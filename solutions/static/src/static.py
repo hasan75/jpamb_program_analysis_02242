@@ -3,7 +3,7 @@ from collections import deque
 from collections.abc import Iterable
 from dataclasses import dataclass
 
-from abstractions import SignSet
+from abstractions import Abstraction, Interval, SignSet
 
 import jpamb
 import sexpr
@@ -13,8 +13,8 @@ from jvm.state import PC, StackInt
 
 @dataclass(frozen=True)
 class State(sexpr.AsSExpr):
-    locals: tuple[SignSet, ...]
-    stack: tuple[SignSet, ...]
+    locals: tuple[Abstraction, ...]
+    stack: tuple[Abstraction, ...]
 
     def __post_init__(self):
         assert isinstance(self.locals, tuple)
@@ -33,8 +33,8 @@ class State(sexpr.AsSExpr):
             tuple(s1 | s2 for s1, s2 in zip(self.stack, other.stack)),
         )
 
-    def push(self, value: SignSet):
-        assert isinstance(value, SignSet), f"Expected sign set but got {value}"
+    def push(self, value: Abstraction):
+        assert isinstance(value, Abstraction), f"Expected abstraction but got {value}"
         return State(self.locals, self.stack + (value,))
 
     def pop(self, number=1):
@@ -49,11 +49,21 @@ class State(sexpr.AsSExpr):
             self.stack,
         )
 
+    # Refines a local variable with information obtained from a conditional branch.
+    def refine(self, index, value):
+        return State(
+            tuple(
+                value if i == index else local
+                for i, local in enumerate(self.locals)
+            ),
+            self.stack,
+        )
 
 def manystep(
     bc: jpamb.Bytecode,
     pc: PC,
     state: State,
+    abstraction: type[Abstraction],
 ) -> Iterable[tuple[PC, object] | str]:
     opr = bc[pc]
     match opr:
@@ -62,36 +72,120 @@ def manystep(
             assert field.extension.name == "$assertionsDisabled"
 
             # Hack - Assuming assertions are never disabled
-            va = SignSet.abstract([StackInt(0)])
+            va = abstraction.abstract([StackInt(0)])
 
             yield (pc + 1, state.push(va))
+
+        # Handles conditional branches comparing two values.
+        case jvm.If(condition=op, target=target):
+            [v1, v2], after = state.pop(2)
+
+            for result in v1.compare(v2, op):
+                if result:
+                    yield (pc % target, after)
+                else:
+                    yield (pc + 1, after)
 
         case jvm.Ifz(condition=op, target=target):
             [val], after = state.pop(1)
 
-            for res in SignSet.compare(val, SignSet.abstract([StackInt(0)]), op):
-                match res:
-                    case True:
+            # Refines the loaded local variable using the branch condition.
+            previous = bc[pc + (-1)]
+
+            if isinstance(previous, jvm.Load):
+                if isinstance(val, SignSet):
+                    # Filters possible signs according to the branch condition.
+                    comparisons = {
+                        jvm.CmpOpr.Eq: lambda x: x == 0,
+                        jvm.CmpOpr.Ne: lambda x: x != 0,
+                        jvm.CmpOpr.Lt: lambda x: x < 0,
+                        jvm.CmpOpr.Le: lambda x: x <= 0,
+                        jvm.CmpOpr.Ge: lambda x: x >= 0,
+                        jvm.CmpOpr.Gt: lambda x: x > 0,
+                    }
+
+                    condition_fn = comparisons[op]
+
+                    true_signs = frozenset(
+                        x for x in val.signs if condition_fn(x)
+                    )
+                    false_signs = val.signs - true_signs
+
+                    if true_signs:
+                        yield (
+                            pc % target,
+                            after.refine(previous.index, SignSet(true_signs)),
+                        )
+
+                    if false_signs:
+                        yield (
+                            pc + 1,
+                            after.refine(previous.index, SignSet(false_signs)),
+                        )
+
+                elif isinstance(val, Interval):
+                    constraints = {
+                        jvm.CmpOpr.Eq: (Interval(0, 0), Interval.top()),
+                        jvm.CmpOpr.Ne: (Interval.top(), Interval(0, 0)),
+                        jvm.CmpOpr.Lt: (Interval(None, -1), Interval(0, None)),
+                        jvm.CmpOpr.Le: (Interval(None, 0), Interval(1, None)),
+                        jvm.CmpOpr.Ge: (Interval(0, None), Interval(None, -1)),
+                        jvm.CmpOpr.Gt: (Interval(1, None), Interval(None, 0)),
+                    }
+
+                    true_constraint, false_constraint = constraints[op]
+
+                    true_interval = val & true_constraint
+                    false_interval = val & false_constraint
+
+                    if not true_interval.is_bottom():
+                        yield (
+                            pc % target,
+                            after.refine(previous.index, true_interval),
+                        )
+
+                    if not false_interval.is_bottom():
+                        yield (
+                            pc + 1,
+                            after.refine(previous.index, false_interval),
+                        )
+
+            else:
+                zero = abstraction.abstract([StackInt(0)])
+
+                for res in val.compare(zero, op):
+                    if res is True:
                         yield (pc % target, after)
-                    case False:
+                    elif res is False:
                         yield (pc + 1, after)
-                    case err:
-                        yield err
+                    else:
+                        yield res
+
+        case jvm.Push(type=jvm.Int(), value=v):
+            va = abstraction.abstract([StackInt(v)])
+            yield (pc + 1, state.push(va))
 
         case jvm.Load(index=i):
             va = state.load(i)
             yield (pc + 1, state.push(va))
+
+        case jvm.Store(index=i):
+            [val], after = state.pop(1)
+            yield (pc + 1, after.store(i, val))
 
         case jvm.Goto(target=t):
             yield (pc % t, state)
 
         case jvm.Binary(operant=op):
             [v1, v2], after = state.pop(2)
-            for res in SignSet.arithmetic(v1, v2, op):
-                if isinstance(res, str):
-                    yield res
-                else:
-                    yield (pc + 1, after.push(res))
+            # Evaluates the operation and propagates any possible arithmetic errors.
+            result, errors = v1.arithmetic(v2, op)
+
+            for error in errors:
+                yield error
+
+            if not result.is_bottom():
+                yield (pc + 1, after.push(result))
 
         case jvm.Return(type=None):
             yield "ok"
@@ -109,22 +203,26 @@ def initialstate(
     bc: jpamb.Bytecode,
     methodid: jvm.AbsMethodID,
     inputs: jpamb.Input | None,
+    abstraction: type[Abstraction] = SignSet,
 ) -> dict[PC, State]:
     method = bc.getmethod(methodid)
-    locals = [SignSet.bot()] * method.max_locals
+    locals = [abstraction.bot()] * method.max_locals
 
     if inputs is None:
         for i, p in enumerate(methodid.extension.params):
-            locals[i] = SignSet.top()
+            locals[i] = abstraction.top()
     else:
         for i, x in enumerate(inputs.values):
             match x:
                 case jpamb.case.Boolean(value=value):
-                    locals[i] = SignSet.abstract([StackInt(int(value))])
+                    locals[i] = abstraction.abstract([StackInt(int(value))])
                 case jpamb.case.Int(value=value):
-                    locals[i] = SignSet.abstract([StackInt(int(value))])
+                    locals[i] = abstraction.abstract([StackInt(int(value))])
                 case jpamb.case.Array():
-                    locals[i] = SignSet.from_sign("+")
+                    if abstraction is SignSet:
+                        locals[i] = SignSet.from_sign("+")
+                    else:
+                        locals[i] = abstraction.top()
                 case _:
                     raise NotImplementedError(f"Unsupported value {x!r}")
 
@@ -137,13 +235,20 @@ class AbstractInterpreter:
     bc: jpamb.Bytecode
     worklist: deque[PC]
     states: dict[PC, State]
+    # Abstraction domain used by this interpreter instance.
+    abstraction: type[Abstraction]
 
     @staticmethod
-    def initial(bc: jpamb.Bytecode, methodid: jvm.AbsMethodID, inputs):
-        states = initialstate(bc, methodid, inputs)
+    def initial(
+        bc: jpamb.Bytecode,
+        methodid: jvm.AbsMethodID,
+        inputs,
+        abstraction: type[Abstraction] = SignSet,
+    ):
+        states = initialstate(bc, methodid, inputs, abstraction)
         worklist = deque(states.keys())
 
-        return AbstractInterpreter(bc, worklist, states)
+        return AbstractInterpreter(bc, worklist, states, abstraction)
 
     def step(self) -> tuple[PC, set[str]]:
         pc = self.worklist.pop()
@@ -152,7 +257,7 @@ class AbstractInterpreter:
 
         finals = set()
 
-        for res in manystep(self.bc, pc, self.states[pc]):
+        for res in manystep(self.bc, pc, self.states[pc], self.abstraction):
             if isinstance(res, str):
                 finals.add(res)
             else:
