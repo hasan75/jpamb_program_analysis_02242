@@ -230,6 +230,19 @@ class SignSet(Abstraction, Lattice):
                         if x >= y:
                             cases.add(False)
                 return cases
+
+            case jvm.CmpOpr.Eq:
+                cases = set()
+                for x in self.signs:
+                    for y in other.signs:
+                        if x != y:
+                            cases.add(False)
+                        elif x == 0:
+                            cases.add(True)
+                        else:
+                            cases.update([True, False])
+                return cases
+
             case _:
                 raise NotImplementedError(f"TODO: {opr}")
 
