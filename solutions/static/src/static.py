@@ -53,7 +53,7 @@ class State(sexpr.AsSExpr):
     def refine(self, index, value):
         return State(
             tuple(
-                value if i == index else local
+                local & value if i == index else local
                 for i, local in enumerate(self.locals)
             ),
             self.stack,
@@ -76,15 +76,108 @@ def manystep(
 
             yield (pc + 1, state.push(va))
 
+
         # Handles conditional branches comparing two values.
         case jvm.If(condition=op, target=target):
             [v1, v2], after = state.pop(2)
 
+            previous1 = bc[pc + (-2)]
+            previous2 = bc[pc + (-1)]
+
+            if (
+                isinstance(previous1, jvm.Load)
+                and isinstance(previous2, jvm.Load)
+                and previous1.index == previous2.index
+            ):
+                result = op in (
+                    jvm.CmpOpr.Eq,
+                    jvm.CmpOpr.Le,
+                    jvm.CmpOpr.Ge,
+                )
+
+                next_pc = pc % target if result else pc + 1
+                yield (next_pc, after)
+                return
+
             for result in v1.compare(v2, op):
-                if result:
-                    yield (pc % target, after)
-                else:
-                    yield (pc + 1, after)
+                next_pc = pc % target if result else pc + 1
+                refined = after
+
+                # Refines both operands when they are loaded from local variables.
+                if (
+                    isinstance(v1, Interval)
+                    and isinstance(v2, Interval)
+                    and isinstance(previous1, jvm.Load)
+                    and isinstance(previous2, jvm.Load)
+                ):
+                    left, right = v1, v2
+
+                    if op == jvm.CmpOpr.Eq:
+                        if result:
+                            common = left & right
+                            left = common
+                            right = common
+
+                    elif op == jvm.CmpOpr.Ne:
+                        if not result:
+                            common = left & right
+                            left = common
+                            right = common
+
+                    else:
+                        # Normalize the comparison into one of four relations.
+                        relation = {
+                            jvm.CmpOpr.Lt: "lt",
+                            jvm.CmpOpr.Le: "le",
+                            jvm.CmpOpr.Gt: "gt",
+                            jvm.CmpOpr.Ge: "ge",
+                        }
+
+                        current = relation[op]
+
+                        if not result:
+                            current = {
+                                "lt": "ge",
+                                "le": "gt",
+                                "gt": "le",
+                                "ge": "lt",
+                            }[current]
+
+                        if current == "lt":
+                            left = left & Interval(
+                                None,
+                                None if right.max is None else right.max - 1,
+                            )
+                            right = right & Interval(
+                                None if left.min is None else left.min + 1,
+                                None,
+                            )
+
+                        elif current == "le":
+                            left = left & Interval(None, right.max)
+                            right = right & Interval(left.min, None)
+
+                        elif current == "gt":
+                            left = left & Interval(
+                                None if right.min is None else right.min + 1,
+                                None,
+                            )
+                            right = right & Interval(
+                                None,
+                                None if left.max is None else left.max - 1,
+                            )
+
+                        elif current == "ge":
+                            left = left & Interval(right.min, None)
+                            right = right & Interval(None, left.max)
+
+                    refined = refined.refine(previous1.index, left)
+                    refined = refined.refine(previous2.index, right)
+
+                    if left.is_bottom() or right.is_bottom():
+                        continue
+
+                yield (next_pc, refined)
 
         case jvm.Ifz(condition=op, target=target):
             [val], after = state.pop(1)
@@ -254,7 +347,6 @@ class AbstractInterpreter:
         pc = self.worklist.pop()
 
         print(f"Stepping {pc}:\n > {self.bc[pc]}", file=sys.stderr)
-
         finals = set()
 
         for res in manystep(self.bc, pc, self.states[pc], self.abstraction):
