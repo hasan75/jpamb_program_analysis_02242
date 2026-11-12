@@ -1,5 +1,7 @@
 import jpamb
 import pytest
+import shutil
+from jpamb.utils import DockerRunner
 from pathlib import Path
 from jpamb.utils import Effect
 from jvm.state import PC
@@ -16,6 +18,64 @@ from synthesis import (
     synthesize_inputs_for_ifz,
     is_parameter_unmodified,
 )
+
+def compile_rewrite_variants(tmp_path, original_condition, rewritten_condition):
+    project_root = Path(__file__).resolve().parents[3]
+    runtime_classes = project_root / "target" / "classes"
+
+    if not runtime_classes.exists():
+        pytest.skip("JPAMB runtime classes are not built")
+
+    eff = Effect(None)
+    docker = DockerRunner.create(
+        tmp_path,
+        "ghcr.io/kalhauge/jvm2json:jdk-latest",
+        eff,
+    )
+
+    folders = []
+
+    for name, condition in (
+        ("original", original_condition),
+        ("rewritten", rewritten_condition),
+    ):
+        class_folder = tmp_path / name / "classes"
+        source_folder = tmp_path / name / "src" / "jpamb" / "cases"
+
+        class_folder.parent.mkdir(parents=True)
+        source_folder.mkdir(parents=True)
+
+        shutil.copytree(runtime_classes, class_folder, dirs_exist_ok=True)
+
+        source_file = source_folder / "RewriteTest.java"
+        source_file.write_text(
+            f"""
+package jpamb.cases;
+
+public class RewriteTest {{
+    public static void assertPositive(int n) {{
+        assert {condition};
+    }}
+}}
+""".strip(),
+            encoding="utf-8",
+        )
+
+        docker.run(
+            [
+                "javac",
+                "-g",
+                "-d",
+                class_folder.relative_to(tmp_path).as_posix(),
+                source_file.relative_to(tmp_path).as_posix(),
+            ],
+            timeout=60,
+            eff=eff,
+        )
+
+        folders.append(class_folder)
+
+    return docker, folders[0], folders[1], eff
 
 def make_ifz_bytecode(condition):
     methodid = jpamb.jvm.AbsMethodID.decode("Test.method:()V")
@@ -395,3 +455,60 @@ def test_synthesize_inputs_for_ifz_rejects_non_integer_parameters():
 
     assert true_inputs == ()
     assert false_inputs == ()
+
+def test_check_rewrite_equivalence_real_equivalent_rewrite(tmp_path):
+    docker, original_folder, rewritten_folder, eff = (
+        compile_rewrite_variants(
+            tmp_path,
+            "n > 0",
+            "n >= 1",
+        )
+    )
+
+    methodid = jpamb.jvm.AbsMethodID.decode(
+        "jpamb.cases.RewriteTest.assertPositive:(I)V"
+    )
+
+    inputs = tuple(
+        jpamb.case.Input((jpamb.case.Int(value),))
+        for value in (-1, 0, 1)
+    )
+
+    assert check_rewrite_equivalence(
+        docker,
+        tmp_path,
+        original_folder,
+        rewritten_folder,
+        methodid,
+        inputs,
+        eff,
+    )
+
+
+def test_check_rewrite_equivalence_real_different_rewrite(tmp_path):
+    docker, original_folder, rewritten_folder, eff = (
+        compile_rewrite_variants(
+            tmp_path,
+            "n > 0",
+            "n >= 0",
+        )
+    )
+
+    methodid = jpamb.jvm.AbsMethodID.decode(
+        "jpamb.cases.RewriteTest.assertPositive:(I)V"
+    )
+
+    inputs = tuple(
+        jpamb.case.Input((jpamb.case.Int(value),))
+        for value in (-1, 0, 1)
+    )
+
+    assert not check_rewrite_equivalence(
+        docker,
+        tmp_path,
+        original_folder,
+        rewritten_folder,
+        methodid,
+        inputs,
+        eff,
+    )
