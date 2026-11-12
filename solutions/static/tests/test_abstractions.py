@@ -6,43 +6,34 @@ from hypothesis import strategies as st
 import jvm
 import jvm.state as jvms
 
-
 def st_i32():
     return st.integers(min_value=-(2**31) - 1, max_value=2**31)
-
 
 def st_u32():
     return st.integers(min_value=0, max_value=2**32)
 
-
 def st_stack_ints():
     return st_i32().map(jvms.StackInt)
 
-
 def st_stack_refs():
     return st_u32().map(jvms.StackReference)
-
 
 def st_signset():
     return (
         st.sets(st.integers(min_value=-1, max_value=1)).map(frozenset).map(ab.SignSet)
     )
 
-
 @given(st_signset(), st_signset(), st_signset())
 def test_signset_is_poset(a: ab.SignSet, b: ab.SignSet, c: ab.SignSet):
     ab.is_poset(a, b, c)
-
 
 @given(st_signset(), st_signset(), st_signset())
 def test_signset_is_lattice(a: ab.SignSet, b: ab.SignSet, c: ab.SignSet):
     ab.is_lattice(a, b, c)
 
-
 @given(st.sets(st_stack_ints()), st_signset())
 def test_signset_is_galoi(a: set[jvms.StackInt], b: ab.SignSet):
     ab.is_galoi(a, b)
-
 
 def arithmetic(opr, x, y):
     match opr:
@@ -50,7 +41,6 @@ def arithmetic(opr, x, y):
             return jvms.StackInt(x.value + y.value)
         case _:
             raise NotImplementedError("TODO")
-
 
 @given(
     st.sampled_from([jvm.BinaryOpr.Add]),
@@ -68,14 +58,12 @@ def test_signset_arithmetic(
     )
     assert real <= abstracted
 
-
 def compare(opr, x, y):
     match opr:
         case jvm.CmpOpr.Le:
             return x.value <= y.value
         case _:
             raise NotImplementedError("TODO")
-
 
 @given(
     st.sampled_from([jvm.CmpOpr.Le]),
@@ -91,7 +79,6 @@ def test_signset_compare(
     abstracted = set(ab.SignSet.abstract(xs).compare(ab.SignSet.abstract(ys), opr))
     assert real <= abstracted
 
-
 @st.composite
 def st_interval(draw):
     min = draw(st.one_of(st.none(), st_i32()))
@@ -102,16 +89,13 @@ def st_interval(draw):
 
     return ab.Interval(min, max)
 
-
 @given(st_interval(), st_interval(), st_interval())
 def test_interval_is_poset(a: ab.Interval, b: ab.Interval, c: ab.Interval):
     ab.is_poset(a, b, c)
 
-
 @given(st_interval(), st_interval(), st_interval())
 def test_interval_is_lattice(a: ab.Interval, b: ab.Interval, c: ab.Interval):
     ab.is_lattice(a, b, c)
-
 
 @given(st.sets(st_stack_ints()), st_interval())
 def test_lnterval_is_galoi(a: set[jvms.StackInt], b: ab.Interval):
@@ -164,7 +148,6 @@ def test_interval_division_by_zero():
     assert result == ab.Interval.top()
     assert errors == {"divide by zero"}
 
-
 def test_interval_division_interval_containing_zero():
     result, errors = ab.Interval(10, 20).arithmetic(
         ab.Interval(-2, 3), jvm.BinaryOpr.Div
@@ -172,7 +155,6 @@ def test_interval_division_interval_containing_zero():
 
     assert result == ab.Interval.top()
     assert errors == {"divide by zero"}
-
 
 def test_interval_arithmetic_with_bottom():
     bottom = ab.Interval(1, 0)
@@ -184,7 +166,6 @@ def test_interval_arithmetic_with_bottom():
     assert result.is_bottom()
     assert errors == set()
 
-
 def test_interval_addition_with_unbounded_values():
     result, errors = ab.Interval(None, 3).arithmetic(
         ab.Interval(1, 2), jvm.BinaryOpr.Add
@@ -192,7 +173,6 @@ def test_interval_addition_with_unbounded_values():
 
     assert result == ab.Interval(None, 5)
     assert errors == set()
-
 
 def test_interval_multiplication_with_unbounded_values():
     result, errors = ab.Interval(1, 3).arithmetic(

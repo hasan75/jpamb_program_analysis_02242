@@ -4,12 +4,20 @@
 import logging
 import sys
 from pathlib import Path
-
+from rewriting import (
+    find_rewrite_sites,
+    find_integer_variables_for_site,
+    is_safe_comparison,
+    invert_if_comparison,
+)
 import tree_sitter
 import tree_sitter_java
-
+import tempfile
+from validation import (
+    synthesize_method_inputs,
+    validate_rewrite_variants,
+)
 import jpamb
-
 
 def main():
     methodid = jpamb.getmethodid(
@@ -26,13 +34,14 @@ def main():
     log = logging
     log.basicConfig(level=logging.DEBUG)
 
-    suite, _ = jpamb.setup()
+    suite, eff = jpamb.setup()
 
     srcfile = suite.sourcefile(methodid.classname).relative_to(Path.cwd())
 
     with open(srcfile, "rb") as f:
         log.debug("parse sourcefile %s", srcfile)
-        tree = parser.parse(f.read())
+        source = f.read()
+        tree = parser.parse(source)
 
     simple_classname = str(methodid.classname.name)
 
@@ -89,8 +98,9 @@ def main():
             if tp.text is None:
                 break
 
-            # todo check for type.
+        # todo check for type.
         else:
+            method_node = snode
             break
     else:
         log.warning(
@@ -100,7 +110,7 @@ def main():
 
     # log.debug("Found method %s %s", method_name, node.range)
 
-    body = node.child_by_field_name("body")
+    body = method_node.child_by_field_name("body")
     assert body and body.text
     for t in body.text.splitlines():
         log.debug("line: %s", t.decode())
@@ -118,6 +128,102 @@ def main():
     else:
         log.debug("No assertion")
         print("assertion error;not-found")
+
+    rewrite_sites = find_rewrite_sites(source)
+
+    # Only consider rewrite sites belonging to the target method.
+    method_rewrite_sites = [
+        site
+        for site in rewrite_sites
+        if site.method_start_byte == method_node.start_byte
+        and site.method_end_byte == method_node.end_byte
+    ]
+
+    output_dir = (
+        Path(__file__).resolve().parents[1]
+        / "generated"
+        / f"{simple_classname}_{method_name}"
+    )
+
+    generated_count = 0
+
+    variants = {}
+    for site in method_rewrite_sites:
+        log.debug(
+            "Rewrite site: kind=%s, condition=%s, operator=%s",
+            site.kind,
+            site.condition,
+            site.operator,
+        )
+
+        # Only if statements are currently supported for comparison inversion.
+        if site.kind != "if_statement":
+            continue
+
+        integer_variables = find_integer_variables_for_site(source, site)
+
+        # Skip comparisons whose operands cannot be safely identified as integers.
+        if not is_safe_comparison(site, integer_variables):
+            log.debug("Skipping unsafe rewrite: %s", site.condition)
+            continue
+
+        rewritten_source = invert_if_comparison(
+            source,
+            site,
+            integer_variables,
+        )
+
+        if rewritten_source == source:
+            log.debug("Rewrite produced no changes: %s", site.condition)
+            continue
+
+        site_dir = output_dir / f"site_{site.start_byte}"
+        site_dir.mkdir(parents=True, exist_ok=True)
+
+        output_file = site_dir / srcfile.name
+        output_file.write_bytes(rewritten_source)
+        variants[f"site_{site.start_byte}"] = rewritten_source
+
+        generated_count += 1
+
+        log.info(
+            "Generated rewrite: %s -> %s",
+            site.condition,
+            output_file,
+        )
+
+    log.info("Generated %d rewrite variants", generated_count)
+
+    if variants:
+        method_bytecode = jpamb.Bytecode(suite, eff, {})
+
+        # Generate concrete inputs from the interval analysis of the target method.
+        inputs = synthesize_method_inputs(
+            method_bytecode,
+            methodid,
+        )
+
+        print(f"\nSynthesized inputs: {len(inputs)}")
+
+        # Use a temporary directory for compilation and validation artifacts.
+        with tempfile.TemporaryDirectory(
+            prefix="syntactic-validation-"
+        ) as temporary_dir:
+
+            results = validate_rewrite_variants(
+                srcfile,
+                source,
+                variants,
+                methodid,
+                inputs,
+                Path(temporary_dir),
+            )
+
+        print("\nRewrite validation results:")
+
+        for name, equivalent in results.items():
+            status = "EQUIVALENT" if equivalent else "NOT EQUIVALENT"
+            print(f"{name}: {status}")
 
     for q in jpamb.QUERIES:
         if q != "assertion error":

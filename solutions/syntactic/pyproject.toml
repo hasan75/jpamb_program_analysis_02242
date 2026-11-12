@@ -10,10 +10,10 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
   "jpamb",
+  "static",
   "tree-sitter>=0.26.0",
   "tree-sitter-java>=0.23.5",
 ]
-
 
 [project.scripts]
 syntactic-treesitter = "syntactic_treesitter:main"
@@ -22,6 +22,7 @@ syntactic-bytecode = "syntactic_bytecode:main"
 
 [tool.uv.sources]
 jpamb = { path = "../../", editable = true }
+static = { path = "../static", editable = true }
 
 [dependency-groups]
 dev = [

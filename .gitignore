@@ -32,3 +32,5 @@ report.sexp
 tags
 
 .DS_Store
+
+solutions/syntactic/generated/

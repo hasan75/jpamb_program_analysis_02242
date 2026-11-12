@@ -6,7 +6,6 @@ from typing import Literal, Self
 import jvm
 import jvm.state as jvms
 
-
 class Poset(ABC):
     @abstractmethod
     def __eq__(self, other: Self) -> bool: ...
@@ -23,11 +22,9 @@ class Poset(ABC):
     def __ge__(self, other: Self) -> bool:
         return self == other or self > other
 
-
 def is_reflexive(a: Poset):
     # Checking if the relation is reflexive (a == a)
     assert a == a, f"Reflexivity check failed: Element {a} is not related to itself."  # noqa: PLR0124
-
 
 def is_antisymmetric(a: Poset, b: Poset):
     if a != b:
@@ -37,7 +34,6 @@ def is_antisymmetric(a: Poset, b: Poset):
             f"but {a} != {b}."
         )
 
-
 def is_transitive(a: Poset, b: Poset, c: Poset):
     if a <= b <= c:
         # Checking that if a <= b and b <= c, then a <= c
@@ -45,7 +41,6 @@ def is_transitive(a: Poset, b: Poset, c: Poset):
             f"Transitivity violation: Found path {a} <= {b} and {b} <= {c}, "
             f"but {a} is not related to {c}."
         )
-
 
 def is_poset(a: Poset, b: Poset, c: Poset):
     for x in [a, b, c]:
@@ -55,7 +50,6 @@ def is_poset(a: Poset, b: Poset, c: Poset):
         is_antisymmetric(a, x)
 
     is_transitive(a, b, c)
-
 
 class Lattice(Poset):
     @classmethod
@@ -72,7 +66,6 @@ class Lattice(Poset):
 
     @abstractmethod
     def __and__(self, other: Self) -> Self: ...
-
 
 def is_lattice_identities(a: Lattice):
     # Top element identity checks
@@ -99,7 +92,6 @@ def is_lattice_identities(a: Lattice):
         f"Bottom identity fail (join commute): ({a} | {a.bot()}) != {a}"
     )
 
-
 def is_lattice(a: Lattice, b: Lattice, c: Lattice):
     for x in [a, b, c]:
         is_lattice_identities(x)
@@ -118,7 +110,6 @@ def is_lattice(a: Lattice, b: Lattice, c: Lattice):
             f"Check individual bounds: {c <= a=}, {c <= b=}."
         )
 
-
 class Abstraction(ABC):
     """This is the minimal interface for an abstraction."""
 
@@ -133,7 +124,6 @@ class Abstraction(ABC):
     @abstractmethod
     def is_bottom(self) -> bool: ...
 
-
 def is_galoi(a: set[jvms.StackValue], b: Abstraction):
     alpha_a = b.abstract(a)
 
@@ -144,9 +134,7 @@ def is_galoi(a: set[jvms.StackValue], b: Abstraction):
         for value in a:
             assert value in b, f"{value} not in {b}"
 
-
 type Sign = Literal[-1, 0, 1]
-
 
 def to_sign(value: jvms.StackValue) -> Sign:
     match value:
@@ -154,7 +142,6 @@ def to_sign(value: jvms.StackValue) -> Sign:
             return (v > 0) - (v < 0)
         case a:
             raise NotImplementedError(f"Unsupported value {value!r}")
-
 
 @dataclass(frozen=True, order=True)
 class SignSet(Abstraction, Lattice):
@@ -276,7 +263,6 @@ class SignSet(Abstraction, Lattice):
                     cases.add(comparisons[opr](x, y))
 
         return cases
-
 
 from collections.abc import Iterable
 from dataclasses import dataclass

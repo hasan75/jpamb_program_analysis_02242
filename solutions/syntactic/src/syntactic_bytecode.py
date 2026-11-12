@@ -5,7 +5,6 @@ import logging
 
 import jpamb
 
-
 def main():
     methodid = jpamb.getmethodid(
         "bytecoder",

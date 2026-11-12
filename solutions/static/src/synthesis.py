@@ -14,7 +14,6 @@ from static import run_analysis
 INT_MIN = -(1 << 31)
 INT_MAX = (1 << 31) - 1
 
-
 def representative_values(interval: Interval) -> tuple[int, ...]:
     """Generate representative Java int values within an interval."""
 
@@ -192,7 +191,6 @@ def synthesize_integer_inputs(
         for combination in combinations
     )
 
-
 def execute_input(
     docker: DockerRunner,
     workdir: Path,
@@ -224,7 +222,6 @@ def execute_input(
         return "*"
 
     return result.strip()
-
 
 def check_rewrite_equivalence(
     docker: DockerRunner,

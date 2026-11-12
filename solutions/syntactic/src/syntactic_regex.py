@@ -8,7 +8,6 @@ from pathlib import Path
 
 import jpamb
 
-
 def main():
     absmethodid = jpamb.getmethodid(
         "syntaxer",

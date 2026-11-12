@@ -10,7 +10,6 @@ import sexpr
 from jpamb import jvm
 from jvm.state import PC, StackInt
 
-
 @dataclass(frozen=True)
 class State(sexpr.AsSExpr):
     locals: tuple[Abstraction, ...]
@@ -75,7 +74,6 @@ def manystep(
             va = abstraction.abstract([StackInt(0)])
 
             yield (pc + 1, state.push(va))
-
 
         # Handles conditional branches comparing two values.
         case jvm.If(condition=op, target=target):
@@ -291,7 +289,6 @@ def manystep(
             # Hack -- if we create an assertion error, we probably also throw it.
             yield "assertion error"
 
-
 def initialstate(
     bc: jpamb.Bytecode,
     methodid: jvm.AbsMethodID,
@@ -321,7 +318,6 @@ def initialstate(
 
     state = State(tuple(locals), ())
     return {PC(methodid, 0): state}
-
 
 @dataclass
 class AbstractInterpreter:
@@ -410,7 +406,6 @@ def interpret():
 
         x = jpamb.emit_step(x, pc, ai.states, depth=1)
         steps -= 1
-
 
 def analyse():
     """The static analysis"""

@@ -27,7 +27,6 @@ def make_if_bytecode(condition, second_index=1):
 
     return bc, PC(methodid, 2)
 
-
 def test_interval_if_lt_refines_both_branches():
     bc, pc = make_if_bytecode(jvm.CmpOpr.Lt)
 
@@ -80,7 +79,6 @@ def test_interval_if_eq_refines_true_branch():
         Interval(5, 10),
         Interval(5, 10),
     )
-
 
 def test_interval_if_eq_discards_impossible_true_branch():
     bc, pc = make_if_bytecode(jvm.CmpOpr.Eq)
@@ -190,7 +188,6 @@ def test_interval_if_ge_refines_both_branches():
         Interval(5, 11),
         Interval(10, 12),
     )
-
 
 def test_interval_if_gt_refines_both_branches():
     bc, pc = make_if_bytecode(jvm.CmpOpr.Gt)

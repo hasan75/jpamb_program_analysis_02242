@@ -107,24 +107,20 @@ def test_representative_values_bounded_interval():
 
     assert result == (2, 3, 4, 5)
 
-
 def test_representative_values_single_value():
     result = representative_values(Interval(4, 4))
 
     assert result == (4,)
-
 
 def test_representative_values_interval_containing_zero():
     result = representative_values(Interval(-2, 2))
 
     assert result == (-2, -1, 0, 1, 2)
 
-
 def test_representative_values_bottom():
     result = representative_values(Interval(1, 0))
 
     assert result == ()
-
 
 def test_representative_values_unbounded_interval():
     result = representative_values(Interval(None, None))
@@ -156,12 +152,10 @@ def test_synthesize_integer_inputs():
         (2, 6),
     )
 
-
 def test_synthesize_integer_inputs_bottom():
     intervals = (Interval(1, 2), Interval(1, 0))
 
     assert synthesize_integer_inputs(intervals) == ()
-
 
 def test_synthesize_integer_inputs_no_parameters():
     assert synthesize_integer_inputs(()) == (jpamb.case.Input(()),)
@@ -183,7 +177,6 @@ def test_check_rewrite_equivalence_same_results(monkeypatch):
         None, None, None, None, None, inputs, None
     )
 
-
 def test_check_rewrite_equivalence_different_results(monkeypatch):
     results = iter(["ok", "assertion error"])
 
@@ -198,7 +191,6 @@ def test_check_rewrite_equivalence_different_results(monkeypatch):
         None, None, None, None, None, inputs, None
     )
 
-
 def test_check_rewrite_equivalence_timeout(monkeypatch):
     results = iter(["*", "*"])
 
@@ -212,7 +204,6 @@ def test_check_rewrite_equivalence_timeout(monkeypatch):
     assert not check_rewrite_equivalence(
         None, None, None, None, None, inputs, None
     )
-
 
 def test_check_rewrite_equivalence_no_inputs():
     assert not check_rewrite_equivalence(
@@ -229,10 +220,8 @@ def test_filter_values_by_condition():
     assert filter_values_by_condition(values, "gt") == (1, 2)
     assert filter_values_by_condition(values, "ge") == (0, 1, 2)
 
-
 def test_filter_values_by_condition_empty():
     assert filter_values_by_condition((), "ne") == ()
-
 
 def test_filter_values_by_condition_invalid():
     import pytest
@@ -291,7 +280,6 @@ def test_synthesize_ifz_branch_inputs_greater_than_zero():
 
     assert values == (1, 2)
 
-
 def test_synthesize_ifz_branch_inputs_less_or_equal_zero():
     inputs = synthesize_ifz_branch_inputs(
         (Interval(-2, 2),),
@@ -306,7 +294,6 @@ def test_synthesize_ifz_branch_inputs_less_or_equal_zero():
     )
 
     assert values == (-2, -1, 0)
-
 
 def test_synthesize_ifz_branch_inputs_multiple_parameters():
     inputs = synthesize_ifz_branch_inputs(
@@ -331,7 +318,6 @@ def test_synthesize_ifz_branch_inputs_multiple_parameters():
         (6, 2),
     )
 
-
 def test_synthesize_ifz_branch_inputs_invalid_index():
     with pytest.raises(IndexError):
         synthesize_ifz_branch_inputs(
@@ -339,7 +325,6 @@ def test_synthesize_ifz_branch_inputs_invalid_index():
             1,
             "gt",
         )
-
 
 def test_synthesize_ifz_branch_inputs_bottom():
     assert synthesize_ifz_branch_inputs(
@@ -385,7 +370,6 @@ def test_parameter_unmodified():
     method = bc.getmethod(pc.method)
 
     assert is_parameter_unmodified(method, 0, pc)
-
 
 def test_parameter_modified_before_ifz():
     methodid = jpamb.jvm.AbsMethodID.decode("Test.method:(I)V")
@@ -483,7 +467,6 @@ def test_check_rewrite_equivalence_real_equivalent_rewrite(tmp_path):
         inputs,
         eff,
     )
-
 
 def test_check_rewrite_equivalence_real_different_rewrite(tmp_path):
     docker, original_folder, rewritten_folder, eff = (
