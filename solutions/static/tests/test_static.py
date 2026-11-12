@@ -6,8 +6,7 @@ from abstractions import Interval
 from jpamb import jvm
 from jpamb.utils import Effect
 from jvm.state import PC
-from static import State, manystep
-
+from static import State, manystep, run_analysis
 
 def make_if_bytecode(condition, second_index=1):
     methodid = jvm.AbsMethodID.decode("Test.method:()V")
@@ -351,3 +350,24 @@ def test_interval_if_lt_refines_unbounded_intervals():
         Interval(5, 10),
         Interval(5, 10),
     )
+
+def test_run_analysis_returns_states_and_final_results():
+    methodid = jvm.AbsMethodID.decode("Test.method:(I)V")
+
+    method = jvm.Method(
+        methodid,
+        [jvm.Return(type=None, offset=0)],
+        1,
+    )
+
+    bc = jpamb.Bytecode(
+        jpamb.Suite(Path.cwd()),
+        Effect(None),
+        {methodid: method},
+    )
+
+    ai, final = run_analysis(bc, methodid)
+
+    assert final == {"ok"}
+    assert ai.states[PC(methodid, 0)].locals == (Interval.top(),)
+    assert not ai.worklist

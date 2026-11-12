@@ -366,6 +366,25 @@ class AbstractInterpreter:
 
         return pc, finals
 
+def run_analysis(
+    bc: jpamb.Bytecode,
+    methodid: jvm.AbsMethodID,
+    inputs: jpamb.Input | None = None,
+    abstraction: type[Abstraction] = Interval,
+    max_steps: int = 300,
+) -> tuple[AbstractInterpreter, set[str]]:
+    ai = AbstractInterpreter.initial(bc, methodid, inputs, abstraction)
+
+    final = set()
+    steps = max_steps
+
+    # Execute the analysis until convergence or the maximum number of steps.
+    while steps > 0 and ai.worklist:
+        _pc, finals = ai.step()
+        final |= finals
+        steps -= 1
+
+    return ai, final
 
 def interpret():
     """The static analysis"""
