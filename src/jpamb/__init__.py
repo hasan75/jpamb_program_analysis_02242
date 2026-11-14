@@ -462,9 +462,7 @@ class Bytecode:
         try:
             method = self.methods[methodid]
         except KeyError:
-            opcodes = list(self.suite.method_opcodes(methodid, eff=self.eff))
-            max_locals = self.suite.method_max_locals(methodid, eff=self.eff)
-            method = jvm.Method(methodid, opcodes, max_locals)
+            method = self.suite.getmethod(methodid, eff=self.eff)
             self.methods[methodid] = method
         return method
 

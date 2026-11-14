@@ -700,4 +700,6 @@ public class RewriteTest {
         workdir=tmp_path,
     )
 
-    assert results == {"different": False}
+    assert results["different"]["concrete_equivalent"] is False
+    assert results["different"]["abstract"]["Interval"]["complete"]
+    assert results["different"]["abstract"]["SignSet"]["complete"]
