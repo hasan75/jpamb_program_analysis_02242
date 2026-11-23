@@ -9,6 +9,10 @@ about *how* to work.
 
 ## 1. The session loop
 
+The paper's layout uses the cited DTU papers (PDFs in
+`proposal/references/`) only as examples; the sections are designed for this
+project in [`PAPER-STRUCTURE.md`](PAPER-STRUCTURE.md).
+
 Every piece of work follows the same loop:
 
 1. **Start:** a new session (or `/clear`), then paste the start prompt (§4).
@@ -64,11 +68,11 @@ sections at once).
 | 6 | Validation: compile + synthesized inputs | `rewrite-auditor` (does validation catch a deliberately wrong rule?) | invalid variants are discarded |
 | 7 | New benchmark cases (D12) | — | `jpamb build` passes |
 | 8 | `experiments/run.py`, `stats.py`; dry run, then full run | `results-checker` (after the paper's results section exists) | CSV + generated tables/figures |
-| P1 | Paper skeleton in `paper/` (start after step 4) | — | compiles in Overleaf |
+| P1 | Paper skeleton in `paper/` per `PAPER-STRUCTURE.md` (start after step 4) | — | compiles in Overleaf |
 | P2 | Gap + Related Work | `literature-scout` **before**, `paper-reviewer` after | 6–10 verified citations |
-| P3 | Approach, Implementation, worked example, pipeline figure | `paper-reviewer` | — |
-| P4 | Evaluation, Threats, Conclusion | `results-checker`, then `paper-reviewer` | all numbers traced |
-| P5 | Final pass on the whole paper | `paper-reviewer` + `results-checker` | ≤ 11 pages, no `\todo{}` |
+| P3 | Background, Overview (worked example + pipeline figure), Analysis-Guided Rewriting, Implementation | `paper-reviewer` | — |
+| P4 | Evaluation (RQ1–RQ3), Threats to Validity, Conclusion, Abstract | `results-checker`, then `paper-reviewer` | all numbers traced |
+| P5 | Final pass on the whole paper | `paper-reviewer` + `results-checker` | ≤ 11 pages incl. references, no `\todo{}` |
 
 Suggested calendar: 23–24 Nov steps 0–2 · 25 Nov steps 3–4 + P1 ·
 26 Nov steps 5–7 + P2 · 27 Nov step 8 + P3 · 28 Nov P4 · 29 Nov P5.
@@ -104,9 +108,12 @@ then the time-budget experiment).
 
 **Paper prompts**
 > Create `paper/main.tex` from the proposal's acmart setup with one file per
-> section in `paper/sections/`: Introduction, Approach, Implementation,
-> Evaluation, Related Work, Threats to Validity, Conclusion. Target 10–11 pages.
-> Put `\todo{}` wherever a number or citation is missing; never invent them.
+> section in `paper/sections/`, following `project/PAPER-STRUCTURE.md` (D13):
+> Abstract, Introduction, Background, Overview, Analysis-Guided Rewriting,
+> Implementation, Evaluation, Threats to Validity, Related Work, Conclusion. Start
+> `paper/bibfile.bib` from the verified entries in PAPER-STRUCTURE.md §3.
+> Target 10–11 pages including references. Put `\todo{}` wherever a number or citation is missing;
+> never invent them.
 
 > Run the `literature-scout` agent for Related Work. Add only verified entries to
 > `paper/bibfile.bib`.

@@ -28,7 +28,8 @@ items, and treat the loop rule (D6.3) and the time budget (D11) as extras.
 
 ### D3. Deadline and length
 **DECIDED.** Paper deadline 29 Nov 2026 (fixed). Presentation 6 Dec 2026.
-Paper length 10–11 pages (acmart `acmsmall`, as in the proposal).
+Paper length 10–11 pages (acmart `acmsmall`, as in the proposal), **including
+references and any appendix**.
 
 ### D4. Build environment
 **DECIDED.** Docker, for `uv run jpamb build`.
@@ -66,6 +67,9 @@ three separate programs (entry points), each with its own `info` name:
 
 Reason: `jpamb analyse <PROGRAM>` treats each as a separate analyzer, so the
 existing scoring and reports work unchanged.
+Built in step 1 (2026-11-23): `static-sign` and `static-sign-narrow` share
+`run_analysis` in `solutions/static/src/static.py`; `static-interval` was added
+in step 2 (2026-11-23), passing the domain to the same driver.
 
 ### D8. Interval vs. sign precision
 **PROVISIONAL.** An interval has no holes: refining `[-inf, inf]` with
@@ -75,6 +79,9 @@ existing scoring and reports work unchanged.
 - do **not** build a reduced product unless there is time left;
 - state the limitation in the paper (Approach, and Threats to Validity),
   and don't call interval "the most precise" without qualification.
+
+Built in step 2 as decided. The step 2 reports confirm the limitation: sign-narrow
+beats interval on `n != 0` guards, interval beats sign-narrow on range checks.
 
 ### D9. Build order (so that cuts are easy)
 **PROVISIONAL.**
@@ -119,3 +126,23 @@ The same weakness found by several seeds or sites counts once.
 them in `cases/jpamb/Runtime.java` (`caseclasses`). Note:
 `docs/extending-jpamb.md` gives an outdated path (`src/main/java/...`).
 **PENDING:** whether to submit them upstream as a PR. Decide later.
+
+---
+
+## Paper
+
+### D13. Paper structure
+**DECIDED** (outline confirmed by the user, 2026-11-23). Sections are designed for this project, not copied from
+another paper (course papers have no fixed list): Abstract · 1 Introduction
+(Context, Gap, Innovation, Evaluation, Contributions) · 2 Background (JPAMB,
+metamorphic testing, the three analyzers under test) · 3 Overview (worked
+example + pipeline figure) · 4 Analysis-Guided Rewriting (inconsistency,
+sites/candidates, rewrite rules, selection strategies, validation) ·
+5 Implementation · 6 Evaluation (RQ1 effectiveness, RQ2 cost, RQ3 validity,
+what the inconsistencies reveal) · 7 Threats to Validity · 8 Related Work ·
+9 Conclusion. Rationale, page budget, figures and verified BibTeX are in
+`project/PAPER-STRUCTURE.md`. Only the layout is set here; the project and
+evaluation stay as in `proposal/main.tex`, and the RQs only split its
+evaluation into separate questions.
+References and any appendix count towards the 11-page limit (user,
+2026-11-23). So: no appendix by default; proofs stay short in §2.3/§4.3.
