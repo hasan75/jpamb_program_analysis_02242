@@ -315,9 +315,6 @@ def check_rewrite_equivalence_local(
             continue
 
         if original != rewritten:
-            print("Inputs:", inputs)
-            print("Original results:", original_results)
-            print("Rewritten results:", rewritten_results)
             return False
 
     return True
