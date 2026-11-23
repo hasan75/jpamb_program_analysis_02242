@@ -31,6 +31,8 @@ report.sexp
 
 .idea
 *.sexp
+# Project analyzer reports are results, so keep them.
+!project/**/*.sexp
 
 tags
 

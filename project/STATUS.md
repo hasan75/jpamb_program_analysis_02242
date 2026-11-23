@@ -80,6 +80,5 @@ Last updated: 2026-11-23
   unsound there; it is the assignment's design and is not changed, so that
   `static-sign` keeps its baseline score. The interval domain handles overflow.
 
-- `.gitignore` line `.sexp` ignores only a file literally named `.sexp`; `*.sexp` was
-  probably meant. It also contains a leftover merge-conflict marker (`<<<<<<< HEAD`).
-  Not fixed; ask the user.
+- `.gitignore` ignores `*.sexp` everywhere except under `project/`
+  (`!project/**/*.sexp`), so the analyzer reports there are committed.
