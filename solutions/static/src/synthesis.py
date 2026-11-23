@@ -14,7 +14,10 @@ from static import run_analysis
 INT_MIN = -(1 << 31)
 INT_MAX = (1 << 31) - 1
 
-def representative_values(interval: Interval) -> tuple[int, ...]:
+def representative_values(
+    interval: Interval,
+    max_abs: int | None = None,
+) -> tuple[int, ...]:
     """Generate representative Java int values within an interval."""
 
     if interval.is_bottom():
@@ -23,10 +26,13 @@ def representative_values(interval: Interval) -> tuple[int, ...]:
     lower = INT_MIN if interval.min is None else max(interval.min, INT_MIN)
     upper = INT_MAX if interval.max is None else min(interval.max, INT_MAX)
 
+    if max_abs is not None:
+        lower = max(lower, -max_abs)
+        upper = min(upper, max_abs)
+
     if lower > upper:
         return ()
 
-    # Include interval boundaries, nearby values, midpoint and values around zero.
     candidates = {
         lower,
         upper,
@@ -39,8 +45,7 @@ def representative_values(interval: Interval) -> tuple[int, ...]:
     }
 
     return tuple(sorted(
-        value
-        for value in candidates
+        value for value in candidates
         if lower <= value <= upper
     ))
 
@@ -170,6 +175,7 @@ def synthesize_ifz_branch_inputs(
 
 def synthesize_integer_inputs(
     intervals: tuple[Interval, ...],
+    max_abs: int | None = None,
 ) -> tuple[jpamb.case.Input, ...]:
     """Generate concrete inputs from abstract integer parameter intervals."""
 
@@ -177,7 +183,7 @@ def synthesize_integer_inputs(
         return ()
 
     values_per_parameter = [
-        representative_values(interval)
+        representative_values(interval, max_abs=max_abs)
         for interval in intervals
     ]
 

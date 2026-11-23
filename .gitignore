@@ -34,3 +34,4 @@ tags
 .DS_Store
 
 solutions/syntactic/generated/
+target/

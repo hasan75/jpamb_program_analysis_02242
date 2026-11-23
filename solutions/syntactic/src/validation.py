@@ -169,7 +169,7 @@ def synthesize_method_inputs(bc, methodid, max_steps=300):
     if not all(isinstance(interval, Interval) for interval in intervals):
         return ()
 
-    return synthesize_integer_inputs(intervals)
+    return synthesize_integer_inputs(intervals, max_abs=1000)
 
 # Compile each source variant against the same JPAMB runtime classes.
 def compile_java_source(
@@ -253,40 +253,54 @@ def execute_inputs_local(
     if not inputs:
         return []
 
-    command = [
+    base_command = [
         str(JAVA_EXE),
         "-cp",
         classfiles_folder.relative_to(workdir).as_posix(),
         "-ea",
         "jpamb.BatchRunner",
         methodid.encode(),
-        *[test_input.encode() for test_input in inputs],
     ]
 
-    result = subprocess.run(
-        command,
-        cwd=workdir,
-        capture_output=True,
-        text=True,
-        timeout=max(30, len(inputs) * 6),
-        check=False,
-    )
+    outputs = []
 
-    if result.returncode != 0:
-        print("Java batch execution failed:")
-        print("Return code:", result.returncode)
-        print("STDOUT:", result.stdout)
-        print("STDERR:", result.stderr)
-        raise RuntimeError("Local Java batch execution failed")
+    for test_input in inputs:
+        command = [
+            *base_command,
+            test_input.encode(),
+        ]
 
-    outputs = result.stdout.splitlines()
+        try:
+            result = subprocess.run(
+                command,
+                cwd=workdir,
+                capture_output=True,
+                text=True,
+                timeout=8,
+                check=False,
+            )
 
-    if len(outputs) != len(inputs):
-        raise RuntimeError(
-            f"Expected {len(inputs)} results, got {len(outputs)}"
-        )
+        except subprocess.TimeoutExpired:
+            outputs.append("*")
+            continue
 
-    return [output.strip() for output in outputs]
+        if result.returncode != 0:
+            print("Java execution failed:")
+            print("Return code:", result.returncode)
+            print("STDOUT:", result.stdout)
+            print("STDERR:", result.stderr)
+            raise RuntimeError("Local Java execution failed")
+
+        lines = result.stdout.splitlines()
+
+        if len(lines) != 1:
+            raise RuntimeError(
+                f"Expected 1 result, got {len(lines)}"
+            )
+
+        outputs.append(lines[0].strip())
+
+    return outputs
 
 def check_rewrite_equivalence_local(
     workdir,

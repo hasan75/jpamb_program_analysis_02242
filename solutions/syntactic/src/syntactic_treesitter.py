@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""A syntactic analysis that detects assertion errors and generates analysis-guided rewrites."""
+"""A syntactic analysis that selects rewrite sites using different strategies."""
 
 import logging
 import sys
 import tempfile
 from pathlib import Path
-
+import argparse
+import random
 import jpamb
 import tree_sitter
 import tree_sitter_java
@@ -45,6 +46,26 @@ def matches_parameter_type(parameter_type, type_node):
     return actual_type == expected_type
 
 def main():
+    argument_parser = argparse.ArgumentParser()
+
+    argument_parser.add_argument(
+        "--strategy",
+        choices=["analysis-guided", "random", "syntax-based"],
+        default="analysis-guided",
+    )
+    argument_parser.add_argument("--seed", type=int, default=42)
+    argument_parser.add_argument("--budget", type=int, default=None)
+
+    args, remaining_args = argument_parser.parse_known_args()
+
+    if len(remaining_args) != 1:
+        argument_parser.error("Expected exactly one JPAMB method identifier")
+
+    sys.argv = [sys.argv[0], remaining_args[0]]
+
+    if args.budget is not None and args.budget < 0:
+        argument_parser.error("--budget must be non-negative")
+
     methodid = jpamb.getmethodid(
         "syntaxer",
         "1.0",
@@ -183,34 +204,53 @@ def main():
 
         eligible_sites.append(site)
 
-    # Rank eligible sites according to uncertainty in the abstract states.
-    ordered_sites, priorities = prioritize_rewrite_sites(
-        method_bytecode,
-        methodid,
-        source,
-        eligible_sites,
-    )
+    priorities = {}
 
-    print("\nAnalysis-guided site prioritization:")
-
-    for site in ordered_sites:
-        priority = priorities[site]
-        uncertainty = priority["uncertainty"]
-
-        print(
-            f"  {site.condition}: "
-            f"score={priority['score']}/2, "
-            f"Interval={uncertainty['Interval']}, "
-            f"SignSet={uncertainty['SignSet']}"
+    if args.strategy == "analysis-guided":
+        ordered_sites, priorities = prioritize_rewrite_sites(
+            method_bytecode,
+            methodid,
+            source,
+            eligible_sites,
         )
+
+    elif args.strategy == "random":
+        ordered_sites = eligible_sites.copy()
+        random.Random(args.seed).shuffle(ordered_sites)
+
+    else:
+        # Prefer shorter conditions as syntactically simpler rewrite sites.
+        ordered_sites = sorted(
+            eligible_sites,
+            key=lambda site: (len(site.condition), site.start_byte),
+        )
+
+    print(f"\nRewrite site selection: {args.strategy}")
+
+    if args.strategy == "analysis-guided":
+        for site in ordered_sites:
+            priority = priorities[site]
+            uncertainty = priority["uncertainty"]
+
+            print(
+                f"  {site.condition}: "
+                f"score={priority['score']}/2, "
+                f"Interval={uncertainty['Interval']}, "
+                f"SignSet={uncertainty['SignSet']}"
+            )
+    else:
+        for site in ordered_sites:
+            print(f"  {site.condition}")
 
     generated_count = 0
     variants = {}
 
     for site in ordered_sites:
+        if args.budget is not None and generated_count >= args.budget:
+            break
+
         integer_variables = find_integer_variables_for_site(source, site)
 
-        # Generate all supported transformations for each prioritized rewrite site.
         rewrites = {
             "invert": lambda: invert_if_comparison(
                 source,
@@ -226,16 +266,13 @@ def main():
                 name,
             )
 
-        # Apply each transformation and store the generated source variants.
         for rewrite_name, rewrite_function in rewrites.items():
+            if args.budget is not None and generated_count >= args.budget:
+                break
+
             rewritten_source = rewrite_function()
 
             if rewritten_source is None or rewritten_source == source:
-                log.debug(
-                    "Rewrite %s produced no changes for: %s",
-                    rewrite_name,
-                    site.condition,
-                )
                 continue
 
             variant_name = f"site_{site.start_byte}_{rewrite_name}"
@@ -250,11 +287,10 @@ def main():
             generated_count += 1
 
             log.info(
-                "Generated %s rewrite: %s -> %s (priority=%d/2)",
+                "Generated %s rewrite: %s -> %s",
                 rewrite_name,
                 site.condition,
                 output_file,
-                priorities[site]["score"],
             )
 
     log.info("Generated %d rewrite variants", generated_count)
