@@ -1,0 +1,265 @@
+\documentclass[review,nonacm,acmsmall]{acmart}
+
+\setcopyright{none}
+\citestyle{acmauthoryear}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{pgfgantt}
+\usepackage{float}
+\usepackage{cleveref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\crefname{lstlisting}{listing}{listings}
+\Crefname{lstlisting}{Listing}{Listings}
+
+% Template-compatible optional Lean language definition.
+% This paper uses Java, but the third template file is retained.
+\definecolor{keywordcolor}{rgb}{0.7,0.1,0.1}
+\definecolor{tacticcolor}{rgb}{0.0,0.1,0.6}
+\definecolor{commentcolor}{rgb}{0.4,0.4,0.4}
+\definecolor{symbolcolor}{rgb}{0.0,0.1,0.6}
+\definecolor{sortcolor}{rgb}{0.1,0.5,0.1}
+\definecolor{attributecolor}{rgb}{0.7,0.1,0.1}
+\input{lstlean.tex}
+
+\title{Analysis-Guided Metamorphic Testing of Java Static Analyzers}
+
+\author{Abdullah Al Abid (s260128)}
+\author{Afonso Fonseca Morais de Sousa Pina (s263162)}
+\author{Hasan Ahmed (s262722)}
+\author{Mahmudul Hasan Aunoy (s260125)}
+\author{Shohan Morol (s262724)}
+
+% The project analyzes Java, so Java is selected instead of Lean.
+\lstset{
+    language=Java,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue!65!black},
+    columns=fullflexible,
+    keepspaces=true,
+    showstringspaces=false,
+    breaklines=true,
+    frame=single
+}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+\paragraph{Context}
+Static program analysis predicts potential runtime errors without executing
+every possible input. Yet the precision of an analyzer can depend on how a
+program is expressed. Consider the following equivalent Java methods, where
+the second reverses the branch condition and order:
+
+\begin{minipage}[t]{0.47\linewidth}
+\begin{lstlisting}
+int f(int x) {
+    if (x > 0)
+        return 100 / x;
+    return 0;
+}
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\linewidth}
+\begin{lstlisting}
+int f(int x) {
+    if (x <= 0)
+        return 0;
+    return 100 / x;
+}
+\end{lstlisting}
+\end{minipage}
+
+For every Java integer input, both methods return the same value without
+dividing by zero. However, an imprecise analyzer might warn on one
+representation but not the other. Such a discrepancy does not necessarily
+prove unsoundness: it can also reflect different levels of conservative
+precision, which developers experience as warnings that appear or disappear
+after harmless refactorings.
+
+\paragraph{Gap}
+Earlier DTU work applied semantics-preserving variations, such as renaming
+variables and methods, to compare the robustness of an LLM and the Infer
+analyzer in detecting null pointer exceptions, measuring results by reported
+line numbers~\citep{chand2024}. The variations served as a robustness check
+and were not placed using information about the program. Other work used
+abstract interpretation to guide a fuzzer towards error-revealing inputs on
+JPAMB~\citep{domingues2025}. However, a static analyzer's prediction for a
+method does not depend on runtime inputs, so input-level guidance cannot
+reveal whether the analyzer's answer depends on how the code is written.
+That requires varying the program itself,
+and it remains open where to vary it: rewriting at arbitrary sites may spend
+effort on code whose analysis result cannot change.
+
+\paragraph{Innovation}
+We ask: \emph{can the abstract state computed by a lightweight analysis select
+semantics-preserving rewrite sites that reveal prediction inconsistencies in a
+Java static analyzer more efficiently than random or purely syntactic
+selection?} Our key observation is that a rewrite can only change an
+analyzer's result where the analyzer's precision depends on the \emph{form} of
+the code: how a branch condition is written, where control flow merges, or how
+a loop is laid out. For example, our sign analyzer does not narrow the
+compared value at a branch, so it reports a possible division by zero in
+\emph{both} versions of \texttt{f} above, and inverting that branch reveals
+nothing. We expect that an analyzer which does narrow at branches can lose
+that information when a rewrite moves where branches merge, so that the two
+versions get different answers; milestone M1 tests this before we commit to
+the full set of rewrites.
+
+We therefore call a site \emph{uncertain} when, in the abstract state at that
+program point, (i) a branch condition can still be both true and false, or
+(ii) a divisor or array index may still be zero or out of bounds. A site is a
+\emph{candidate} when it is uncertain \emph{and} one of our rewrites changes a
+feature the analyzer's precision depends on there: branch polarity, where
+branches merge, whether a jump goes backward, or the form of a comparison.
+Rewrites are limited by a budget of $N$ rewrites for the whole benchmark, not
+per method, because most JPAMB methods contain only one or two eligible sites.
+The guided strategy spends this budget on candidate sites across all methods
+first, choosing among them at random, and uses other eligible sites only when
+no candidates remain; we expect rewrites at non-candidate sites to leave the
+analyzer's answer unchanged and so waste budget. An \emph{inconsistency} is a
+difference in the set of outcomes (\texttt{ok}, divide by zero, assertion
+error, out of bounds, null pointer, \texttt{*}) predicted by the \emph{same}
+analyzer for an original method and its rewritten version.
+
+We will implement a parser-based site finder; a set of rewrites (branch
+inversion with branch swapping, equivalent integer comparisons, loop
+reshaping); the guided selector; and an interval domain alongside the existing
+sign domain. Each rewrite has a precondition under which it preserves
+behavior, which the site finder checks before applying it: for example, the
+condition has no side effects, compares \texttt{int} values, and no rule
+changes arithmetic that may overflow. To catch errors in the rules or their
+implementation, we synthesize test inputs from the abstract state: for each
+rewritten condition, inputs that make it true and false, plus the boundary
+values of each variable's interval. We run the original and the variant on
+these inputs and discard any variant whose outcome differs.
+
+\paragraph{Evaluation}
+We test three JPAMB analyzers that differ only in precision: sign analysis
+without narrowing at branches, sign analysis with narrowing, and interval
+analysis. They differ for reasons unrelated to our selection strategies, so
+differences between strategies come from where they rewrite, not from how the
+analyzers were built. Inconsistencies are always measured \emph{within} one
+analyzer (original vs.\ variant). We compare the guided strategy with two
+baselines over the same eligible sites and rewrite rules: random selection,
+which draws uniformly from all eligible sites, and syntax-based selection,
+which prefers sites close to a division or assertion. The guided strategy
+uses the abstract states of our interval analysis, the most precise of the
+three, because a coarser guide would mark almost every site as uncertain.
+
+We compare the strategies in two settings. With a fixed \emph{rewrite
+budget}, each strategy produces the same number $N$ of variants across the
+benchmark; this measures how well it chooses sites. With a fixed \emph{time
+budget}, each strategy runs for the same wall-clock time $T$ and produces as
+many variants as it can; the time the guided strategy spends computing
+abstract states counts towards $T$, so this measures whether the guidance is
+worth its cost. Each setting is repeated with at least ten random seeds. We
+measure distinct inconsistencies, valid variants (those that compile and pass
+the synthesized tests), time to first inconsistency, and total runtime, and
+compare strategies with a Mann--Whitney U test. Subjects are the integer and
+branch methods of JPAMB plus a new set of cases that we submit as JPAMB
+additions. We separately report rewrites that do not change the compiled
+bytecode. Threats to validity are limited language coverage, correctness of
+the rewrites, how representative the benchmark is, and that the guiding
+analysis is also one of the analyzers under test.
+
+\section{Plan}
+\textbf{M1 (7 Nov):} a proof of concept on five method pairs with two
+rewrites and a first version of branch narrowing in the sign analyzer, run
+through \texttt{jpamb build} and \texttt{jpamb analyse}.
+\textbf{M2 (14 Nov):} the site finder, the rewrites, the three selection
+strategies, the interval domain, and full narrowing at branches.
+\textbf{M3 (22 Nov):} an extended benchmark, and rewrites checked with test
+inputs synthesized from the abstract state.
+\textbf{M4 (29 Nov):} experiments, statistics, and the paper.
+If M1 shows no inconsistencies for a rewrite, we replace that rewrite before
+M2. If the interval domain is not ready at M2, development of the guided
+strategy continues with the sign analysis with narrowing as a temporary
+guide. Ownership is given in Table~\ref{tab:contributions} and the schedule
+in Figure~\ref{fig:timeline}.
+
+\clearpage
+% % References section
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{bibfile}
+
+\section*{Project Timeline and Contributions}
+
+\begin{figure}[H]
+\centering
+\caption{Proposed Project Timeline (2026)}
+\label{fig:timeline}
+\begin{ganttchart}[
+    hgrid,
+    time slot format=isodate,
+    today=2026-10-21,
+    today rule/.style={draw=blue!70!black, thick},
+    today label font=\scriptsize,
+    x unit=0.11cm,
+    bar label node/.append style={text width=4.35cm, align=right},
+    vgrid={*5{white},*2{dotted}},
+    y unit chart=0.55cm,
+    bar label font=\scriptsize,
+    title label font=\small\bfseries,
+    vrule/.style={very thick, red},
+    vrule label font=\tiny\bfseries
+  ]{2026-10-19}{2026-12-15}
+  \gantttitlecalendar{month=shortname} \\
+  \ganttbar{M1: Proof of concept and branch narrowing}{2026-10-28}{2026-11-07} \\
+  \ganttbar{Semantics-preserving rewrites}{2026-10-30}{2026-11-14} \\
+  \ganttbar{Interval domain and branch narrowing}{2026-11-01}{2026-11-14} \\
+  \ganttbar{Random, syntactic and guided selection}{2026-11-01}{2026-11-14} \\
+  \ganttbar{M3: Benchmark and test synthesis}{2026-11-08}{2026-11-22} \\
+  \ganttbar{Experiments and statistical evaluation}{2026-11-18}{2026-11-27} \\
+  \ganttbar{Related work and paper writing}{2026-11-09}{2026-11-29}
+  \ganttvrule[vrule label node/.append style={anchor=north west}]{Proposal*}{2026-10-22}
+  \ganttvrule{Paper*}{2026-11-29}
+  \ganttvrule{Present*}{2026-12-06}
+\end{ganttchart}
+
+\vspace{2pt}
+
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Proposed technical contributions. $S_1$: Abdullah Al Abid (parsing
+and rewriting); $S_2$: Hasan Ahmed (abstract domains and guidance);
+$S_3$: Afonso Fonseca Morais de Sousa Pina (related work and test synthesis
+for rewrite checking); $S_4$: Mahmudul Hasan Aunoy (JPAMB integration,
+benchmark additions, syntactic analysis of the benchmark methods, and the
+syntax-based baseline); $S_5$: Shohan Morol (experiments, statistics, and
+part of the related work).}
+\label{tab:contributions}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llrrrrrr@{}}
+\toprule
+ID & Contribution & Max & $S_1$ & $S_2$ & $S_3$ & $S_4$ & $S_5$ \\
+\midrule
+ISY & Syntactic analysis & 10 & 6 & 0 & 0 & 4 & 0 \\
+NCR & Analysis-informed rewriting & 10 & 4 & 6 & 0 & 0 & 0 \\
+NTS & Analysis-informed test synthesis & 10 & 0 & 5 & 5 & 0 & 0 \\
+EXB & Accepted JPAMB additions & 5 & 0 & 0 & 0 & 5 & 0 \\
+EST & Statistical evaluation & 5 & 0 & 0 & 0 & 0 & 5 \\
+PRW & Relate recent papers & 10 & 0 & 0 & 7 & 0 & 3 \\
+PWP & Write final paper & 10 & 2 & 2 & 2 & 2 & 2 \\
+PEX & Illustrating examples & 4 & 0 & 0 & 2 & 2 & 0 \\
+PDI & Process diagram & 3 & 0 & 0 & 0 & 3 & 0 \\
+PMG & Project management & 6 & 3 & 3 & 0 & 0 & 0 \\
+\midrule
+& \textbf{Total} & \textbf{73} & 15 & 16 & 16 & 16 & 10 \\
+& \textbf{Suggested maximum grade} & -- & 10 & 10 & 10 & 10 & 7 \\
+
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}

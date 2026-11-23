@@ -30,11 +30,12 @@ result
 report.sexp
 
 .idea
-.sexp
+*.sexp
 
 tags
-<<<<<<< HEAD
 
 .DS_Store
-=======
->>>>>>> d982ae8 (removed unused files for suite expansion)
+
+.claude
+
+CLAUDE.md

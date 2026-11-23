@@ -1,0 +1,43 @@
+% Optional Lean language listing definition retained from the course template.
+% The current paper's lstset uses Java, not Lean.
+% To list Lean code, use \begin{lstlisting}[language=lean] ... \end{lstlisting}.
+\lstdefinelanguage{lean}{
+  sensitive=true,
+  morekeywords=[1]{import,prelude,protected,private,noncomputable,
+    definition,lemma,variable,variables,theorem,example,open,as,
+    export,axiom,inductive,structure,universe,universes,match,
+    infix,infixl,infixr,notation,instance,eval,check,namespace,
+    section,attribute,local,set_option,class,calc,have,show,by,
+    in,at,let,forall,fun,exists,if,then,else,obtain,from,
+    mutual,do,def,partial,mut,where,macro,syntax,deriving,
+    return,try,catch,for,macro_rules,abbrev},
+  morekeywords=[2]{Sort,Type,Prop},
+  morekeywords=[3]{assumption,apply,intro,intros,allGoals,
+    generalize,clear,revert,done,exact,refine,repeat,cases,
+    rewrite,rw,simp,simp_all,contradiction,constructor,
+    injection,induction},
+  literate={:=}{{\color{symbolcolor}:=}}2
+           {→}{{\ensuremath{\rightarrow}}}1
+           {←}{{\ensuremath{\leftarrow}}}1
+           {∀}{{\ensuremath{\forall}}}1
+           {∃}{{\ensuremath{\exists}}}1
+           {≤}{{\ensuremath{\leq}}}1
+           {≥}{{\ensuremath{\geq}}}1,
+  morecomment=[s][\color{commentcolor}]{/-}{-/},
+  morecomment=[l][\color{commentcolor}]{--},
+  showstringspaces=false,
+  keepspaces=true,
+  tabsize=3,
+  extendedchars=false,
+  breaklines=true,
+  breakatwhitespace=true,
+  basicstyle=\ttfamily\small,
+  captionpos=b,
+  columns=[l]fullflexible,
+  identifierstyle={\ttfamily\color{black}},
+  keywordstyle=[1]{\ttfamily\color{keywordcolor}},
+  keywordstyle=[2]{\ttfamily\color{sortcolor}},
+  keywordstyle=[3]{\ttfamily\color{tacticcolor}},
+  stringstyle=\ttfamily,
+  commentstyle={\ttfamily\footnotesize}
+}
