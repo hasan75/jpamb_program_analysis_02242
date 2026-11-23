@@ -101,6 +101,9 @@ ALL_OUTCOMES = (
 
 type Domain = type[SignSet | Interval]
 
+STEP_CAP = 10_000
+"""Safety net on worklist steps per method; every benchmark method stops earlier."""
+
 
 def manystep(
     bc: jpamb.Bytecode,
@@ -393,7 +396,7 @@ def run_analysis(name: str, narrow: bool, domain: Domain = SignSet) -> None:
     bc = jpamb.Bytecode(suite, eff, {})
 
     ai = AbstractInterpreter.initial(bc, methodid, None, narrow=narrow, domain=domain)
-    final = ai.run(10_000)
+    final = ai.run(STEP_CAP)
 
     tags = {
         "ok": "ok",

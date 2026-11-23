@@ -1,0 +1,9 @@
+analyzer static-interval (domain interval, narrow True)
+methods: 145
+without fixpoint: 0
+methods with an uncertain site: 101
+branch sites: 232 (uncertain 170)
+divisor sites: 65 (uncertain 52)
+array sites: 78 (uncertain 78)
+goto sites: 43 (uncertain 0)
+total seconds: 0.037

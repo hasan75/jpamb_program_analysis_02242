@@ -95,6 +95,18 @@ beats interval on `n != 0` guards, interval beats sign-narrow on range checks.
 8. Experiments and statistics (D10, D11)
 9. Paper (drafted in parallel from step 4 on)
 
+### D14. What makes a site uncertain
+**PROVISIONAL.** As built in step 3 (`solutions/static/src/export.py`), from
+the `static-interval` state before the instruction:
+- **branch** (`if`): the condition can be both true and false;
+- **divisor** (`/`, `%`): the divisor may be zero *and* may be nonzero. A
+  divisor that is certainly 0 is a settled outcome, like a branch with one
+  outcome (reading of "may still be zero", proposal line 118);
+- **array access**: always uncertain, because no domain tracks array lengths,
+  so no access is proven in bounds. State this as a limitation in the paper.
+Backward `goto`s are recorded but never uncertain. Sites are joined to the
+source by line (`uncertain_lines`).
+
 ---
 
 ## Evaluation

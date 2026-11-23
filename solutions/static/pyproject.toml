@@ -19,6 +19,7 @@ static-interpreter = "static:interpret"
 static-sign = "static:analyse_sign"
 static-sign-narrow = "static:analyse_sign_narrow"
 static-interval = "static:analyse_interval"
+static-export = "export:main"
 
 [tool.uv.sources]
 jpamb = { path = "../../", editable = true }

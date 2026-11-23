@@ -164,6 +164,10 @@ class SignSet(Abstraction, Lattice):
     def __sexpr__(self):
         return str(self)
 
+    def to_json(self) -> list[str]:
+        """The signs as a list, e.g. ``["-", "+"]``; ``[]`` is bottom."""
+        return [z for z, b in zip("-0+", [-1, 0, 1]) if b in self.signs]
+
     @classmethod
     def from_sign(cls, code):
         return cls(frozenset(b for z, b in zip("-0+", [-1, 0, 1]) if z in code))
@@ -362,6 +366,12 @@ class Interval(Abstraction, Lattice):
 
     def __sexpr__(self):
         return str(self)
+
+    def to_json(self) -> dict[str, int | None] | str:
+        """``{"min", "max"}`` with ``None`` for a missing (int32) bound, or ``"bot"``."""
+        if self.is_bot():
+            return "bot"
+        return {"min": self.min, "max": self.max}
 
     # -- lattice ------------------------------------------------------------
 

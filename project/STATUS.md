@@ -6,7 +6,7 @@ note, and keep "Next" current.
 
 Last updated: 2026-11-23
 
-**Next:** step 3, export per-PC abstract states and uncertain sites (from `static-interval`).
+**Next:** step 4, site finder + rewrite rules 1–2 (D6) in `solutions/metamorphic/`, joined to the step 3 export by source line.
 
 ---
 
@@ -52,7 +52,25 @@ Last updated: 2026-11-23
   - All 145 methods reach a fixpoint within the step cap, in both domains.
     Tests: 25 pass (interval lattice/Galois tests un-skipped, new soundness tests
     for arithmetic, compare, refine and widen).
-- [ ] **3. Abstract-state export, uncertain sites**
+- [x] **3. Abstract-state export, uncertain sites** (D14)
+  - `solutions/static/src/export.py`, program `static-export`: runs the analyzer
+    (default `static-interval`) on every benchmark method and writes, per method,
+    the state at every instruction, its source line, the outcomes, and the sites
+    (branch, divisor, array, goto) with an `uncertain` flag and the operand
+    intervals and their locals (for input synthesis in step 6).
+  - Line numbers: the decompiled JSON has a line table (`code.lines`). Its
+    `offset` is the **instruction index** (same as `PC.offset`), not the byte
+    offset in `Opcode.offset`; checked on `Dependent.safeDivByN` and over all
+    sites (every branch and divisor site lands on a source line with a
+    comparison or `/`/`%`). A condition split over several lines maps to the
+    statement's first line.
+  - Export in `project/step3/static-interval-states.json` (summary in
+    `export-output.txt`): 145 methods, all at a fixpoint, outcomes identical to
+    the step 2 `static-interval` report. 101 methods have an uncertain site.
+    Sites: branch 232 (170 uncertain), divisor 65 (52), array 78 (78),
+    backward/forward goto 43 (never uncertain). Analysis time 0.04 s in total.
+    The `seconds` fields change on every run.
+  - Tests: 30 pass (5 new in `tests/test_export.py`).
 - [ ] **4. Site finder + rewrite rules 1–2** (D6), audited by `rewrite-auditor`
 - [ ] **5. Random / syntax-based / guided selection**
 - [ ] **6. Validation: compile + synthesized inputs**
