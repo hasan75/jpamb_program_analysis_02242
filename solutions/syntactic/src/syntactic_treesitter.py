@@ -56,6 +56,12 @@ def main():
     argument_parser.add_argument("--seed", type=int, default=42)
     argument_parser.add_argument("--budget", type=int, default=None)
 
+    argument_parser.add_argument(
+        "--selection-only",
+        action="store_true",
+        help="Generate rewrite variants without validating them",
+    )
+
     args, remaining_args = argument_parser.parse_known_args()
 
     if len(remaining_args) != 1:
@@ -294,6 +300,12 @@ def main():
             )
 
     log.info("Generated %d rewrite variants", generated_count)
+
+    if args.selection_only:
+        print("\nSelected rewrite variants:")
+        for name in variants:
+            print(f"  {name}")
+        return
 
     if variants:
         # Generate concrete inputs from the interval analysis of the target method.
