@@ -253,54 +253,44 @@ def execute_inputs_local(
     if not inputs:
         return []
 
-    base_command = [
+    command = [
         str(JAVA_EXE),
         "-cp",
         classfiles_folder.relative_to(workdir).as_posix(),
         "-ea",
         "jpamb.BatchRunner",
         methodid.encode(),
+        *[test_input.encode() for test_input in inputs],
     ]
 
-    outputs = []
+    try:
+        result = subprocess.run(
+            command,
+            cwd=workdir,
+            capture_output=True,
+            text=True,
+            timeout=max(120, 6 * len(inputs)),
+            check=False,
+        )
 
-    for test_input in inputs:
-        command = [
-            *base_command,
-            test_input.encode(),
-        ]
+    except subprocess.TimeoutExpired:
+        raise RuntimeError("Batch Java execution timed out")
 
-        try:
-            result = subprocess.run(
-                command,
-                cwd=workdir,
-                capture_output=True,
-                text=True,
-                timeout=8,
-                check=False,
-            )
+    if result.returncode != 0:
+        print("Java execution failed:")
+        print("Return code:", result.returncode)
+        print("STDOUT:", result.stdout)
+        print("STDERR:", result.stderr)
+        raise RuntimeError("Local Java execution failed")
 
-        except subprocess.TimeoutExpired:
-            outputs.append("*")
-            continue
+    outputs = result.stdout.splitlines()
 
-        if result.returncode != 0:
-            print("Java execution failed:")
-            print("Return code:", result.returncode)
-            print("STDOUT:", result.stdout)
-            print("STDERR:", result.stderr)
-            raise RuntimeError("Local Java execution failed")
+    if len(outputs) != len(inputs):
+        raise RuntimeError(
+            f"Expected {len(inputs)} results, got {len(outputs)}"
+        )
 
-        lines = result.stdout.splitlines()
-
-        if len(lines) != 1:
-            raise RuntimeError(
-                f"Expected 1 result, got {len(lines)}"
-            )
-
-        outputs.append(lines[0].strip())
-
-    return outputs
+    return [output.strip() for output in outputs]
 
 def check_rewrite_equivalence_local(
     workdir,
@@ -358,63 +348,104 @@ def analyze_class_folder(class_folder, methodid, max_steps=300):
     return results
 
 def is_site_uncertain(bc, ai, methodid, source, site):
+    from rewriting import find_rewrite_sites
+    from tree_sitter import Language, Parser
+    import tree_sitter_java
+
     method = bc.getmethod(methodid)
 
-    # Map the source-level rewrite site to its corresponding bytecode line.
-    source_line = source[:site.start_byte].count(b"\n") + 1
+    parser = Parser()
+    parser.language = Language(tree_sitter_java.language())
+    tree = parser.parse(source)
 
-    # Find the corresponding entry in the bytecode line table.
-    line_index = next(
-        (
-            i
-            for i, entry in enumerate(method.lines)
-            if entry["line"] == source_line
-        ),
-        None,
-    )
+    def contains_logical_operator(node):
+        if node.type in {"&&", "||"}:
+            return True
 
-    if line_index is None:
-        return None
-
-    start = method.lines[line_index]["offset"]
-    end = (
-        method.lines[line_index + 1]["offset"]
-        if line_index + 1 < len(method.lines)
-        else None
-    )
-
-    # Find conditional branches associated with the source line.
-    branches = [
-        i
-        for i, opcode in enumerate(method.opcodes)
-        if opcode.offset >= start
-        and (end is None or opcode.offset < end)
-        and isinstance(opcode, (jvm.If, jvm.Ifz))
-    ]
-
-    # Some Java conditions are mapped to the following bytecode line.
-    if not branches and line_index + 1 < len(method.lines):
-        next_start = method.lines[line_index + 1]["offset"]
-        next_end = (
-            method.lines[line_index + 2]["offset"]
-            if line_index + 2 < len(method.lines)
-            else None
+        return any(
+            contains_logical_operator(child)
+            for child in node.children
         )
 
-        branches = [
-            i
-            for i, opcode in enumerate(method.opcodes)
-            if opcode.offset >= next_start
-            and (next_end is None or opcode.offset < next_end)
-            and isinstance(opcode, (jvm.If, jvm.Ifz))
-        ]
+    method_sites = [
+        candidate
+        for candidate in find_rewrite_sites(source)
+        if candidate.kind == "if_statement"
+        and candidate.method_start_byte == site.method_start_byte
+        and candidate.method_end_byte == site.method_end_byte
+    ]
 
-    # Avoid assigning a result when the source-to-bytecode mapping is ambiguous.
-    if len(branches) != 1:
+    if not method_sites:
         return None
 
-    branch_index = branches[0]
-    opcode = method.opcodes[branch_index]
+    method_sites.sort(key=lambda candidate: candidate.start_byte)
+
+    site_positions = [
+        index
+        for index, candidate in enumerate(method_sites)
+        if candidate.start_byte == site.start_byte
+        and candidate.end_byte == site.end_byte
+    ]
+
+    if len(site_positions) != 1:
+        return None
+
+    def find_condition(node):
+        if node.type == "if_statement":
+            condition = node.child_by_field_name("condition")
+
+            if (
+                condition is not None
+                and condition.start_byte == site.start_byte
+                and condition.end_byte == site.end_byte
+            ):
+                return condition
+
+        for child in node.children:
+            result = find_condition(child)
+
+            if result is not None:
+                return result
+
+        return None
+
+    root = tree.root_node
+    condition = find_condition(root)
+
+    if condition is None or contains_logical_operator(condition):
+        return None
+
+    branches = [
+        (index, opcode)
+        for index, opcode in enumerate(method.opcodes)
+        if isinstance(opcode, (jvm.If, jvm.Ifz))
+    ]
+
+    if len(method_sites) != len(branches):
+        return None
+
+    expected_conditions = {
+        "<": "ge",
+        "<=": "gt",
+        ">": "le",
+        ">=": "lt",
+        "==": "ne",
+        "!=": "eq",
+    }
+
+    site_position = site_positions[0]
+    operator = site.operator
+
+    if isinstance(operator, bytes):
+        operator = operator.decode()
+
+    branch_index, opcode = branches[site_position]
+
+    expected = expected_conditions.get(operator)
+
+    if expected is None or str(opcode.condition) != expected:
+        return None
+
     state = ai.states.get(PC(methodid, branch_index))
 
     if state is None:
@@ -435,7 +466,6 @@ def is_site_uncertain(bc, ai, methodid, source, site):
 
     possible_results = left.compare(right, opcode.condition)
 
-    # A condition is uncertain when both outcomes are possible in the abstract state.
     return possible_results == {True, False}
 
 def prioritize_rewrite_sites(bc, methodid, source, sites, max_steps=300):
@@ -593,44 +623,4 @@ def validate_rewrite_variants(
     return results
 
 if __name__ == "__main__":
-    import tempfile
-
-    methodid = AbsMethodID.decode(
-        "jpamb.cases.Dependent.badNormalizedDistance:(II)I"
-    )
-
-    project_root = Path.cwd().resolve()
-    source_file = (
-        project_root / "cases" / "jpamb" / "cases" / "Dependent.java"
-    )
-
-    with tempfile.TemporaryDirectory() as temp:
-        workdir = Path(temp).resolve()
-
-        class_folder = compile_java_source(
-            workdir,
-            "original",
-            source_file,
-            source_file.read_bytes(),
-            project_root / "target" / "classes",
-            project_root,
-        )
-
-        bc = create_analysis_bytecode(class_folder, methodid)
-
-        method = bc.getmethod(methodid)
-        print(f"Bytecode created: {methodid}")
-        print(f"Instructions: {len(method.opcodes)}")
-
-        for abstraction in (Interval, SignSet):
-            with redirect_stderr(io.StringIO()):
-                ai, outcomes = run_analysis(
-                    bc,
-                    methodid,
-                    abstraction=abstraction,
-                    max_steps=300,
-                )
-
-            print(f"\nAbstraction: {abstraction.__name__}")
-            print(f"Outcomes: {outcomes}")
-            print(f"Remaining worklist: {len(ai.worklist)}")
+    print("This module provides rewrite validation utilities.")
