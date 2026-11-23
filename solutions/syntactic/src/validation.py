@@ -295,10 +295,10 @@ def check_rewrite_equivalence_local(
     methodid,
     inputs,
 ):
-    """Compare cached original results with rewritten results."""
+    """Compare original and rewritten execution results."""
 
     if not inputs:
-        return False
+        return None
 
     rewritten_results = execute_inputs_local(
         workdir,
@@ -308,16 +308,19 @@ def check_rewrite_equivalence_local(
     )
 
     if len(original_results) != len(rewritten_results):
-        return False
+        return None
+
+    inconclusive = False
 
     for original, rewritten in zip(original_results, rewritten_results):
-        if original == "*" and rewritten == "*":
+        if original == "*" or rewritten == "*":
+            inconclusive = True
             continue
 
         if original != rewritten:
             return False
 
-    return True
+    return None if inconclusive else True
 
 def analyze_class_folder(class_folder, methodid, max_steps=300):
     bc = create_analysis_bytecode(class_folder, methodid)

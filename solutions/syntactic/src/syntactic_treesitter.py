@@ -24,6 +24,26 @@ from validation import (
     prioritize_rewrite_sites,
 )
 
+JVM_TO_JAVA_TYPES = {
+    "Int": "int",
+    "Long": "long",
+    "Float": "float",
+    "Double": "double",
+    "Boolean": "boolean",
+    "Byte": "byte",
+    "Char": "char",
+    "Short": "short",
+}
+
+def matches_parameter_type(parameter_type, type_node):
+    expected_type = JVM_TO_JAVA_TYPES.get(type(parameter_type).__name__)
+
+    if expected_type is None or type_node.text is None:
+        return False
+
+    actual_type = type_node.text.decode("utf-8").replace(" ", "")
+    return actual_type == expected_type
+
 def main():
     methodid = jpamb.getmethodid(
         "syntaxer",
@@ -95,7 +115,7 @@ def main():
         for parameter_type, parameter in zip(methodid.extension.params, params):
             type_node = parameter.child_by_field_name("type")
 
-            if type_node is None or type_node.text is None:
+            if type_node is None or not matches_parameter_type(parameter_type, type_node):
                 break
         else:
             break
@@ -265,11 +285,12 @@ def main():
         print("\nRewrite validation results:")
 
         for name, result in results.items():
-            concrete_status = (
-                "EQUIVALENT"
-                if result["concrete_equivalent"]
-                else "NOT EQUIVALENT"
-            )
+            if result["concrete_equivalent"] is None:
+                concrete_status = "INCONCLUSIVE"
+            elif result["concrete_equivalent"]:
+                concrete_status = "EQUIVALENT"
+            else:
+                concrete_status = "NOT EQUIVALENT"
 
             print(f"\n{name}:")
             print(f"  Concrete equivalence: {concrete_status}")

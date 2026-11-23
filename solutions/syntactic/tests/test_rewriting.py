@@ -740,7 +740,59 @@ def test_comparison_rewrites(condition, rewrite_name, expected):
     rewritten = apply_rewrite(source, site, rewrite_name)
 
     assert expected.encode() in rewritten
-    
+
+@pytest.mark.parametrize(
+    ("condition", "expected"),
+    [
+        ("x > 2147483646", "x >= 2147483647"),
+        ("x < -2147483647", "x <= -2147483648"),
+    ],
+)
+def test_shift_comparison_respects_java_integer_bounds(
+    condition, expected
+):
+    source = f"""
+    class Example {{
+        boolean test(int x) {{
+            if ({condition}) {{
+                return true;
+            }}
+            return false;
+        }}
+    }}
+    """.encode()
+
+    site = find_rewrite_sites(source)[0]
+    rewritten = shift_comparison(source, site)
+
+    assert rewritten is not None
+    assert expected.encode() in rewritten
+
+@pytest.mark.parametrize(
+    "condition",
+    [
+        "x > 2147483647",
+        "x < -2147483648",
+        "x <= 2147483647",
+        "x >= -2147483648",
+    ],
+)
+def test_shift_comparison_rejects_integer_overflow(condition):
+    source = f"""
+    class Example {{
+        boolean test(int x) {{
+            if ({condition}) {{
+                return true;
+            }}
+            return false;
+        }}
+    }}
+    """.encode()
+
+    site = find_rewrite_sites(source)[0]
+
+    assert shift_comparison(source, site) is None
+
 def test_double_negate():
     source = b"""
     class Example {
