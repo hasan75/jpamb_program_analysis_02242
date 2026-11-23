@@ -1,5 +1,6 @@
 import io
 import json
+import os
 import shutil
 import subprocess
 from contextlib import redirect_stderr
@@ -13,12 +14,15 @@ from abstractions import Interval, SignSet
 from static import run_analysis
 from synthesis import synthesize_integer_inputs
 
-JAVA = Path(
-    r"C:\Program Files\Eclipse Adoptium\jdk-21.0.13.9-hotspot\bin"
-)
+JAVA_HOME = os.environ.get("JAVA_HOME")
 
-JAVAC = JAVA / "javac.exe"
-JAVA_EXE = JAVA / "java.exe"
+if JAVA_HOME:
+    JAVA = Path(JAVA_HOME) / "bin"
+    JAVAC = JAVA / ("javac.exe" if os.name == "nt" else "javac")
+    JAVA_EXE = JAVA / ("java.exe" if os.name == "nt" else "java")
+else:
+    JAVAC = shutil.which("javac") or "javac"
+    JAVA_EXE = shutil.which("java") or "java"
 
 # Execute multiple inputs in one JVM process, with an individual timeout for each execution.
 BATCH_RUNNER = r"""
