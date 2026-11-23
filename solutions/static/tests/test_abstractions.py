@@ -45,15 +45,13 @@ def test_signset_is_galoi(a: set[jvms.StackInt], b: ab.SignSet):
 
 
 def arithmetic(opr, x, y):
-    match opr:
-        case jvm.BinaryOpr.Add:
-            return jvms.StackInt(x.value + y.value)
-        case _:
-            raise NotImplementedError("TODO")
+    if opr in (jvm.BinaryOpr.Div, jvm.BinaryOpr.Rem) and y.value == 0:
+        return None
+    return jvms.StackInt(ab.java_binary(opr, x.value, y.value))
 
 
 @given(
-    st.sampled_from([jvm.BinaryOpr.Add]),
+    st.sampled_from(list(jvm.BinaryOpr)),
     st.sets(st_stack_ints()),
     st.sets(
         st_stack_ints(),
@@ -62,23 +60,22 @@ def arithmetic(opr, x, y):
 def test_signset_arithmetic(
     opr: jvm.BinaryOpr, xs: set[jvms.StackInt], ys: set[jvms.StackInt]
 ):
-    real = ab.SignSet.abstract(arithmetic(opr, x, y) for x in xs for y in ys)
-    (abstracted, _errs) = ab.SignSet.abstract(xs).arithmetic(
+    results = [arithmetic(opr, x, y) for x in xs for y in ys]
+    real = ab.SignSet.abstract(r for r in results if r is not None)
+    (abstracted, errs) = ab.SignSet.abstract(xs).arithmetic(
         ab.SignSet.abstract(ys), opr
     )
     assert real <= abstracted
+    if None in results:
+        assert "divide by zero" in errs
 
 
 def compare(opr, x, y):
-    match opr:
-        case jvm.CmpOpr.Le:
-            return x.value <= y.value
-        case _:
-            raise NotImplementedError("TODO")
+    return ab.java_compare(opr, x.value, y.value)
 
 
 @given(
-    st.sampled_from([jvm.CmpOpr.Le]),
+    st.sampled_from(list(jvm.CmpOpr)),
     st.sets(st_stack_ints()),
     st.sets(
         st_stack_ints(),

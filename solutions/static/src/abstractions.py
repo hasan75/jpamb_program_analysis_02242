@@ -196,42 +196,69 @@ class SignSet(Abstraction, Lattice):
     def arithmetic(
         self, other: "SignSet", opr: jvm.BinaryOpr
     ) -> tuple["SignSet", set[str]]:
-        match opr:
-            case jvm.BinaryOpr.Add:
-                output = set()
-                if 1 in self.signs:
-                    output.add(1)
-                    if -1 in other.signs:
-                        output.update([0, -1])
-
-                if -1 in self.signs:
-                    output.add(-1)
-                    if 1 in other.signs:
-                        output.update([0, 1])
-
-                if 0 in self.signs:
-                    output.update(other.signs)
-
-                return (SignSet(output), set())
-            case _:
-                raise NotImplementedError(f"TODO: {opr}")
+        output = set()
+        errors = set()
+        for x in self.signs:
+            for y in other.signs:
+                if y == 0 and opr in (jvm.BinaryOpr.Div, jvm.BinaryOpr.Rem):
+                    errors.add("divide by zero")
+                    continue
+                for a in REPRESENTATIVES[x]:
+                    for b in REPRESENTATIVES[y]:
+                        output.add(sign_of(java_binary(opr, a, b)))
+        return (SignSet(frozenset(output)), errors)
 
     def compare(self, other: "SignSet", opr: jvm.CmpOpr) -> Iterable[bool]:
-        match opr:
-            case jvm.CmpOpr.Le:
-                cases = set()
-                for x in self.signs:
-                    for y in other.signs:
-                        if x == 0 or y == 0:
-                            cases.add(x <= y)
-                            continue
-                        if x <= y:
-                            cases.add(True)
-                        if x >= y:
-                            cases.add(False)
-                return cases
-            case _:
-                raise NotImplementedError(f"TODO: {opr}")
+        cases = set()
+        for x in self.signs:
+            for y in other.signs:
+                for a in REPRESENTATIVES[x]:
+                    for b in REPRESENTATIVES[y]:
+                        cases.add(java_compare(opr, a, b))
+        return cases
+
+
+REPRESENTATIVES: dict[Sign, tuple[int, ...]] = {-1: (-1, -2), 0: (0,), 1: (1, 2)}
+
+
+def sign_of(v: int) -> Sign:
+    return (v > 0) - (v < 0)
+
+
+def java_binary(opr: jvm.BinaryOpr, a: int, b: int) -> int:
+    """Integer semantics of the JVM (division truncates towards zero)."""
+    match opr:
+        case jvm.BinaryOpr.Add:
+            return a + b
+        case jvm.BinaryOpr.Sub:
+            return a - b
+        case jvm.BinaryOpr.Mul:
+            return a * b
+        case jvm.BinaryOpr.Div:
+            q = abs(a) // abs(b)
+            return q if (a < 0) == (b < 0) else -q
+        case jvm.BinaryOpr.Rem:
+            return a - b * java_binary(jvm.BinaryOpr.Div, a, b)
+        case _:
+            raise NotImplementedError(f"TODO: {opr}")
+
+
+def java_compare(opr: jvm.CmpOpr, a: int, b: int) -> bool:
+    match opr:
+        case jvm.CmpOpr.Eq:
+            return a == b
+        case jvm.CmpOpr.Ne:
+            return a != b
+        case jvm.CmpOpr.Lt:
+            return a < b
+        case jvm.CmpOpr.Le:
+            return a <= b
+        case jvm.CmpOpr.Gt:
+            return a > b
+        case jvm.CmpOpr.Ge:
+            return a >= b
+        case _:
+            raise NotImplementedError(f"TODO: {opr}")
 
 
 from collections.abc import Iterable

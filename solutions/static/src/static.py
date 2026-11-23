@@ -50,6 +50,21 @@ class State(sexpr.AsSExpr):
         )
 
 
+ALL_OUTCOMES = (
+    "ok",
+    "divide by zero",
+    "assertion error",
+    "out of bounds",
+    "null pointer",
+    "*",
+)
+
+ZERO = SignSet.abstract([StackInt(0)])
+
+NULL = SignSet.from_sign("0")
+ARRAY = SignSet.from_sign("+")
+
+
 def manystep(
     bc: jpamb.Bytecode,
     pc: PC,
@@ -57,52 +72,120 @@ def manystep(
 ) -> Iterable[tuple[PC, object] | str]:
     opr = bc[pc]
     match opr:
+        case jvm.Push(type=jvm.Int(), value=v):
+            yield (pc + 1, state.push(SignSet.abstract([StackInt(v)])))
+
+        case jvm.Push(type=jvm.Reference(), value=0):
+            yield (pc + 1, state.push(NULL))
+
         case jvm.Get(static=True, field=field):
             # Hack - Only handle the assertion case
             assert field.extension.name == "$assertionsDisabled"
 
             # Hack - Assuming assertions are never disabled
-            va = SignSet.abstract([StackInt(0)])
-
-            yield (pc + 1, state.push(va))
+            yield (pc + 1, state.push(ZERO))
 
         case jvm.Ifz(condition=op, target=target):
             [val], after = state.pop(1)
+            for res in val.compare(ZERO, op):
+                yield (pc % target, after) if res else (pc + 1, after)
+            if target <= pc.offset:
+                yield "*"
 
-            for res in SignSet.compare(val, SignSet.abstract([StackInt(0)]), op):
-                match res:
-                    case True:
-                        yield (pc % target, after)
-                    case False:
-                        yield (pc + 1, after)
-                    case err:
-                        yield err
-
-        case jvm.Load(index=i):
-            va = state.load(i)
-            yield (pc + 1, state.push(va))
+        case jvm.If(condition=op, target=target):
+            [v1, v2], after = state.pop(2)
+            for res in v1.compare(v2, op):
+                yield (pc % target, after) if res else (pc + 1, after)
+            if target <= pc.offset:
+                yield "*"
 
         case jvm.Goto(target=t):
+            if t <= pc.offset:
+                yield "*"
             yield (pc % t, state)
+
+        case jvm.Load(index=i):
+            yield (pc + 1, state.push(state.load(i)))
+
+        case jvm.Store(index=i):
+            [v], after = state.pop(1)
+            yield (pc + 1, after.store(i, v))
+
+        case jvm.Dup(words=1):
+            [v], _ = state.pop(1)
+            yield (pc + 1, state.push(v))
+
+        case jvm.Incr(index=i, amount=k):
+            res, _ = state.load(i).arithmetic(
+                SignSet.abstract([StackInt(k)]), jvm.BinaryOpr.Add
+            )
+            yield (pc + 1, state.store(i, res))
 
         case jvm.Binary(operant=op):
             [v1, v2], after = state.pop(2)
-            for res in SignSet.arithmetic(v1, v2, op):
-                if isinstance(res, str):
-                    yield res
-                else:
-                    yield (pc + 1, after.push(res))
+            res, errs = v1.arithmetic(v2, op)
+            yield from errs
+            if res.signs:
+                yield (pc + 1, after.push(res))
 
-        case jvm.Return(type=None):
-            yield "ok"
+        case jvm.NewArray():
+            _, after = state.pop(1)
+            yield (pc + 1, after.push(ARRAY))
 
-        case jvm.Return(type=t):
-            # Hack -- we assume that we always return.
-            yield "ok"
+        case jvm.ArrayLength():
+            [ref], after = state.pop(1)
+            if 0 in ref.signs:
+                yield "null pointer"
+            if 1 in ref.signs:
+                yield (pc + 1, after.push(SignSet.from_sign("0+")))
 
-        case jvm.New(classname=jvm.ClassName("java.lang.AssertionError")):
-            # Hack -- if we create an assertion error, we probably also throw it.
+        case jvm.ArrayLoad():
+            [ref, _index], after = state.pop(2)
+            yield from array_errors(ref)
+            if 1 in ref.signs:
+                yield (pc + 1, after.push(SignSet.top()))
+
+        case jvm.ArrayStore():
+            [ref, _index, _value], after = state.pop(3)
+            yield from array_errors(ref)
+            if 1 in ref.signs:
+                yield (pc + 1, after)
+
+        case jvm.New():
+            yield (pc + 1, state.push(SignSet.top()))
+
+        case jvm.Throw():
             yield "assertion error"
+
+        case (
+            jvm.InvokeStatic(method=m)
+            | jvm.InvokeVirtual(method=m)
+            | jvm.InvokeSpecial(method=m)
+            | jvm.InvokeInterface(method=m)
+        ):
+            nargs = len(tuple(m.extension.params))
+            if not isinstance(opr, jvm.InvokeStatic):
+                nargs += 1
+            _, after = state.pop(nargs) if nargs else ((), state)
+            yield "assertion error"
+            if m.extension.return_type is None:
+                yield (pc + 1, after)
+            else:
+                yield (pc + 1, after.push(SignSet.top()))
+
+        case jvm.Return():
+            yield "ok"
+
+        case _:
+            print(f"Unsupported instruction {opr}", file=sys.stderr)
+            yield from ALL_OUTCOMES
+
+
+def array_errors(ref: SignSet) -> Iterable[str]:
+    if 0 in ref.signs:
+        yield "null pointer"
+    if 1 in ref.signs:
+        yield "out of bounds"
 
 
 def initialstate(
@@ -126,7 +209,7 @@ def initialstate(
                 case jpamb.case.Array():
                     locals[i] = SignSet.from_sign("+")
                 case _:
-                    raise NotImplementedError(f"Unsupported value {x!r}")
+                    locals[i] = SignSet.top()
 
     state = State(tuple(locals), ())
     return {PC(methodid, 0): state}
@@ -169,13 +252,21 @@ class AbstractInterpreter:
 
         return pc, finals
 
+    def run(self, steps: int) -> set[str]:
+        final = set()
+        while steps > 0 and self.worklist:
+            _pc, finals = self.step()
+            final |= finals
+            steps -= 1
+        return final
+
 
 def interpret():
     """The static analysis"""
     methodid, input, steps = jpamb.getcase(
         "static",
         "1.0",
-        "The Rice Theorem Cookers",
+        "Hasan Ahmed",
         ["static", "python"],
         for_science=True,
     )
@@ -189,6 +280,8 @@ def interpret():
     while steps > 0 and ai.worklist:
         pc, final = ai.step()
         for f in final:
+            if steps <= 1:
+                break
             jpamb.emit_step(x, pc, f, depth=1)
             steps -= 1
 
@@ -202,7 +295,7 @@ def analyse():
     methodid = jpamb.getmethodid(
         "static",
         "1.0",
-        "The Rice Theorem Cookers",
+        "Hasan Ahmed",
         ["static", "python"],
         for_science=True,
     )
@@ -210,18 +303,19 @@ def analyse():
     suite, eff = jpamb.setup()
     bc = jpamb.Bytecode(suite, eff, {})
 
-    steps = 300
-
     ai = AbstractInterpreter.initial(bc, methodid, None)
+    final = ai.run(10_000)
 
-    final = set()
-    while steps > 0 and ai.worklist:
-        _pc, finals = ai.step()
-        final |= finals
-        steps -= 1
-
+    tags = {
+        "ok": "ok",
+        "divide by zero": "dz",
+        "assertion error": "ae",
+        "out of bounds": "ob",
+        "null pointer": "np",
+        "*": "lp",
+    }
     for f in jpamb.QUERIES:
-        if f not in final:
-            print(f"{f};no")
+        if f in final:
+            print(f"{f};{tags[f]}yes")
         else:
-            print(f"{f};maybe")
+            print(f"{f};no")
