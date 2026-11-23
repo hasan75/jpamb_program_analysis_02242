@@ -6,8 +6,8 @@ import jpamb.utils.Case;
  * Cases written for metamorphic testing of static analyzers. Every method is the ORIGINAL form; a
  * rewrite tool produces the variants. Each method guards a risky operation (division, array
  * access, assert) behind an integer comparison, so the analyzer must narrow at the branch to
- * prove it safe. All guards are correct, so every method is expected to be safe for the inputs
- * listed, and the boundary inputs sit right at the comparison.
+ * prove it safe. All guards are correct (offByOneGuard is the one deliberate exception), and the
+ * boundary inputs sit right at the comparison.
  */
 public class MetamorphicCases {
 
@@ -88,7 +88,7 @@ public class MetamorphicCases {
     return 100 / x;
   }
 
-  // two guards, both needed for safety
+  // two guards, both needed for safety (each divisor has its own guard, so no int overflow)
   @Case("(0, 5) -> ok")
   @Case("(3, 0) -> ok")
   @Case("(3, 3) -> ok")
@@ -96,7 +96,7 @@ public class MetamorphicCases {
   public static int twoGuards(int a, int b) {
     if (a > 0) {
       if (b > 0) {
-        return 100 / (a * b);
+        return 100 / a + 100 / b;
       }
     }
     return 0;
