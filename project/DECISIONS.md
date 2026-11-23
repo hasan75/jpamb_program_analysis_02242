@@ -58,6 +58,24 @@ script in `experiments/`, and every citation must be a verified real paper.
 Preconditions for every rule: the condition has no side effects, it compares
 `int` values, and no arithmetic that may overflow is changed.
 
+Built in step 4 (`solutions/metamorphic/src/rules.py`) as these forms:
+- **R1-invert:** `if (c) A else B` → `if (¬c) {B} else {A}` (no else: `{}`);
+  `c` may combine int comparisons with `&&`, `||`, `!`; ¬c by De Morgan, so
+  operands are evaluated in the same order. Both branches always get braces
+  (else-if chains, dangling else).
+- **R2-swap:** `a < b` → `b > a`; only if at most one operand may throw.
+- **R2-strict:** `x > c` ↔ `x >= c+1` etc., `c` a decimal literal, `c±1`
+  computed by the rewriter and kept within int32.
+- **R2-split:** `a != b` → `(a < b || a > b)`, and also `a == b` →
+  `(a <= b && a >= b)` (the symmetric case, beyond the D6 example).
+"Pure int" is checked syntactically: int locals/parameters (every declaration of
+the name in the method is `int`, one of them encloses and precedes the use, and
+no field, interface constant, enum constant or record component has that name), int literals,
+`+ - * / % & | ^ << >> >>> ~`, `id.length`, and `id[e]` on `int[]`. Method
+calls, `++`, assignments, casts, `char`, `long`, fields and pattern variables
+are rejected, and methods that tree-sitter cannot parse are skipped. Audited by
+`rewrite-auditor` in step 4: no open counterexamples.
+
 ### D7. How the three analyzers under test are run
 **PROVISIONAL.** One shared implementation in `solutions/static/`, exposed as
 three separate programs (entry points), each with its own `info` name:
@@ -106,6 +124,11 @@ the `static-interval` state before the instruction:
   so no access is proven in bounds. State this as a limitation in the paper.
 Backward `goto`s are recorded but never uncertain. Sites are joined to the
 source by line (`uncertain_lines`).
+Step 4 joins a rewrite site by its own line, or by the first line of its
+statement if the export has no branch on that line. A site with no branch on
+either line (the analyzer gave up on the method, as in `BitOperations`) counts
+as not uncertain. A line-level join is coarse: two comparisons on one line
+share one flag.
 
 ---
 

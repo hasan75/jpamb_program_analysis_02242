@@ -6,7 +6,7 @@ note, and keep "Next" current.
 
 Last updated: 2026-11-23
 
-**Next:** step 4, site finder + rewrite rules 1–2 (D6) in `solutions/metamorphic/`, joined to the step 3 export by source line.
+**Next:** step 5, random / syntax-based / guided selection over the step 4 sites (`project/step4/sites.json`).
 
 ---
 
@@ -71,7 +71,38 @@ Last updated: 2026-11-23
     backward/forward goto 43 (never uncertain). Analysis time 0.04 s in total.
     The `seconds` fields change on every run.
   - Tests: 30 pass (5 new in `tests/test_export.py`).
-- [ ] **4. Site finder + rewrite rules 1–2** (D6), audited by `rewrite-auditor`
+- [x] **4. Site finder + rewrite rules 1–2** (D6), audited by `rewrite-auditor`
+  - New package `solutions/metamorphic/` (tree-sitter, as in `solutions/syntactic`),
+    program `metamorphic-sites`. `javaexpr.py` checks the shared precondition
+    (pure `int` operands, types from the method's declarations, fields never
+    trusted); `rules.py` has R1 `invert` and R2 `swap`, `strict`, `split`, each
+    with its equivalence argument; `sites.py` finds the sites in the 145
+    benchmark methods, joins them to the step 3 export by line, and `apply`
+    makes a variant (one rewrite per variant).
+  - Output in `project/step4/sites.json` (summary in `sites-output.txt`):
+    344 sites in 85 methods (all 145 methods matched to their source).
+    R1-invert 64, R2-swap 153, R2-strict 70, R2-split 57. 317 are uncertain
+    (74 methods). Most int comparisons in JPAMB are on unconstrained parameters,
+    so few sites are settled; this matters for how much guidance can help (RQ1).
+  - 19 sites (all in `BitOperations`) cannot be joined: the analyzer does not
+    support `bitopr`, gives up with all outcomes and exports no states there.
+    They count as not uncertain.
+  - Rejected by the precondition: `char[]` comparisons (`Arrays`), method calls
+    (`"fuzz".equals(name)`, `smith.draw()`), boolean conditions (`if (b)`),
+    `i++ != 0`.
+  - Not compiled yet (Docker is down, no local `javac`); compiling every
+    variant is part of step 6. All variants re-parse without errors.
+  - Audit (`rewrite-auditor`): no wrong rewrite among the 344 sites. It found
+    three precondition gaps on Java outside the benchmark, now closed and each
+    covered by a test: (1) pattern variables (`o instanceof Double d`) were not
+    recorded as declarations; (2) a name used outside its `int` local's scope
+    could be an interface constant or inherited field; (3) tree-sitter fails on
+    some valid literals (`0_10`) and the rewrite dropped tokens. Fixes: names
+    are resolved by scope (an `int` declaration must enclose and precede the
+    use), pattern/lambda binders count as non-`int`, interface/enum/record
+    names count as fields, methods with a parse error are skipped, and local
+    enum/interface bodies are not searched. The site set did not change.
+    Tests: 54 pass.
 - [ ] **5. Random / syntax-based / guided selection**
 - [ ] **6. Validation: compile + synthesized inputs**
 - [ ] **7. New benchmark cases** (D12)
