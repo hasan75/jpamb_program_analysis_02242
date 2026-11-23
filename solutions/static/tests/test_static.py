@@ -2,7 +2,7 @@ from pathlib import Path
 
 import jpamb
 import pytest
-from abstractions import Interval
+from abstractions import Interval, SignSet
 from jpamb import jvm
 from jpamb.utils import Effect
 from jvm.state import PC
@@ -26,6 +26,54 @@ def make_if_bytecode(condition, second_index=1):
     )
 
     return bc, PC(methodid, 2)
+
+@pytest.mark.parametrize("zero_first", [False, True])
+def test_signset_if_ne_zero_refines_both_operand_orders(zero_first):
+    methodid = jvm.AbsMethodID.decode("Test.method:()V")
+
+    zero = SignSet(frozenset({0}))
+    unknown = SignSet.top()
+
+    if zero_first:
+        opcodes = [
+            jvm.Push(type=jvm.Int(), value=0, offset=0),
+            jvm.Load(type=jvm.Int(), index=0, offset=1),
+            jvm.If(condition=jvm.CmpOpr.Ne, target=4, offset=2),
+        ]
+        stack = (zero, unknown)
+    else:
+        opcodes = [
+            jvm.Load(type=jvm.Int(), index=0, offset=0),
+            jvm.Push(type=jvm.Int(), value=0, offset=1),
+            jvm.If(condition=jvm.CmpOpr.Ne, target=4, offset=2),
+        ]
+        stack = (unknown, zero)
+
+    method = jvm.Method(methodid, opcodes, 2)
+
+    bc = jpamb.Bytecode(
+        jpamb.Suite(Path.cwd()),
+        Effect(None),
+        {methodid: method},
+    )
+
+    state = State(
+        locals=(unknown,),
+        stack=stack,
+    )
+
+    branches = {
+        next_pc.offset: refined
+        for next_pc, refined in manystep(
+            bc,
+            PC(methodid, 2),
+            state,
+            SignSet,
+        )
+    }
+
+    assert branches[4].locals[0].signs == frozenset({-1, 1})
+    assert branches[3].locals[0].signs == frozenset({0})
 
 def test_interval_if_lt_refines_both_branches():
     bc, pc = make_if_bytecode(jvm.CmpOpr.Lt)

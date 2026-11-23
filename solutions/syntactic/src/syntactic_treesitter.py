@@ -11,6 +11,8 @@ import tree_sitter
 import tree_sitter_java
 
 from rewriting import (
+    REWRITES,
+    apply_rewrite,
     find_rewrite_sites,
     find_integer_variables_for_site,
     is_safe_comparison,
@@ -188,31 +190,52 @@ def main():
     for site in ordered_sites:
         integer_variables = find_integer_variables_for_site(source, site)
 
-        rewritten_source = invert_if_comparison(
-            source,
-            site,
-            integer_variables,
-        )
+        # Generate all supported transformations for each prioritized rewrite site.
+        rewrites = {
+            "invert": lambda: invert_if_comparison(
+                source,
+                site,
+                integer_variables,
+            ),
+        }
 
-        if rewritten_source == source:
-            log.debug("Rewrite produced no changes: %s", site.condition)
-            continue
+        for rewrite_name in REWRITES:
+            rewrites[rewrite_name] = lambda name=rewrite_name: apply_rewrite(
+                source,
+                site,
+                name,
+            )
 
-        site_dir = output_dir / f"site_{site.start_byte}"
-        site_dir.mkdir(parents=True, exist_ok=True)
+        # Apply each transformation and store the generated source variants.
+        for rewrite_name, rewrite_function in rewrites.items():
+            rewritten_source = rewrite_function()
 
-        output_file = site_dir / srcfile.name
-        output_file.write_bytes(rewritten_source)
+            if rewritten_source is None or rewritten_source == source:
+                log.debug(
+                    "Rewrite %s produced no changes for: %s",
+                    rewrite_name,
+                    site.condition,
+                )
+                continue
 
-        variants[f"site_{site.start_byte}"] = rewritten_source
-        generated_count += 1
+            variant_name = f"site_{site.start_byte}_{rewrite_name}"
 
-        log.info(
-            "Generated rewrite: %s -> %s (priority=%d/2)",
-            site.condition,
-            output_file,
-            priorities[site]["score"],
-        )
+            site_dir = output_dir / variant_name
+            site_dir.mkdir(parents=True, exist_ok=True)
+
+            output_file = site_dir / srcfile.name
+            output_file.write_bytes(rewritten_source)
+
+            variants[variant_name] = rewritten_source
+            generated_count += 1
+
+            log.info(
+                "Generated %s rewrite: %s -> %s (priority=%d/2)",
+                rewrite_name,
+                site.condition,
+                output_file,
+                priorities[site]["score"],
+            )
 
     log.info("Generated %d rewrite variants", generated_count)
 

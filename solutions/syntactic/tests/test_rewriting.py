@@ -21,6 +21,13 @@ from rewriting import (
     invert_if_comparison,
     is_integer_operand,
     is_safe_comparison,
+    apply_rewrite,
+    shift_comparison,
+    swap_comparison,
+    split_not_equal,
+    negate_equal,
+    double_negate,
+    bad_shift,
 )
 
 def test_find_rewrite_sites():
@@ -703,3 +710,111 @@ public class RewriteTest {
     assert results["different"]["concrete_equivalent"] is False
     assert results["different"]["abstract"]["Interval"]["complete"]
     assert results["different"]["abstract"]["SignSet"]["complete"]
+
+@pytest.mark.parametrize(
+    ("condition", "rewrite_name", "expected"),
+    [
+        ("x > 0", "shift", "x >= 1"),
+        ("x <= 0", "shift", "x < 1"),
+        ("x < 0", "shift", "x <= -1"),
+        ("x >= 0", "shift", "x > -1"),
+        ("x > 5", "swap", "5 < x"),
+        ("x <= 5", "swap", "5 >= x"),
+        ("x != 5", "ne_split", "x < 5 || x > 5"),
+        ("x == 5", "eq_negate", "!(x != 5)"),
+    ],
+)
+def test_comparison_rewrites(condition, rewrite_name, expected):
+    source = f"""
+    class Example {{
+        boolean test(int x) {{
+            if ({condition}) {{
+                return true;
+            }}
+            return false;
+        }}
+    }}
+    """.encode()
+
+    site = find_rewrite_sites(source)[0]
+    rewritten = apply_rewrite(source, site, rewrite_name)
+
+    assert expected.encode() in rewritten
+    
+def test_double_negate():
+    source = b"""
+    class Example {
+        boolean test(int x) {
+            if (x > 0) {
+                return true;
+            }
+            return false;
+        }
+    }
+    """
+
+    site = find_rewrite_sites(source)[0]
+    rewritten = double_negate(source, site)
+
+    assert b"!(!(" in rewritten
+
+def test_bad_shift_is_not_equivalent(tmp_path):
+    source = b"""
+package jpamb.cases;
+
+public class RewriteTest {
+    public static void test(int x) {
+        if (x > 0) {
+            assert x > 0;
+        }
+    }
+}
+"""
+
+    site = find_rewrite_sites(source)[0]
+    rewritten = bad_shift(source, site)
+
+    assert b"x >= 0" in rewritten
+
+    inputs = tuple(
+        jpamb.case.Input((jpamb.case.Int(value),))
+        for value in (-1, 0, 1)
+    )
+
+    source_file = (
+        Path.cwd()
+        / "cases"
+        / "jpamb"
+        / "cases"
+        / "RewriteTest.java"
+    )
+
+    results = validate_rewrite_variants(
+        source_file=source_file,
+        original_source=source,
+        variants={
+            "bad_shift": rewritten,
+        },
+        methodid="jpamb.cases.RewriteTest.test:(I)V",
+        inputs=inputs,
+        workdir=tmp_path,
+    )
+
+    assert results["bad_shift"]["concrete_equivalent"] is False
+
+def test_apply_rewrite_rejects_unknown_name():
+    source = b"""
+    class Example {
+        boolean test(int x) {
+            if (x > 0) {
+                return true;
+            }
+            return false;
+        }
+    }
+    """
+
+    site = find_rewrite_sites(source)[0]
+
+    with pytest.raises(ValueError):
+        apply_rewrite(source, site, "unknown")

@@ -101,6 +101,53 @@ def manystep(
                 next_pc = pc % target if result else pc + 1
                 refined = after
 
+                # Refines SignSet when comparing a loaded variable with zero.
+                if isinstance(v1, SignSet) and isinstance(v2, SignSet):
+                    comparison_functions = {
+                        jvm.CmpOpr.Eq: lambda x, y: x == y,
+                        jvm.CmpOpr.Ne: lambda x, y: x != y,
+                        jvm.CmpOpr.Lt: lambda x, y: x < y,
+                        jvm.CmpOpr.Le: lambda x, y: x <= y,
+                        jvm.CmpOpr.Gt: lambda x, y: x > y,
+                        jvm.CmpOpr.Ge: lambda x, y: x >= y,
+                    }
+
+                    if (
+                        isinstance(previous1, jvm.Push)
+                        and previous1.value == 0
+                        and isinstance(previous2, jvm.Load)
+                    ):
+                        variable = v2
+                        variable_index = previous2.index
+                        predicate = lambda sign: comparison_functions[op](0, sign)
+
+                    elif (
+                        isinstance(previous1, jvm.Load)
+                        and isinstance(previous2, jvm.Push)
+                        and previous2.value == 0
+                    ):
+                        variable = v1
+                        variable_index = previous1.index
+                        predicate = lambda sign: comparison_functions[op](sign, 0)
+
+                    else:
+                        variable = None
+
+                    if variable is not None:
+                        possible_signs = frozenset(
+                            sign
+                            for sign in variable.signs
+                            if predicate(sign) == result
+                        )
+
+                        if not possible_signs:
+                            continue
+
+                        refined = refined.refine(
+                            variable_index,
+                            SignSet(possible_signs),
+                        )
+
                 # Refines both operands when they are loaded from local variables.
                 if (
                     isinstance(v1, Interval)

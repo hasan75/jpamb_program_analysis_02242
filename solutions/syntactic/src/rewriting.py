@@ -391,3 +391,149 @@ def is_safe_comparison(site: RewriteSite, integer_variables: set[str]) -> bool:
         is_integer_operand(site.left_expression, integer_variables)
         and is_integer_operand(site.right_expression, integer_variables)
     )
+
+# Additional comparison rewrites for simple integer variable-constant expressions.
+JAVA_INT_MIN = -(2**31)
+JAVA_INT_MAX = 2**31 - 1
+
+INTEGER_VARIABLE = re.compile(r"[a-zA-Z_$][a-zA-Z0-9_$]*")
+DECIMAL_INTEGER = re.compile(r"-?(?:0|[1-9][0-9]*)")
+
+SHIFT_OPERATORS = {
+    ">": (">=", 1),
+    "<=": ("<", 1),
+    "<": ("<=", -1),
+    ">=": (">", -1),
+}
+
+MIRRORED_OPERATORS = {
+    ">": "<",
+    ">=": "<=",
+    "<": ">",
+    "<=": ">=",
+    "==": "==",
+    "!=": "!=",
+}
+
+def get_simple_comparison(site):
+    left = site.left_expression.strip()
+    right = site.right_expression.strip()
+
+    if not INTEGER_VARIABLE.fullmatch(left):
+        return None
+
+    if not DECIMAL_INTEGER.fullmatch(right):
+        return None
+
+    value = int(right)
+
+    if not JAVA_INT_MIN <= value <= JAVA_INT_MAX:
+        return None
+
+    return left, value
+
+def replace_site_condition(source, site, replacement):
+    if isinstance(replacement, str):
+        replacement = replacement.encode()
+
+    replacement = b"(" + replacement + b")"
+
+    return (
+        source[:site.start_byte]
+        + replacement
+        + source[site.end_byte:]
+    )
+
+def shift_comparison(source, site):
+    comparison = get_simple_comparison(site)
+
+    if comparison is None or site.operator not in SHIFT_OPERATORS:
+        return None
+
+    variable, constant = comparison
+    new_operator, delta = SHIFT_OPERATORS[site.operator]
+    new_constant = constant + delta
+
+    if not JAVA_INT_MIN <= new_constant <= JAVA_INT_MAX:
+        return None
+
+    replacement = f"{variable} {new_operator} {new_constant}"
+
+    return replace_site_condition(source, site, replacement)
+
+def swap_comparison(source, site):
+    comparison = get_simple_comparison(site)
+
+    if comparison is None or site.operator not in MIRRORED_OPERATORS:
+        return None
+
+    variable, constant = comparison
+    operator = MIRRORED_OPERATORS[site.operator]
+
+    replacement = f"{constant} {operator} {variable}"
+
+    return replace_site_condition(source, site, replacement)
+
+def split_not_equal(source, site):
+    comparison = get_simple_comparison(site)
+
+    if comparison is None or site.operator != "!=":
+        return None
+
+    variable, constant = comparison
+    replacement = f"{variable} < {constant} || {variable} > {constant}"
+
+    return replace_site_condition(source, site, replacement)
+
+def negate_equal(source, site):
+    comparison = get_simple_comparison(site)
+
+    if comparison is None or site.operator != "==":
+        return None
+
+    variable, constant = comparison
+    replacement = f"!({variable} != {constant})"
+
+    return replace_site_condition(source, site, replacement)
+
+def double_negate(source, site):
+    condition = source[site.start_byte:site.end_byte]
+
+    replacement = b"!(" + b"!(" + condition + b"))"
+
+    return replace_site_condition(source, site, replacement)
+
+# Deliberately incorrect rewrite used to test equivalence validation.
+def bad_shift(source, site):
+    comparison = get_simple_comparison(site)
+
+    if comparison is None or site.operator != ">":
+        return None
+
+    variable, constant = comparison
+    replacement = f"{variable} >= {constant}"
+
+    return replace_site_condition(source, site, replacement)
+
+REWRITES = {
+    "shift": shift_comparison,
+    "swap": swap_comparison,
+    "ne_split": split_not_equal,
+    "eq_negate": negate_equal,
+    "double_negate": double_negate,
+}
+
+NEGATIVE_CONTROLS = {
+    "bad_shift": bad_shift,
+}
+
+def apply_rewrite(source, site, rewrite_name):
+    rewrite = REWRITES.get(rewrite_name)
+
+    if rewrite is None:
+        rewrite = NEGATIVE_CONTROLS.get(rewrite_name)
+
+    if rewrite is None:
+        raise ValueError(f"Unknown rewrite: {rewrite_name}")
+
+    return rewrite(source, site)
