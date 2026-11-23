@@ -307,10 +307,20 @@ def check_rewrite_equivalence_local(
         inputs,
     )
 
-    if "*" in original_results or "*" in rewritten_results:
+    if len(original_results) != len(rewritten_results):
         return False
 
-    return original_results == rewritten_results
+    for original, rewritten in zip(original_results, rewritten_results):
+        if original == "*" and rewritten == "*":
+            continue
+
+        if original != rewritten:
+            print("Inputs:", inputs)
+            print("Original results:", original_results)
+            print("Rewritten results:", rewritten_results)
+            return False
+
+    return True
 
 def analyze_class_folder(class_folder, methodid, max_steps=300):
     bc = create_analysis_bytecode(class_folder, methodid)

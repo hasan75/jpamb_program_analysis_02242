@@ -373,8 +373,7 @@ def is_integer_operand(expression, integer_variables: set[str]) -> bool:
 
     integer_literal = (
         r"(?:"
-        r"0"
-        r"|[1-9](?:_?[0-9])*"
+        r"-?(?:0|[1-9](?:_?[0-9])*)"
         r"|0[xX][0-9a-fA-F](?:_?[0-9a-fA-F])*"
         r"|0[bB][01](?:_?[01])*"
         r"|0[0-7](?:_?[0-7])*"

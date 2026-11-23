@@ -256,7 +256,7 @@ def test_find_integer_variables():
         ("count", True),
         ("0", True),
         ("123", True),
-        ("-5", False),
+        ("-5", True),
         ("0x10", True),
         ("0b101", True),
         ("3.14", False),
