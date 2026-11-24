@@ -322,6 +322,8 @@ def main():
         inputs = synthesize_method_inputs(
             method_bytecode,
             methodid,
+            source=source,
+            sites=(site,),
         )
 
         print(f"\nSynthesized inputs: {len(inputs)}")

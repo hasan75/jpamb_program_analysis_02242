@@ -13,7 +13,10 @@ from jvm.classfile import AbsMethodID
 from jvm.state import PC, StackInt
 from abstractions import Interval, SignSet
 from static import run_analysis
-from synthesis import synthesize_integer_inputs
+from synthesis import (
+    synthesize_integer_inputs,
+    synthesize_inputs_for_ifz,
+)
 
 JAVA_HOME = os.environ.get("JAVA_HOME")
 
@@ -149,7 +152,14 @@ def create_analysis_bytecode(class_folder, methodid):
     suite = jpamb.Suite.from_workdir(analysis_root)
     return jpamb.Bytecode(suite, eff, {})
 
-def synthesize_method_inputs(bc, methodid, max_steps=300):
+
+def synthesize_method_inputs(
+    bc,
+    methodid,
+    max_steps=300,
+    source=None,
+    sites=(),
+):
     with redirect_stderr(io.StringIO()):
         ai, _ = run_analysis(
             bc,
@@ -170,7 +180,72 @@ def synthesize_method_inputs(bc, methodid, max_steps=300):
     if not all(isinstance(interval, Interval) for interval in intervals):
         return ()
 
-    return synthesize_integer_inputs(intervals, max_abs=1000)
+    generated = list(
+        synthesize_integer_inputs(intervals, max_abs=1000)
+    )
+
+    # Add inputs targeting both outcomes of each selected Ifz condition.
+    if source is not None and sites:
+        from rewriting import find_rewrite_sites
+
+        method = bc.getmethod(methodid)
+
+        selected_method = sites[0]
+
+        method_sites = [
+            candidate
+            for candidate in find_rewrite_sites(source)
+            if candidate.kind == "if_statement"
+            and candidate.method_start_byte
+                == selected_method.method_start_byte
+            and candidate.method_end_byte
+                == selected_method.method_end_byte
+        ]
+
+        branches = [
+            (index, opcode)
+            for index, opcode in enumerate(method.opcodes)
+            if isinstance(opcode, (jvm.If, jvm.Ifz))
+        ]
+
+        if len(method_sites) == len(branches):
+            method_sites.sort(
+                key=lambda candidate: candidate.start_byte
+            )
+
+            selected_positions = {
+                (site.start_byte, site.end_byte)
+                for site in sites
+            }
+
+            for position, candidate in enumerate(method_sites):
+                if (
+                    candidate.start_byte,
+                    candidate.end_byte,
+                ) not in selected_positions:
+                    continue
+
+                branch_index, opcode = branches[position]
+
+                if not isinstance(opcode, jvm.Ifz):
+                    continue
+
+                true_inputs, false_inputs = synthesize_inputs_for_ifz(
+                    bc,
+                    methodid,
+                    PC(methodid, branch_index),
+                )
+
+                generated.extend(true_inputs)
+                generated.extend(false_inputs)
+
+    # Remove duplicate inputs while preserving their order.
+    unique_inputs = {}
+    for test_input in generated:
+        unique_inputs[test_input.encode()] = test_input
+
+    return tuple(unique_inputs.values())
+
 
 # Compile each source variant against the same JPAMB runtime classes.
 def compile_java_source(

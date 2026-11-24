@@ -38,9 +38,8 @@ target/
 
 # Generated experimental evaluation results
 /solutions/syntactic/evaluation_runs/
-
-# Backup of experimental evaluation results
 /solutions/syntactic/evaluation_runs_backup/
+/solutions/syntactic/evaluation_runs_synthesis/
 
 # Temporary evaluation test output
 /evaluation_test.json
