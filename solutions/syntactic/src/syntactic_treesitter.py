@@ -2,6 +2,7 @@
 """A syntactic analysis that selects rewrite sites using different strategies."""
 
 import logging
+import json
 import sys
 import tempfile
 from pathlib import Path
@@ -55,6 +56,13 @@ def main():
     )
     argument_parser.add_argument("--seed", type=int, default=42)
     argument_parser.add_argument("--budget", type=int, default=None)
+
+    argument_parser.add_argument(
+        "--results-json",
+        type=Path,
+        default=None,
+        help="Export validation results to a JSON file",
+    )
 
     argument_parser.add_argument(
         "--selection-only",
@@ -307,6 +315,8 @@ def main():
             print(f"  {name}")
         return
 
+    results = {}
+
     if variants:
         # Generate concrete inputs from the interval analysis of the target method.
         inputs = synthesize_method_inputs(
@@ -354,6 +364,28 @@ def main():
                 print(f"  {abstraction_name}: {abstract_status}")
                 print(f"    Original:  {comparison['original']}")
                 print(f"    Rewritten: {comparison['rewritten']}")
+
+    if args.results_json is not None:
+        args.results_json.parent.mkdir(parents=True, exist_ok=True)
+
+        evaluation_data = {
+            "method": str(methodid),
+            "strategy": args.strategy,
+            "seed": args.seed,
+            "budget": args.budget,
+            "variant_count": generated_count,
+            "results": results,
+        }
+
+        with args.results_json.open("w", encoding="utf-8") as file:
+            json.dump(
+                evaluation_data,
+                file,
+                indent=2,
+                default=str,
+            )
+
+        print(f"\nResults exported to: {args.results_json}")
 
     for query in jpamb.QUERIES:
         if query != "assertion error":

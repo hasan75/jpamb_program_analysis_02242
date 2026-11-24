@@ -2,6 +2,7 @@ import io
 import json
 import os
 import shutil
+import time
 import subprocess
 from contextlib import redirect_stderr
 from pathlib import Path
@@ -238,7 +239,7 @@ def compile_java_source(
         capture_output=True,
         text=True,
         check=True,
-        timeout=60,
+        timeout=180,
     )
 
     return class_folder
@@ -525,6 +526,9 @@ def validate_rewrite_variants(
     if isinstance(methodid, str):
         methodid = AbsMethodID.decode(methodid)
 
+    experiment_start = time.perf_counter()
+    first_inconsistency_time = None
+
     project_root = Path.cwd().resolve()
     runtime_classes = project_root / "target" / "classes"
 
@@ -537,7 +541,6 @@ def validate_rewrite_variants(
     workdir = Path(workdir).resolve()
     workdir.mkdir(parents=True, exist_ok=True)
 
-    # Compile and execute the original implementation.
     original_folder = compile_java_source(
         workdir,
         "original",
@@ -554,7 +557,6 @@ def validate_rewrite_variants(
         inputs,
     )
 
-    # Analyze the original implementation with both abstract domains.
     original_abstract = analyze_class_folder(
         original_folder,
         methodid,
@@ -563,8 +565,8 @@ def validate_rewrite_variants(
     results = {}
 
     for name, rewritten_source in variants.items():
+        variant_start = time.perf_counter()
 
-        # Compile the rewritten implementation.
         rewritten_folder = compile_java_source(
             workdir,
             name,
@@ -574,7 +576,6 @@ def validate_rewrite_variants(
             project_root,
         )
 
-        # Compare concrete execution results using the same synthesized inputs.
         concrete_equivalent = check_rewrite_equivalence_local(
             workdir,
             original_results,
@@ -583,13 +584,11 @@ def validate_rewrite_variants(
             inputs,
         )
 
-        # Analyze the rewritten implementation.
         rewritten_abstract = analyze_class_folder(
             rewritten_folder,
             methodid,
         )
 
-        # Compare the abstract outcomes only when both analyses completed.
         abstract_comparisons = {}
 
         for abstraction_name in original_abstract:
@@ -615,9 +614,28 @@ def validate_rewrite_variants(
                 "complete": complete,
             }
 
+        abstract_inconsistency = (
+            concrete_equivalent is True
+            and any(
+                comparison["complete"]
+                and comparison["equivalent"] is False
+                for comparison in abstract_comparisons.values()
+            )
+        )
+
+        elapsed_seconds = time.perf_counter() - variant_start
+        cumulative_seconds = time.perf_counter() - experiment_start
+
+        if abstract_inconsistency and first_inconsistency_time is None:
+            first_inconsistency_time = cumulative_seconds
+
         results[name] = {
             "concrete_equivalent": concrete_equivalent,
             "abstract": abstract_comparisons,
+            "abstract_inconsistency": abstract_inconsistency,
+            "elapsed_seconds": elapsed_seconds,
+            "cumulative_seconds": cumulative_seconds,
+            "time_to_first_inconsistency": first_inconsistency_time,
         }
 
     return results
