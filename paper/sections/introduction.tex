@@ -1,5 +1,4 @@
-% 1 Introduction (~1.4 p). Keeps the proposal's labelled paragraphs, which the
-% professor graded by name. Terms are only introduced here; Section 4 defines them.
+% 1 Introduction (~1.4 p). Terms are only introduced here; Section 4 defines them.
 \section{Introduction}
 \label{sec:intro}
 
@@ -62,7 +61,7 @@ existing technique therefore says where to place a behavior-preserving rewrite
 for such analyzers.
 
 \paragraph{Innovation}
-We ask: \emph{can the abstract state computed by a lightweight analysis select
+We ask: \emph{can the abstract state computed by a fixed interval analysis select
 semantics-preserving rewrite sites that reveal inconsistencies in a static
 analyzer more efficiently than random or syntax-based selection?} The
 intuition is that a rewrite can only change an answer where the analyzer's
@@ -70,10 +69,9 @@ precision depends on the form of the code. Where a fixed interval analysis,
 the \emph{guide}, already decides a branch, a rewritten condition should be
 decided the same way; where the guide is uncertain, the analyzer may be too.
 We therefore mark sites as \emph{uncertain} from the guide's abstract state and
-spend a fixed rewrite budget on them first. The guide's states are computed
-once per method, not from the output of each analyzer under test, so the
-approach applies to analyzers that predict sets of outcomes rather than lists
-of warnings.
+spend a fixed rewrite budget on them first. The guide's abstract states, not an
+analyzer's reported warnings, mark the sites, so the approach applies to
+analyzers that predict sets of outcomes rather than lists of warnings.
 
 \paragraph{Evaluation}
 We test three abstract interpreters for JPAMB that differ only in their integer
@@ -102,7 +100,7 @@ becomes undecided for signs.
     (\cref{sec:rules,sec:validation,sec:rq3}).
   \item A controlled comparison of guided, random and syntax-based selection
     under one budget on three analyzers, with a negative result and its
-    explanation: a guide must model how the analyzer under test abstracts
+    explanation: a guide should model how the analyzer under test abstracts
     constants, not only where the program is undecided
     (\cref{sec:rq1,sec:findings}).
   \item \NumGuardsMethods{} new JPAMB methods with \NumGuardsCases{} annotated

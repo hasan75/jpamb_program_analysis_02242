@@ -1,4 +1,4 @@
-% 6 Evaluation (~2.4 p). One RQ per measurement promised in the proposal.
+% 6 Evaluation (~2.4 p).
 \section{Evaluation}
 \label{sec:evaluation}
 
@@ -20,14 +20,14 @@ The subjects are \NumMethods{} JPAMB methods: \NumMethodsOrig{} from the
 benchmark and \NumGuardsMethods{} methods (\NumGuardsCases{} annotated cases)
 in a new class, \texttt{Guards}, written before any RQ1 measurement in five
 patterns fixed in advance: guarded division, range checks before array
-accesses, branches an analysis can settle, assertions on facts from an earlier
+accesses, branches an analysis can decide, assertions on facts from an earlier
 branch, and else-if chains used after the merge. Since the author of the
 technique wrote them, every RQ1 result is also reported without them.
 
 There are \NumSites{} eligible sites in \NumSiteMethods{} methods
 (\NumSitesNoGuards{} without \texttt{Guards}). \NumUncertain{}
-(\UncertainPercent\%) are candidates for \texttt{guided} and \NumStrict{} for
-\texttt{guided-strict}; \NumSettled{} are settled and \NumNoState{} have no
+(\UncertainPercent\%) are candidates for \texttt{guided}, \NumStrict{} of them
+also strict candidates for \texttt{guided-strict}; \NumSettled{} are settled and \NumNoState{} have no
 guide state. The share of candidates is high because many conditions compare
 unconstrained parameters, array accesses are always uncertain, and sites on one
 line share a flag. The budget is $N=\BudgetHalf$ (50\% of the eligible sites)
@@ -38,14 +38,15 @@ summed over the three analyzers; the tests use the sum because
 \texttt{static-interval} has none, and \cref{tab:rq1} gives the per-analyzer
 means. Strategies are compared by a two-sided Mann--Whitney U test (normal
 approximation with tie and continuity correction) and the Vargha--Delaney effect size
-$\hat{A}_{12}$, the probability that a run of the first strategy finds more
+$\hat{A}_{12}$, the probability that a \emph{run} (one strategy, budget and
+seed) of the first strategy finds more
 than a run of the second, ties counted half. All runs used one machine:
 \Machine.
 
 \subsection{RQ1: Effectiveness}
 \label{sec:rq1}
-Rewriting \emph{every} eligible site bounds what any strategy can find. It
-yields only \Pool{} distinct inconsistencies (\PoolSign{} for
+Rewriting \emph{every} eligible site bounds what any strategy can find; we
+call these inconsistencies the \emph{pool}. It yields only \Pool{} distinct inconsistencies (\PoolSign{} for
 \texttt{static-sign}, \PoolSignNarrow{} for \texttt{static-sign-narrow},
 \PoolInterval{} for \texttt{static-interval}), from \NumInconsistentVariants{}
 of the \NumValid{} variants, all from R2-strict; without \texttt{Guards}, the
@@ -62,7 +63,7 @@ the Mann--Whitney $p$ and $\hat{A}_{12}$ of the total against
 \input{generated/tab-rq1}
 \end{table}
 
-\Cref{tab:rq1} gives the result. The strategy planned in the proposal,
+\Cref{tab:rq1} gives the result. The main strategy,
 \texttt{guided}, and its sensitivity variant \texttt{guided-strict} find
 \emph{fewer} inconsistencies than \texttt{random} in every setting. At $N=\BudgetHalf$,
 \texttt{guided} finds \MeanGuidedHalf{} on average, against \MeanRandomHalf{}
@@ -107,6 +108,9 @@ the same number of variants, so a time-budget comparison reduces to the
 rewrite-budget comparison of RQ1. For the same reason we do not report time to
 the first inconsistency, which here is the position of the first of
 \NumInconsistentVariants{} sites in each order.
+
+\emph{Answer to RQ2: guidance costs \CostExport{}\,s of \CostTotal{}\,s;
+validating the variants dominates the cost.}
 
 \subsection{RQ3: Validity of Variants}
 \label{sec:rq3}
@@ -161,9 +165,7 @@ prediction is $\{\ast\}$; on the right the condition may be false and an
 assertion error is added. \texttt{Loops.neverDivides} is the same with a
 division by zero. The interval guide knows $i\in[1,1]$ and decides both
 forms, so the site is settled and \texttt{guided} never reaches it within the
-budget. In \texttt{Guards.assertDerivedRange}, the guard \texttt{x >= 0}
-lets \texttt{static-sign-narrow} prove a later assertion, and \texttt{x > -1}
-does not.
+budget. \Cref{sec:overview} shows the same effect in a guard.
 
 This explains why the hypothesis behind guidance (\cref{sec:sites}) fails for
 these analyzers. The guide represents every constant exactly, the sign domain

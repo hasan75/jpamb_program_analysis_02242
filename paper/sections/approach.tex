@@ -35,7 +35,7 @@ We read this off a \emph{guide}: the interval analyzer \texttt{static-interval}
 (\cref{sec:analyzers}) run on the original method. Its domain distinguishes the
 most values of the three, although it cannot exclude 0 from inside an interval,
 so a divisor guarded by \texttt{x != 0} stays uncertain for the guide while
-\texttt{static-sign-narrow} settles it. From the guide's fixpoint we classify
+\texttt{static-sign-narrow} proves it nonzero. From the guide's fixpoint we classify
 instructions by the abstract state before them:
 \begin{itemize}
   \item a conditional jump is \emph{uncertain} if its condition can be both
@@ -151,9 +151,9 @@ seed, so each (strategy, seed) gives one reproducible order. The strategies are:
   \item[\texttt{guided}] all candidates in random order, then all other
     eligible sites in random order.
   \item[\texttt{guided-strict}] a sensitivity variant, defined after counting
-    candidates (\cref{sec:threats}): as \texttt{guided}, but a candidate must
-    also lie in a method where the guide finds a possible division by zero or
-    array error.
+    candidates (\cref{sec:threats}): as \texttt{guided}, but with
+    \emph{strict candidates}, the candidates in methods where the guide finds
+    a possible division by zero or array error.
 \end{description}
 The strategies differ only in the order, so a difference in what they find
 comes from where they rewrite.

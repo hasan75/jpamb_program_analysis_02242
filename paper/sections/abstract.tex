@@ -1,6 +1,22 @@
-% Abstract (~0.25 p). Problem -> key observation (a rewrite changes a result only
-% where precision depends on the form of the code) -> technique -> setup (three
-% analyzers, three strategies, ten seeds) -> main result, numbers from experiments/.
+% Abstract (~0.25 p). Problem -> idea -> technique -> setup -> result, all
+% numbers from experiments/.
 \begin{abstract}
-\todo{abstract: written last}
+The answers of a static analyzer can depend on how equivalent code is written,
+and rewriting a program without changing its behavior tests this without
+ground truth. For analyzers that predict a set of possible outcomes per method,
+it is open where such rewrites should be placed. We ask whether the abstract
+state of a fixed interval analysis, the guide, can select better rewrite
+sites than random or syntax-based selection: sites where the guide is uncertain are rewritten first,
+using four rules on integer conditions, and every variant is compiled and
+tested on synthesized inputs. We compare guided, random and syntax-based
+selection under the same budget on three abstract interpreters for JPAMB,
+\NumMethods{} methods with \NumSites{} eligible sites, over \NumSeeds{} seeds.
+All \NumValid{} variants are valid, and the inputs reject
+\NumMutantsKilled{} of \NumMutantsNonEquivalent{} non-equivalent wrong
+rewrites. Rewriting every site yields only \Pool{} distinct inconsistencies,
+and guided selection finds fewer than random selection (\MeanGuidedHalf{} vs.\
+\MeanRandomHalf{} per run at half the sites, \PGuidedRandomHalf). Most
+inconsistencies (\PoolFromSettledOnly{} of \Pool{}) occur only where the guide
+is certain but the sign domain abstracts the compared constant coarsely, which suggests that a guide should model the
+abstraction of the analyzer it guides, not only where the program is undecided.
 \end{abstract}

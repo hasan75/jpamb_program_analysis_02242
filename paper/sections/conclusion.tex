@@ -1,5 +1,22 @@
-% 9 Conclusion (~0.25 p). Answer to the RQ, main limitation, future work
-% (loop reshaping, reduced product, larger programs).
+% 9 Conclusion (~0.25 p). Answer to the RQ, main limitation, future work.
 \section{Conclusion}
 \label{sec:conclusion}
-\todo{conclusion}
+We asked whether the abstract state of a fixed interval analysis selects
+semantics-preserving rewrite sites that reveal inconsistencies in a static
+analyzer more efficiently than random or syntax-based selection. On JPAMB, with
+three abstract interpreters, it does not: rewriting uncertain sites first finds
+fewer distinct inconsistencies than random selection, because most of the
+few inconsistencies arise only where the interval guide is certain and the
+sign domain loses the compared constant. The main limitation is the size of the evidence:
+micro-benchmarks, integer conditions only, analyzers from one code base, and a
+pool of \Pool{} inconsistencies.
+
+The result suggests that a guide should model the abstraction of the analyzer
+under test rather than the program's uncertainty. For a sign analyzer, the
+\NumStrictCrossZero{} R2-strict sites whose constant changes to or from $0$ are
+such a selection, found after the fact; whether it, or settled-first selection, does better than
+chance needs a planned experiment on other analyzers and larger programs.
+Further work includes a loop-reshaping rule to test how widening depends on
+loop shape, and a reduced product of signs and intervals as both guide and
+analyzer, combining the exclusion of $0$ that signs express with the bounds
+that intervals express.

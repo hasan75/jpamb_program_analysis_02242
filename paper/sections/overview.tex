@@ -1,9 +1,66 @@
 % 3 Overview (~1.0 p). One worked example end to end, taken from real pipeline
-% output (after step 8), and the pipeline figure (PDI).
+% output, and the pipeline figure (PDI).
 \section{Overview}
 \label{sec:overview}
 
 \input{figures/pipeline}
 
-\todo{worked example: method, interval state at the site, why it is a candidate,
-the rewrite, outcome sets of the three analyzers, the inconsistency}
+We follow one method through the pipeline of \cref{fig:pipeline}. It is one of
+the \texttt{Guards} cases added for this study (\cref{sec:setup}):
+
+\begin{lstlisting}[numbers=left,firstnumber=137,numberstyle=\tiny]
+public static void assertDerivedRange(int x, int y) {
+  if (x >= 0 && y > x) {
+    assert y > 0;
+  }
+}
+\end{lstlisting}
+
+\paragraph{Guide}
+The interval guide analyzes the original method once. When \texttt{x >= 0} is
+tested, $x\in\OverviewStateX$, so that branch can go either way and line 138
+is uncertain. When \texttt{y > 0} is tested, the guide has $x\in[0,\infty]$,
+and \texttt{y > x} has refined $y$ to $\OverviewStateY$: the assertion's
+branch has one possible direction, and line 139 is settled
+(\cref{sec:sites}).
+
+\paragraph{Sites and variants}
+The site finder finds \OverviewNumSites{} eligible sites in the method: branch
+inversion of the \texttt{if} (R1), mirrored comparisons (R2-swap) for all
+three comparisons, and strict/non-strict rewrites (R2-strict) of the two
+comparisons with a literal (\cref{sec:rules}). Each site gives one variant,
+and each variant compiles and agrees with the original on every synthesized
+input; evaluated at method entry, every rewritten condition takes both values
+on these inputs (\cref{sec:validation}).
+
+\begin{table}[t]
+\caption{The worked example: predicted outcome sets of the original and of
+each variant (ok, assertion error AE). Bold: differs from the original; the
+two bold cells are one distinct inconsistency.}
+\label{tab:overview}
+\small
+\input{generated/tab-overview}
+\end{table}
+
+\paragraph{Analysis and comparison}
+\Cref{tab:overview} shows the outcome sets. \texttt{static-sign} never refines
+at branches, so it cannot prove the assertion in any version.
+\texttt{static-interval} proves it in every version. \texttt{static-sign-narrow}
+proves it in the original: \texttt{x >= 0} refines $x$ to $\{0,+\}$,
+\texttt{y > x} then refines $y$ to $\{+\}$, and \texttt{y > 0} holds. Swapping
+operands or inverting the branch keeps this, but both R2-strict rewrites break
+it. \texttt{x > -1} compares $x$ with $-1$, which the sign domain abstracts to
+$\{-\}$, and a negative $x$ can exceed a negative constant, so $x$ is not
+refined and nothing is known about $y$; \texttt{y >= 1}
+compares $y\in\{+\}$ with $\{+\}$, which may fail. Each changes
+$\{\mathrm{ok}\}$ to $\{\mathrm{ok}, \mathrm{AE}\}$; with the same analyzer,
+method, rule and change, the two variants count as one distinct inconsistency
+(\cref{sec:inconsistency}).
+
+\paragraph{Selection}
+The benchmark has \NumSites{} such sites, and a strategy decides which ones to
+rewrite within a budget (\cref{sec:selection}). The guided strategy rewrites uncertain sites first, so it can reach line 138
+but not line 139. The example
+already hints at the evaluation's main finding: the settled site on line 139
+gives the same inconsistency, and \cref{sec:findings} shows that this is the
+rule rather than the exception on JPAMB.
