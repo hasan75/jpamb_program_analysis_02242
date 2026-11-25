@@ -6,11 +6,12 @@ note, and keep "Next" current.
 
 Last updated: 2026-11-25 (step 8)
 
-**Next:** paper. §4 Approach and §5 Implementation drafted (§4 reviewed and
-revised); then §1 Gap/Innovation (contrast Statfier), §8 Related Work,
-§6 Evaluation (RQ1 pre-registered + post-hoc `settled`, RQ2 cost, RQ3
-validity, case study of the 5 inconsistencies), §7 Threats, §3 Overview.
-`results-checker` once §6 exists.
+**Next:** §3 Overview (worked example, `Guards.assertDerivedRange` or
+`Loops.neverAsserts`), Abstract, Conclusion; then P5. **Length is the main
+risk:** sections hold ~5,700 words plus 4 tables, a figure and listings, an
+estimated ~11.5-12.5 pages before §3/Abstract/Conclusion; P5 must cut about
+1.5-2 pages (candidates: §4 detail, §6.6 rule-by-rule paragraph, §5, Related
+Work overlap with Gap). Needs an Overleaf compile for a real count.
 
 ---
 
@@ -187,7 +188,13 @@ validity, case study of the 5 inconsistencies), §7 Threats, §3 Overview.
     compiled in Overleaf.
   - Section plan (D13, DECIDED) designed for this project in `PAPER-STRUCTURE.md`. Verified
     BibTeX for the two cited DTU papers (PDFs in `proposal/references/`) is in §3.
-- [ ] **P2. Gap + Related Work** (`literature-scout` first)
+- [x] **P2. Gap + Related Work** (`literature-scout` first)
+  - 2026-11-25: `literature-scout` checked one-line descriptions of all cited
+    papers (interrogation testing is single-analyzer metamorphic testing, not
+    differential; Statfier tests PMD, SpotBugs, Infer, SonarQube, CheckStyle at
+    warning lines + backward slices). JPAMB cited as software
+    (`kalhauge2026jpamb`, from `CITATION.cff`). Gap and §8 written, reviewed
+    (major revisions) and revised.
   - `literature-scout` done: 11 verified entries in `paper/bibfile.bib`.
     **Statfier** (Zhang et al., ESEC/FSE 2023) already tests static analyzers
     with semantics-preserving transformations and picks sites from the
@@ -210,6 +217,12 @@ validity, case study of the 5 inconsistencies), §7 Threats, §3 Overview.
     data. `evaluation.tex` skeleton still mentions a time budget: rewrite RQ2
     as the cost table (D11).
 - [ ] **P4. Evaluation (RQ1–RQ3), Threats to Validity, Conclusion, Abstract**
+  - 2026-11-25: §6 Evaluation (RQ1 negative as planned, exploratory `settled`,
+    RQ2 cost in text, RQ3, §6.6 mechanism with generated evidence:
+    `\NumStrictCrossZero`, Bonferroni check) and §7 Threats (internal,
+    construct, conclusion, external) drafted, reviewed (major revisions) and
+    revised; §1 Introduction complete. `results-checker` run on the whole
+    paper. Open: Abstract, Conclusion.
 - [ ] **P5. Final pass** (`paper-reviewer` + `results-checker`, ≤ 11 pages, no `\todo{}`)
 
 ## Open questions

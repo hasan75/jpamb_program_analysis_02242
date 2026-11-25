@@ -152,10 +152,11 @@ RNG `random.Random(f"{strategy}/{seed}")` over sites sorted by id.
 - `random`: uniform shuffle (proposal: uniform over all eligible sites).
 - `syntax`: by line distance from the site to the nearest `/`, `%` or `assert`
   in the same method (tree-sitter only); ties shuffled; methods without one last.
-- `guided`: D14 candidates (`uncertain`, 317) shuffled first, then the rest.
+- `guided`: D14 candidates (`uncertain`; 317 on 145 methods, 368 on 160) shuffled first, then the rest.
 - `guided-strict` (**DECIDED** by the user, 2026-11-25, as a sensitivity
   check, not a replacement): candidates are uncertain sites in methods with an
-  uncertain divisor or array access in the export (187 sites, 42 methods).
+  uncertain divisor or array access in the export (187 sites, 42 methods on
+  145 methods; 215 sites, 49 methods on 160).
   Reason: under D14, 92% of the sites are candidates (most JPAMB comparisons
   are on unconstrained parameters), so at N = 172 random already hits ~158
   candidates; `guided` stays the main strategy so the definition is not tuned
@@ -192,7 +193,7 @@ the first w bits for each `draw(w)`, plus 8 random bit strings; other
 reference types use only `@Case` inputs.
 Sensitivity check (`--mutants`): one deliberately wrong rewrite per rewritten
 node (R2: off-by-one/opposite operator; R1: negated condition without the
-swap). The 25 mutants that no input can kill are listed with an argument each
+swap). The mutants that no input can kill (25 on 145 methods, 31 on 160) are listed with an argument each
 in `project/step6/equivalent-mutants.json` (rewrite-auditor review,
 2026-11-25). Paper, Threats to Validity: one-at-a-time synthesis cannot
 produce coordinated values (the 2 surviving mutants in `Dependent`), and the
@@ -233,12 +234,15 @@ reported separately, and the paper explains the mechanism with a case study.
   (344), N = 172 (50%) and 86 (25%). With the step 7 cases (408 eligible
   sites), N = 204 (50%) and 102 (25%).
 - **Time budget T:** **cut** (user, 2026-11-25). With a pool of 5 distinct
-  inconsistencies a time-budget comparison says nothing. RQ2 is instead a
-  **cost table**: wall-clock time per pipeline stage (`experiments/cost.py`,
+  inconsistencies a time-budget comparison says nothing. RQ2 instead reports
+  **cost per stage** (in the text of Sec. 6.4, no table, to save space): wall-clock time per pipeline stage (`experiments/cost.py`,
   which reruns the pipeline into `build/cost/` and checks it reproduces the
   committed results), and the guidance overhead (the export).
 - **Statistics:** Mann–Whitney U per analyzer, guided vs. each baseline,
-  plus an effect size (Vargha–Delaney A12).
+  plus an effect size (Vargha–Delaney A12). As run (step 8): `stats.json` has the
+  per-analyzer tests, but the paper tests the total over the three analyzers,
+  because `static-interval` has no inconsistency, and gives per-analyzer means
+  in Table `tab:rq1`.
 
 ---
 

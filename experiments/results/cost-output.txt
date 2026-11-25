@@ -1,15 +1,15 @@
 export (guide analysis): 0.3 s
 site finding: 0.1 s
 selection (all strategies, seeds): 0.1 s
-validation (compile + inputs): 231.7 s
-analysis (3 analyzers, originals + variants): 1.8 s
+validation (compile + inputs): 232.5 s
+analysis (3 analyzers, originals + variants): 1.7 s
 {
  "seconds": {
-  "export (guide analysis)": 0.29389241699936974,
-  "site finding": 0.062231703001089045,
-  "selection (all strategies, seeds)": 0.07559797999965667,
-  "validation (compile + inputs)": 231.7264812659996,
-  "analysis (3 analyzers, originals + variants)": 1.772000888002367
+  "export (guide analysis)": 0.30310496099991724,
+  "site finding": 0.07015175999913481,
+  "selection (all strategies, seeds)": 0.07977113699962501,
+  "validation (compile + inputs)": 232.53489640299813,
+  "analysis (3 analyzers, originals + variants)": 1.6512941750006576
  },
  "variants": 408,
  "reproduced": {
@@ -17,5 +17,12 @@ analysis (3 analyzers, originals + variants): 1.8 s
   "project/step5/selections.json": true,
   "project/step6/validation.json": true,
   "experiments/results/outcomes.json": true
+ },
+ "machine": {
+  "cpu": "12th Gen Intel(R) Core(TM) i7-1255U",
+  "cores": 12,
+  "os": "Linux 6.8.0-149-generic",
+  "python": "3.13.5",
+  "java": "openjdk version \"21.0.7\" 2025-04-15"
  }
 }

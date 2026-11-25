@@ -11,6 +11,8 @@ Needs Docker for the validation stage.
 
 import argparse
 import json
+import os
+import platform
 import subprocess
 import time
 from pathlib import Path
@@ -38,6 +40,37 @@ def timed(cmd: list[str], log: Path) -> float:
     with log.open("w") as fp:
         subprocess.run(cmd, cwd=ROOT, stdout=fp, stderr=subprocess.STDOUT, check=True)
     return time.perf_counter() - start
+
+
+def machine() -> dict:
+    cpu = next(
+        (
+            line.split(":", 1)[1].strip()
+            for line in Path("/proc/cpuinfo").read_text().splitlines()
+            if line.startswith("model name")
+        ),
+        platform.processor(),
+    )
+    java = subprocess.run(
+        [
+            "docker",
+            "run",
+            "--rm",
+            "ghcr.io/kalhauge/jvm2json:jdk-latest",
+            "java",
+            "-version",
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+    ).stderr.splitlines()
+    return {
+        "cpu": cpu,
+        "cores": os.cpu_count(),
+        "os": f"{platform.system()} {platform.release()}",
+        "python": platform.python_version(),
+        "java": java[0] if java else "unknown",
+    }
 
 
 def main() -> None:
@@ -117,7 +150,12 @@ def main() -> None:
         for k, v in committed.items()
     }
     variants = len(json.loads(val.read_text())["variants"])
-    data = {"seconds": seconds, "variants": variants, "reproduced": reproduced}
+    data = {
+        "seconds": seconds,
+        "variants": variants,
+        "reproduced": reproduced,
+        "machine": machine(),
+    }
     args.output.write_text(json.dumps(data, indent=1) + "\n")
     print(json.dumps(data, indent=1))
 
