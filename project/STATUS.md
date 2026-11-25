@@ -6,12 +6,32 @@ note, and keep "Next" current.
 
 Last updated: 2026-11-25 (step 8)
 
-**Next:** §3 Overview (worked example, `Guards.assertDerivedRange` or
-`Loops.neverAsserts`), Abstract, Conclusion; then P5. **Length is the main
-risk:** sections hold ~5,700 words plus 4 tables, a figure and listings, an
-estimated ~11.5-12.5 pages before §3/Abstract/Conclusion; P5 must cut about
-1.5-2 pages (candidates: §4 detail, §6.6 rule-by-rule paragraph, §5, Related
-Work overlap with Gap). Needs an Overleaf compile for a real count.
+**Next:** P5. Upload `paper/` to Overleaf for a real page count, then apply
+the cuts below as needed (all sections drafted; no `\todo` left).
+
+### Length (estimate 2026-11-25: ~13-13.5 p, limit 11 p incl. references)
+Ranked cuts (saving per content lost; `paper-reviewer`), **not applied yet**:
+1. Merge Gap and Related Work overlap: Gap keeps one clause per work + why it
+   does not apply; drop Related's "Earlier DTU work" paragraph and its
+   metamorphic-testing sentence. ~250 words, 0.4 p, no loss.
+2. Threats: replace repeats of RQ3, line-flag, post-hoc and no-Guards
+   sentences by references. ~170 words, 0.3 p, no loss.
+3. §6.6: shorten the hypothesis paragraph to two sentences and the
+   rule-by-rule paragraph to ~60 words. ~200 words, 0.3 p, low loss.
+4. Inline `lst:loops` as one line of code. ~0.15 p, low loss.
+5. Intro Evaluation paragraph: drop the mutant clause, one-clause mechanism.
+   ~90 words, 0.15 p, low loss.
+6. Drop `tab:analyzers` (Background). ~0.2 p, low loss.
+7. Compress §5 Implementation (keep PC-to-line mapping and footnote).
+   ~130 words, 0.2 p, low loss.
+8. Background Domains paragraph: keep the sign-overflow sentence, cut
+   per-operator arithmetic. ~60 words, 0.1 p, low loss.
+9. §4.5 input tiers: keep tiers 1-2 and the aim. ~90 words, 0.15 p, medium.
+10. §3 Selection paragraph: keep only the hint sentence. ~40 words, 0.07 p.
+11. Drop `rabin2021`. ~0.08 p, low loss.
+12. Reserve: no-Guards block of `tab:rq1` as one sentence. ~0.15 p, medium.
+Cuts 1-11: ~2.1 p. Do not cut the equivalence arguments, the widening
+termination argument, or §3 (rubric rows).
 
 ---
 
@@ -202,7 +222,11 @@ Work overlap with Gap). Needs an Overleaf compile for a real count.
     (sites from a separate interval analysis's abstract state; abstract
     interpreters predicting outcome sets; comparison with random and
     syntax-based selection under one budget).
-- [ ] **P3. Background, Overview (worked example + pipeline figure), Analysis-Guided Rewriting, Implementation**
+- [x] **P3. Background, Overview (worked example + pipeline figure), Analysis-Guided Rewriting, Implementation**
+  - 2026-11-25: §3 Overview written (worked example
+    `Guards.assertDerivedRange`, generated `tab-overview` with assertions in
+    `paper_numbers.py`), reviewed (minor revisions) and checked by
+    `results-checker`.
   - Background drafted, reviewed (`paper-reviewer`: major revisions), revised
     against the code; per-analyzer method counts now from macros. Open: JPAMB
     citation.
@@ -216,7 +240,10 @@ Work overlap with Gap). Needs an Overleaf compile for a real count.
     loop rule out of scope; guided-strict and settled defined after seeing
     data. `evaluation.tex` skeleton still mentions a time budget: rewrite RQ2
     as the cost table (D11).
-- [ ] **P4. Evaluation (RQ1–RQ3), Threats to Validity, Conclusion, Abstract**
+- [x] **P4. Evaluation (RQ1–RQ3), Threats to Validity, Conclusion, Abstract**
+  - 2026-11-25: Abstract and Conclusion written; whole-paper consistency
+    pass (guide wording, "candidate"/"strict candidate", "pool" and "run"
+    defined, "should" not "must", no proposal references, RQ2 answer).
   - 2026-11-25: §6 Evaluation (RQ1 negative as planned, exploratory `settled`,
     RQ2 cost in text, RQ3, §6.6 mechanism with generated evidence:
     `\NumStrictCrossZero`, Bonferroni check) and §7 Threats (internal,
