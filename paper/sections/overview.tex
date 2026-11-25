@@ -58,9 +58,7 @@ method, rule and change, the two variants count as one distinct inconsistency
 (\cref{sec:inconsistency}).
 
 \paragraph{Selection}
-The benchmark has \NumSites{} such sites, and a strategy decides which ones to
-rewrite within a budget (\cref{sec:selection}). The guided strategy rewrites uncertain sites first, so it can reach line 138
-but not line 139. The example
-already hints at the evaluation's main finding: the settled site on line 139
-gives the same inconsistency, and \cref{sec:findings} shows that this is the
-rule rather than the exception on JPAMB.
+A strategy chooses which of the \NumSites{} sites to rewrite within a budget
+(\cref{sec:selection}). The guided strategy rewrites uncertain sites first, so
+it reaches line 138 but not line 139, although line 139 gives the same
+inconsistency; \cref{sec:findings} shows that this is typical on JPAMB.

@@ -39,26 +39,20 @@ transformations~\citep{zhang2023statfier}. Rewriting a program in a semantics-pr
 the analyzer's answers is a metamorphic test that needs no ground truth.
 
 \paragraph{Gap}
-Most techniques for testing static analyzers compare against a reference,
-such as other analyzers, concrete execution, or solver-computed
-results~\citep{klinger2019,cuoq2012,taneja2020}. Metamorphic testing needs no
-reference~\citep{chen2018}, and equivalence-preserving transformations have
-exposed bugs in compilers~\citep{le2014emi,donaldson2017}. The closest work
-does not say where to rewrite for analyzers that predict outcomes.
-Statfier~\citep{zhang2023statfier} transforms Java programs at the lines where
-the analyzer warns and their backward slices; an analyzer that predicts one
-outcome set per method reports no such lines. Interrogation
-testing~\citep{kaindlstorfer2024} chooses transformations from the analyzer's
-own verification results, but it changes assertions and assumptions on purpose
-instead of preserving behavior. Earlier DTU work renamed variables and methods
-to test the robustness of an LLM and the Infer analyzer~\citep{chand2024};
-renaming local variables leaves the bytecode instructions, and hence the
-answer of an analyzer that reads them, unchanged. Abstract interpretation has also guided a fuzzer on
-JPAMB~\citep{domingues2025}. However, a static analyzer's prediction for a
-method does not depend on runtime inputs, so input-level guidance cannot
-reveal whether the analyzer's answer depends on how the code is written. No
-existing technique therefore says where to place a behavior-preserving rewrite
-for such analyzers.
+Most techniques for testing static analyzers compare against a reference:
+other analyzers, concrete execution, or a
+solver~\citep{klinger2019,cuoq2012,taneja2020}. Metamorphic testing needs
+none~\citep{chen2018}, and equivalence-preserving transformations have exposed
+compiler bugs~\citep{le2014emi,donaldson2017}, but where to rewrite for an
+analyzer that predicts outcomes is open. Statfier~\citep{zhang2023statfier}
+transforms code at warning lines, which such an analyzer does not report;
+interrogation testing~\citep{kaindlstorfer2024} changes assertions on purpose
+instead of preserving behavior. Earlier DTU work renamed identifiers to test an
+LLM and Infer~\citep{chand2024}, which leaves the bytecode instructions that
+our analyzers read unchanged, and used abstract states to guide a fuzzer on
+JPAMB~\citep{domingues2025}, but an analyzer's prediction for a method does not
+depend on runtime inputs. No existing technique therefore says where to place
+a behavior-preserving rewrite for such analyzers (\cref{sec:related}).
 
 \paragraph{Innovation}
 We ask: \emph{can the abstract state computed by a fixed interval analysis select
@@ -78,18 +72,15 @@ We test three abstract interpreters for JPAMB that differ only in their integer
 domain and in whether they refine at branches, on \NumMethods{} methods with
 \NumSites{} eligible sites, and compare guided selection with random and
 syntax-based selection under the same budget over \NumSeeds{} seeds. The
-hypothesis does not hold. All \NumValid{} variants are valid, and the test
-inputs reject \NumMutantsKilled{} of \NumMutantsNonEquivalent{} non-equivalent
-wrong rewrites, but rewriting every site exposes only \Pool{} distinct
-inconsistencies. At a budget of half the sites, guided selection finds
+hypothesis does not hold. All \NumValid{} variants are valid, but rewriting
+every site exposes only \Pool{} distinct inconsistencies. At a budget of half the sites, guided selection finds
 \MeanGuidedHalf{} distinct inconsistencies per run (summed over the three
 analyzers), against \MeanRandomHalf{} for random selection
 (\PGuidedRandomHalf), and it also loses at a quarter of the sites and without
 the cases we added. The reason is a mismatch between guide and analyzers:
 \PoolFromSettledOnly{} of the \Pool{} inconsistencies occur at sites the guide
 settles, where the rewrite replaces a constant the sign domain abstracts
-exactly ($0$) by one it does not ($1$), so a condition that both domains decide
-becomes undecided for signs.
+exactly ($0$) by one it does not ($1$).
 
 \paragraph{Contributions}
 \begin{enumerate}

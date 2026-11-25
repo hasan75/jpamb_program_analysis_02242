@@ -152,17 +152,12 @@ non-termination ($\ast$).}
 \input{generated/tab-inconsistencies}
 \end{table}
 
-\begin{lstlisting}[float=t,caption={\texttt{Loops.neverAsserts} (left) and
-its R2-strict variant (right).},label={lst:loops}]
-int i = 1;                        int i = 1;
-while (i > 0) {}                  while (i >= 1) {}
-assert false;                     assert false;
-\end{lstlisting}
-
-In \cref{lst:loops}, both sign analyzers know $i\in\{+\}$. On the left the
-loop condition is always true, the assertion is unreachable, and the
-prediction is $\{\ast\}$; on the right the condition may be false and an
-assertion error is added. \texttt{Loops.neverDivides} is the same with a
+\texttt{Loops.neverAsserts} sets \texttt{i = 1}, loops on
+\texttt{while (i > 0) \{\}} and then reaches \texttt{assert false}; its
+R2-strict variant loops on \texttt{i >= 1}. Both sign analyzers know
+$i\in\{+\}$. In the original the loop condition is always true, the assertion
+is unreachable, and the prediction is $\{\ast\}$; in the variant the
+condition may be false and an assertion error is added. \texttt{Loops.neverDivides} is the same with a
 division by zero. The interval guide knows $i\in[1,1]$ and decides both
 forms, so the site is settled and \texttt{guided} never reaches it within the
 budget. \Cref{sec:overview} shows the same effect in a guard.

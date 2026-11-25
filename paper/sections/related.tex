@@ -13,8 +13,7 @@ three need a reference (other analyzers, an execution, or a solver), whereas
 our oracle is the analyzer itself on an equivalent method.
 
 \paragraph{Metamorphic testing of analyzers}
-Metamorphic testing replaces an oracle by relations between the outputs for
-related inputs~\citep{chen2018}. Interrogation testing~\citep{kaindlstorfer2024}
+Interrogation testing~\citep{kaindlstorfer2024}
 applies it to eight C/C++ analyzers, including the abstract interpreters Clam
 and MOPSA: it adds,
 strengthens or weakens assertions and assumptions, partly based on which
@@ -40,10 +39,6 @@ semantics-preserving transformations to graphics shaders and compares the
 rendered images. \citet{rabin2021} show that neural models of code
 often change their method-name predictions under such transformations. Our
 rules are of the same kind, restricted to integer conditions so that their
-equivalence can be argued and tested.
-
-\paragraph{Earlier DTU work}
-\citet{chand2024} compare an LLM and Infer on null pointer exceptions in
-LLM-generated Java, with a fuzzer as ground truth, and check robustness by
-renaming; \citet{domingues2025} use abstract states to choose fuzzer inputs on
-JPAMB. As argued in \cref{sec:intro}, neither chooses where to rewrite.
+equivalence can be argued and tested. Earlier DTU work on
+JPAMB~\citep{chand2024,domingues2025} does not choose where to rewrite
+(\cref{sec:intro}).
