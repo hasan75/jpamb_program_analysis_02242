@@ -1,0 +1,107 @@
+% 2 Background (~1.0 p). The analyzers are the subjects of the study, not its
+% contribution, so they are kept apart from the technique.
+\section{Background}
+\label{sec:background}
+
+\subsection{JPAMB and Outcome Predictions}
+\label{sec:jpamb}
+JPAMB (Java Program Analysis Micro Benchmarks)~\todo{cite: JPAMB} is a suite
+of small static Java methods, each annotated with test cases that state which
+outcome an input produces, for example that input \texttt{(0)} leads to a
+division by zero. An analyzer receives a method identifier and the bytecode,
+and answers, for each of six outcomes, whether some input reaches it: normal
+termination (\texttt{ok}), divide by zero, assertion error, out of bounds,
+null pointer, and non-termination (\texttt{*}). We call the outcomes it
+answers \emph{yes} to its \emph{outcome set} for the method. An analyzer is
+sound for a method if the outcome set contains every outcome some input
+reaches, and precise if it contains no other. JPAMB scores the answers against
+the outcomes of the annotated cases.
+
+\subsection{Metamorphic Testing}
+\label{sec:mt}
+Metamorphic testing replaces a missing oracle by a \emph{metamorphic
+relation} between the outputs for related inputs~\citep{chen2018}. Our system
+under test is an analyzer and its inputs are methods. The relation is: two
+methods with the same behavior on every input get the same outcome set. A
+sound and fully precise analyzer satisfies it trivially, because both outcome
+sets equal the true one. A sound but imprecise analyzer over-approximates, and
+how much it over-approximates may depend on how the method is written. A
+violation, an \emph{inconsistency}, shows that one of the two outcome sets is
+imprecise or, if a reachable outcome is missing, unsound. The relation is a
+robustness property rather than a correctness requirement.
+
+\subsection{The Three Analyzers Under Test}
+\label{sec:analyzers}
+The three analyzers are abstract interpreters~\citep{cousot1977} over JPAMB
+bytecode. They share one implementation and differ only in the abstract domain
+for integers and in whether they refine values at conditional jumps
+(\cref{tab:analyzers}). Each computes a fixpoint over the method's
+control-flow graph with a worklist. The outcome set collects what the reachable
+abstract states can produce: \texttt{ok} at a return; divide by zero at a
+\texttt{/} or \texttt{\%} whose divisor may be 0; null pointer at an array
+access whose reference may be null, and out of bounds at every array access
+whose reference may be non-null, because no domain tracks array lengths;
+assertion error at a \texttt{throw}; and \texttt{*} at every reachable
+backward jump, so there is no termination analysis. The analysis is
+intraprocedural: a call is not analyzed, may raise an assertion error, and
+returns an unknown value. References and booleans share the integer domain
+(null is 0).
+
+\begin{table}[t]
+\caption{The three analyzers under test.}
+\label{tab:analyzers}
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+Analyzer & Domain & Refinement & Widening \\
+\midrule
+\texttt{static-sign} & subsets of $\{-,0,+\}$ & no & join (finite) \\
+\texttt{static-sign-narrow} & subsets of $\{-,0,+\}$ & yes & join (finite) \\
+\texttt{static-interval} & intervals $[l,h]$ of 32-bit ints & yes & at loop heads \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Domains}
+Both domains abstract sets of 32-bit integers ordered by inclusion, and both
+form Galois connections with them: for signs,
+$\alpha(V)=\{\mathrm{sign}(v) \mid v\in V\}$ and
+$\gamma(S)=\{v \mid \mathrm{sign}(v)\in S\}$; for intervals,
+$\alpha(V)=[\min V,\max V]$ and $\gamma([l,h])=\{v \mid l\le v\le h\}$. We
+write $\pm\infty$ for a bound at the 32-bit limit. For \texttt{+}, \texttt{-},
+\texttt{*} and \texttt{/}, interval arithmetic computes the hull of the
+results at the bounds, and a result that leaves the 32-bit range, where Java
+wraps around, becomes $[-\infty,\infty]$; \texttt{\%} uses $|a \% b| < |b|$,
+and other operators give $[-\infty,\infty]$. The sign domain ignores
+wrap-around, so its predictions are unsound when an operation overflows.
+
+\paragraph{Refinement at branches}
+At a conditional jump such as \texttt{if (x > 0)}, an analyzer with refinement
+intersects the abstract value of each compared local variable with the values
+that make the condition true on one edge and false on the other; a compared
+expression such as \texttt{x+1} is not refined. With or without refinement, an
+edge is dropped when the comparison cannot have that outcome, but without
+refinement its successor receives the unrefined state. This is also called
+narrowing at branches, hence the name \texttt{static-sign-narrow}; it is not
+the narrowing operator that recovers precision after
+widening~\citep{moller2018spa}, which none of the analyzers uses.
+
+\paragraph{Widening}
+Every cycle in the control-flow graph contains an edge to an equal or smaller
+instruction offset, and the analyzer widens at its target. States at a node
+only grow, and at a widening point every strict increase of a bound sets it to
+$\pm\infty$, so each widening point changes finitely often and the iteration
+terminates. For signs, widening is the join, which suffices because the
+lattice is finite; for intervals, ascending chains have length about $2^{33}$,
+so iteration without widening could take that many steps.
+
+\paragraph{Neither domain is uniformly more precise}
+An interval has no holes: refining $[-\infty,\infty]$ with \texttt{x != 0}
+leaves $[-\infty,\infty]$, since \texttt{!=} removes a constant only at an
+endpoint (e.g.\ $[0,h]$ becomes $[1,h]$), while \texttt{static-sign-narrow}
+obtains $\{-,+\}$ and proves a later \texttt{1 / x} safe. Conversely,
+\texttt{static-interval} proves \texttt{if (n > 100) \{ if (n < 50) ... \}}
+infeasible, which signs cannot. On JPAMB, \texttt{static-sign-narrow} is more
+precise on \todo{number: methods} methods and \texttt{static-interval} on
+\todo{number: methods}, so the analyzers differ in precision for reasons
+unrelated to where a rewrite is placed.

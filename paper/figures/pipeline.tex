@@ -1,0 +1,38 @@
+% Fig. 1: the pipeline (process diagram).
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+    font=\footnotesize,
+    node distance=4mm and 5mm,
+    stage/.style={draw, rounded corners=2pt, align=center, minimum height=9mm,
+                  text width=21mm, fill=blue!4},
+    data/.style={draw, dashed, align=center, minimum height=7mm, text width=19mm},
+    arr/.style={-{Stealth[length=2mm]}, semithick},
+  ]
+  % row 1: guidance
+  \node[data]                        (src)   {Java source\\+ bytecode};
+  \node[stage, right=of src]         (guide) {Interval analysis\\(guide)};
+  \node[stage, right=of guide]       (find)  {Site finder\\rules R1, R2};
+  \node[stage, right=of find]        (sel)   {Selection\\budget $N$, seed};
+  % row 2: testing
+  \node[stage, below=9mm of sel]     (rw)    {Rewrite\\one site};
+  \node[stage, left=of rw]           (val)   {Validation\\compile + inputs};
+  \node[stage, left=of val]          (ana)   {Analyzer under test\\original, variant};
+  \node[data, left=of ana]           (cmp)   {Outcome sets\\differ?};
+
+  \draw[arr] (src) -- (guide);
+  \draw[arr] (guide) -- node[above, font=\scriptsize] {states} (find);
+  \draw[arr] (find) -- node[above, font=\scriptsize] {sites} (sel);
+  \draw[arr] (sel) -- node[right, font=\scriptsize] {order} (rw);
+  \draw[arr] (rw) -- node[above, font=\scriptsize] {variant} (val);
+  \draw[arr] (val) -- node[above, font=\scriptsize] {valid} (ana);
+  \draw[arr] (ana) -- (cmp);
+  \draw[arr] (src.south) -- ++(0,-3mm) -| (ana.north);
+\end{tikzpicture}
+\caption{The pipeline. An interval analysis computes abstract states that mark
+sites as uncertain; a strategy orders the eligible sites, and the first $N$ are
+rewritten, one rewrite per variant. Valid variants and their originals are
+analyzed by the same analyzer, and an inconsistency is a difference between
+the two predicted outcome sets.}
+\label{fig:pipeline}
+\end{figure}

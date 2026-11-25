@@ -1,0 +1,64 @@
+\documentclass[review,nonacm,acmsmall]{acmart}
+
+\setcopyright{none}
+\citestyle{acmauthoryear}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,fit}
+\usepackage{cleveref}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\crefname{lstlisting}{listing}{listings}
+\Crefname{lstlisting}{Listing}{Listings}
+
+% Placeholder for a missing number, citation or text. None may remain at submission.
+\providecommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+
+% Numbers from experiments/ (never typed by hand).
+\input{generated/numbers}
+
+\lstset{
+    language=Java,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue!65!black},
+    columns=fullflexible,
+    keepspaces=true,
+    showstringspaces=false,
+    breaklines=true,
+    frame=single
+}
+
+\title{Analysis-Guided Metamorphic Testing of Java Static Analyzers}
+
+\author{Hasan Ahmed (s262722)}
+\affiliation{%
+  \institution{Technical University of Denmark}
+  \city{Kongens Lyngby}
+  \country{Denmark}}
+
+\begin{document}
+
+\input{sections/abstract}
+
+\maketitle
+
+\input{sections/introduction}
+\input{sections/background}
+\input{sections/overview}
+\input{sections/approach}
+\input{sections/implementation}
+\input{sections/evaluation}
+\input{sections/threats}
+\input{sections/related}
+\input{sections/conclusion}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{bibfile}
+
+\end{document}
