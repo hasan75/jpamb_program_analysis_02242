@@ -8,7 +8,7 @@ Status values: **DECIDED** (final), **PROVISIONAL** (Claude's recommended
 default, in use until the user confirms or changes it), **PENDING** (open,
 do not build anything that depends on it).
 
-Last updated: 2026-11-23
+Last updated: 2026-11-25
 
 ---
 
@@ -144,6 +144,26 @@ Paper, Threats to Validity: the guide shares its implementation with the
 analyzers under test, so it knows exactly where they give up; a guide built
 separately from the analyzers under test would not know this.
 
+### D15. Selection strategies
+**PROVISIONAL** (built in step 5, `solutions/metamorphic/src/selection.py`).
+Each strategy returns an **ordering of all eligible sites**; a rewrite budget N
+takes its first N, a time budget takes sites in that order until T runs out.
+RNG `random.Random(f"{strategy}/{seed}")` over sites sorted by id.
+- `random`: uniform shuffle (proposal: uniform over all eligible sites).
+- `syntax`: by line distance from the site to the nearest `/`, `%` or `assert`
+  in the same method (tree-sitter only); ties shuffled; methods without one last.
+- `guided`: D14 candidates (`uncertain`, 317) shuffled first, then the rest.
+- `guided-strict` (**DECIDED** by the user, 2026-11-25, as a sensitivity
+  check, not a replacement): candidates are uncertain sites in methods with an
+  uncertain divisor or array access in the export (187 sites, 42 methods).
+  Reason: under D14, 92% of the sites are candidates (most JPAMB comparisons
+  are on unconstrained parameters), so at N = 172 random already hits ~158
+  candidates; `guided` stays the main strategy so the definition is not tuned
+  after seeing data. Paper: report both, and state in Threats to Validity that
+  the strict variant was added after counting candidates, and that array
+  accesses are always uncertain (D14), which makes the strict filter partly
+  syntactic.
+
 ---
 
 ## Evaluation
@@ -160,6 +180,8 @@ The same weakness found by several seeds or sites counts once.
   benchmark. Default: N = 50% of all eligible sites, so random selection
   cannot simply rewrite everything. Also report a second value (25%) to show
   the trend.
+  Computed by `selection.budgets` from the eligible count: on the step 4 sites
+  (344), N = 172 (50%) and 86 (25%). Recomputed if step 7 adds sites.
 - **Time budget T:** secondary experiment, only if the rewrite-budget
   experiment is done. Default T = the guided strategy's median runtime at
   budget N.

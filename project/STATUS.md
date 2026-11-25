@@ -4,13 +4,12 @@ Checklist of the build steps in `WORKFLOW.md` §3 (order from `DECISIONS.md` D9)
 Claude updates this at the end of every session: tick what's done, add a short
 note, and keep "Next" current.
 
-Last updated: 2026-11-23
+Last updated: 2026-11-25
 
-**Next:** step 5, random / syntax-based / guided selection over the step 4 sites
-(`project/step4/sites.json`, one rewrite per variant). Eligible sites are all 344
-for every strategy; guided candidates are those with `uncertain: true` (317).
-Settle the rewrite budget N per D11 once the eligible count is final. Then P1
-(paper skeleton) can start, per WORKFLOW.
+**Next:** step 6, validation: compile each selected variant (Docker must be
+running) and run original vs. variant on test inputs synthesized from the
+step 3 intervals; drop variants whose outcome differs. Then P1 (paper skeleton),
+which is now overdue per the WORKFLOW calendar.
 
 ---
 
@@ -107,7 +106,21 @@ Settle the rewrite budget N per D11 once the eligible count is final. Then P1
     names count as fields, methods with a parse error are skipped, and local
     enum/interface bodies are not searched. The site set did not change.
     Tests: 54 pass.
-- [ ] **5. Random / syntax-based / guided selection**
+- [x] **5. Random / syntax-based / guided selection** (D15)
+  - `solutions/metamorphic/src/selection.py`, program `metamorphic-select`:
+    strategies `random`, `syntax`, `guided`, `guided-strict`; each gives an
+    ordering of all 344 eligible sites per seed (0-9); N = 172 / 86 (D11).
+  - Output in `project/step5/selections.json` (summary in
+    `selections-output.txt`). Two runs give identical orderings.
+  - At N = 172 (mean over seeds, uncertain hit / strict hit): random 158.0 /
+    94.5, syntax 148.2 / 77.2, guided 172 / 102.7, guided-strict 172 / 172.
+    Syntax hits fewer candidates than random: closeness to `/`/`assert` does
+    not predict uncertainty here.
+  - Tests: 63 pass in `solutions/metamorphic` (9 new in `test_selection.py`).
+  - Noticed: the root `.venv/bin/pytest` has a stale shebang (repo moved), so
+    `uv run pytest` fails at the root; `uv run python -m pytest` works
+    (134 pass, 2 skipped). Three Markdown files in `assignment-guide/` and
+    `course-notes/` fail `ruff format --check` (not project code).
 - [ ] **6. Validation: compile + synthesized inputs**
 - [ ] **7. New benchmark cases** (D12)
 - [ ] **8. Experiments + statistics** (D10, D11)
@@ -127,6 +140,8 @@ Settle the rewrite budget N per D11 once the eligible count is final. Then P1
 - D2 grading scope: waiting for the user.
 - Confirmed 2026-11-23: R2-split includes `==` (D6), and sites without an
   abstract state are eligible but not guided candidates (D14).
+- Confirmed 2026-11-25: `guided` keeps D14; `guided-strict` added as a
+  sensitivity check (D15).
 - D12 upstream PR for new cases: decide later.
 
 ## Known issues
