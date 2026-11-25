@@ -67,7 +67,11 @@ Built in step 4 (`solutions/metamorphic/src/rules.py`) as these forms:
 - **R2-strict:** `x > c` ↔ `x >= c+1` etc., `c` a decimal literal, `c±1`
   computed by the rewriter and kept within int32.
 - **R2-split:** `a != b` → `(a < b || a > b)`, and also `a == b` →
-  `(a <= b && a >= b)` (the symmetric case, beyond the D6 example).
+  `(a <= b && a >= b)`. **DECIDED** (user, 2026-11-23): `==` is included. The
+  proposal names "equivalent integer comparisons" in general (line 132), the
+  equivalence argument is the same, and 34 of the 57 split sites are `==`,
+  many of them divide-by-zero guards (`divisor == 0`), where the analyzers
+  differ most (D8). In the paper it is one rule, stated for both directions.
 "Pure int" is checked syntactically: int locals/parameters (every declaration of
 the name in the method is `int`, one of them encloses and precedes the use, and
 no field, interface constant, enum constant or record component has that name), int literals,
@@ -125,10 +129,20 @@ the `static-interval` state before the instruction:
 Backward `goto`s are recorded but never uncertain. Sites are joined to the
 source by line (`uncertain_lines`).
 Step 4 joins a rewrite site by its own line, or by the first line of its
-statement if the export has no branch on that line. A site with no branch on
-either line (the analyzer gave up on the method, as in `BitOperations`) counts
-as not uncertain. A line-level join is coarse: two comparisons on one line
-share one flag.
+statement if the export has no branch on that line. A line-level join is
+coarse: two comparisons on one line share one flag.
+
+**DECIDED** (user, 2026-11-23): a site where the guide has **no abstract
+state** (the analysis gave up on the method; 19 sites, all in `BitOperations`,
+whose `bitopr` none of the analyzers supports) stays **eligible** for every
+strategy but is **not a candidate** for the guided one (`uncertain: false`).
+Reason: all three analyzers predict every outcome there (step 2 reports), and
+no rule touches the unsupported operations, so a rewrite there can never give
+an inconsistency; marking them uncertain would make guidance waste budget
+(proposal line 98), and removing them would hide that random selection does.
+Paper, Threats to Validity: the guide shares its implementation with the
+analyzers under test, so it knows exactly where they give up; a guide built
+separately from the analyzers under test would not know this.
 
 ---
 

@@ -6,7 +6,11 @@ note, and keep "Next" current.
 
 Last updated: 2026-11-23
 
-**Next:** step 5, random / syntax-based / guided selection over the step 4 sites (`project/step4/sites.json`).
+**Next:** step 5, random / syntax-based / guided selection over the step 4 sites
+(`project/step4/sites.json`, one rewrite per variant). Eligible sites are all 344
+for every strategy; guided candidates are those with `uncertain: true` (317).
+Settle the rewrite budget N per D11 once the eligible count is final. Then P1
+(paper skeleton) can start, per WORKFLOW.
 
 ---
 
@@ -121,6 +125,8 @@ Last updated: 2026-11-23
 ## Open questions
 
 - D2 grading scope: waiting for the user.
+- Confirmed 2026-11-23: R2-split includes `==` (D6), and sites without an
+  abstract state are eligible but not guided candidates (D14).
 - D12 upstream PR for new cases: decide later.
 
 ## Known issues
