@@ -1,0 +1,21 @@
+export (guide analysis): 0.3 s
+site finding: 0.1 s
+selection (all strategies, seeds): 0.1 s
+validation (compile + inputs): 231.7 s
+analysis (3 analyzers, originals + variants): 1.8 s
+{
+ "seconds": {
+  "export (guide analysis)": 0.29389241699936974,
+  "site finding": 0.062231703001089045,
+  "selection (all strategies, seeds)": 0.07559797999965667,
+  "validation (compile + inputs)": 231.7264812659996,
+  "analysis (3 analyzers, originals + variants)": 1.772000888002367
+ },
+ "variants": 408,
+ "reproduced": {
+  "project/step4/sites.json": true,
+  "project/step5/selections.json": true,
+  "project/step6/validation.json": true,
+  "experiments/results/outcomes.json": true
+ }
+}

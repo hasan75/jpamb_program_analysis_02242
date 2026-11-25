@@ -1,0 +1,15 @@
+original methods analyzed: 160
+valid variants analyzed: 408 (skipped, not valid: 0)
+analysis time, all analyzers: 1.5 s
+distinct inconsistencies (D10), all sites rewritten: 5
+  static-sign: 2 distinct, from 2 variants
+  static-sign-narrow: 3 distinct, from 4 variants
+  static-interval: 0 distinct, from 0 variants
+  by rule: {'R2-strict': 5}
+inconsistent variants:
+  static-sign-narrow cases/jpamb/cases/Guards.java:138:9:R2-strict uncertain ['ok'] -> ['assertion error', 'ok']
+  static-sign-narrow cases/jpamb/cases/Guards.java:139:14:R2-strict settled   ['ok'] -> ['assertion error', 'ok']
+  static-sign        cases/jpamb/cases/Loops.java:19:12:R2-strict  settled   ['*'] -> ['*', 'assertion error']
+  static-sign-narrow cases/jpamb/cases/Loops.java:19:12:R2-strict  settled   ['*'] -> ['*', 'assertion error']
+  static-sign        cases/jpamb/cases/Loops.java:27:12:R2-strict  settled   ['*'] -> ['*', 'divide by zero']
+  static-sign-narrow cases/jpamb/cases/Loops.java:27:12:R2-strict  settled   ['*'] -> ['*', 'divide by zero']

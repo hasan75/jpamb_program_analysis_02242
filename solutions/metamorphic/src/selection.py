@@ -11,6 +11,10 @@ strategy name and the seed.
 - ``guided``: candidates (``uncertain``, D14) first, then the rest.
 - ``guided-strict``: candidates that are uncertain *and* lie in a method with
   an uncertain divisor or array access, then the rest (sensitivity check).
+- ``settled`` (post-hoc, exploratory): sites whose condition the guide settles
+  (an abstract state exists and the site is not uncertain) first, then the
+  rest. Defined after the step 8 pool showed that inconsistencies occur at
+  settled sites; not part of the pre-registered comparison.
 """
 
 import argparse
@@ -25,7 +29,8 @@ import tree_sitter
 from javaexpr import parse, text
 from sites import nodes_in
 
-STRATEGIES = ("random", "syntax", "guided", "guided-strict")
+STRATEGIES = ("random", "syntax", "guided", "guided-strict", "settled")
+POST_HOC = ("settled",)
 SEEDS = range(10)
 BUDGET_FRACTIONS = {"50%": 0.5, "25%": 0.25}  # D11
 
@@ -118,6 +123,10 @@ def order(
             )
         case "guided-strict":
             return candidates_first(sites, strict, r)
+        case "settled":
+            return candidates_first(
+                sites, {s["id"] for s in sites if s["joined"] and not s["uncertain"]}, r
+            )
     raise ValueError(f"unknown strategy {strategy}")
 
 

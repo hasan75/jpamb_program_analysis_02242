@@ -378,6 +378,14 @@ def interpret():
         steps -= 1
 
 
+def predict(
+    bc: jpamb.Bytecode, methodid: jvm.AbsMethodID, narrow: bool, domain: Domain
+) -> set[str]:
+    """The outcome set an analyzer under test predicts for one method."""
+    ai = AbstractInterpreter.initial(bc, methodid, None, narrow=narrow, domain=domain)
+    return ai.run(STEP_CAP)
+
+
 def run_analysis(name: str, narrow: bool, domain: Domain = SignSet) -> None:
     """Shared driver for the analyzers under test (D7).
 
@@ -394,9 +402,7 @@ def run_analysis(name: str, narrow: bool, domain: Domain = SignSet) -> None:
 
     suite, eff = jpamb.setup()
     bc = jpamb.Bytecode(suite, eff, {})
-
-    ai = AbstractInterpreter.initial(bc, methodid, None, narrow=narrow, domain=domain)
-    final = ai.run(STEP_CAP)
+    final = predict(bc, methodid, narrow, domain)
 
     tags = {
         "ok": "ok",
@@ -413,16 +419,24 @@ def run_analysis(name: str, narrow: bool, domain: Domain = SignSet) -> None:
             print(f"{f};no")
 
 
+#: The analyzers under test (D7): name -> (narrowing at branches, domain).
+ANALYZERS: dict[str, tuple[bool, Domain]] = {
+    "static-sign": (False, SignSet),
+    "static-sign-narrow": (True, SignSet),
+    "static-interval": (True, Interval),
+}
+
+
 def analyse_sign():
     """Sign analysis without narrowing at branches."""
-    run_analysis("static-sign", narrow=False)
+    run_analysis("static-sign", *ANALYZERS["static-sign"])
 
 
 def analyse_sign_narrow():
     """Sign analysis with narrowing at branches."""
-    run_analysis("static-sign-narrow", narrow=True)
+    run_analysis("static-sign-narrow", *ANALYZERS["static-sign-narrow"])
 
 
 def analyse_interval():
     """Interval analysis with narrowing at branches and widening at loop heads."""
-    run_analysis("static-interval", narrow=True, domain=Interval)
+    run_analysis("static-interval", *ANALYZERS["static-interval"])

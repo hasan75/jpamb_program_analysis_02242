@@ -53,7 +53,9 @@ def main() -> None:
         added += 1
     out = sexpr.pretty(sexpr.sexpr(benchmark), indent=2)
     new = parse(out).experiments
-    changed = [e for e, c in old.items() if new.get(e) != c and pattern.search(str(e)) is None]
+    changed = [
+        e for e, c in old.items() if new.get(e) != c and pattern.search(str(e)) is None
+    ]
     if changed:
         sys.exit(f"{len(changed)} existing entries would change; refusing")
     suite.benchmark_file.write_text(out)

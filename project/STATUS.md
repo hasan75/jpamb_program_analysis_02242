@@ -4,14 +4,13 @@ Checklist of the build steps in `WORKFLOW.md` §3 (order from `DECISIONS.md` D9)
 Claude updates this at the end of every session: tick what's done, add a short
 note, and keep "Next" current.
 
-Last updated: 2026-11-25
+Last updated: 2026-11-25 (step 8)
 
-**Next:** step 8, experiments: `experiments/run.py` runs the three analyzers
-on the validated variants (`build/variants/*/decompiled`) per strategy and
-seed, `stats.py` computes distinct inconsistencies (D10), Mann-Whitney U and
-A12 (D11), with and without `Guards` (D12); `paper_numbers.py` writes
-`paper/generated/`. Paper in parallel: Approach (Sec. 4), Gap/Innovation
-(must cite and contrast Statfier, see P2), Related Work, Implementation.
+**Next:** paper. §4 Approach and §5 Implementation drafted (§4 reviewed and
+revised); then §1 Gap/Innovation (contrast Statfier), §8 Related Work,
+§6 Evaluation (RQ1 pre-registered + post-hoc `settled`, RQ2 cost, RQ3
+validity, case study of the 5 inconsistencies), §7 Threats, §3 Overview.
+`results-checker` once §6 exists.
 
 ---
 
@@ -159,7 +158,26 @@ A12 (D11), with and without `Guards` (D12); `paper_numbers.py` writes
     equivalent (6 new in Guards, added to `equivalent-mutants.json`), 227 of 229
     non-equivalent killed (survivors: the two `Dependent` ones).
   - `solutions/static/tests/test_export.py` no longer hard-codes 145 methods.
-- [ ] **8. Experiments + statistics** (D10, D11)
+- [x] **8. Experiments + statistics** (D10, D11, D17)
+  - `static.predict` + `ANALYZERS` shared by the CLI and the experiments;
+    `tests/test_predict.py` checks it equals the step 7 reports (160 methods,
+    3 analyzers).
+  - Post-hoc strategy `settled` (D15) added; step 5 rerun, the four
+    pre-registered orders unchanged (test).
+  - `experiments/run.py` (outcomes of every original and valid variant per
+    analyzer, `results/outcomes.json`), `stats.py` (distinct D10 tuples per
+    strategy/seed/budget, all and without Guards, Mann-Whitney U + A12,
+    `results/stats.json`), `cost.py` (reruns the pipeline into `build/cost/`,
+    times each stage, checks the rerun reproduces steps 4-6 and the outcomes:
+    all reproduced; `results/cost.json`), `paper_numbers.py`
+    (`paper/generated/numbers.tex`, `tab-rq1`, `tab-inconsistencies`,
+    `tab-cost`; deterministic).
+  - Result (D17): pool of **5** distinct inconsistencies, all R2-strict, none
+    for `static-interval`; 4 of 5 at settled sites. At N = 204 (mean total
+    distinct over 10 seeds): random 3.1, syntax 3.6, guided 0.3,
+    guided-strict 0.0, settled (post-hoc) 5.0; guided vs random p = 0.002,
+    A12 = 0.10. Same direction without Guards and at 25%.
+  - Cost: validation 232 s of 234 s total; guidance (export) 0.3 s.
 
 ## Paper (`paper/`, compiled in Overleaf)
 
@@ -179,8 +197,18 @@ A12 (D11), with and without `Guards` (D12); `paper_numbers.py` writes
     syntax-based selection under one budget).
 - [ ] **P3. Background, Overview (worked example + pipeline figure), Analysis-Guided Rewriting, Implementation**
   - Background drafted, reviewed (`paper-reviewer`: major revisions), revised
-    against the code. Open: JPAMB citation; the two per-analyzer method counts
-    (must come from `paper_numbers.py`).
+    against the code; per-analyzer method counts now from macros. Open: JPAMB
+    citation.
+  - §4 Approach and §5 Implementation drafted (2026-11-25). §4 reviewed
+    (`paper-reviewer`: major revisions) and revised: D8 wording of the guide,
+    site = (node, rule), table widths, no proposal references, guided-strict
+    labeled as a sensitivity variant, input-tier wording, coverage claim now
+    measured (`\NumCondBoth` etc.). Still ~2.5 p (budget 2.2): trim in P5.
+    For Threats (§7): methods with non-int parameters validated on case inputs
+    only (`\NumOneInput` methods have one input); line-level uncertainty join;
+    loop rule out of scope; guided-strict and settled defined after seeing
+    data. `evaluation.tex` skeleton still mentions a time budget: rewrite RQ2
+    as the cost table (D11).
 - [ ] **P4. Evaluation (RQ1–RQ3), Threats to Validity, Conclusion, Abstract**
 - [ ] **P5. Final pass** (`paper-reviewer` + `results-checker`, ≤ 11 pages, no `\todo{}`)
 

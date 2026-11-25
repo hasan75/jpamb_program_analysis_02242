@@ -88,3 +88,20 @@ def test_budgets(sites):
         "50%": round(len(sites) / 2),
         "25%": round(len(sites) / 4),
     }
+
+
+def test_settled_takes_settled_sites_first(sites, distance, strict):
+    settled = {s["id"] for s in sites if s["joined"] and not s["uncertain"]}
+    assert settled and not settled & {s["id"] for s in sites if s["uncertain"]}
+    for seed in selection.SEEDS:
+        a = ids("settled", seed, sites, distance, strict)
+        assert set(a[: len(settled)]) == settled
+
+
+def test_committed_orders_are_reproduced(sites, distance, strict):
+    # The step 5 output matches the code, so adding a strategy did not change
+    # the orders of the others (the RNG is keyed by strategy and seed).
+    data = json.loads((ROOT / "project/step5/selections.json").read_text())
+    for strategy, orders in data["orders"].items():
+        for seed, committed in orders.items():
+            assert committed == ids(strategy, int(seed), sites, distance, strict)

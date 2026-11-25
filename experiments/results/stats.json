@@ -1,0 +1,2405 @@
+{
+ "seeds": [
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9"
+ ],
+ "analyzers": [
+  "static-interval",
+  "static-sign",
+  "static-sign-narrow"
+ ],
+ "subsets": {
+  "all": {
+   "eligible": 408,
+   "budgets": {
+    "50%": 204,
+    "25%": 102
+   },
+   "pool": {
+    "static-interval": 0,
+    "static-sign": 2,
+    "static-sign-narrow": 3,
+    "all analyzers": 5
+   },
+   "50%": {
+    "N": 204,
+    "runs": {
+     "random": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 1,
+       "all analyzers": 1
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 2,
+       "all analyzers": 3
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 1,
+       "all analyzers": 1
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 2,
+       "all analyzers": 3
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 2,
+       "all analyzers": 3
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      }
+     },
+     "syntax": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 2,
+       "all analyzers": 3
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 2,
+       "all analyzers": 3
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 2,
+       "all analyzers": 3
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 2,
+       "all analyzers": 3
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 2,
+       "all analyzers": 3
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 2,
+       "all analyzers": 3
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 2,
+       "all analyzers": 3
+      }
+     },
+     "guided": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 1,
+       "all analyzers": 1
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 1,
+       "all analyzers": 1
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 1,
+       "all analyzers": 1
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      }
+     },
+     "guided-strict": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      }
+     },
+     "settled": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      }
+     }
+    },
+    "means": {
+     "random": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 1.1,
+       "sd": 0.8306623862918074
+      },
+      "static-sign-narrow": {
+       "mean": 2,
+       "sd": 1.0
+      },
+      "all analyzers": {
+       "mean": 3.1,
+       "sd": 1.8138357147217055
+      }
+     },
+     "syntax": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 1.3,
+       "sd": 0.458257569495584
+      },
+      "static-sign-narrow": {
+       "mean": 2.3,
+       "sd": 0.458257569495584
+      },
+      "all analyzers": {
+       "mean": 3.6,
+       "sd": 0.916515138991168
+      }
+     },
+     "guided": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign-narrow": {
+       "mean": 0.3,
+       "sd": 0.458257569495584
+      },
+      "all analyzers": {
+       "mean": 0.3,
+       "sd": 0.458257569495584
+      }
+     },
+     "guided-strict": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign-narrow": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "all analyzers": {
+       "mean": 0,
+       "sd": 0.0
+      }
+     },
+     "settled": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 2,
+       "sd": 0.0
+      },
+      "static-sign-narrow": {
+       "mean": 3,
+       "sd": 0.0
+      },
+      "all analyzers": {
+       "mean": 5,
+       "sd": 0.0
+      }
+     }
+    },
+    "tests": [
+     {
+      "strategy": "guided",
+      "baseline": "random",
+      "analyzer": "static-interval",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided",
+      "baseline": "random",
+      "analyzer": "static-sign",
+      "pre_registered": true,
+      "U": 15.0,
+      "p": 0.002052485266845729,
+      "A12": 0.15
+     },
+     {
+      "strategy": "guided",
+      "baseline": "random",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": true,
+      "U": 9.5,
+      "p": 0.0015376012997705207,
+      "A12": 0.095
+     },
+     {
+      "strategy": "guided",
+      "baseline": "random",
+      "analyzer": "all analyzers",
+      "pre_registered": true,
+      "U": 9.5,
+      "p": 0.0015376012997705207,
+      "A12": 0.095
+     },
+     {
+      "strategy": "guided",
+      "baseline": "syntax",
+      "analyzer": "static-interval",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided",
+      "baseline": "syntax",
+      "analyzer": "static-sign",
+      "pre_registered": true,
+      "U": 0.0,
+      "p": 4.040224543100724e-05,
+      "A12": 0.0
+     },
+     {
+      "strategy": "guided",
+      "baseline": "syntax",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": true,
+      "U": 0.0,
+      "p": 8.744986536701464e-05,
+      "A12": 0.0
+     },
+     {
+      "strategy": "guided",
+      "baseline": "syntax",
+      "analyzer": "all analyzers",
+      "pre_registered": true,
+      "U": 0.0,
+      "p": 8.744986536701464e-05,
+      "A12": 0.0
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "random",
+      "analyzer": "static-interval",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "random",
+      "analyzer": "static-sign",
+      "pre_registered": true,
+      "U": 15.0,
+      "p": 0.002052485266845729,
+      "A12": 0.15
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "random",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": true,
+      "U": 5.0,
+      "p": 0.00020946650272210413,
+      "A12": 0.05
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "random",
+      "analyzer": "all analyzers",
+      "pre_registered": true,
+      "U": 5.0,
+      "p": 0.00020946650272210413,
+      "A12": 0.05
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "syntax",
+      "analyzer": "static-interval",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "syntax",
+      "analyzer": "static-sign",
+      "pre_registered": true,
+      "U": 0.0,
+      "p": 4.040224543100724e-05,
+      "A12": 0.0
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "syntax",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": true,
+      "U": 0.0,
+      "p": 4.040224543100724e-05,
+      "A12": 0.0
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "syntax",
+      "analyzer": "all analyzers",
+      "pre_registered": true,
+      "U": 0.0,
+      "p": 4.040224543100724e-05,
+      "A12": 0.0
+     },
+     {
+      "strategy": "settled",
+      "baseline": "random",
+      "analyzer": "static-interval",
+      "pre_registered": false,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "settled",
+      "baseline": "random",
+      "analyzer": "static-sign",
+      "pre_registered": false,
+      "U": 80.0,
+      "p": 0.005745341447596881,
+      "A12": 0.8
+     },
+     {
+      "strategy": "settled",
+      "baseline": "random",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": false,
+      "U": 80.0,
+      "p": 0.005829764462212962,
+      "A12": 0.8
+     },
+     {
+      "strategy": "settled",
+      "baseline": "random",
+      "analyzer": "all analyzers",
+      "pre_registered": false,
+      "U": 80.0,
+      "p": 0.005829764462212962,
+      "A12": 0.8
+     }
+    ]
+   },
+   "25%": {
+    "N": 102,
+    "runs": {
+     "random": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 2,
+       "all analyzers": 3
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 1,
+       "all analyzers": 1
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 2,
+       "all analyzers": 3
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 2,
+       "all analyzers": 3
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 1,
+       "all analyzers": 2
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 1,
+       "all analyzers": 1
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 2,
+       "all analyzers": 3
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 2,
+       "all analyzers": 3
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      }
+     },
+     "syntax": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 1,
+       "all analyzers": 1
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 1,
+       "all analyzers": 1
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 1,
+       "all analyzers": 1
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 1,
+       "all analyzers": 1
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 1,
+       "all analyzers": 1
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 1,
+       "all analyzers": 1
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 1,
+       "all analyzers": 1
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 1,
+       "all analyzers": 1
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 1,
+       "all analyzers": 1
+      }
+     },
+     "guided": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 1,
+       "all analyzers": 1
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      }
+     },
+     "guided-strict": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      }
+     },
+     "settled": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 3,
+       "all analyzers": 5
+      }
+     }
+    },
+    "means": {
+     "random": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 0.8,
+       "sd": 0.6
+      },
+      "static-sign-narrow": {
+       "mean": 1.6,
+       "sd": 0.8
+      },
+      "all analyzers": {
+       "mean": 2.4,
+       "sd": 1.3564659966250536
+      }
+     },
+     "syntax": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign-narrow": {
+       "mean": 0.9,
+       "sd": 0.3
+      },
+      "all analyzers": {
+       "mean": 0.9,
+       "sd": 0.3
+      }
+     },
+     "guided": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign-narrow": {
+       "mean": 0.1,
+       "sd": 0.3
+      },
+      "all analyzers": {
+       "mean": 0.1,
+       "sd": 0.3
+      }
+     },
+     "guided-strict": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign-narrow": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "all analyzers": {
+       "mean": 0,
+       "sd": 0.0
+      }
+     },
+     "settled": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 2,
+       "sd": 0.0
+      },
+      "static-sign-narrow": {
+       "mean": 3,
+       "sd": 0.0
+      },
+      "all analyzers": {
+       "mean": 5,
+       "sd": 0.0
+      }
+     }
+    },
+    "tests": [
+     {
+      "strategy": "guided",
+      "baseline": "random",
+      "analyzer": "static-interval",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided",
+      "baseline": "random",
+      "analyzer": "static-sign",
+      "pre_registered": true,
+      "U": 15.0,
+      "p": 0.001826382051913745,
+      "A12": 0.15
+     },
+     {
+      "strategy": "guided",
+      "baseline": "random",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": true,
+      "U": 7.0,
+      "p": 0.0005056497998192905,
+      "A12": 0.07
+     },
+     {
+      "strategy": "guided",
+      "baseline": "random",
+      "analyzer": "all analyzers",
+      "pre_registered": true,
+      "U": 6.5,
+      "p": 0.0004491249445111246,
+      "A12": 0.065
+     },
+     {
+      "strategy": "guided",
+      "baseline": "syntax",
+      "analyzer": "static-interval",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided",
+      "baseline": "syntax",
+      "analyzer": "static-sign",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided",
+      "baseline": "syntax",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": true,
+      "U": 10.0,
+      "p": 0.0005741725377175675,
+      "A12": 0.1
+     },
+     {
+      "strategy": "guided",
+      "baseline": "syntax",
+      "analyzer": "all analyzers",
+      "pre_registered": true,
+      "U": 10.0,
+      "p": 0.0005741725377175675,
+      "A12": 0.1
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "random",
+      "analyzer": "static-interval",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "random",
+      "analyzer": "static-sign",
+      "pre_registered": true,
+      "U": 15.0,
+      "p": 0.001826382051913745,
+      "A12": 0.15
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "random",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": true,
+      "U": 5.0,
+      "p": 0.00019714480327349853,
+      "A12": 0.05
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "random",
+      "analyzer": "all analyzers",
+      "pre_registered": true,
+      "U": 5.0,
+      "p": 0.00020119110629259848,
+      "A12": 0.05
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "syntax",
+      "analyzer": "static-interval",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "syntax",
+      "analyzer": "static-sign",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "syntax",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": true,
+      "U": 5.0,
+      "p": 9.660519008211227e-05,
+      "A12": 0.05
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "syntax",
+      "analyzer": "all analyzers",
+      "pre_registered": true,
+      "U": 5.0,
+      "p": 9.660519008211227e-05,
+      "A12": 0.05
+     },
+     {
+      "strategy": "settled",
+      "baseline": "random",
+      "analyzer": "static-interval",
+      "pre_registered": false,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "settled",
+      "baseline": "random",
+      "analyzer": "static-sign",
+      "pre_registered": false,
+      "U": 95.0,
+      "p": 0.0001778062566227964,
+      "A12": 0.95
+     },
+     {
+      "strategy": "settled",
+      "baseline": "random",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": false,
+      "U": 95.0,
+      "p": 0.00019714480327349853,
+      "A12": 0.95
+     },
+     {
+      "strategy": "settled",
+      "baseline": "random",
+      "analyzer": "all analyzers",
+      "pre_registered": false,
+      "U": 95.0,
+      "p": 0.00020119110629259848,
+      "A12": 0.95
+     }
+    ]
+   }
+  },
+  "without Guards": {
+   "eligible": 344,
+   "budgets": {
+    "50%": 172,
+    "25%": 86
+   },
+   "pool": {
+    "static-interval": 0,
+    "static-sign": 2,
+    "static-sign-narrow": 2,
+    "all analyzers": 4
+   },
+   "50%": {
+    "N": 172,
+    "runs": {
+     "random": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 1,
+       "all analyzers": 2
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 1,
+       "all analyzers": 2
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 1,
+       "all analyzers": 2
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      }
+     },
+     "syntax": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 1,
+       "all analyzers": 2
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 1,
+       "all analyzers": 2
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 1,
+       "all analyzers": 2
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 1,
+       "all analyzers": 2
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 1,
+       "all analyzers": 2
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 1,
+       "all analyzers": 2
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 1,
+       "all analyzers": 2
+      }
+     },
+     "guided": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      }
+     },
+     "guided-strict": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      }
+     },
+     "settled": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      }
+     }
+    },
+    "means": {
+     "random": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 1.1,
+       "sd": 0.8306623862918074
+      },
+      "static-sign-narrow": {
+       "mean": 1.1,
+       "sd": 0.8306623862918074
+      },
+      "all analyzers": {
+       "mean": 2.2,
+       "sd": 1.6613247725836149
+      }
+     },
+     "syntax": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 1.3,
+       "sd": 0.458257569495584
+      },
+      "static-sign-narrow": {
+       "mean": 1.3,
+       "sd": 0.458257569495584
+      },
+      "all analyzers": {
+       "mean": 2.6,
+       "sd": 0.916515138991168
+      }
+     },
+     "guided": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign-narrow": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "all analyzers": {
+       "mean": 0,
+       "sd": 0.0
+      }
+     },
+     "guided-strict": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign-narrow": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "all analyzers": {
+       "mean": 0,
+       "sd": 0.0
+      }
+     },
+     "settled": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 2,
+       "sd": 0.0
+      },
+      "static-sign-narrow": {
+       "mean": 2,
+       "sd": 0.0
+      },
+      "all analyzers": {
+       "mean": 4,
+       "sd": 0.0
+      }
+     }
+    },
+    "tests": [
+     {
+      "strategy": "guided",
+      "baseline": "random",
+      "analyzer": "static-interval",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided",
+      "baseline": "random",
+      "analyzer": "static-sign",
+      "pre_registered": true,
+      "U": 15.0,
+      "p": 0.002052485266845729,
+      "A12": 0.15
+     },
+     {
+      "strategy": "guided",
+      "baseline": "random",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": true,
+      "U": 15.0,
+      "p": 0.002052485266845729,
+      "A12": 0.15
+     },
+     {
+      "strategy": "guided",
+      "baseline": "random",
+      "analyzer": "all analyzers",
+      "pre_registered": true,
+      "U": 15.0,
+      "p": 0.002052485266845729,
+      "A12": 0.15
+     },
+     {
+      "strategy": "guided",
+      "baseline": "syntax",
+      "analyzer": "static-interval",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided",
+      "baseline": "syntax",
+      "analyzer": "static-sign",
+      "pre_registered": true,
+      "U": 0.0,
+      "p": 4.040224543100724e-05,
+      "A12": 0.0
+     },
+     {
+      "strategy": "guided",
+      "baseline": "syntax",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": true,
+      "U": 0.0,
+      "p": 4.040224543100724e-05,
+      "A12": 0.0
+     },
+     {
+      "strategy": "guided",
+      "baseline": "syntax",
+      "analyzer": "all analyzers",
+      "pre_registered": true,
+      "U": 0.0,
+      "p": 4.040224543100724e-05,
+      "A12": 0.0
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "random",
+      "analyzer": "static-interval",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "random",
+      "analyzer": "static-sign",
+      "pre_registered": true,
+      "U": 15.0,
+      "p": 0.002052485266845729,
+      "A12": 0.15
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "random",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": true,
+      "U": 15.0,
+      "p": 0.002052485266845729,
+      "A12": 0.15
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "random",
+      "analyzer": "all analyzers",
+      "pre_registered": true,
+      "U": 15.0,
+      "p": 0.002052485266845729,
+      "A12": 0.15
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "syntax",
+      "analyzer": "static-interval",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "syntax",
+      "analyzer": "static-sign",
+      "pre_registered": true,
+      "U": 0.0,
+      "p": 4.040224543100724e-05,
+      "A12": 0.0
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "syntax",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": true,
+      "U": 0.0,
+      "p": 4.040224543100724e-05,
+      "A12": 0.0
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "syntax",
+      "analyzer": "all analyzers",
+      "pre_registered": true,
+      "U": 0.0,
+      "p": 4.040224543100724e-05,
+      "A12": 0.0
+     },
+     {
+      "strategy": "settled",
+      "baseline": "random",
+      "analyzer": "static-interval",
+      "pre_registered": false,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "settled",
+      "baseline": "random",
+      "analyzer": "static-sign",
+      "pre_registered": false,
+      "U": 80.0,
+      "p": 0.005745341447596881,
+      "A12": 0.8
+     },
+     {
+      "strategy": "settled",
+      "baseline": "random",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": false,
+      "U": 80.0,
+      "p": 0.005745341447596881,
+      "A12": 0.8
+     },
+     {
+      "strategy": "settled",
+      "baseline": "random",
+      "analyzer": "all analyzers",
+      "pre_registered": false,
+      "U": 80.0,
+      "p": 0.005745341447596881,
+      "A12": 0.8
+     }
+    ]
+   },
+   "25%": {
+    "N": 86,
+    "runs": {
+     "random": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 1,
+       "all analyzers": 2
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 1,
+       "all analyzers": 2
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 1,
+       "all analyzers": 2
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 1,
+       "all analyzers": 2
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 1,
+       "static-sign-narrow": 1,
+       "all analyzers": 2
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      }
+     },
+     "syntax": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      }
+     },
+     "guided": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      }
+     },
+     "guided-strict": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 0,
+       "static-sign-narrow": 0,
+       "all analyzers": 0
+      }
+     },
+     "settled": {
+      "0": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "1": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "2": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "3": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "4": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "5": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "6": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "7": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "8": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      },
+      "9": {
+       "static-interval": 0,
+       "static-sign": 2,
+       "static-sign-narrow": 2,
+       "all analyzers": 4
+      }
+     }
+    },
+    "means": {
+     "random": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 0.9,
+       "sd": 0.7
+      },
+      "static-sign-narrow": {
+       "mean": 0.9,
+       "sd": 0.7
+      },
+      "all analyzers": {
+       "mean": 1.8,
+       "sd": 1.4
+      }
+     },
+     "syntax": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign-narrow": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "all analyzers": {
+       "mean": 0,
+       "sd": 0.0
+      }
+     },
+     "guided": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign-narrow": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "all analyzers": {
+       "mean": 0,
+       "sd": 0.0
+      }
+     },
+     "guided-strict": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign-narrow": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "all analyzers": {
+       "mean": 0,
+       "sd": 0.0
+      }
+     },
+     "settled": {
+      "static-interval": {
+       "mean": 0,
+       "sd": 0.0
+      },
+      "static-sign": {
+       "mean": 2,
+       "sd": 0.0
+      },
+      "static-sign-narrow": {
+       "mean": 2,
+       "sd": 0.0
+      },
+      "all analyzers": {
+       "mean": 4,
+       "sd": 0.0
+      }
+     }
+    },
+    "tests": [
+     {
+      "strategy": "guided",
+      "baseline": "random",
+      "analyzer": "static-interval",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided",
+      "baseline": "random",
+      "analyzer": "static-sign",
+      "pre_registered": true,
+      "U": 15.0,
+      "p": 0.001975264402345578,
+      "A12": 0.15
+     },
+     {
+      "strategy": "guided",
+      "baseline": "random",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": true,
+      "U": 15.0,
+      "p": 0.001975264402345578,
+      "A12": 0.15
+     },
+     {
+      "strategy": "guided",
+      "baseline": "random",
+      "analyzer": "all analyzers",
+      "pre_registered": true,
+      "U": 15.0,
+      "p": 0.001975264402345578,
+      "A12": 0.15
+     },
+     {
+      "strategy": "guided",
+      "baseline": "syntax",
+      "analyzer": "static-interval",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided",
+      "baseline": "syntax",
+      "analyzer": "static-sign",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided",
+      "baseline": "syntax",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided",
+      "baseline": "syntax",
+      "analyzer": "all analyzers",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "random",
+      "analyzer": "static-interval",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "random",
+      "analyzer": "static-sign",
+      "pre_registered": true,
+      "U": 15.0,
+      "p": 0.001975264402345578,
+      "A12": 0.15
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "random",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": true,
+      "U": 15.0,
+      "p": 0.001975264402345578,
+      "A12": 0.15
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "random",
+      "analyzer": "all analyzers",
+      "pre_registered": true,
+      "U": 15.0,
+      "p": 0.001975264402345578,
+      "A12": 0.15
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "syntax",
+      "analyzer": "static-interval",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "syntax",
+      "analyzer": "static-sign",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "syntax",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "guided-strict",
+      "baseline": "syntax",
+      "analyzer": "all analyzers",
+      "pre_registered": true,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "settled",
+      "baseline": "random",
+      "analyzer": "static-interval",
+      "pre_registered": false,
+      "U": null,
+      "p": null,
+      "A12": 0.5
+     },
+     {
+      "strategy": "settled",
+      "baseline": "random",
+      "analyzer": "static-sign",
+      "pre_registered": false,
+      "U": 90.0,
+      "p": 0.0006505752252380692,
+      "A12": 0.9
+     },
+     {
+      "strategy": "settled",
+      "baseline": "random",
+      "analyzer": "static-sign-narrow",
+      "pre_registered": false,
+      "U": 90.0,
+      "p": 0.0006505752252380692,
+      "A12": 0.9
+     },
+     {
+      "strategy": "settled",
+      "baseline": "random",
+      "analyzer": "all analyzers",
+      "pre_registered": false,
+      "U": 90.0,
+      "p": 0.0006505752252380692,
+      "A12": 0.9
+     }
+    ]
+   }
+  }
+ },
+ "selections": "project/step5/selections.json",
+ "outcomes": "experiments/results/outcomes.json"
+}

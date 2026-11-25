@@ -7,17 +7,21 @@ budget 50%: N = 204
   syntax          173.5 [171-175]    88.5 [85-92]    77.0 [76-78]
   guided          204.0 [204-204]   120.5 [114-125]    79.3 [76-82]
   guided-strict   204.0 [204-204]   204.0 [204-204]    48.9 [48-49]
+  settled         174.8 [172-178]    98.5 [88-107]    86.5 [81-90]
   rules per seed, random: R1-invert 41.9, R2-split 31.1, R2-strict 44.4, R2-swap 86.6
   rules per seed, syntax: R1-invert 30.5, R2-split 42.3, R2-strict 40.7, R2-swap 90.5
   rules per seed, guided: R1-invert 46.7, R2-split 32.5, R2-strict 39.5, R2-swap 85.3
   rules per seed, guided-strict: R1-invert 50.5, R2-split 31.1, R2-strict 35.0, R2-swap 87.4
+  rules per seed, settled: R1-invert 41.5, R2-split 27.4, R2-strict 45.5, R2-swap 89.6
 budget 25%: N = 102
   strategy       uncertain hit     strict hit        methods
   random           91.8 [89-95]    53.7 [49-61]    62.1 [56-68]
   syntax           81.7 [78-86]    34.0 [32-39]    51.7 [50-53]
   guided          102.0 [102-102]    60.8 [55-67]    58.3 [55-62]
   guided-strict   102.0 [102-102]   102.0 [102-102]    40.4 [36-43]
+  settled          77.1 [75-79]    42.8 [37-52]    61.0 [59-64]
   rules per seed, random: R1-invert 20.8, R2-split 17.0, R2-strict 21.1, R2-swap 43.1
   rules per seed, syntax: R1-invert 7.7, R2-split 24.5, R2-strict 21.8, R2-swap 48.0
   rules per seed, guided: R1-invert 24.8, R2-split 15.0, R2-strict 18.1, R2-swap 44.1
   rules per seed, guided-strict: R1-invert 25.7, R2-split 15.1, R2-strict 17.7, R2-swap 43.5
+  rules per seed, settled: R1-invert 18.3, R2-split 14.6, R2-strict 24.9, R2-swap 44.2

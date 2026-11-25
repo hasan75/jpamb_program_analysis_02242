@@ -163,6 +163,11 @@ RNG `random.Random(f"{strategy}/{seed}")` over sites sorted by id.
   the strict variant was added after counting candidates, and that array
   accesses are always uncertain (D14), which makes the strict filter partly
   syntactic.
+- `settled` (**DECIDED** by the user, 2026-11-25, **post-hoc, exploratory**):
+  sites with an abstract state that are not uncertain (21 sites) first, then
+  the rest. Defined *after* step 8 showed that the inconsistencies occur at
+  settled sites. Paper: report it separately from the pre-registered
+  comparison, marked post-hoc, never as the technique's result.
 
 ### D16. Validating variants
 **PROVISIONAL** (built in step 6, `solutions/metamorphic/src/validate.py` +
@@ -203,6 +208,20 @@ on parameters the method never assigns.
 `(analyzer, method, rewrite rule, original outcome set, variant outcome set)`.
 The same weakness found by several seeds or sites counts once.
 
+### D17. Step 8 result: where the inconsistencies are
+**FINDING** (step 8, 2026-11-25; `experiments/results/`). Rewriting all 408
+valid variants gives only **5 distinct inconsistencies**, all from R2-strict,
+none for `static-interval`: `Loops.java:19`/`:27` (`while (i > 0)` to
+`i >= 1`, sign and sign-narrow) and `Guards.java:138`/`:139` (one tuple,
+sign-narrow). Four of the five come from sites the guide *settles*: the sign
+domain abstracts `0` to `{0}` but `1` to `{+}`, so `{+} > 0` is decided and
+`{+} >= 1` is not. This refutes the D14 hypothesis that settled sites cannot
+change the outcome: a site the precise guide settles can still be undecided
+for a coarser analyzer once the constant changes. Consequence (user decision):
+RQ1 is reported as pre-registered (guided and guided-strict find fewer than
+random and syntax, p <= 0.002), the post-hoc `settled` strategy (D15) is
+reported separately, and the paper explains the mechanism with a case study.
+
 ### D11. Experiment parameters
 **PROVISIONAL.**
 - **Seeds:** 10 (the proposal says at least ten).
@@ -213,9 +232,11 @@ The same weakness found by several seeds or sites counts once.
   Computed by `selection.budgets` from the eligible count: on the step 4 sites
   (344), N = 172 (50%) and 86 (25%). With the step 7 cases (408 eligible
   sites), N = 204 (50%) and 102 (25%).
-- **Time budget T:** secondary experiment, only if the rewrite-budget
-  experiment is done. Default T = the guided strategy's median runtime at
-  budget N.
+- **Time budget T:** **cut** (user, 2026-11-25). With a pool of 5 distinct
+  inconsistencies a time-budget comparison says nothing. RQ2 is instead a
+  **cost table**: wall-clock time per pipeline stage (`experiments/cost.py`,
+  which reruns the pipeline into `build/cost/` and checks it reproduces the
+  committed results), and the guidance overhead (the export).
 - **Statistics:** Mann–Whitney U per analyzer, guided vs. each baseline,
   plus an effect size (Vargha–Delaney A12).
 
