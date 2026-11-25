@@ -1,0 +1,25 @@
+mutants: 217
+  compile: 217
+  valid (same result on every input): 27
+  discarded by testing: 190
+  bytecode identical to original: 0
+  inputs per method: min 1, max 128
+  original condition values on inputs: {'unknown': 130, 'both': 86, 'one': 1}
+  mutant-invert-without-swap: 64, valid 0, identical bytecode 0, condition values {'unknown': 29, 'both': 34, 'one': 1}
+  mutant-off-by-one: 153, valid 27, identical bytecode 0, condition values {'unknown': 101, 'both': 52}
+  killed (caught by testing): 190 of 217
+  equivalent (no input can kill them): 25, of which killed 0
+  killed among non-equivalent: 190 of 192
+    survived: cases/jpamb/cases/Dependent.java:79:9:mutant-off-by-one
+    survived: cases/jpamb/cases/Dependent.java:60:9:mutant-off-by-one
+  not valid (190), first 10:
+    cases/jpamb/cases/Arrays.java:68:21:mutant-off-by-one: {'input': '()', 'original': 'ok:null', 'variant': 'out of bounds'}
+    cases/jpamb/cases/Arrays.java:69:14:mutant-off-by-one: {'input': '()', 'original': 'ok:null', 'variant': 'assertion error'}
+    cases/jpamb/cases/Arrays.java:153:5:mutant-invert-without-swap: {'input': '(5)', 'original': 'assertion error', 'variant': 'ok:null'}
+    cases/jpamb/cases/Arrays.java:153:19:mutant-off-by-one: {'input': '(8)', 'original': 'ok:null', 'variant': 'out of bounds'}
+    cases/jpamb/cases/Arrays.java:154:14:mutant-off-by-one: {'input': '(4)', 'original': 'ok:null', 'variant': 'assertion error'}
+    cases/jpamb/cases/Arrays.java:27:12:mutant-off-by-one: {'input': '()', 'original': 'ok:null', 'variant': 'assertion error'}
+    cases/jpamb/cases/Arrays.java:163:21:mutant-off-by-one: {'input': '(5)', 'original': 'ok:null', 'variant': 'out of bounds'}
+    cases/jpamb/cases/Arrays.java:167:5:mutant-invert-without-swap: {'input': '(6)', 'original': 'assertion error', 'variant': 'ok:null'}
+    cases/jpamb/cases/Arrays.java:167:19:mutant-off-by-one: {'input': '(8)', 'original': 'ok:null', 'variant': 'out of bounds'}
+    cases/jpamb/cases/Arrays.java:168:14:mutant-off-by-one: {'input': '(5)', 'original': 'ok:null', 'variant': 'assertion error'}

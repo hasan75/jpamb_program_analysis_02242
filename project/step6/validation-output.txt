@@ -1,0 +1,11 @@
+variants: 344
+  compile: 344
+  valid (same result on every input): 344
+  discarded by testing: 0
+  bytecode identical to original: 0
+  inputs per method: min 1, max 128
+  original condition values on inputs: {'unknown': 205, 'both': 138, 'one': 1}
+  R1-invert: 64, valid 64, identical bytecode 0, condition values {'unknown': 29, 'both': 34, 'one': 1}
+  R2-split: 57, valid 57, identical bytecode 0, condition values {'unknown': 35, 'both': 22}
+  R2-strict: 70, valid 70, identical bytecode 0, condition values {'unknown': 40, 'both': 30}
+  R2-swap: 153, valid 153, identical bytecode 0, condition values {'unknown': 101, 'both': 52}

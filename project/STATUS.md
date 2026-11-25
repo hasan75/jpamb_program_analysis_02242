@@ -6,10 +6,10 @@ note, and keep "Next" current.
 
 Last updated: 2026-11-25
 
-**Next:** step 6, validation: compile each selected variant (Docker must be
-running) and run original vs. variant on test inputs synthesized from the
-step 3 intervals; drop variants whose outcome differs. Then P1 (paper skeleton),
-which is now overdue per the WORKFLOW calendar.
+**Next:** step 7, new benchmark cases (D12), then step 8 (experiments: run
+the three analyzers on the validated variants in `build/variants/*/decompiled`,
+count distinct inconsistencies per strategy and seed). P1 (paper skeleton) is
+overdue per the WORKFLOW calendar; start it next to step 7.
 
 ---
 
@@ -121,7 +121,24 @@ which is now overdue per the WORKFLOW calendar.
     `uv run pytest` fails at the root; `uv run python -m pytest` works
     (134 pass, 2 skipped). Three Markdown files in `assignment-guide/` and
     `course-notes/` fail `ruff format --check` (not project code).
-- [ ] **6. Validation: compile + synthesized inputs**
+- [x] **6. Validation: compile + synthesized inputs** (D16), reviewed by `rewrite-auditor`
+  - Program `metamorphic-validate` (`validate.py`, harness `java/Validate.java`).
+    Variants, compiled classes and decompiled JSON go to `build/variants/<vid>/`
+    (gitignored, rebuilt by the program); step 8 analyzes the decompiled JSON.
+  - Output in `project/step6/validation.json` (summary `validation-output.txt`):
+    344 of 344 compile, **344 valid**, 0 discarded, 0 bytecode-identical to the
+    original. 1-128 inputs per method. Original condition takes both values on
+    the inputs for 138 sites, one value for 1, unknown for 205 (operands assigned
+    in the method, or not plain parameters).
+  - Mutants (`mutants.json`, `mutants-output.txt`): 217 wrong rewrites, 190
+    killed; 25 equivalent (`equivalent-mutants.json`), so **190 of 192**
+    non-equivalent killed. The 2 survivors (`Dependent.java:60`, `:79`) need
+    coordinated values in two or three parameters.
+  - The auditor's review found 10 missed mutants in the first run (array lengths,
+    shifted/complemented constants, `int[]` and `Smith` inputs, missing zero base);
+    the source-constant tier fixed 8. It found no way for a wrong rewrite to be
+    reported valid by mistake.
+  - Tests: 76 pass in `solutions/metamorphic` (13 new in `test_validate.py`).
 - [ ] **7. New benchmark cases** (D12)
 - [ ] **8. Experiments + statistics** (D10, D11)
 

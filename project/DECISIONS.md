@@ -164,6 +164,36 @@ RNG `random.Random(f"{strategy}/{seed}")` over sites sorted by id.
   accesses are always uncertain (D14), which makes the strict filter partly
   syntactic.
 
+### D16. Validating variants
+**PROVISIONAL** (built in step 6, `solutions/metamorphic/src/validate.py` +
+`java/Validate.java`). A variant is **valid** when it compiles and gives the
+same **outcome and return value** as the original on every synthesized input
+(stricter than the outcome alone). All Java runs in one container of the
+jvm2json image; one JVM per method (original + its variants, own class loader
+each, assertions on), 1 s timeout per input (`*`), the JVM restarted after a
+timeout (`Thread.stop` is gone in current JDKs). Both versions timing out
+counts as equal.
+Inputs per method (deterministic, cap 128), in priority order under the cap:
+1. the `@Case` inputs;
+2. from the interval export: per parameter, the interval boundaries ±1 at its
+   branch/divisor sites, compared constants ±1, {0, ±1, MIN, MAX}; varied one
+   parameter at a time from each case input and from all-zero;
+3. constants from the method source (int literals, array initializer lengths,
+   their complements `~c`, and shifts `c << s` by literal s), ±1;
+4. 16 random combinations.
+`int[]` methods get `[I: c]` for source constants c ≥ 0 (InputParser reads no
+negative numbers in an array literal); `Smith` methods get each constant as
+the first w bits for each `draw(w)`, plus 8 random bit strings; other
+reference types use only `@Case` inputs.
+Sensitivity check (`--mutants`): one deliberately wrong rewrite per rewritten
+node (R2: off-by-one/opposite operator; R1: negated condition without the
+swap). The 25 mutants that no input can kill are listed with an argument each
+in `project/step6/equivalent-mutants.json` (rewrite-auditor review,
+2026-11-25). Paper, Threats to Validity: one-at-a-time synthesis cannot
+produce coordinated values (the 2 surviving mutants in `Dependent`), and the
+condition-coverage check (`condition_values`) is only computed for conditions
+on parameters the method never assigns.
+
 ---
 
 ## Evaluation

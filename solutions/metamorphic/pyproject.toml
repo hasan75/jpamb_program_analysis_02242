@@ -16,6 +16,7 @@ dependencies = [
 [project.scripts]
 metamorphic-sites = "sites:main"
 metamorphic-select = "selection:main"
+metamorphic-validate = "validate:main"
 
 [tool.uv.sources]
 jpamb = { path = "../../", editable = true }
