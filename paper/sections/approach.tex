@@ -2,23 +2,184 @@
 \section{Analysis-Guided Rewriting}
 \label{sec:approach}
 
+The technique takes a benchmark of methods and an analyzer under test, and
+produces pairs of an original method and a \emph{variant} that differs from it
+by one semantics-preserving rewrite. This section starts with the property
+being tested and then follows the pipeline of \cref{fig:pipeline}.
+
 \subsection{Consistency and Inconsistencies}
 \label{sec:inconsistency}
-\todo{the metamorphic relation; the counting unit (D10)}
+Let $A(m)$ be the outcome set that analyzer $A$ predicts for method $m$
+(\cref{sec:jpamb}), and let $m'$ be a variant of $m$ that behaves like $m$ on
+every input; in practice, $m'$ is a \emph{valid} variant (\cref{sec:validation}),
+since equivalence on all inputs cannot be checked. $A$ is \emph{consistent} on
+$(m,m')$ if $A(m)=A(m')$; otherwise the pair is an \emph{inconsistency}.
+Comparisons are always made within one analyzer, so differences in precision
+between analyzers do not count. Several variants can expose the same weakness,
+so we count \emph{distinct} inconsistencies, the distinct tuples
+\[
+  (A,\; m,\; r,\; A(m),\; A(m'))
+\]
+where $r$ is the rule that produced $m'$: the same method, rule and change of
+outcome set count once, whatever site, strategy or seed produced it.
 
 \subsection{Sites, Uncertain Sites and Candidates}
 \label{sec:sites}
-\todo{conditions (i) and (ii), computed from the interval state (D14)}
+A \emph{site} is a pair of a syntax node in a method and a rule
+(\cref{sec:rules}) whose precondition holds there; one comparison can thus give
+up to three sites. The \emph{eligible} sites of a benchmark are all its sites,
+and every strategy chooses from the same eligible sites.
+
+Whether a rewrite can change an answer depends on what is known at the site.
+We read this off a \emph{guide}: the interval analyzer \texttt{static-interval}
+(\cref{sec:analyzers}) run on the original method. Its domain distinguishes the
+most values of the three, although it cannot exclude 0 from inside an interval,
+so a divisor guarded by \texttt{x != 0} stays uncertain for the guide while
+\texttt{static-sign-narrow} settles it. From the guide's fixpoint we classify
+instructions by the abstract state before them:
+\begin{itemize}
+  \item a conditional jump is \emph{uncertain} if its condition can be both
+    true and false;
+  \item a division or remainder is uncertain if its divisor may be zero
+    \emph{and} may be nonzero (a divisor that is certainly zero is a settled
+    outcome, like a branch with one possible direction);
+  \item an array access is always uncertain, since no domain tracks array
+    lengths.
+\end{itemize}
+Instructions are mapped to source lines (\cref{sec:implementation}). A site is
+\emph{uncertain} if its line, or for a condition spanning several lines the
+first line of its statement, contains an uncertain instruction; two sites on
+one line therefore share one flag, and a condition that reads an array element
+is always uncertain. A site whose line has a branch with a state but no
+uncertain instruction is \emph{settled}. If the guide has no state at a branch
+on the line, which in the benchmark happens only where it gives up on an
+unsupported instruction (\NumNoState{} sites), the site is neither.
+
+A \emph{candidate} is an uncertain site. Every rule changes how a condition is
+compiled (\cref{tab:rules}), so whether the guide still considers the condition
+undecided is what separates candidates from other sites. Guidance rests on the
+hypothesis that rewrites at settled sites are less likely to change an
+analyzer's outcome set than rewrites at uncertain sites, and so waste budget;
+RQ1 tests this (\cref{sec:evaluation}).
 
 \subsection{Rewrite Rules}
 \label{sec:rules}
-\todo{R1 branch inversion with swap; R2 equivalent integer comparisons; preconditions;
-equivalence arguments; table of rules}
+\Cref{tab:rules} lists the rules. Each variant contains exactly one rewrite, so
+an inconsistency can be traced to a single change. The proposal's third rule,
+loop reshaping, is out of scope (\cref{sec:threats}).
+
+\paragraph{Shared precondition}
+Every operand of a rewritten comparison must be a \emph{pure} \texttt{int}
+expression: \texttt{int} literals, \texttt{int} local variables and parameters,
+unary and binary arithmetic and bitwise operators, the length of a local array,
+and an element of a local \texttt{int[]}. Method calls, increments,
+assignments, casts, fields and other types are excluded, so evaluating an
+operand has no side effect and evaluating it twice gives the same value. Pure
+operands can still throw (division by zero, an index out of bounds, a null
+array), so the rules keep the order in which operands are evaluated, or require
+that at most one of them may throw. No rule adds or removes arithmetic on the
+operands, since that could overflow: \texttt{x+1 > y} and \texttt{x >= y}
+differ at \texttt{Integer.MAX\_VALUE}.
+
+\begin{table}[t]
+\caption{Rewrite rules. Each variant applies one rule at one site; all
+operands satisfy the shared precondition.}
+\label{tab:rules}
+\small
+\begin{tabular}{@{}p{1.6cm}p{4.7cm}p{2.8cm}p{3.0cm}@{}}
+\toprule
+Rule & Original $\to$ variant & Extra precondition & What changes \\
+\midrule
+R1-invert & \texttt{if (c) A else B} $\to$ \texttt{if (}$\lnot c$\texttt{) \{B\} else \{A\}}
+  & $c$ built from comparisons, \texttt{\&\&}, \texttt{||}, \texttt{!}
+  & branch polarity, block order \\
+R2-swap & \texttt{a < b} $\to$ \texttt{b > a} (all six operators)
+  & at most one operand may throw
+  & operand order, mirrored operator \\
+R2-strict & \texttt{x > 5} $\to$ \texttt{x >= 6}, \texttt{x <= 5} $\to$ \texttt{x < 6}, \ldots
+  & decimal literal; $c\pm1$ within 32 bits
+  & the constant compared against \\
+R2-split & \texttt{a != b} $\to$ \texttt{(a < b || a > b)};\newline
+  \texttt{a == b} $\to$ \texttt{(a <= b \&\& a >= b)}
+  & --
+  & two comparisons, extra branch and merge \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{R1: branch inversion with swap}
+The condition is negated and the two branches are exchanged; a missing
+\texttt{else} becomes an empty block, and both branches get braces so that an
+\texttt{else if} chain or a dangling \texttt{else} keeps its meaning. The
+negation is written out by De Morgan's laws down to negated comparisons
+(\texttt{x > 0} becomes \texttt{x <= 0}). Since $\lnot(a \land b) = \lnot a \lor
+\lnot b$ and both forms evaluate $a$ first and $b$ only when $a$ does not decide
+the result, the variant evaluates the same operands in the same order, so it
+throws exactly when the original does and otherwise takes the branch the
+original takes. The compiler normally emits the jump with the opposite polarity
+and the blocks in the opposite order.
+
+\paragraph{R2: equivalent integer comparisons}
+\emph{R2-swap} mirrors a comparison. The truth value is the same, but $b$ is
+now evaluated before $a$, so if both could throw, a different exception could
+be raised first; the precondition excludes this. \emph{R2-strict} moves between
+strict and non-strict comparison with a decimal literal $c$: for integers,
+$x > c \iff x \ge c+1$ whenever $c+1$ does not overflow, and the variant
+contains the computed literal, not an addition. \emph{R2-split} expresses
+\texttt{!=} and \texttt{==} by trichotomy: $a \ne b \iff a<b \lor a>b$ and
+$a = b \iff a\le b \land a\ge b$. The variant evaluates $a$ and $b$ up to
+twice, which is safe because they are pure: if the first evaluation throws, the
+original throws the same exception at the same point, and otherwise the second
+evaluation gives the same values.
 
 \subsection{Selection Under a Shared Budget}
 \label{sec:selection}
-\todo{guided, random, syntax-based; one benchmark-wide budget N and a seed (D15)}
+A strategy orders all eligible sites; with a \emph{rewrite budget} $N$, the
+first $N$ sites in that order are rewritten. $N$ is shared by the whole
+benchmark and is a fixed fraction of the eligible sites: a shared budget lets a
+strategy choose between methods, which is where guidance can matter, whereas
+with a per-method budget every strategy would rewrite nearly the same sites.
+Ties are broken by a pseudo-random shuffle seeded with the strategy name and a
+seed, so each (strategy, seed) gives one reproducible order. The strategies are:
+\begin{description}
+  \item[\texttt{random}] a uniform random permutation of all eligible sites.
+  \item[\texttt{syntax}] sites ordered by their distance in source lines to
+    the nearest \texttt{/}, \texttt{\%} or \texttt{assert} in the same method,
+    closest first, and sites in methods without one last. It uses no analysis
+    and follows the proposal's baseline, which prefers sites close to a
+    division or assertion.
+  \item[\texttt{guided}] all candidates in random order, then all other
+    eligible sites in random order.
+  \item[\texttt{guided-strict}] a sensitivity variant, defined after counting
+    candidates (\cref{sec:threats}): as \texttt{guided}, but a candidate must
+    also lie in a method where the guide finds a possible division by zero or
+    array error.
+\end{description}
+The strategies differ only in the order, so a difference in what they find
+comes from where they rewrite.
 
 \subsection{Validating Variants}
 \label{sec:validation}
-\todo{compile, synthesized inputs, outcome and return value (D16)}
+The rules carry an equivalence argument, but the argument, the precondition
+check and the rewriter can each be wrong. Every variant is therefore compiled
+and tested before it is analyzed. A variant is \emph{valid} if it compiles and,
+on every test input, gives the same outcome as the original and, when the
+outcome is normal termination, the same return value. Variants that fail are
+discarded; variants whose bytecode equals the original's are flagged, because
+they cannot expose an inconsistency.
+
+Test inputs are synthesized per method, up to a fixed cap and in priority order
+so that the cap cuts the least informative ones: (1) the inputs of the
+method's annotated cases; (2) for each parameter, the bounds of its interval at
+each branch and division site and their neighbors, the constants compared
+anywhere in the method $\pm1$, and $0$, $\pm1$ and the 32-bit extremes, varying
+one parameter at a time from each case input and from all zeros; (3) integer
+literals of the method $\pm1$, array-initializer lengths, and their
+complements and shifts by other literals; and (4) random values. Tiers (2)--(4)
+apply to integer parameters; methods with other parameters are tested on their
+case inputs, plus non-negative single-element arrays and bit strings for the
+benchmark's random-input object where the input parser allows. The inputs aim
+to make each rewritten condition both true and false and to hit the boundaries
+where an off-by-one rewrite would differ; \cref{sec:rq3} measures how often
+they do. Programs run with assertions enabled and a time limit per input, and an
+input on which both versions exceed the limit counts as equal.

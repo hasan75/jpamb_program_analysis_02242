@@ -27,7 +27,7 @@ sound and fully precise analyzer satisfies it trivially, because both outcome
 sets equal the true one. A sound but imprecise analyzer over-approximates, and
 how much it over-approximates may depend on how the method is written. A
 violation, an \emph{inconsistency}, shows that one of the two outcome sets is
-imprecise or, if a reachable outcome is missing, unsound. The relation is a
+imprecise or, if a reachable outcome is missing, unsound (\cref{sec:inconsistency} defines how we count them). The relation is a
 robustness property rather than a correctness requirement.
 
 \subsection{The Three Analyzers Under Test}
@@ -101,7 +101,8 @@ leaves $[-\infty,\infty]$, since \texttt{!=} removes a constant only at an
 endpoint (e.g.\ $[0,h]$ becomes $[1,h]$), while \texttt{static-sign-narrow}
 obtains $\{-,+\}$ and proves a later \texttt{1 / x} safe. Conversely,
 \texttt{static-interval} proves \texttt{if (n > 100) \{ if (n < 50) ... \}}
-infeasible, which signs cannot. On JPAMB, \texttt{static-sign-narrow} is more
-precise on \todo{number: methods} methods and \texttt{static-interval} on
-\todo{number: methods}, so the analyzers differ in precision for reasons
+infeasible, which signs cannot. Of the \NumMethods{} benchmark methods,
+\texttt{static-sign-narrow} predicts a strictly smaller outcome set than
+\texttt{static-interval} on \NumNarrowBeatsInterval{} and a strictly larger one
+on \NumIntervalBeatsNarrow{}, so the analyzers differ in precision for reasons
 unrelated to where a rewrite is placed.
