@@ -10,7 +10,15 @@ Last updated: 2026-11-25 (step 8)
 the cuts below as needed (all sections drafted; no `\todo` left).
 
 ### Length (estimate 2026-11-25: ~13-13.5 p, limit 11 p incl. references)
-Ranked cuts (saving per content lost; `paper-reviewer`), **not applied yet**:
+Overleaf 2026-11-25: **13 p incl. references**, without a contribution table.
+The 14 references are cited and needed; trim the body, not the bibliography.
+PPPA'24/'25 papers run 9-14 p (median 11) with 3-22 references (median 7.5),
+and none of them has a member-contribution table.
+2026-11-25: no hard 11 p cap any more; only no-loss cuts wanted. The paper now
+has four group authors; no contribution table (D1).
+Cuts 1-5 APPLIED 2026-11-25 (about 330 words and the `lst:loops` float, ~0.6-0.7 p);
+cuts 6-12 deliberately kept (content, not repetition). Recompile in Overleaf.
+Ranked cuts (saving per content lost; `paper-reviewer`):
 1. Merge Gap and Related Work overlap: Gap keeps one clause per work + why it
    does not apply; drop Related's "Earlier DTU work" paragraph and its
    metamorphic-testing sentence. ~250 words, 0.4 p, no loss.

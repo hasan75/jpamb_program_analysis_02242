@@ -15,7 +15,12 @@ Last updated: 2026-11-25
 ## Scope and setup
 
 ### D1. Who works on the project
-**DECIDED.** Solo project (Hasan Ahmed). Build on branch
+**DECIDED (revised 2026-11-25).** Group project: DTU Compute Group 20,
+Abdullah Al Abid, Afonso Fonseca Morais de Sousa Pina, Hasan Ahmed and
+Mahmudul Hasan Aunoy (Shohan Morol from the proposal is not an author). The
+paper lists all four; running heads show the title and "DTU Compute Group 20".
+Shohan's share (EST 5, PRW 3, PWP 2) goes to the four remaining members.
+No contribution table in the paper (decided by the group). Build on branch
 `project/metamorphic-isolated` only; do not read or merge other branches.
 
 ### D2. Grading scope / contribution rows claimed
