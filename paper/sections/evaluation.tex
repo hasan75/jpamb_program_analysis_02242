@@ -4,24 +4,187 @@
 
 \subsection{Research Questions}
 \label{sec:rqs}
-\todo{RQ1 effectiveness (rewrite budget), RQ2 cost (time budget), RQ3 validity}
+\begin{description}
+  \item[RQ1 (effectiveness)] Under the same rewrite budget, does guided
+    selection find more distinct inconsistencies than random and
+    syntax-based selection?
+  \item[RQ2 (cost)] What does each stage of the pipeline cost, and what does
+    guidance add?
+  \item[RQ3 (validity)] Can the variants be trusted to be equivalent to their
+    originals?
+\end{description}
 
 \subsection{Subjects and Setup}
 \label{sec:setup}
-\todo{subjects incl. new cases; eligible sites; N; seeds; Mann--Whitney U and A12; hardware}
+The subjects are \NumMethods{} JPAMB methods: \NumMethodsOrig{} from the
+benchmark and \NumGuardsMethods{} methods (\NumGuardsCases{} annotated cases)
+in a new class, \texttt{Guards}, written before any RQ1 measurement in five
+patterns fixed in advance: guarded division, range checks before array
+accesses, branches an analysis can settle, assertions on facts from an earlier
+branch, and else-if chains used after the merge. Since the author of the
+technique wrote them, every RQ1 result is also reported without them.
+
+There are \NumSites{} eligible sites in \NumSiteMethods{} methods
+(\NumSitesNoGuards{} without \texttt{Guards}). \NumUncertain{}
+(\UncertainPercent\%) are candidates for \texttt{guided} and \NumStrict{} for
+\texttt{guided-strict}; \NumSettled{} are settled and \NumNoState{} have no
+guide state. The share of candidates is high because many conditions compare
+unconstrained parameters, array accesses are always uncertain, and sites on one
+line share a flag. The budget is $N=\BudgetHalf$ (50\% of the eligible sites)
+or $N=\BudgetQuarter$ (25\%), and $N=\BudgetHalfNoGuards$ or
+$N=\BudgetQuarterNoGuards$ without \texttt{Guards}, with \NumSeeds{} seeds per
+strategy. The measure is the number of distinct inconsistencies per run,
+summed over the three analyzers; the tests use the sum because
+\texttt{static-interval} has none, and \cref{tab:rq1} gives the per-analyzer
+means. Strategies are compared by a two-sided Mann--Whitney U test (normal
+approximation with tie and continuity correction) and the Vargha--Delaney effect size
+$\hat{A}_{12}$, the probability that a run of the first strategy finds more
+than a run of the second, ties counted half. All runs used one machine:
+\Machine.
 
 \subsection{RQ1: Effectiveness}
 \label{sec:rq1}
-\todo{generated table: distinct inconsistencies per strategy and analyzer}
+Rewriting \emph{every} eligible site bounds what any strategy can find. It
+yields only \Pool{} distinct inconsistencies (\PoolSign{} for
+\texttt{static-sign}, \PoolSignNarrow{} for \texttt{static-sign-narrow},
+\PoolInterval{} for \texttt{static-interval}), from \NumInconsistentVariants{}
+of the \NumValid{} variants, all from R2-strict; without \texttt{Guards}, the
+pool is \PoolNoGuards{}. RQ1 therefore asks whether a strategy reaches these
+few sites within its budget.
+
+\begin{table}[t]
+\caption{RQ1: distinct inconsistencies per run at the 50\% budget, mean
+(population standard deviation) over \NumSeeds{} seeds, per analyzer and in total, with
+the Mann--Whitney $p$ and $\hat{A}_{12}$ of the total against
+\texttt{random}. $^\dagger$Exploratory, defined after the pool was known.}
+\label{tab:rq1}
+\small
+\input{generated/tab-rq1}
+\end{table}
+
+\Cref{tab:rq1} gives the result. The strategy planned in the proposal,
+\texttt{guided}, and its sensitivity variant \texttt{guided-strict} find
+\emph{fewer} inconsistencies than \texttt{random} in every setting. At $N=\BudgetHalf$,
+\texttt{guided} finds \MeanGuidedHalf{} on average, against \MeanRandomHalf{}
+for \texttt{random} (\PGuidedRandomHalf, $\hat{A}_{12}=\AGuidedRandomHalf$) and
+\MeanSyntaxHalf{} for \texttt{syntax} (\PGuidedSyntaxHalf); at
+$N=\BudgetQuarter$ and without \texttt{Guards} the direction against
+\texttt{random} is the same. Of
+the \NumPlannedTests{} planned tests that can be computed, the largest $p$ is
+\MaxPlannedP{}, below the Bonferroni threshold of \BonferroniAlpha{}; in the
+\NumPlannedNoTest{} remaining comparisons, without \texttt{Guards} at
+$N=\BudgetQuarterNoGuards$, \texttt{syntax} finds none either. These results
+are largely fixed by construction. Because $N$ is smaller than the number of
+candidates, \texttt{guided} never reaches a settled site, whatever the seed,
+and \NumInconsistentSitesSettled{} of the \NumInconsistentVariants{} sites
+that produce an inconsistency are settled; \PoolFromSettledOnly{} of the
+\Pool{} distinct inconsistencies come from no uncertain site. The seeds vary
+only which of these sites \texttt{random} and \texttt{syntax} reach.
+
+\emph{Answer to RQ1: no. Choosing uncertain sites first finds fewer distinct
+inconsistencies than random selection in all four settings, and fewer than
+syntax-based selection in three; in the fourth, neither finds any.}
+
+\paragraph{Exploratory: settled sites first}
+The opposite order, which we defined only after seeing the pool and therefore
+treat as a hypothesis, rewrites the \NumSettled{} settled sites first. Since
+\NumSettled{} is below every budget, it contains the whole pool at both
+budgets, by construction (\MeanSettledHalf{} in every seed). Whether settled
+sites are richer elsewhere would need a new experiment on other analyzers and
+programs.
 
 \subsection{RQ2: Cost}
 \label{sec:rq2}
-\todo{time budget results}
+One complete run of the pipeline, which reproduces the stored sites,
+selections, validation results and outcome sets exactly,
+takes \CostTotal{}\,s. Validation dominates with \CostValidation{}\,s:
+compiling every variant and running every input on both versions. Computing
+the guide's states for all methods takes \CostExport{}\,s, site finding and
+selection \CostSites{}\,s and \CostSelection{}\,s, and analyzing every
+original and variant with all three analyzers \CostAnalysis{}\,s. Guidance is
+thus negligible, and under a time budget every strategy would validate about
+the same number of variants, so a time-budget comparison reduces to the
+rewrite-budget comparison of RQ1. For the same reason we do not report time to
+the first inconsistency, which here is the position of the first of
+\NumInconsistentVariants{} sites in each order.
 
 \subsection{RQ3: Validity of Variants}
 \label{sec:rq3}
-\todo{valid variants, discarded, bytecode-identical, mutant kill rate}
+All \NumCompile{} variants compile and agree with their originals on every
+input, so testing discards \NumDiscarded{}, and \NumBytecodeIdentical{} have
+the original's bytecode. To check that the inputs could have exposed a wrong rewrite, we
+validated deliberately wrong ones: off-by-one or opposite operators for R2,
+and negation without swapping the branches for R1. Of the \NumMutants{}
+mutants, \NumMutantsEquivalent{} are equivalent to the original on all inputs
+(for example, an off-by-one at a boundary the operand never reaches), each
+with a written argument; testing rejects \NumMutantsKilled{} of the other
+\NumMutantsNonEquivalent{}. The \NumMutantsSurvived{} survivors need
+coordinated values in two or three parameters, which one-at-a-time synthesis
+does not produce. For conditions on parameters the method never assigns, we
+measured the original condition at entry: for \NumCondBoth{} variants the
+inputs make it take both values and for \NumCondOne{} only one; for the other
+\NumCondUnknown{} variants this is not measured.
+
+\emph{Answer to RQ3: every variant passed, and the inputs reject all but
+\NumMutantsSurvived{} non-equivalent wrong rewrites; the evidence is weaker for
+methods with non-integer parameters (\cref{sec:threats}).}
 
 \subsection{What the Inconsistencies Reveal}
 \label{sec:findings}
-\todo{inconsistencies grouped by cause, one short example each}
+\Cref{tab:inconsistencies} lists the variants that change an outcome set. They
+share one cause: the sign domain abstracts the constant $0$ exactly, to
+$\{0\}$, but $1$ to $\{+\}$ and $-1$ to $\{-\}$. A value in $\{+\}$ compared
+with $\{0\}$ by \texttt{>} is always greater; compared with $\{+\}$ by
+\texttt{>=}, it may not be, since the domain cannot tell $1$ from $2$. All
+\NumInconsistentSitesCrossZero{} sites are among the \NumStrictCrossZero{}
+R2-strict sites whose literal changes to or from $0$.
+
+\begin{table}[t]
+\caption{The variants with an inconsistency. Guide: the site's status for the
+interval guide. Outcomes: ok, assertion error (AE), divide by zero (DZ),
+non-termination ($\ast$).}
+\label{tab:inconsistencies}
+\small
+\input{generated/tab-inconsistencies}
+\end{table}
+
+\begin{lstlisting}[float=t,caption={\texttt{Loops.neverAsserts} (left) and
+its R2-strict variant (right).},label={lst:loops}]
+int i = 1;                        int i = 1;
+while (i > 0) {}                  while (i >= 1) {}
+assert false;                     assert false;
+\end{lstlisting}
+
+In \cref{lst:loops}, both sign analyzers know $i\in\{+\}$. On the left the
+loop condition is always true, the assertion is unreachable, and the
+prediction is $\{\ast\}$; on the right the condition may be false and an
+assertion error is added. \texttt{Loops.neverDivides} is the same with a
+division by zero. The interval guide knows $i\in[1,1]$ and decides both
+forms, so the site is settled and \texttt{guided} never reaches it within the
+budget. In \texttt{Guards.assertDerivedRange}, the guard \texttt{x >= 0}
+lets \texttt{static-sign-narrow} prove a later assertion, and \texttt{x > -1}
+does not.
+
+This explains why the hypothesis behind guidance (\cref{sec:sites}) fails for
+these analyzers. The guide represents every constant exactly, the sign domain
+only $0$. An inconsistency of this kind needs a comparison that the sign
+analyzer decides in one form and not in the other, and such a comparison is
+usually decided by the guide in both, so the site is settled. Where the guide is
+uncertain, the condition is typically undecided for all three analyzers in
+both forms, and the rewrite changes nothing; only
+\NumInconsistentSitesUncertain{} of the \NumUncertain{} uncertain sites
+produces an inconsistency.
+
+The other rules change no outcome set on JPAMB. On each edge, both domains
+refine the two operands of a comparison alike, whichever side they are on and
+whichever edge is taken, so swapping operands or inverting a branch gives the
+same edge states. For \texttt{static-sign-narrow}, splitting
+\texttt{x != y} gives the union of the \texttt{<} and \texttt{>} refinements,
+which is the \texttt{!=} refinement, and splitting \texttt{==} gave the same
+states as \texttt{==} in every case we checked; for intervals the hull of the two parts equals the
+\texttt{!=} refinement, and the sequence of \texttt{<=} and \texttt{>=} the
+\texttt{==} refinement. For intervals the fixpoint could still depend on the
+order in which a widening point is reached when R1 or R2-split reorders or
+adds branches inside a loop, but this does not occur on JPAMB, and R2-strict
+is exact for intervals, since $x>c$ and $x\ge c+1$ refine to the same
+interval.

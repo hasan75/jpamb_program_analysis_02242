@@ -2,4 +2,48 @@
 % Only citations verified by literature-scout.
 \section{Related Work}
 \label{sec:related}
-\todo{related work}
+
+\paragraph{Testing static analyzers against a reference}
+\citet{klinger2019} insert synthesized assertions into correct C
+programs and run six verifiers and analyzers on the variants; an analyzer that
+disagrees with the majority points to a soundness or precision issue. \citet{cuoq2012} test Frama-C on random Csmith programs, using the value
+analysis as an interpreter and comparing with compiled execution, and \citet{taneja2020} compare LLVM's dataflow analyses, such as known bits and
+integer ranges, with maximally precise results computed by an SMT solver. All
+three need a reference (other analyzers, an execution, or a solver), whereas
+our oracle is the analyzer itself on an equivalent method.
+
+\paragraph{Metamorphic testing of analyzers}
+Metamorphic testing replaces an oracle by relations between the outputs for
+related inputs~\citep{chen2018}. Interrogation testing~\citep{kaindlstorfer2024}
+applies it to eight C/C++ analyzers, including the abstract interpreters Clam
+and MOPSA: it adds,
+strengthens or weakens assertions and assumptions, partly based on which
+assertions the analyzer has already proven, and checks set inclusions between
+the failing assertions. Its transformations change the specification with a
+predicted effect, while ours preserve the method's behavior and compare
+predicted outcome sets. Statfier~\citep{zhang2023statfier} applies
+semantics-preserving transformations to programs from the test suites of PMD,
+SpotBugs, Infer, SonarQube and CheckStyle, at warning lines and their backward
+slices, and reports a bug when the number or type of warnings changes. Both
+use the analyzer's own results to decide what to transform. We choose sites
+from a fixed analysis's abstract state, which also applies where the analyzer
+reports nothing, compare this choice with random and syntax-based selection
+under one budget, and find that on JPAMB it does worse than random
+(\cref{sec:rq1}).
+
+\paragraph{Equivalence-based testing of compilers and models}
+Equivalence modulo inputs~\citep{le2014emi} prunes code that is not executed on
+given inputs and compares the outputs of the compiled programs; like our
+guide, it uses information about the program (coverage) to choose where to
+mutate, and its authors suggest adapting the idea to analysis systems. GLFuzz~\citep{donaldson2017} applies
+semantics-preserving transformations to graphics shaders and compares the
+rendered images. \citet{rabin2021} show that neural models of code
+often change their method-name predictions under such transformations. Our
+rules are of the same kind, restricted to integer conditions so that their
+equivalence can be argued and tested.
+
+\paragraph{Earlier DTU work}
+\citet{chand2024} compare an LLM and Infer on null pointer exceptions in
+LLM-generated Java, with a fuzzer as ground truth, and check robustness by
+renaming; \citet{domingues2025} use abstract states to choose fuzzer inputs on
+JPAMB. As argued in \cref{sec:intro}, neither chooses where to rewrite.

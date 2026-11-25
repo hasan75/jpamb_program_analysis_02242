@@ -1,4 +1,44 @@
-% 7 Threats to Validity (~0.4 p). Internal, construct, external.
+% 7 Threats to Validity (~0.4 p). Internal, construct, conclusion, external.
 \section{Threats to Validity}
 \label{sec:threats}
-\todo{threats}
+
+\paragraph{Internal validity}
+A wrong rewrite could create a spurious inconsistency. Each rule has an
+equivalence argument and a syntactic precondition, and every variant passed
+testing (\cref{sec:rq3}); this is evidence, not a proof. One-at-a-time input
+synthesis cannot produce coordinated values in several parameters, as the
+\NumMutantsSurvived{} surviving mutants show, and whether a rewritten
+condition took both values was measured only for conditions on unassigned
+parameters (\NumCondUnknown{} of \NumValid{} variants are unmeasured). Methods with
+non-integer parameters are tested only on their case inputs and simple array
+and random-object inputs. For \texttt{static-interval}, the guide and the
+analyzer under test coincide, and all three share one implementation, so the
+guide knows exactly where they give up; sharing code could only favor
+\texttt{guided}, which nevertheless found fewer inconsistencies.
+
+\paragraph{Construct validity}
+A distinct inconsistency (\cref{sec:inconsistency}) counts the same change of
+outcome set by the same rule in one method once, which may merge different
+causes or split one cause over several methods. Uncertainty is computed per
+source line, so two comparisons on one line share a flag, and array accesses
+are always uncertain, which makes \texttt{guided-strict} partly syntactic.
+\texttt{guided-strict} was defined after the candidates were counted and
+\texttt{settled} after the pool was known; neither is evidence for the
+technique. Time budgets and the time to the first inconsistency are not
+reported (\cref{sec:rq2}).
+
+\paragraph{Conclusion validity}
+The tests compare \NumSeeds{} runs per strategy whose orders differ only by
+the seed over a fixed pool of \Pool{} inconsistencies, with many ties; the
+$p$-values describe these runs, and the guided results are largely fixed by
+construction (\cref{sec:rq1}).
+
+\paragraph{External validity}
+JPAMB consists of micro-benchmarks, the rules cover only \texttt{int}
+comparisons, and the three analyzers come from one code base; other analyzers
+and programs may contain more inconsistencies. The \texttt{Guards} cases were
+written by the author of the technique; without them the pool shrinks to
+\PoolNoGuards{}, \texttt{guided} still finds fewer than \texttt{random} at both
+budgets, and at 25\% it ties with \texttt{syntax}, which also finds none. Loop
+reshaping (\texttt{while} to \texttt{if} with \texttt{do}-\texttt{while}) is
+not among the rules, so effects of loop shape on widening are not covered.

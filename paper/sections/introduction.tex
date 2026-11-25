@@ -4,25 +4,107 @@
 \label{sec:intro}
 
 \paragraph{Context}
-% The f(x) pair: equivalent methods, an imprecise analyzer may warn on only one.
-\todo{context}
+A static analyzer predicts which runtime errors a program can reach without
+running it on every input. Its precision can depend on how the program is
+written. The two Java methods below are equivalent: for every \texttt{int}
+input they return the same value and never divide by zero.
+
+\noindent
+\begin{minipage}[t]{0.47\linewidth}
+\begin{lstlisting}
+int f(int x) {
+  if (x > 0)
+    return 100 / x;
+  return 0;
+}
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\linewidth}
+\begin{lstlisting}
+int f(int x) {
+  if (x <= 0)
+    return 0;
+  return 100 / x;
+}
+\end{lstlisting}
+\end{minipage}
+
+\noindent
+An imprecise analyzer may nevertheless warn about a division by zero in one of
+them and not in the other. Such a discrepancy need not be unsound; it shows that
+the analyzer's over-approximation depends on the form of the code, which
+developers experience as warnings that appear or disappear after a harmless
+refactoring; real Java analyzers do change their warnings under such
+transformations~\citep{zhang2023statfier}. Rewriting a program in a semantics-preserving way and comparing
+the analyzer's answers is a metamorphic test that needs no ground truth.
 
 \paragraph{Gap}
-% Differential and random-program testing of analyzers, metamorphic testing,
-% renaming-based robustness (chand2024), input-level guidance (domingues2025).
-\todo{gap: needs literature-scout citations}
+Most techniques for testing static analyzers compare against a reference,
+such as other analyzers, concrete execution, or solver-computed
+results~\citep{klinger2019,cuoq2012,taneja2020}. Metamorphic testing needs no
+reference~\citep{chen2018}, and equivalence-preserving transformations have
+exposed bugs in compilers~\citep{le2014emi,donaldson2017}. The closest work
+does not say where to rewrite for analyzers that predict outcomes.
+Statfier~\citep{zhang2023statfier} transforms Java programs at the lines where
+the analyzer warns and their backward slices; an analyzer that predicts one
+outcome set per method reports no such lines. Interrogation
+testing~\citep{kaindlstorfer2024} chooses transformations from the analyzer's
+own verification results, but it changes assertions and assumptions on purpose
+instead of preserving behavior. Earlier DTU work renamed variables and methods
+to test the robustness of an LLM and the Infer analyzer~\citep{chand2024};
+renaming local variables leaves the bytecode instructions, and hence the
+answer of an analyzer that reads them, unchanged. Abstract interpretation has also guided a fuzzer on
+JPAMB~\citep{domingues2025}. However, a static analyzer's prediction for a
+method does not depend on runtime inputs, so input-level guidance cannot
+reveal whether the analyzer's answer depends on how the code is written. No
+existing technique therefore says where to place a behavior-preserving rewrite
+for such analyzers.
 
 \paragraph{Innovation}
-% The research question and the key observation.
-\todo{innovation}
+We ask: \emph{can the abstract state computed by a lightweight analysis select
+semantics-preserving rewrite sites that reveal inconsistencies in a static
+analyzer more efficiently than random or syntax-based selection?} The
+intuition is that a rewrite can only change an answer where the analyzer's
+precision depends on the form of the code. Where a fixed interval analysis,
+the \emph{guide}, already decides a branch, a rewritten condition should be
+decided the same way; where the guide is uncertain, the analyzer may be too.
+We therefore mark sites as \emph{uncertain} from the guide's abstract state and
+spend a fixed rewrite budget on them first. The guide's states are computed
+once per method, not from the output of each analyzer under test, so the
+approach applies to analyzers that predict sets of outcomes rather than lists
+of warnings.
 
 \paragraph{Evaluation}
-% Setup in two sentences and the headline result (from generated numbers).
-\todo{evaluation summary}
+We test three abstract interpreters for JPAMB that differ only in their integer
+domain and in whether they refine at branches, on \NumMethods{} methods with
+\NumSites{} eligible sites, and compare guided selection with random and
+syntax-based selection under the same budget over \NumSeeds{} seeds. The
+hypothesis does not hold. All \NumValid{} variants are valid, and the test
+inputs reject \NumMutantsKilled{} of \NumMutantsNonEquivalent{} non-equivalent
+wrong rewrites, but rewriting every site exposes only \Pool{} distinct
+inconsistencies. At a budget of half the sites, guided selection finds
+\MeanGuidedHalf{} distinct inconsistencies per run (summed over the three
+analyzers), against \MeanRandomHalf{} for random selection
+(\PGuidedRandomHalf), and it also loses at a quarter of the sites and without
+the cases we added. The reason is a mismatch between guide and analyzers:
+\PoolFromSettledOnly{} of the \Pool{} inconsistencies occur at sites the guide
+settles, where the rewrite replaces a constant the sign domain abstracts
+exactly ($0$) by one it does not ($1$), so a condition that both domains decide
+becomes undecided for signs.
 
 \paragraph{Contributions}
-% (1) uncertain/candidate sites from abstract states (Sec. 4.2);
-% (2) rewrite rules with preconditions and test-based validation (4.3, 4.5);
-% (3) comparison of guided, random and syntax-based selection on three analyzers (6);
-% (4) new JPAMB cases (6.2).
-\todo{contributions}
+\begin{enumerate}
+  \item A definition of uncertain sites from a guide's abstract states
+    (\cref{sec:sites}).
+  \item Four rewrite rules for \texttt{int} conditions with preconditions, and
+    test-based validation checked with wrong rewrites
+    (\cref{sec:rules,sec:validation,sec:rq3}).
+  \item A controlled comparison of guided, random and syntax-based selection
+    under one budget on three analyzers, with a negative result and its
+    explanation: a guide must model how the analyzer under test abstracts
+    constants, not only where the program is undecided
+    (\cref{sec:rq1,sec:findings}).
+  \item \NumGuardsMethods{} new JPAMB methods with \NumGuardsCases{} annotated
+    cases on integer guards (\cref{sec:setup}).
+\end{enumerate}

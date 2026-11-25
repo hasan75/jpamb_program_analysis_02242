@@ -65,8 +65,8 @@ RQ1 tests this (\cref{sec:evaluation}).
 \subsection{Rewrite Rules}
 \label{sec:rules}
 \Cref{tab:rules} lists the rules. Each variant contains exactly one rewrite, so
-an inconsistency can be traced to a single change. The proposal's third rule,
-loop reshaping, is out of scope (\cref{sec:threats}).
+an inconsistency can be traced to a single change. Loop reshaping is not among
+the rules (\cref{sec:threats}).
 
 \paragraph{Shared precondition}
 Every operand of a rewritten comparison must be a \emph{pure} \texttt{int}
@@ -146,8 +146,8 @@ seed, so each (strategy, seed) gives one reproducible order. The strategies are:
   \item[\texttt{syntax}] sites ordered by their distance in source lines to
     the nearest \texttt{/}, \texttt{\%} or \texttt{assert} in the same method,
     closest first, and sites in methods without one last. It uses no analysis
-    and follows the proposal's baseline, which prefers sites close to a
-    division or assertion.
+    and prefers sites close to code that can fail by a division or an
+    assertion.
   \item[\texttt{guided}] all candidates in random order, then all other
     eligible sites in random order.
   \item[\texttt{guided-strict}] a sensitivity variant, defined after counting
