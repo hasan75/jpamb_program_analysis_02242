@@ -1,23 +1,23 @@
-eligible sites: 344
-candidates: guided 317, guided-strict 187 (42 methods)
+eligible sites: 408
+candidates: guided 368, guided-strict 215 (49 methods)
 seeds: 10
-budget 50%: N = 172
+budget 50%: N = 204
   strategy       uncertain hit     strict hit        methods
-  random          158.0 [156-161]    94.5 [84-102]    74.3 [67-79]
-  syntax          148.2 [147-149]    77.2 [74-80]    68.8 [67-71]
-  guided          172.0 [172-172]   102.7 [93-109]    66.5 [63-70]
-  guided-strict   172.0 [172-172]   172.0 [172-172]    41.7 [41-42]
-  rules per seed, random: R1-invert 31.0, R2-split 30.0, R2-strict 34.6, R2-swap 76.4
-  rules per seed, syntax: R1-invert 24.0, R2-split 37.8, R2-strict 33.2, R2-swap 77.0
-  rules per seed, guided: R1-invert 35.8, R2-split 30.9, R2-strict 31.5, R2-swap 73.8
-  rules per seed, guided-strict: R1-invert 40.6, R2-split 27.8, R2-strict 28.5, R2-swap 75.1
-budget 25%: N = 86
+  random          183.4 [180-186]   106.5 [100-114]    87.9 [85-91]
+  syntax          173.5 [171-175]    88.5 [85-92]    77.0 [76-78]
+  guided          204.0 [204-204]   120.5 [114-125]    79.3 [76-82]
+  guided-strict   204.0 [204-204]   204.0 [204-204]    48.9 [48-49]
+  rules per seed, random: R1-invert 41.9, R2-split 31.1, R2-strict 44.4, R2-swap 86.6
+  rules per seed, syntax: R1-invert 30.5, R2-split 42.3, R2-strict 40.7, R2-swap 90.5
+  rules per seed, guided: R1-invert 46.7, R2-split 32.5, R2-strict 39.5, R2-swap 85.3
+  rules per seed, guided-strict: R1-invert 50.5, R2-split 31.1, R2-strict 35.0, R2-swap 87.4
+budget 25%: N = 102
   strategy       uncertain hit     strict hit        methods
-  random           79.6 [76-83]    47.3 [41-56]    52.5 [44-57]
-  syntax           70.5 [66-76]    29.3 [25-33]    46.0 [44-48]
-  guided           86.0 [86-86]    50.4 [45-54]    49.1 [44-53]
-  guided-strict    86.0 [86-86]    86.0 [86-86]    35.2 [31-38]
-  rules per seed, random: R1-invert 16.4, R2-split 14.8, R2-strict 16.1, R2-swap 38.7
-  rules per seed, syntax: R1-invert 6.4, R2-split 21.7, R2-strict 17.6, R2-swap 40.3
-  rules per seed, guided: R1-invert 19.1, R2-split 14.3, R2-strict 16.7, R2-swap 35.9
-  rules per seed, guided-strict: R1-invert 20.3, R2-split 12.9, R2-strict 14.6, R2-swap 38.2
+  random           91.8 [89-95]    53.7 [49-61]    62.1 [56-68]
+  syntax           81.7 [78-86]    34.0 [32-39]    51.7 [50-53]
+  guided          102.0 [102-102]    60.8 [55-67]    58.3 [55-62]
+  guided-strict   102.0 [102-102]   102.0 [102-102]    40.4 [36-43]
+  rules per seed, random: R1-invert 20.8, R2-split 17.0, R2-strict 21.1, R2-swap 43.1
+  rules per seed, syntax: R1-invert 7.7, R2-split 24.5, R2-strict 21.8, R2-swap 48.0
+  rules per seed, guided: R1-invert 24.8, R2-split 15.0, R2-strict 18.1, R2-swap 44.1
+  rules per seed, guided-strict: R1-invert 25.7, R2-split 15.1, R2-strict 17.7, R2-swap 43.5

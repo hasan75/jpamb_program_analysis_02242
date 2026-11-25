@@ -20,6 +20,7 @@ public class Runtime {
           jpamb.cases.Calls.class,
           jpamb.cases.Dependent.class,
           jpamb.cases.Extended.class,
+          jpamb.cases.Guards.class,
           jpamb.cases.Loops.class,
           jpamb.cases.MagicConstants.class,
           jpamb.cases.Operators.class,

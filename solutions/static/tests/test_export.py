@@ -68,7 +68,8 @@ def test_divisor_sites(bc):
 
 def test_every_method_exports(bc):
     data = export.export_all(bc, Interval, narrow=True)
-    assert len(data["methods"]) == 145
+    cases = (ROOT / "target/stats/cases.txt").read_text().splitlines()
+    assert len(data["methods"]) == len({c.split()[0] for c in cases if c.strip()})
     assert all(m["fixpoint"] for m in data["methods"].values())
     assert json.loads(json.dumps(data)) == data
 

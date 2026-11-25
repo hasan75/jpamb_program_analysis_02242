@@ -1,0 +1,708 @@
+┌ Getting info about analysis
+│ [32m[+][0m Ran solutions/static/.venv/bin/static-interval info
+└ Getting info about analysis
+[32m[+][0m Iteration 1/3, Experiment 1/160 jpamb.cases.Arrays.arrayContent:()V
+[32m[+][0m Iteration 1/3, Experiment 2/160 jpamb.cases.Arrays.arrayContentAboveMinus13:()V
+[32m[+][0m Iteration 1/3, Experiment 3/160 jpamb.cases.Arrays.arrayFillUntilEqual:()V
+[32m[+][0m Iteration 1/3, Experiment 4/160 jpamb.cases.Arrays.arrayInBounds:()V
+[32m[+][0m Iteration 1/3, Experiment 5/160 jpamb.cases.Arrays.arrayIndexValue:(I)V
+[32m[+][0m Iteration 1/3, Experiment 6/160 jpamb.cases.Arrays.arrayIsNull:()V
+[32m[+][0m Iteration 1/3, Experiment 7/160 jpamb.cases.Arrays.arrayIsNullLength:()V
+[32m[+][0m Iteration 1/3, Experiment 8/160 jpamb.cases.Arrays.arrayLength:()V
+[32m[+][0m Iteration 1/3, Experiment 9/160 jpamb.cases.Arrays.arrayLoop:(I)V
+[32m[+][0m Iteration 1/3, Experiment 10/160 jpamb.cases.Arrays.arrayNotEmpty:([I)V
+[32m[+][0m Iteration 1/3, Experiment 11/160 jpamb.cases.Arrays.arrayOutOfBounds:()V
+[32m[+][0m Iteration 1/3, Experiment 12/160 jpamb.cases.Arrays.arraySometimesNull:(I)V
+[32m[+][0m Iteration 1/3, Experiment 13/160 jpamb.cases.Arrays.arraySpellsHello:([C)V
+[32m[+][0m Iteration 1/3, Experiment 14/160 jpamb.cases.Arrays.arraySumIsLarge:([I)V
+[32m[+][0m Iteration 1/3, Experiment 15/160 jpamb.cases.Arrays.arraySumIsLargeInt:(I)V
+[32m[+][0m Iteration 1/3, Experiment 16/160 jpamb.cases.Arrays.binarySearch:(I)V
+[32m[+][0m Iteration 1/3, Experiment 17/160 jpamb.cases.Arrays.secretThenDivide:([C)I
+[32m[+][0m Iteration 1/3, Experiment 18/160 jpamb.cases.BitOperations.bitshiftLeft:(I)V
+[32m[+][0m Iteration 1/3, Experiment 19/160 jpamb.cases.BitOperations.bitshiftRight:(I)V
+[32m[+][0m Iteration 1/3, Experiment 20/160 jpamb.cases.BitOperations.bitshiftUnsignedRight:(I)V
+[32m[+][0m Iteration 1/3, Experiment 21/160 jpamb.cases.BitOperations.bitwiseAnd:(II)V
+[32m[+][0m Iteration 1/3, Experiment 22/160 jpamb.cases.BitOperations.bitwiseNot:(I)V
+[32m[+][0m Iteration 1/3, Experiment 23/160 jpamb.cases.BitOperations.bitwiseOr:(II)V
+[32m[+][0m Iteration 1/3, Experiment 24/160 jpamb.cases.BitOperations.drawInt:(I)V
+[32m[+][0m Iteration 1/3, Experiment 25/160 jpamb.cases.BitOperations.xor:(II)V
+[32m[+][0m Iteration 1/3, Experiment 26/160 jpamb.cases.Calls.allPrimesArePositive:(I)V
+[32m[+][0m Iteration 1/3, Experiment 27/160 jpamb.cases.Calls.callsAssertFalse:()V
+[32m[+][0m Iteration 1/3, Experiment 28/160 jpamb.cases.Calls.callsAssertFib:(I)V
+[32m[+][0m Iteration 1/3, Experiment 29/160 jpamb.cases.Calls.callsAssertIf:(Z)V
+[32m[+][0m Iteration 1/3, Experiment 30/160 jpamb.cases.Calls.callsAssertIfWithTrue:()V
+[32m[+][0m Iteration 1/3, Experiment 31/160 jpamb.cases.Calls.callsAssertTrue:()V
+[32m[+][0m Iteration 1/3, Experiment 32/160 jpamb.cases.Calls.callsBowtie:(II)I
+[32m[+][0m Iteration 1/3, Experiment 33/160 jpamb.cases.Calls.callsCallChain:(II)I
+[32m[+][0m Iteration 1/3, Experiment 34/160 jpamb.cases.Calls.callsCallCycle:(II)I
+[32m[+][0m Iteration 1/3, Experiment 35/160 jpamb.cases.Calls.callsCallCycleFork:(II)I
+[32m[+][0m Iteration 1/3, Experiment 36/160 jpamb.cases.Calls.callsCallCycleLoop:(II)I
+[32m[+][0m Iteration 1/3, Experiment 37/160 jpamb.cases.Calls.callsCallCycleNext:(II)I
+[32m[+][0m Iteration 1/3, Experiment 38/160 jpamb.cases.Calls.callsDiamond:(I)I
+[32m[+][0m Iteration 1/3, Experiment 39/160 jpamb.cases.Calls.callsDumbbell:(II)I
+[32m[+][0m Iteration 1/3, Experiment 40/160 jpamb.cases.Calls.callsTadpole:(II)I
+[32m[+][0m Iteration 1/3, Experiment 41/160 jpamb.cases.Calls.callsWheel:(II)I
+[32m[+][0m Iteration 1/3, Experiment 42/160 jpamb.cases.Calls.divideViaHelper:(I)I
+[32m[+][0m Iteration 1/3, Experiment 43/160 jpamb.cases.Calls.divisionThroughHelper:(II)I
+[32m[+][0m Iteration 1/3, Experiment 44/160 jpamb.cases.Dependent.badNormalizedDistance:(II)I
+[32m[+][0m Iteration 1/3, Experiment 45/160 jpamb.cases.Dependent.combinedGuidance:(III)V
+[32m[+][0m Iteration 1/3, Experiment 46/160 jpamb.cases.Dependent.compareEquality:(II)V
+[32m[+][0m Iteration 1/3, Experiment 47/160 jpamb.cases.Dependent.divisionLoop:(I)V
+[32m[+][0m Iteration 1/3, Experiment 48/160 jpamb.cases.Dependent.doubleIsAlwaysEven:(I)V
+[32m[+][0m Iteration 1/3, Experiment 49/160 jpamb.cases.Dependent.normalizedDistance:(II)I
+[32m[+][0m Iteration 1/3, Experiment 50/160 jpamb.cases.Dependent.safeDivByN:(I)I
+[32m[+][0m Iteration 1/3, Experiment 51/160 jpamb.cases.Extended.safeDifferenceChain:(III)I
+[32m[+][0m Iteration 1/3, Experiment 52/160 jpamb.cases.Extended.safeLoopAccumulation:(III)I
+[32m[+][0m Iteration 1/3, Experiment 53/160 jpamb.cases.Extended.safeNestedLoopDivision:(III)I
+[32m[+][0m Iteration 1/3, Experiment 54/160 jpamb.cases.Extended.safeSelectedDivisor:(ZIII)I
+[32m[+][0m Iteration 1/3, Experiment 55/160 jpamb.cases.Extended.unsafeComputedRemainder:(IIIII)I
+[32m[+][0m Iteration 1/3, Experiment 56/160 jpamb.cases.Extended.unsafeLoopOffsetDivisor:(IIII)I
+[32m[+][0m Iteration 1/3, Experiment 57/160 jpamb.cases.Extended.unsafeModeDerivedDivisor:(IIII)I
+[32m[+][0m Iteration 1/3, Experiment 58/160 jpamb.cases.Extended.unsafeNestedAffineDivisor:(IIIII)I
+[32m[+][0m Iteration 1/3, Experiment 59/160 jpamb.cases.Extended.unsafeNestedLoopDivisor:(IIIII)I
+[32m[+][0m Iteration 1/3, Experiment 60/160 jpamb.cases.Loops.decrementLoop:(I)V
+[32m[+][0m Iteration 1/3, Experiment 61/160 jpamb.cases.Loops.doWhileDivision:(II)I
+[32m[+][0m Iteration 1/3, Experiment 62/160 jpamb.cases.Loops.forLoopDivision:(II)I
+[32m[+][0m Iteration 1/3, Experiment 63/160 jpamb.cases.Loops.forever:()V
+[32m[+][0m Iteration 1/3, Experiment 64/160 jpamb.cases.Loops.loopRemainder:(II)I
+[32m[+][0m Iteration 1/3, Experiment 65/160 jpamb.cases.Loops.multiplicationLoop:(I)V
+[32m[+][0m Iteration 1/3, Experiment 66/160 jpamb.cases.Loops.nestedLoop:(I)V
+[32m[+][0m Iteration 1/3, Experiment 67/160 jpamb.cases.Loops.neverAsserts:()V
+[32m[+][0m Iteration 1/3, Experiment 68/160 jpamb.cases.Loops.neverDivides:()I
+[32m[+][0m Iteration 1/3, Experiment 69/160 jpamb.cases.Loops.safeNestedBranchDivision:(III)I
+[32m[+][0m Iteration 1/3, Experiment 70/160 jpamb.cases.Loops.terminates:()V
+[32m[+][0m Iteration 1/3, Experiment 71/160 jpamb.cases.Loops.whileLoopDivision:(II)I
+[32m[+][0m Iteration 1/3, Experiment 72/160 jpamb.cases.MagicConstants.computedIndex:(I)I
+[32m[+][0m Iteration 1/3, Experiment 73/160 jpamb.cases.MagicConstants.derivedNull:(I)I
+[32m[+][0m Iteration 1/3, Experiment 74/160 jpamb.cases.MagicConstants.loopAndEquality:(I)V
+[32m[+][0m Iteration 1/3, Experiment 75/160 jpamb.cases.MagicConstants.loopDoubling:(I)V
+[32m[+][0m Iteration 1/3, Experiment 76/160 jpamb.cases.MagicConstants.loopDoublingSafe:(I)V
+[32m[+][0m Iteration 1/3, Experiment 77/160 jpamb.cases.MagicConstants.narrowEquality:(I)V
+[32m[+][0m Iteration 1/3, Experiment 78/160 jpamb.cases.MagicConstants.rangeCondition:(I)V
+[32m[+][0m Iteration 1/3, Experiment 79/160 jpamb.cases.MagicConstants.squareThreshold:(I)V
+[32m[+][0m Iteration 1/3, Experiment 80/160 jpamb.cases.MagicConstants.squaredDivisor:(I)I
+[32m[+][0m Iteration 1/3, Experiment 81/160 jpamb.cases.MagicConstants.sumReachesTarget:(I)V
+[32m[+][0m Iteration 1/3, Experiment 82/160 jpamb.cases.MagicConstants.tableLookup:(I)I
+[32m[+][0m Iteration 1/3, Experiment 83/160 jpamb.cases.MagicConstants.tableLookupSafe:(I)I
+[32m[+][0m Iteration 1/3, Experiment 84/160 jpamb.cases.MagicConstants.twoParams:(II)I
+[32m[+][0m Iteration 1/3, Experiment 85/160 jpamb.cases.MagicConstants.twoParamsSafe:(II)I
+[32m[+][0m Iteration 1/3, Experiment 86/160 jpamb.cases.MagicConstants.unreachableRange:(I)V
+[32m[+][0m Iteration 1/3, Experiment 87/160 jpamb.cases.Operators.branchRemainder:(ZI)I
+[32m[+][0m Iteration 1/3, Experiment 88/160 jpamb.cases.Operators.directRemainder:(II)I
+[32m[+][0m Iteration 1/3, Experiment 89/160 jpamb.cases.Operators.divisionChain:(IIII)I
+[32m[+][0m Iteration 1/3, Experiment 90/160 jpamb.cases.Operators.multiplyForDivisor:(II)I
+[32m[+][0m Iteration 1/3, Experiment 91/160 jpamb.cases.Operators.negatedDivisor:(I)I
+[32m[+][0m Iteration 1/3, Experiment 92/160 jpamb.cases.Overflow.arrayIndexAfterOverflow:(I)I
+[32m[+][0m Iteration 1/3, Experiment 93/160 jpamb.cases.Randomness.branchOverlap:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 1/3, Experiment 94/160 jpamb.cases.Randomness.compareInts:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 1/3, Experiment 95/160 jpamb.cases.Randomness.draw34Bits:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 1/3, Experiment 96/160 jpamb.cases.Randomness.drawDependsOnArg:(ILjpamb/utils/Smith;)I
+[32m[+][0m Iteration 1/3, Experiment 97/160 jpamb.cases.Randomness.drawInCallee:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 1/3, Experiment 98/160 jpamb.cases.Randomness.drawInt:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 1/3, Experiment 99/160 jpamb.cases.Randomness.drawIntOverflow:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 1/3, Experiment 100/160 jpamb.cases.Randomness.loopUntilHeads:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 1/3, Experiment 101/160 jpamb.cases.Randomness.randomBranch:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 1/3, Experiment 102/160 jpamb.cases.Randomness.randomIndex:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 1/3, Experiment 103/160 jpamb.cases.Randomness.randomNull:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 1/3, Experiment 104/160 jpamb.cases.Randomness.spinOnTails:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 1/3, Experiment 105/160 jpamb.cases.Randomness.twoDraws:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 1/3, Experiment 106/160 jpamb.cases.Simple.ConstantExtractionCheck:(ILjava/lang/String;)V
+[32m[+][0m Iteration 1/3, Experiment 107/160 jpamb.cases.Simple.assertBoolean:(Z)V
+[32m[+][0m Iteration 1/3, Experiment 108/160 jpamb.cases.Simple.assertFalse:()V
+[32m[+][0m Iteration 1/3, Experiment 109/160 jpamb.cases.Simple.assertInteger:(I)V
+[32m[+][0m Iteration 1/3, Experiment 110/160 jpamb.cases.Simple.assertPositive:(I)V
+[32m[+][0m Iteration 1/3, Experiment 111/160 jpamb.cases.Simple.assertTrue:()V
+[32m[+][0m Iteration 1/3, Experiment 112/160 jpamb.cases.Simple.branchDivision:(ZI)I
+[32m[+][0m Iteration 1/3, Experiment 113/160 jpamb.cases.Simple.checkBeforeAssert:(I)V
+[32m[+][0m Iteration 1/3, Experiment 114/160 jpamb.cases.Simple.checkBeforeDivideByN2:(I)I
+[32m[+][0m Iteration 1/3, Experiment 115/160 jpamb.cases.Simple.checkBeforeDivideByN:(I)I
+[32m[+][0m Iteration 1/3, Experiment 116/160 jpamb.cases.Simple.directDivision:(II)I
+[32m[+][0m Iteration 1/3, Experiment 117/160 jpamb.cases.Simple.divideByN:(I)I
+[32m[+][0m Iteration 1/3, Experiment 118/160 jpamb.cases.Simple.divideByNMinus10054203:(I)I
+[32m[+][0m Iteration 1/3, Experiment 119/160 jpamb.cases.Simple.divideByZero:()I
+[32m[+][0m Iteration 1/3, Experiment 120/160 jpamb.cases.Simple.divideZeroByZero:(II)I
+[32m[+][0m Iteration 1/3, Experiment 121/160 jpamb.cases.Simple.doNothing:()V
+[32m[+][0m Iteration 1/3, Experiment 122/160 jpamb.cases.Simple.earlyReturn:()I
+[32m[+][0m Iteration 1/3, Experiment 123/160 jpamb.cases.Simple.guardedDivision:(I)I
+[32m[+][0m Iteration 1/3, Experiment 124/160 jpamb.cases.Simple.integerRangeBoundary:(I)V
+[32m[+][0m Iteration 1/3, Experiment 125/160 jpamb.cases.Simple.justAdd:(II)I
+[32m[+][0m Iteration 1/3, Experiment 126/160 jpamb.cases.Simple.justMulitply:(II)I
+[32m[+][0m Iteration 1/3, Experiment 127/160 jpamb.cases.Simple.justReturn:()I
+[32m[+][0m Iteration 1/3, Experiment 128/160 jpamb.cases.Simple.justReturnNothing:()V
+[32m[+][0m Iteration 1/3, Experiment 129/160 jpamb.cases.Simple.multiError:(Z)I
+[32m[+][0m Iteration 1/3, Experiment 130/160 jpamb.cases.Simple.nestedBranchDivision:(II)I
+[32m[+][0m Iteration 1/3, Experiment 131/160 jpamb.cases.Simple.nestedConstantCoverage:(III)V
+[32m[+][0m Iteration 1/3, Experiment 132/160 jpamb.cases.Simple.selectedDivisor:(ZII)I
+[32m[+][0m Iteration 1/3, Experiment 133/160 jpamb.cases.Simple.subtractForDivisor:(II)I
+[32m[+][0m Iteration 1/3, Experiment 134/160 jpamb.cases.Strings.checkComplexSequence:(Ljava/lang/String;)V
+[32m[+][0m Iteration 1/3, Experiment 135/160 jpamb.cases.Strings.checkExtension:(Ljava/lang/String;)V
+[32m[+][0m Iteration 1/3, Experiment 136/160 jpamb.cases.Strings.sayHello2:(Ljava/lang/String;)V
+[32m[+][0m Iteration 1/3, Experiment 137/160 jpamb.cases.Strings.sayHello3:(Ljava/lang/String;)V
+[32m[+][0m Iteration 1/3, Experiment 138/160 jpamb.cases.Strings.sayHello:(Ljava/lang/String;)V
+[32m[+][0m Iteration 1/3, Experiment 139/160 jpamb.cases.Tricky.collatz:(I)V
+[32m[+][0m Iteration 1/3, Experiment 140/160 jpamb.cases.advanced.CWE470.strict_safe_dispatcher:(Ljava/lang/String;)V
+[32m[+][0m Iteration 1/3, Experiment 141/160 jpamb.cases.advanced.CWE470.unsafe_dispatcher:(Ljava/lang/String;)V
+[32m[+][0m Iteration 1/3, Experiment 142/160 jpamb.cases.advanced.CWE470.weak_dispatcher:(Ljava/lang/String;)V
+[32m[+][0m Iteration 1/3, Experiment 143/160 jpamb.cases.advanced.CWE502.blacklist_deserialization:(Ljava/lang/String;)V
+[32m[+][0m Iteration 1/3, Experiment 144/160 jpamb.cases.advanced.CWE502.insecure_deserialization:(Ljava/lang/String;)V
+[32m[+][0m Iteration 1/3, Experiment 145/160 jpamb.cases.advanced.CWE502.whitelist_deserialization:(Ljava/lang/String;)V
+[32m[+][0m Iteration 1/3, Experiment 146/160 jpamb.cases.Guards.assertAfterGuard:(I)I
+[32m[+][0m Iteration 1/3, Experiment 147/160 jpamb.cases.Guards.assertDerivedRange:(II)V
+[32m[+][0m Iteration 1/3, Experiment 148/160 jpamb.cases.Guards.assertWrongDerivation:(I)V
+[32m[+][0m Iteration 1/3, Experiment 149/160 jpamb.cases.Guards.boundedLoopCheck:(I)I
+[32m[+][0m Iteration 1/3, Experiment 150/160 jpamb.cases.Guards.clampThenDivide:(I)I
+[32m[+][0m Iteration 1/3, Experiment 151/160 jpamb.cases.Guards.classifyThenIndex:(I)I
+[32m[+][0m Iteration 1/3, Experiment 152/160 jpamb.cases.Guards.constantMode:(I)I
+[32m[+][0m Iteration 1/3, Experiment 153/160 jpamb.cases.Guards.divGuardNotZero:(I)I
+[32m[+][0m Iteration 1/3, Experiment 154/160 jpamb.cases.Guards.divGuardPositiveReversed:(I)I
+[32m[+][0m Iteration 1/3, Experiment 155/160 jpamb.cases.Guards.divGuardWrongBound:(I)I
+[32m[+][0m Iteration 1/3, Experiment 156/160 jpamb.cases.Guards.mergeLosesZero:(I)I
+[32m[+][0m Iteration 1/3, Experiment 157/160 jpamb.cases.Guards.rangeCheckLowerMissing:(I)I
+[32m[+][0m Iteration 1/3, Experiment 158/160 jpamb.cases.Guards.rangeCheckOffByOne:(I)I
+[32m[+][0m Iteration 1/3, Experiment 159/160 jpamb.cases.Guards.rangeCheckedRead:(I)I
+[32m[+][0m Iteration 1/3, Experiment 160/160 jpamb.cases.Guards.signThenDivide:(I)I
+[32m[+][0m Iteration 2/3, Experiment 1/160 jpamb.cases.Arrays.arrayContent:()V
+[32m[+][0m Iteration 2/3, Experiment 2/160 jpamb.cases.Arrays.arrayContentAboveMinus13:()V
+[32m[+][0m Iteration 2/3, Experiment 3/160 jpamb.cases.Arrays.arrayFillUntilEqual:()V
+[32m[+][0m Iteration 2/3, Experiment 4/160 jpamb.cases.Arrays.arrayInBounds:()V
+[32m[+][0m Iteration 2/3, Experiment 5/160 jpamb.cases.Arrays.arrayIndexValue:(I)V
+[32m[+][0m Iteration 2/3, Experiment 6/160 jpamb.cases.Arrays.arrayIsNull:()V
+[32m[+][0m Iteration 2/3, Experiment 7/160 jpamb.cases.Arrays.arrayIsNullLength:()V
+[32m[+][0m Iteration 2/3, Experiment 8/160 jpamb.cases.Arrays.arrayLength:()V
+[32m[+][0m Iteration 2/3, Experiment 9/160 jpamb.cases.Arrays.arrayLoop:(I)V
+[32m[+][0m Iteration 2/3, Experiment 10/160 jpamb.cases.Arrays.arrayNotEmpty:([I)V
+[32m[+][0m Iteration 2/3, Experiment 11/160 jpamb.cases.Arrays.arrayOutOfBounds:()V
+[32m[+][0m Iteration 2/3, Experiment 12/160 jpamb.cases.Arrays.arraySometimesNull:(I)V
+[32m[+][0m Iteration 2/3, Experiment 13/160 jpamb.cases.Arrays.arraySpellsHello:([C)V
+[32m[+][0m Iteration 2/3, Experiment 14/160 jpamb.cases.Arrays.arraySumIsLarge:([I)V
+[32m[+][0m Iteration 2/3, Experiment 15/160 jpamb.cases.Arrays.arraySumIsLargeInt:(I)V
+[32m[+][0m Iteration 2/3, Experiment 16/160 jpamb.cases.Arrays.binarySearch:(I)V
+[32m[+][0m Iteration 2/3, Experiment 17/160 jpamb.cases.Arrays.secretThenDivide:([C)I
+[32m[+][0m Iteration 2/3, Experiment 18/160 jpamb.cases.BitOperations.bitshiftLeft:(I)V
+[32m[+][0m Iteration 2/3, Experiment 19/160 jpamb.cases.BitOperations.bitshiftRight:(I)V
+[32m[+][0m Iteration 2/3, Experiment 20/160 jpamb.cases.BitOperations.bitshiftUnsignedRight:(I)V
+[32m[+][0m Iteration 2/3, Experiment 21/160 jpamb.cases.BitOperations.bitwiseAnd:(II)V
+[32m[+][0m Iteration 2/3, Experiment 22/160 jpamb.cases.BitOperations.bitwiseNot:(I)V
+[32m[+][0m Iteration 2/3, Experiment 23/160 jpamb.cases.BitOperations.bitwiseOr:(II)V
+[32m[+][0m Iteration 2/3, Experiment 24/160 jpamb.cases.BitOperations.drawInt:(I)V
+[32m[+][0m Iteration 2/3, Experiment 25/160 jpamb.cases.BitOperations.xor:(II)V
+[32m[+][0m Iteration 2/3, Experiment 26/160 jpamb.cases.Calls.allPrimesArePositive:(I)V
+[32m[+][0m Iteration 2/3, Experiment 27/160 jpamb.cases.Calls.callsAssertFalse:()V
+[32m[+][0m Iteration 2/3, Experiment 28/160 jpamb.cases.Calls.callsAssertFib:(I)V
+[32m[+][0m Iteration 2/3, Experiment 29/160 jpamb.cases.Calls.callsAssertIf:(Z)V
+[32m[+][0m Iteration 2/3, Experiment 30/160 jpamb.cases.Calls.callsAssertIfWithTrue:()V
+[32m[+][0m Iteration 2/3, Experiment 31/160 jpamb.cases.Calls.callsAssertTrue:()V
+[32m[+][0m Iteration 2/3, Experiment 32/160 jpamb.cases.Calls.callsBowtie:(II)I
+[32m[+][0m Iteration 2/3, Experiment 33/160 jpamb.cases.Calls.callsCallChain:(II)I
+[32m[+][0m Iteration 2/3, Experiment 34/160 jpamb.cases.Calls.callsCallCycle:(II)I
+[32m[+][0m Iteration 2/3, Experiment 35/160 jpamb.cases.Calls.callsCallCycleFork:(II)I
+[32m[+][0m Iteration 2/3, Experiment 36/160 jpamb.cases.Calls.callsCallCycleLoop:(II)I
+[32m[+][0m Iteration 2/3, Experiment 37/160 jpamb.cases.Calls.callsCallCycleNext:(II)I
+[32m[+][0m Iteration 2/3, Experiment 38/160 jpamb.cases.Calls.callsDiamond:(I)I
+[32m[+][0m Iteration 2/3, Experiment 39/160 jpamb.cases.Calls.callsDumbbell:(II)I
+[32m[+][0m Iteration 2/3, Experiment 40/160 jpamb.cases.Calls.callsTadpole:(II)I
+[32m[+][0m Iteration 2/3, Experiment 41/160 jpamb.cases.Calls.callsWheel:(II)I
+[32m[+][0m Iteration 2/3, Experiment 42/160 jpamb.cases.Calls.divideViaHelper:(I)I
+[32m[+][0m Iteration 2/3, Experiment 43/160 jpamb.cases.Calls.divisionThroughHelper:(II)I
+[32m[+][0m Iteration 2/3, Experiment 44/160 jpamb.cases.Dependent.badNormalizedDistance:(II)I
+[32m[+][0m Iteration 2/3, Experiment 45/160 jpamb.cases.Dependent.combinedGuidance:(III)V
+[32m[+][0m Iteration 2/3, Experiment 46/160 jpamb.cases.Dependent.compareEquality:(II)V
+[32m[+][0m Iteration 2/3, Experiment 47/160 jpamb.cases.Dependent.divisionLoop:(I)V
+[32m[+][0m Iteration 2/3, Experiment 48/160 jpamb.cases.Dependent.doubleIsAlwaysEven:(I)V
+[32m[+][0m Iteration 2/3, Experiment 49/160 jpamb.cases.Dependent.normalizedDistance:(II)I
+[32m[+][0m Iteration 2/3, Experiment 50/160 jpamb.cases.Dependent.safeDivByN:(I)I
+[32m[+][0m Iteration 2/3, Experiment 51/160 jpamb.cases.Extended.safeDifferenceChain:(III)I
+[32m[+][0m Iteration 2/3, Experiment 52/160 jpamb.cases.Extended.safeLoopAccumulation:(III)I
+[32m[+][0m Iteration 2/3, Experiment 53/160 jpamb.cases.Extended.safeNestedLoopDivision:(III)I
+[32m[+][0m Iteration 2/3, Experiment 54/160 jpamb.cases.Extended.safeSelectedDivisor:(ZIII)I
+[32m[+][0m Iteration 2/3, Experiment 55/160 jpamb.cases.Extended.unsafeComputedRemainder:(IIIII)I
+[32m[+][0m Iteration 2/3, Experiment 56/160 jpamb.cases.Extended.unsafeLoopOffsetDivisor:(IIII)I
+[32m[+][0m Iteration 2/3, Experiment 57/160 jpamb.cases.Extended.unsafeModeDerivedDivisor:(IIII)I
+[32m[+][0m Iteration 2/3, Experiment 58/160 jpamb.cases.Extended.unsafeNestedAffineDivisor:(IIIII)I
+[32m[+][0m Iteration 2/3, Experiment 59/160 jpamb.cases.Extended.unsafeNestedLoopDivisor:(IIIII)I
+[32m[+][0m Iteration 2/3, Experiment 60/160 jpamb.cases.Loops.decrementLoop:(I)V
+[32m[+][0m Iteration 2/3, Experiment 61/160 jpamb.cases.Loops.doWhileDivision:(II)I
+[32m[+][0m Iteration 2/3, Experiment 62/160 jpamb.cases.Loops.forLoopDivision:(II)I
+[32m[+][0m Iteration 2/3, Experiment 63/160 jpamb.cases.Loops.forever:()V
+[32m[+][0m Iteration 2/3, Experiment 64/160 jpamb.cases.Loops.loopRemainder:(II)I
+[32m[+][0m Iteration 2/3, Experiment 65/160 jpamb.cases.Loops.multiplicationLoop:(I)V
+[32m[+][0m Iteration 2/3, Experiment 66/160 jpamb.cases.Loops.nestedLoop:(I)V
+[32m[+][0m Iteration 2/3, Experiment 67/160 jpamb.cases.Loops.neverAsserts:()V
+[32m[+][0m Iteration 2/3, Experiment 68/160 jpamb.cases.Loops.neverDivides:()I
+[32m[+][0m Iteration 2/3, Experiment 69/160 jpamb.cases.Loops.safeNestedBranchDivision:(III)I
+[32m[+][0m Iteration 2/3, Experiment 70/160 jpamb.cases.Loops.terminates:()V
+[32m[+][0m Iteration 2/3, Experiment 71/160 jpamb.cases.Loops.whileLoopDivision:(II)I
+[32m[+][0m Iteration 2/3, Experiment 72/160 jpamb.cases.MagicConstants.computedIndex:(I)I
+[32m[+][0m Iteration 2/3, Experiment 73/160 jpamb.cases.MagicConstants.derivedNull:(I)I
+[32m[+][0m Iteration 2/3, Experiment 74/160 jpamb.cases.MagicConstants.loopAndEquality:(I)V
+[32m[+][0m Iteration 2/3, Experiment 75/160 jpamb.cases.MagicConstants.loopDoubling:(I)V
+[32m[+][0m Iteration 2/3, Experiment 76/160 jpamb.cases.MagicConstants.loopDoublingSafe:(I)V
+[32m[+][0m Iteration 2/3, Experiment 77/160 jpamb.cases.MagicConstants.narrowEquality:(I)V
+[32m[+][0m Iteration 2/3, Experiment 78/160 jpamb.cases.MagicConstants.rangeCondition:(I)V
+[32m[+][0m Iteration 2/3, Experiment 79/160 jpamb.cases.MagicConstants.squareThreshold:(I)V
+[32m[+][0m Iteration 2/3, Experiment 80/160 jpamb.cases.MagicConstants.squaredDivisor:(I)I
+[32m[+][0m Iteration 2/3, Experiment 81/160 jpamb.cases.MagicConstants.sumReachesTarget:(I)V
+[32m[+][0m Iteration 2/3, Experiment 82/160 jpamb.cases.MagicConstants.tableLookup:(I)I
+[32m[+][0m Iteration 2/3, Experiment 83/160 jpamb.cases.MagicConstants.tableLookupSafe:(I)I
+[32m[+][0m Iteration 2/3, Experiment 84/160 jpamb.cases.MagicConstants.twoParams:(II)I
+[32m[+][0m Iteration 2/3, Experiment 85/160 jpamb.cases.MagicConstants.twoParamsSafe:(II)I
+[32m[+][0m Iteration 2/3, Experiment 86/160 jpamb.cases.MagicConstants.unreachableRange:(I)V
+[32m[+][0m Iteration 2/3, Experiment 87/160 jpamb.cases.Operators.branchRemainder:(ZI)I
+[32m[+][0m Iteration 2/3, Experiment 88/160 jpamb.cases.Operators.directRemainder:(II)I
+[32m[+][0m Iteration 2/3, Experiment 89/160 jpamb.cases.Operators.divisionChain:(IIII)I
+[32m[+][0m Iteration 2/3, Experiment 90/160 jpamb.cases.Operators.multiplyForDivisor:(II)I
+[32m[+][0m Iteration 2/3, Experiment 91/160 jpamb.cases.Operators.negatedDivisor:(I)I
+[32m[+][0m Iteration 2/3, Experiment 92/160 jpamb.cases.Overflow.arrayIndexAfterOverflow:(I)I
+[32m[+][0m Iteration 2/3, Experiment 93/160 jpamb.cases.Randomness.branchOverlap:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 2/3, Experiment 94/160 jpamb.cases.Randomness.compareInts:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 2/3, Experiment 95/160 jpamb.cases.Randomness.draw34Bits:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 2/3, Experiment 96/160 jpamb.cases.Randomness.drawDependsOnArg:(ILjpamb/utils/Smith;)I
+[32m[+][0m Iteration 2/3, Experiment 97/160 jpamb.cases.Randomness.drawInCallee:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 2/3, Experiment 98/160 jpamb.cases.Randomness.drawInt:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 2/3, Experiment 99/160 jpamb.cases.Randomness.drawIntOverflow:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 2/3, Experiment 100/160 jpamb.cases.Randomness.loopUntilHeads:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 2/3, Experiment 101/160 jpamb.cases.Randomness.randomBranch:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 2/3, Experiment 102/160 jpamb.cases.Randomness.randomIndex:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 2/3, Experiment 103/160 jpamb.cases.Randomness.randomNull:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 2/3, Experiment 104/160 jpamb.cases.Randomness.spinOnTails:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 2/3, Experiment 105/160 jpamb.cases.Randomness.twoDraws:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 2/3, Experiment 106/160 jpamb.cases.Simple.ConstantExtractionCheck:(ILjava/lang/String;)V
+[32m[+][0m Iteration 2/3, Experiment 107/160 jpamb.cases.Simple.assertBoolean:(Z)V
+[32m[+][0m Iteration 2/3, Experiment 108/160 jpamb.cases.Simple.assertFalse:()V
+[32m[+][0m Iteration 2/3, Experiment 109/160 jpamb.cases.Simple.assertInteger:(I)V
+[32m[+][0m Iteration 2/3, Experiment 110/160 jpamb.cases.Simple.assertPositive:(I)V
+[32m[+][0m Iteration 2/3, Experiment 111/160 jpamb.cases.Simple.assertTrue:()V
+[32m[+][0m Iteration 2/3, Experiment 112/160 jpamb.cases.Simple.branchDivision:(ZI)I
+[32m[+][0m Iteration 2/3, Experiment 113/160 jpamb.cases.Simple.checkBeforeAssert:(I)V
+[32m[+][0m Iteration 2/3, Experiment 114/160 jpamb.cases.Simple.checkBeforeDivideByN2:(I)I
+[32m[+][0m Iteration 2/3, Experiment 115/160 jpamb.cases.Simple.checkBeforeDivideByN:(I)I
+[32m[+][0m Iteration 2/3, Experiment 116/160 jpamb.cases.Simple.directDivision:(II)I
+[32m[+][0m Iteration 2/3, Experiment 117/160 jpamb.cases.Simple.divideByN:(I)I
+[32m[+][0m Iteration 2/3, Experiment 118/160 jpamb.cases.Simple.divideByNMinus10054203:(I)I
+[32m[+][0m Iteration 2/3, Experiment 119/160 jpamb.cases.Simple.divideByZero:()I
+[32m[+][0m Iteration 2/3, Experiment 120/160 jpamb.cases.Simple.divideZeroByZero:(II)I
+[32m[+][0m Iteration 2/3, Experiment 121/160 jpamb.cases.Simple.doNothing:()V
+[32m[+][0m Iteration 2/3, Experiment 122/160 jpamb.cases.Simple.earlyReturn:()I
+[32m[+][0m Iteration 2/3, Experiment 123/160 jpamb.cases.Simple.guardedDivision:(I)I
+[32m[+][0m Iteration 2/3, Experiment 124/160 jpamb.cases.Simple.integerRangeBoundary:(I)V
+[32m[+][0m Iteration 2/3, Experiment 125/160 jpamb.cases.Simple.justAdd:(II)I
+[32m[+][0m Iteration 2/3, Experiment 126/160 jpamb.cases.Simple.justMulitply:(II)I
+[32m[+][0m Iteration 2/3, Experiment 127/160 jpamb.cases.Simple.justReturn:()I
+[32m[+][0m Iteration 2/3, Experiment 128/160 jpamb.cases.Simple.justReturnNothing:()V
+[32m[+][0m Iteration 2/3, Experiment 129/160 jpamb.cases.Simple.multiError:(Z)I
+[32m[+][0m Iteration 2/3, Experiment 130/160 jpamb.cases.Simple.nestedBranchDivision:(II)I
+[32m[+][0m Iteration 2/3, Experiment 131/160 jpamb.cases.Simple.nestedConstantCoverage:(III)V
+[32m[+][0m Iteration 2/3, Experiment 132/160 jpamb.cases.Simple.selectedDivisor:(ZII)I
+[32m[+][0m Iteration 2/3, Experiment 133/160 jpamb.cases.Simple.subtractForDivisor:(II)I
+[32m[+][0m Iteration 2/3, Experiment 134/160 jpamb.cases.Strings.checkComplexSequence:(Ljava/lang/String;)V
+[32m[+][0m Iteration 2/3, Experiment 135/160 jpamb.cases.Strings.checkExtension:(Ljava/lang/String;)V
+[32m[+][0m Iteration 2/3, Experiment 136/160 jpamb.cases.Strings.sayHello2:(Ljava/lang/String;)V
+[32m[+][0m Iteration 2/3, Experiment 137/160 jpamb.cases.Strings.sayHello3:(Ljava/lang/String;)V
+[32m[+][0m Iteration 2/3, Experiment 138/160 jpamb.cases.Strings.sayHello:(Ljava/lang/String;)V
+[32m[+][0m Iteration 2/3, Experiment 139/160 jpamb.cases.Tricky.collatz:(I)V
+[32m[+][0m Iteration 2/3, Experiment 140/160 jpamb.cases.advanced.CWE470.strict_safe_dispatcher:(Ljava/lang/String;)V
+[32m[+][0m Iteration 2/3, Experiment 141/160 jpamb.cases.advanced.CWE470.unsafe_dispatcher:(Ljava/lang/String;)V
+[32m[+][0m Iteration 2/3, Experiment 142/160 jpamb.cases.advanced.CWE470.weak_dispatcher:(Ljava/lang/String;)V
+[32m[+][0m Iteration 2/3, Experiment 143/160 jpamb.cases.advanced.CWE502.blacklist_deserialization:(Ljava/lang/String;)V
+[32m[+][0m Iteration 2/3, Experiment 144/160 jpamb.cases.advanced.CWE502.insecure_deserialization:(Ljava/lang/String;)V
+[32m[+][0m Iteration 2/3, Experiment 145/160 jpamb.cases.advanced.CWE502.whitelist_deserialization:(Ljava/lang/String;)V
+[32m[+][0m Iteration 2/3, Experiment 146/160 jpamb.cases.Guards.assertAfterGuard:(I)I
+[32m[+][0m Iteration 2/3, Experiment 147/160 jpamb.cases.Guards.assertDerivedRange:(II)V
+[32m[+][0m Iteration 2/3, Experiment 148/160 jpamb.cases.Guards.assertWrongDerivation:(I)V
+[32m[+][0m Iteration 2/3, Experiment 149/160 jpamb.cases.Guards.boundedLoopCheck:(I)I
+[32m[+][0m Iteration 2/3, Experiment 150/160 jpamb.cases.Guards.clampThenDivide:(I)I
+[32m[+][0m Iteration 2/3, Experiment 151/160 jpamb.cases.Guards.classifyThenIndex:(I)I
+[32m[+][0m Iteration 2/3, Experiment 152/160 jpamb.cases.Guards.constantMode:(I)I
+[32m[+][0m Iteration 2/3, Experiment 153/160 jpamb.cases.Guards.divGuardNotZero:(I)I
+[32m[+][0m Iteration 2/3, Experiment 154/160 jpamb.cases.Guards.divGuardPositiveReversed:(I)I
+[32m[+][0m Iteration 2/3, Experiment 155/160 jpamb.cases.Guards.divGuardWrongBound:(I)I
+[32m[+][0m Iteration 2/3, Experiment 156/160 jpamb.cases.Guards.mergeLosesZero:(I)I
+[32m[+][0m Iteration 2/3, Experiment 157/160 jpamb.cases.Guards.rangeCheckLowerMissing:(I)I
+[32m[+][0m Iteration 2/3, Experiment 158/160 jpamb.cases.Guards.rangeCheckOffByOne:(I)I
+[32m[+][0m Iteration 2/3, Experiment 159/160 jpamb.cases.Guards.rangeCheckedRead:(I)I
+[32m[+][0m Iteration 2/3, Experiment 160/160 jpamb.cases.Guards.signThenDivide:(I)I
+[32m[+][0m Iteration 3/3, Experiment 1/160 jpamb.cases.Arrays.arrayContent:()V
+[32m[+][0m Iteration 3/3, Experiment 2/160 jpamb.cases.Arrays.arrayContentAboveMinus13:()V
+[32m[+][0m Iteration 3/3, Experiment 3/160 jpamb.cases.Arrays.arrayFillUntilEqual:()V
+[32m[+][0m Iteration 3/3, Experiment 4/160 jpamb.cases.Arrays.arrayInBounds:()V
+[32m[+][0m Iteration 3/3, Experiment 5/160 jpamb.cases.Arrays.arrayIndexValue:(I)V
+[32m[+][0m Iteration 3/3, Experiment 6/160 jpamb.cases.Arrays.arrayIsNull:()V
+[32m[+][0m Iteration 3/3, Experiment 7/160 jpamb.cases.Arrays.arrayIsNullLength:()V
+[32m[+][0m Iteration 3/3, Experiment 8/160 jpamb.cases.Arrays.arrayLength:()V
+[32m[+][0m Iteration 3/3, Experiment 9/160 jpamb.cases.Arrays.arrayLoop:(I)V
+[32m[+][0m Iteration 3/3, Experiment 10/160 jpamb.cases.Arrays.arrayNotEmpty:([I)V
+[32m[+][0m Iteration 3/3, Experiment 11/160 jpamb.cases.Arrays.arrayOutOfBounds:()V
+[32m[+][0m Iteration 3/3, Experiment 12/160 jpamb.cases.Arrays.arraySometimesNull:(I)V
+[32m[+][0m Iteration 3/3, Experiment 13/160 jpamb.cases.Arrays.arraySpellsHello:([C)V
+[32m[+][0m Iteration 3/3, Experiment 14/160 jpamb.cases.Arrays.arraySumIsLarge:([I)V
+[32m[+][0m Iteration 3/3, Experiment 15/160 jpamb.cases.Arrays.arraySumIsLargeInt:(I)V
+[32m[+][0m Iteration 3/3, Experiment 16/160 jpamb.cases.Arrays.binarySearch:(I)V
+[32m[+][0m Iteration 3/3, Experiment 17/160 jpamb.cases.Arrays.secretThenDivide:([C)I
+[32m[+][0m Iteration 3/3, Experiment 18/160 jpamb.cases.BitOperations.bitshiftLeft:(I)V
+[32m[+][0m Iteration 3/3, Experiment 19/160 jpamb.cases.BitOperations.bitshiftRight:(I)V
+[32m[+][0m Iteration 3/3, Experiment 20/160 jpamb.cases.BitOperations.bitshiftUnsignedRight:(I)V
+[32m[+][0m Iteration 3/3, Experiment 21/160 jpamb.cases.BitOperations.bitwiseAnd:(II)V
+[32m[+][0m Iteration 3/3, Experiment 22/160 jpamb.cases.BitOperations.bitwiseNot:(I)V
+[32m[+][0m Iteration 3/3, Experiment 23/160 jpamb.cases.BitOperations.bitwiseOr:(II)V
+[32m[+][0m Iteration 3/3, Experiment 24/160 jpamb.cases.BitOperations.drawInt:(I)V
+[32m[+][0m Iteration 3/3, Experiment 25/160 jpamb.cases.BitOperations.xor:(II)V
+[32m[+][0m Iteration 3/3, Experiment 26/160 jpamb.cases.Calls.allPrimesArePositive:(I)V
+[32m[+][0m Iteration 3/3, Experiment 27/160 jpamb.cases.Calls.callsAssertFalse:()V
+[32m[+][0m Iteration 3/3, Experiment 28/160 jpamb.cases.Calls.callsAssertFib:(I)V
+[32m[+][0m Iteration 3/3, Experiment 29/160 jpamb.cases.Calls.callsAssertIf:(Z)V
+[32m[+][0m Iteration 3/3, Experiment 30/160 jpamb.cases.Calls.callsAssertIfWithTrue:()V
+[32m[+][0m Iteration 3/3, Experiment 31/160 jpamb.cases.Calls.callsAssertTrue:()V
+[32m[+][0m Iteration 3/3, Experiment 32/160 jpamb.cases.Calls.callsBowtie:(II)I
+[32m[+][0m Iteration 3/3, Experiment 33/160 jpamb.cases.Calls.callsCallChain:(II)I
+[32m[+][0m Iteration 3/3, Experiment 34/160 jpamb.cases.Calls.callsCallCycle:(II)I
+[32m[+][0m Iteration 3/3, Experiment 35/160 jpamb.cases.Calls.callsCallCycleFork:(II)I
+[32m[+][0m Iteration 3/3, Experiment 36/160 jpamb.cases.Calls.callsCallCycleLoop:(II)I
+[32m[+][0m Iteration 3/3, Experiment 37/160 jpamb.cases.Calls.callsCallCycleNext:(II)I
+[32m[+][0m Iteration 3/3, Experiment 38/160 jpamb.cases.Calls.callsDiamond:(I)I
+[32m[+][0m Iteration 3/3, Experiment 39/160 jpamb.cases.Calls.callsDumbbell:(II)I
+[32m[+][0m Iteration 3/3, Experiment 40/160 jpamb.cases.Calls.callsTadpole:(II)I
+[32m[+][0m Iteration 3/3, Experiment 41/160 jpamb.cases.Calls.callsWheel:(II)I
+[32m[+][0m Iteration 3/3, Experiment 42/160 jpamb.cases.Calls.divideViaHelper:(I)I
+[32m[+][0m Iteration 3/3, Experiment 43/160 jpamb.cases.Calls.divisionThroughHelper:(II)I
+[32m[+][0m Iteration 3/3, Experiment 44/160 jpamb.cases.Dependent.badNormalizedDistance:(II)I
+[32m[+][0m Iteration 3/3, Experiment 45/160 jpamb.cases.Dependent.combinedGuidance:(III)V
+[32m[+][0m Iteration 3/3, Experiment 46/160 jpamb.cases.Dependent.compareEquality:(II)V
+[32m[+][0m Iteration 3/3, Experiment 47/160 jpamb.cases.Dependent.divisionLoop:(I)V
+[32m[+][0m Iteration 3/3, Experiment 48/160 jpamb.cases.Dependent.doubleIsAlwaysEven:(I)V
+[32m[+][0m Iteration 3/3, Experiment 49/160 jpamb.cases.Dependent.normalizedDistance:(II)I
+[32m[+][0m Iteration 3/3, Experiment 50/160 jpamb.cases.Dependent.safeDivByN:(I)I
+[32m[+][0m Iteration 3/3, Experiment 51/160 jpamb.cases.Extended.safeDifferenceChain:(III)I
+[32m[+][0m Iteration 3/3, Experiment 52/160 jpamb.cases.Extended.safeLoopAccumulation:(III)I
+[32m[+][0m Iteration 3/3, Experiment 53/160 jpamb.cases.Extended.safeNestedLoopDivision:(III)I
+[32m[+][0m Iteration 3/3, Experiment 54/160 jpamb.cases.Extended.safeSelectedDivisor:(ZIII)I
+[32m[+][0m Iteration 3/3, Experiment 55/160 jpamb.cases.Extended.unsafeComputedRemainder:(IIIII)I
+[32m[+][0m Iteration 3/3, Experiment 56/160 jpamb.cases.Extended.unsafeLoopOffsetDivisor:(IIII)I
+[32m[+][0m Iteration 3/3, Experiment 57/160 jpamb.cases.Extended.unsafeModeDerivedDivisor:(IIII)I
+[32m[+][0m Iteration 3/3, Experiment 58/160 jpamb.cases.Extended.unsafeNestedAffineDivisor:(IIIII)I
+[32m[+][0m Iteration 3/3, Experiment 59/160 jpamb.cases.Extended.unsafeNestedLoopDivisor:(IIIII)I
+[32m[+][0m Iteration 3/3, Experiment 60/160 jpamb.cases.Loops.decrementLoop:(I)V
+[32m[+][0m Iteration 3/3, Experiment 61/160 jpamb.cases.Loops.doWhileDivision:(II)I
+[32m[+][0m Iteration 3/3, Experiment 62/160 jpamb.cases.Loops.forLoopDivision:(II)I
+[32m[+][0m Iteration 3/3, Experiment 63/160 jpamb.cases.Loops.forever:()V
+[32m[+][0m Iteration 3/3, Experiment 64/160 jpamb.cases.Loops.loopRemainder:(II)I
+[32m[+][0m Iteration 3/3, Experiment 65/160 jpamb.cases.Loops.multiplicationLoop:(I)V
+[32m[+][0m Iteration 3/3, Experiment 66/160 jpamb.cases.Loops.nestedLoop:(I)V
+[32m[+][0m Iteration 3/3, Experiment 67/160 jpamb.cases.Loops.neverAsserts:()V
+[32m[+][0m Iteration 3/3, Experiment 68/160 jpamb.cases.Loops.neverDivides:()I
+[32m[+][0m Iteration 3/3, Experiment 69/160 jpamb.cases.Loops.safeNestedBranchDivision:(III)I
+[32m[+][0m Iteration 3/3, Experiment 70/160 jpamb.cases.Loops.terminates:()V
+[32m[+][0m Iteration 3/3, Experiment 71/160 jpamb.cases.Loops.whileLoopDivision:(II)I
+[32m[+][0m Iteration 3/3, Experiment 72/160 jpamb.cases.MagicConstants.computedIndex:(I)I
+[32m[+][0m Iteration 3/3, Experiment 73/160 jpamb.cases.MagicConstants.derivedNull:(I)I
+[32m[+][0m Iteration 3/3, Experiment 74/160 jpamb.cases.MagicConstants.loopAndEquality:(I)V
+[32m[+][0m Iteration 3/3, Experiment 75/160 jpamb.cases.MagicConstants.loopDoubling:(I)V
+[32m[+][0m Iteration 3/3, Experiment 76/160 jpamb.cases.MagicConstants.loopDoublingSafe:(I)V
+[32m[+][0m Iteration 3/3, Experiment 77/160 jpamb.cases.MagicConstants.narrowEquality:(I)V
+[32m[+][0m Iteration 3/3, Experiment 78/160 jpamb.cases.MagicConstants.rangeCondition:(I)V
+[32m[+][0m Iteration 3/3, Experiment 79/160 jpamb.cases.MagicConstants.squareThreshold:(I)V
+[32m[+][0m Iteration 3/3, Experiment 80/160 jpamb.cases.MagicConstants.squaredDivisor:(I)I
+[32m[+][0m Iteration 3/3, Experiment 81/160 jpamb.cases.MagicConstants.sumReachesTarget:(I)V
+[32m[+][0m Iteration 3/3, Experiment 82/160 jpamb.cases.MagicConstants.tableLookup:(I)I
+[32m[+][0m Iteration 3/3, Experiment 83/160 jpamb.cases.MagicConstants.tableLookupSafe:(I)I
+[32m[+][0m Iteration 3/3, Experiment 84/160 jpamb.cases.MagicConstants.twoParams:(II)I
+[32m[+][0m Iteration 3/3, Experiment 85/160 jpamb.cases.MagicConstants.twoParamsSafe:(II)I
+[32m[+][0m Iteration 3/3, Experiment 86/160 jpamb.cases.MagicConstants.unreachableRange:(I)V
+[32m[+][0m Iteration 3/3, Experiment 87/160 jpamb.cases.Operators.branchRemainder:(ZI)I
+[32m[+][0m Iteration 3/3, Experiment 88/160 jpamb.cases.Operators.directRemainder:(II)I
+[32m[+][0m Iteration 3/3, Experiment 89/160 jpamb.cases.Operators.divisionChain:(IIII)I
+[32m[+][0m Iteration 3/3, Experiment 90/160 jpamb.cases.Operators.multiplyForDivisor:(II)I
+[32m[+][0m Iteration 3/3, Experiment 91/160 jpamb.cases.Operators.negatedDivisor:(I)I
+[32m[+][0m Iteration 3/3, Experiment 92/160 jpamb.cases.Overflow.arrayIndexAfterOverflow:(I)I
+[32m[+][0m Iteration 3/3, Experiment 93/160 jpamb.cases.Randomness.branchOverlap:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 3/3, Experiment 94/160 jpamb.cases.Randomness.compareInts:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 3/3, Experiment 95/160 jpamb.cases.Randomness.draw34Bits:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 3/3, Experiment 96/160 jpamb.cases.Randomness.drawDependsOnArg:(ILjpamb/utils/Smith;)I
+[32m[+][0m Iteration 3/3, Experiment 97/160 jpamb.cases.Randomness.drawInCallee:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 3/3, Experiment 98/160 jpamb.cases.Randomness.drawInt:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 3/3, Experiment 99/160 jpamb.cases.Randomness.drawIntOverflow:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 3/3, Experiment 100/160 jpamb.cases.Randomness.loopUntilHeads:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 3/3, Experiment 101/160 jpamb.cases.Randomness.randomBranch:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 3/3, Experiment 102/160 jpamb.cases.Randomness.randomIndex:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 3/3, Experiment 103/160 jpamb.cases.Randomness.randomNull:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 3/3, Experiment 104/160 jpamb.cases.Randomness.spinOnTails:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 3/3, Experiment 105/160 jpamb.cases.Randomness.twoDraws:(Ljpamb/utils/Smith;)V
+[32m[+][0m Iteration 3/3, Experiment 106/160 jpamb.cases.Simple.ConstantExtractionCheck:(ILjava/lang/String;)V
+[32m[+][0m Iteration 3/3, Experiment 107/160 jpamb.cases.Simple.assertBoolean:(Z)V
+[32m[+][0m Iteration 3/3, Experiment 108/160 jpamb.cases.Simple.assertFalse:()V
+[32m[+][0m Iteration 3/3, Experiment 109/160 jpamb.cases.Simple.assertInteger:(I)V
+[32m[+][0m Iteration 3/3, Experiment 110/160 jpamb.cases.Simple.assertPositive:(I)V
+[32m[+][0m Iteration 3/3, Experiment 111/160 jpamb.cases.Simple.assertTrue:()V
+[32m[+][0m Iteration 3/3, Experiment 112/160 jpamb.cases.Simple.branchDivision:(ZI)I
+[32m[+][0m Iteration 3/3, Experiment 113/160 jpamb.cases.Simple.checkBeforeAssert:(I)V
+[32m[+][0m Iteration 3/3, Experiment 114/160 jpamb.cases.Simple.checkBeforeDivideByN2:(I)I
+[32m[+][0m Iteration 3/3, Experiment 115/160 jpamb.cases.Simple.checkBeforeDivideByN:(I)I
+[32m[+][0m Iteration 3/3, Experiment 116/160 jpamb.cases.Simple.directDivision:(II)I
+[32m[+][0m Iteration 3/3, Experiment 117/160 jpamb.cases.Simple.divideByN:(I)I
+[32m[+][0m Iteration 3/3, Experiment 118/160 jpamb.cases.Simple.divideByNMinus10054203:(I)I
+[32m[+][0m Iteration 3/3, Experiment 119/160 jpamb.cases.Simple.divideByZero:()I
+[32m[+][0m Iteration 3/3, Experiment 120/160 jpamb.cases.Simple.divideZeroByZero:(II)I
+[32m[+][0m Iteration 3/3, Experiment 121/160 jpamb.cases.Simple.doNothing:()V
+[32m[+][0m Iteration 3/3, Experiment 122/160 jpamb.cases.Simple.earlyReturn:()I
+[32m[+][0m Iteration 3/3, Experiment 123/160 jpamb.cases.Simple.guardedDivision:(I)I
+[32m[+][0m Iteration 3/3, Experiment 124/160 jpamb.cases.Simple.integerRangeBoundary:(I)V
+[32m[+][0m Iteration 3/3, Experiment 125/160 jpamb.cases.Simple.justAdd:(II)I
+[32m[+][0m Iteration 3/3, Experiment 126/160 jpamb.cases.Simple.justMulitply:(II)I
+[32m[+][0m Iteration 3/3, Experiment 127/160 jpamb.cases.Simple.justReturn:()I
+[32m[+][0m Iteration 3/3, Experiment 128/160 jpamb.cases.Simple.justReturnNothing:()V
+[32m[+][0m Iteration 3/3, Experiment 129/160 jpamb.cases.Simple.multiError:(Z)I
+[32m[+][0m Iteration 3/3, Experiment 130/160 jpamb.cases.Simple.nestedBranchDivision:(II)I
+[32m[+][0m Iteration 3/3, Experiment 131/160 jpamb.cases.Simple.nestedConstantCoverage:(III)V
+[32m[+][0m Iteration 3/3, Experiment 132/160 jpamb.cases.Simple.selectedDivisor:(ZII)I
+[32m[+][0m Iteration 3/3, Experiment 133/160 jpamb.cases.Simple.subtractForDivisor:(II)I
+[32m[+][0m Iteration 3/3, Experiment 134/160 jpamb.cases.Strings.checkComplexSequence:(Ljava/lang/String;)V
+[32m[+][0m Iteration 3/3, Experiment 135/160 jpamb.cases.Strings.checkExtension:(Ljava/lang/String;)V
+[32m[+][0m Iteration 3/3, Experiment 136/160 jpamb.cases.Strings.sayHello2:(Ljava/lang/String;)V
+[32m[+][0m Iteration 3/3, Experiment 137/160 jpamb.cases.Strings.sayHello3:(Ljava/lang/String;)V
+[32m[+][0m Iteration 3/3, Experiment 138/160 jpamb.cases.Strings.sayHello:(Ljava/lang/String;)V
+[32m[+][0m Iteration 3/3, Experiment 139/160 jpamb.cases.Tricky.collatz:(I)V
+[32m[+][0m Iteration 3/3, Experiment 140/160 jpamb.cases.advanced.CWE470.strict_safe_dispatcher:(Ljava/lang/String;)V
+[32m[+][0m Iteration 3/3, Experiment 141/160 jpamb.cases.advanced.CWE470.unsafe_dispatcher:(Ljava/lang/String;)V
+[32m[+][0m Iteration 3/3, Experiment 142/160 jpamb.cases.advanced.CWE470.weak_dispatcher:(Ljava/lang/String;)V
+[32m[+][0m Iteration 3/3, Experiment 143/160 jpamb.cases.advanced.CWE502.blacklist_deserialization:(Ljava/lang/String;)V
+[32m[+][0m Iteration 3/3, Experiment 144/160 jpamb.cases.advanced.CWE502.insecure_deserialization:(Ljava/lang/String;)V
+[32m[+][0m Iteration 3/3, Experiment 145/160 jpamb.cases.advanced.CWE502.whitelist_deserialization:(Ljava/lang/String;)V
+[32m[+][0m Iteration 3/3, Experiment 146/160 jpamb.cases.Guards.assertAfterGuard:(I)I
+[32m[+][0m Iteration 3/3, Experiment 147/160 jpamb.cases.Guards.assertDerivedRange:(II)V
+[32m[+][0m Iteration 3/3, Experiment 148/160 jpamb.cases.Guards.assertWrongDerivation:(I)V
+[32m[+][0m Iteration 3/3, Experiment 149/160 jpamb.cases.Guards.boundedLoopCheck:(I)I
+[32m[+][0m Iteration 3/3, Experiment 150/160 jpamb.cases.Guards.clampThenDivide:(I)I
+[32m[+][0m Iteration 3/3, Experiment 151/160 jpamb.cases.Guards.classifyThenIndex:(I)I
+[32m[+][0m Iteration 3/3, Experiment 152/160 jpamb.cases.Guards.constantMode:(I)I
+[32m[+][0m Iteration 3/3, Experiment 153/160 jpamb.cases.Guards.divGuardNotZero:(I)I
+[32m[+][0m Iteration 3/3, Experiment 154/160 jpamb.cases.Guards.divGuardPositiveReversed:(I)I
+[32m[+][0m Iteration 3/3, Experiment 155/160 jpamb.cases.Guards.divGuardWrongBound:(I)I
+[32m[+][0m Iteration 3/3, Experiment 156/160 jpamb.cases.Guards.mergeLosesZero:(I)I
+[32m[+][0m Iteration 3/3, Experiment 157/160 jpamb.cases.Guards.rangeCheckLowerMissing:(I)I
+[32m[+][0m Iteration 3/3, Experiment 158/160 jpamb.cases.Guards.rangeCheckOffByOne:(I)I
+[32m[+][0m Iteration 3/3, Experiment 159/160 jpamb.cases.Guards.rangeCheckedRead:(I)I
+[32m[+][0m Iteration 3/3, Experiment 160/160 jpamb.cases.Guards.signThenDivide:(I)I
+Cmd:           solutions/static/.venv/bin/static-interval
+Analysis:
+ Name:         static-interval
+ Version:      1.0
+ Group:        Hasan Ahmed
+ Tags:         ('static', 'python')
+ System:       Linux-6.8.0-149-generic-x86_64-with-glibc2.35
+Experiments:   160
+Iterations:    3
+Timeout:       5.0
+Method                                               Score  Time (rel)  Time (abs)
+                                                                                  
+jpamb.cases.Arrays                                                                
+  arrayContent:()V                                  -10.25     1.16 Db     0.103 s
+  arrayContentAboveMinus13:()V                        3.27     1.16 Db     0.100 s
+  arrayFillUntilEqual:()V                             5.35     1.19 Db     0.105 s
+  arrayInBounds:()V                                   5.52     1.21 Db     0.111 s
+  arrayIndexValue:(I)V                                5.05     1.19 Db     0.108 s
+  arrayIsNull:()V                                     2.36     1.19 Db     0.110 s
+  arrayIsNullLength:()V                               2.36     1.22 Db     0.115 s
+  arrayLength:()V                                     3.43     1.22 Db     0.118 s
+  arrayLoop:(I)V                                      4.88     1.25 Db     0.120 s
+  arrayNotEmpty:([I)V                                 5.15     1.30 Db     0.105 s
+  arrayOutOfBounds:()V                              -11.83     1.25 Db     0.111 s
+  arraySometimesNull:(I)V                           -15.42     1.26 Db     0.112 s
+  arraySpellsHello:([C)V                              2.56     1.18 Db     0.102 s
+  arraySumIsLarge:([I)V                               4.61     1.31 Db     0.108 s
+  arraySumIsLargeInt:(I)V                             4.88     1.35 Db     0.120 s
+  binarySearch:(I)V                                   4.88     1.29 Db     0.117 s
+  secretThenDivide:([C)I                              4.23     1.30 Db     0.108 s
+                                                                                  
+jpamb.cases.BitOperations                                                         
+  bitshiftLeft:(I)V                                   3.65     1.29 Db     0.100 s
+  bitshiftRight:(I)V                                  3.65     1.20 Db     0.095 s
+  bitshiftUnsignedRight:(I)V                          3.65     1.25 Db     0.100 s
+  bitwiseAnd:(II)V                                    3.65     1.25 Db     0.105 s
+  bitwiseNot:(I)V                                     3.65     1.24 Db     0.106 s
+  bitwiseOr:(II)V                                     3.65     1.20 Db     0.109 s
+  drawInt:(I)V                                        3.65     1.22 Db     0.118 s
+  xor:(II)V                                           3.65     1.23 Db     0.100 s
+                                                                                  
+jpamb.cases.Calls                                                                 
+  allPrimesArePositive:(I)V                           2.39     1.20 Db     0.105 s
+  callsAssertFalse:()V                               -9.71     1.19 Db     0.101 s
+  callsAssertFib:(I)V                                 5.42     1.20 Db     0.107 s
+  callsAssertIf:(Z)V                                  5.42     1.21 Db     0.126 s
+  callsAssertIfWithTrue:()V                           3.81     1.16 Db     0.104 s
+  callsAssertTrue:()V                                 3.81     1.22 Db     0.107 s
+  callsBowtie:(II)I                                   5.42     1.25 Db     0.119 s
+  callsCallChain:(II)I                                5.42     1.30 Db     0.104 s
+  callsCallCycle:(II)I                                3.81     1.28 Db     0.116 s
+  callsCallCycleFork:(II)I                            3.81     1.28 Db     0.119 s
+  callsCallCycleLoop:(II)I                            3.81     1.27 Db     0.105 s
+  callsCallCycleNext:(II)I                            3.81     1.34 Db     0.127 s
+  callsDiamond:(I)I                                   5.42     1.31 Db     0.124 s
+  callsDumbbell:(II)I                                 5.42     1.26 Db     0.118 s
+  callsTadpole:(II)I                                  5.42     1.26 Db     0.118 s
+  callsWheel:(II)I                                    5.42     1.22 Db     0.106 s
+  divideViaHelper:(I)I                             -121.43     1.28 Db     0.122 s
+  divisionThroughHelper:(II)I                      -121.43     1.23 Db     0.113 s
+                                                                                  
+jpamb.cases.Dependent                                                             
+  badNormalizedDistance:(II)I                         1.98     1.19 Db     0.102 s
+  combinedGuidance:(III)V                             5.42     1.26 Db     0.122 s
+  compareEquality:(II)V                               5.42     1.36 Db     0.127 s
+  divisionLoop:(I)V                                   5.26     1.29 Db     0.126 s
+  doubleIsAlwaysEven:(I)V                             3.81     1.24 Db     0.106 s
+  normalizedDistance:(II)I                            2.03     1.26 Db     0.114 s
+  safeDivByN:(I)I                                     4.93     1.28 Db     0.123 s
+                                                                                  
+jpamb.cases.Extended                                                              
+  safeDifferenceChain:(III)I                          4.93     1.23 Db     0.114 s
+  safeLoopAccumulation:(III)I                         4.76     1.33 Db     0.124 s
+  safeNestedLoopDivision:(III)I                       4.76     1.29 Db     0.131 s
+  safeSelectedDivisor:(ZIII)I                         4.93     1.28 Db     0.142 s
+  unsafeComputedRemainder:(IIIII)I                    4.87     1.24 Db     0.129 s
+  unsafeLoopOffsetDivisor:(IIII)I                     4.71     1.23 Db     0.127 s
+  unsafeModeDerivedDivisor:(IIII)I                    4.87     1.28 Db     0.117 s
+  unsafeNestedAffineDivisor:(IIIII)I                  4.87     1.25 Db     0.121 s
+  unsafeNestedLoopDivisor:(IIIII)I                    4.71     1.25 Db     0.124 s
+                                                                                  
+jpamb.cases.Guards                                                                
+  assertAfterGuard:(I)I                               5.89     1.29 Db     0.131 s
+  assertDerivedRange:(II)V                            5.89     1.24 Db     0.134 s
+  assertWrongDerivation:(I)V                          5.42     1.17 Db     0.105 s
+  boundedLoopCheck:(I)I                               5.73     1.26 Db     0.126 s
+  clampThenDivide:(I)I                                5.89     1.24 Db     0.134 s
+  classifyThenIndex:(I)I                              5.52     1.22 Db     0.127 s
+  constantMode:(I)I                                   5.89     1.31 Db     0.159 s
+  divGuardNotZero:(I)I                                4.93     1.12 Db     0.140 s
+  divGuardPositiveReversed:(I)I                       5.89     1.18 Db     0.134 s
+  divGuardWrongBound:(I)I                             4.87     1.22 Db     0.110 s
+  mergeLosesZero:(I)I                                 1.98     1.21 Db     0.120 s
+  rangeCheckLowerMissing:(I)I                         3.30     1.22 Db     0.126 s
+  rangeCheckOffByOne:(I)I                             3.30     1.17 Db     0.118 s
+  rangeCheckedRead:(I)I                               5.52     1.22 Db     0.143 s
+  signThenDivide:(I)I                                 4.93     1.15 Db     0.113 s
+                                                                                  
+jpamb.cases.Loops                                                                 
+  decrementLoop:(I)V                                  5.26     1.22 Db     0.106 s
+  doWhileDivision:(II)I                               4.71     1.26 Db     0.135 s
+  forLoopDivision:(II)I                               4.71     1.34 Db     0.122 s
+  forever:()V                                         0.26     1.34 Db     0.118 s
+  loopRemainder:(II)I                                 4.71     1.24 Db     0.126 s
+  multiplicationLoop:(I)V                             5.26     1.11 Db     0.129 s
+  nestedLoop:(I)V                                     5.26     1.10 Db     0.135 s
+  neverAsserts:()V                                    0.26     1.29 Db     0.154 s
+  neverDivides:()I                                    0.26     1.25 Db     0.133 s
+  safeNestedBranchDivision:(III)I                     2.03     1.19 Db     0.109 s
+  terminates:()V                                    -11.49     1.18 Db     0.111 s
+  whileLoopDivision:(II)I                             4.71     1.26 Db     0.143 s
+                                                                                  
+jpamb.cases.MagicConstants                                                        
+  computedIndex:(I)I                                  3.30     1.30 Db     0.122 s
+  derivedNull:(I)I                                    1.93     1.25 Db     0.124 s
+  loopAndEquality:(I)V                                5.26     1.29 Db     0.132 s
+  loopDoubling:(I)V                                   5.26     1.18 Db     0.112 s
+  loopDoublingSafe:(I)V                               3.64     1.20 Db     0.132 s
+  narrowEquality:(I)V                                 5.42     1.24 Db     0.138 s
+  rangeCondition:(I)V                                 5.42     1.25 Db     0.148 s
+  squareThreshold:(I)V                                5.42     1.16 Db     0.128 s
+  squaredDivisor:(I)I                                 4.87     1.25 Db     0.132 s
+  sumReachesTarget:(I)V                               5.26     1.24 Db     0.120 s
+  tableLookup:(I)I                                    2.28     1.32 Db     0.125 s
+  tableLookupSafe:(I)I                                4.55     1.30 Db     0.144 s
+  twoParams:(II)I                                     4.87     1.29 Db     0.123 s
+  twoParamsSafe:(II)I                                 4.93     1.30 Db     0.145 s
+  unreachableRange:(I)V                               5.89     1.27 Db     0.162 s
+                                                                                  
+jpamb.cases.Operators                                                             
+  branchRemainder:(ZI)I                               4.87     1.19 Db     0.169 s
+  directRemainder:(II)I                               4.87     1.23 Db     0.180 s
+  divisionChain:(IIII)I                               4.87     1.18 Db     0.159 s
+  multiplyForDivisor:(II)I                            4.87     1.22 Db     0.153 s
+  negatedDivisor:(I)I                                 1.98     1.30 Db     0.130 s
+                                                                                  
+jpamb.cases.Overflow                                                              
+  arrayIndexAfterOverflow:(I)I                        3.30     1.29 Db     0.130 s
+                                                                                  
+jpamb.cases.Randomness                                                            
+  branchOverlap:(Ljpamb/utils/Smith;)V                4.40     1.26 Db     0.122 s
+  compareInts:(Ljpamb/utils/Smith;)V                  5.42     1.30 Db     0.128 s
+  draw34Bits:(Ljpamb/utils/Smith;)V                   5.42     1.26 Db     0.133 s
+  drawDependsOnArg:(ILjpamb/utils/Smith;)I            2.79     1.22 Db     0.135 s
+  drawInCallee:(Ljpamb/utils/Smith;)V                 5.42     1.27 Db     0.153 s
+  drawInt:(Ljpamb/utils/Smith;)V                      4.40     1.24 Db     0.146 s
+  drawIntOverflow:(Ljpamb/utils/Smith;)V              5.42     1.19 Db     0.126 s
+  loopUntilHeads:(Ljpamb/utils/Smith;)V              -0.27     1.27 Db     0.132 s
+  randomBranch:(Ljpamb/utils/Smith;)V                 5.42     1.21 Db     0.125 s
+  randomIndex:(Ljpamb/utils/Smith;)V                  1.22     1.19 Db     0.112 s
+  randomNull:(Ljpamb/utils/Smith;)V                  -0.16     1.21 Db     0.138 s
+  spinOnTails:(Ljpamb/utils/Smith;)V                 -1.88     1.22 Db     0.145 s
+  twoDraws:(Ljpamb/utils/Smith;)V                     5.42     1.21 Db     0.113 s
+                                                                                  
+jpamb.cases.Simple                                                                
+  ConstantExtractionCheck:(ILjava/lang/String;)V      3.65     1.19 Db     0.108 s
+  assertBoolean:(Z)V                                  5.42     1.20 Db     0.128 s
+  assertFalse:()V                                     5.48     1.20 Db     0.138 s
+  assertInteger:(I)V                                  5.42     1.24 Db     0.142 s
+  assertPositive:(I)V                                 5.42     1.27 Db     0.144 s
+  assertTrue:()V                                      5.89     1.23 Db     0.131 s
+  branchDivision:(ZI)I                                4.87     1.26 Db     0.137 s
+  checkBeforeAssert:(I)V                              4.46     1.33 Db     0.144 s
+  checkBeforeDivideByN:(I)I                           4.46     1.16 Db     0.111 s
+  checkBeforeDivideByN2:(I)I                          4.93     1.18 Db     0.112 s
+  directDivision:(II)I                                4.87     1.29 Db     0.131 s
+  divideByN:(I)I                                      4.87     1.25 Db     0.122 s
+  divideByNMinus10054203:(I)I                         4.87     1.21 Db     0.137 s
+  divideByZero:()I                                    4.93     1.21 Db     0.122 s
+  divideZeroByZero:(II)I                              4.87     1.29 Db     0.122 s
+  doNothing:()V                                       5.89     1.27 Db     0.147 s
+  earlyReturn:()I                                     5.89     1.19 Db     0.132 s
+  guardedDivision:(I)I                                4.93     1.22 Db     0.140 s
+  integerRangeBoundary:(I)V                           5.42     1.31 Db     0.146 s
+  justAdd:(II)I                                       5.89     1.26 Db     0.138 s
+  justMulitply:(II)I                                  5.89     1.30 Db     0.126 s
+  justReturn:()I                                      5.89     1.26 Db     0.140 s
+  justReturnNothing:()V                               5.89     1.15 Db     0.118 s
+  multiError:(Z)I                                     4.46     1.27 Db     0.137 s
+  nestedBranchDivision:(II)I                          4.87     1.21 Db     0.130 s
+  nestedConstantCoverage:(III)V                       5.42     1.19 Db     0.112 s
+  selectedDivisor:(ZII)I                              4.87     1.25 Db     0.133 s
+  subtractForDivisor:(II)I                            4.87     1.22 Db     0.138 s
+                                                                                  
+jpamb.cases.Strings                                                               
+  checkComplexSequence:(Ljava/lang/String;)V          3.65     1.28 Db     0.128 s
+  checkExtension:(Ljava/lang/String;)V                3.65     1.16 Db     0.112 s
+  sayHello:(Ljava/lang/String;)V                      3.65     1.11 Db     0.113 s
+  sayHello2:(Ljava/lang/String;)V                     3.65     1.28 Db     0.135 s
+  sayHello3:(Ljava/lang/String;)V                     3.65     1.21 Db     0.139 s
+                                                                                  
+jpamb.cases.Tricky                                                                
+  collatz:(I)V                                        5.26     1.24 Db     0.137 s
+                                                                                  
+jpamb.cases.advanced.CWE470                                                       
+  strict_safe_dispatcher:(Ljava/lang/String;)V        2.03     1.29 Db     0.135 s
+  unsafe_dispatcher:(Ljava/lang/String;)V             3.65     1.31 Db     0.140 s
+  weak_dispatcher:(Ljava/lang/String;)V               3.65     1.20 Db     0.126 s
+                                                                                  
+jpamb.cases.advanced.CWE502                                                       
+  blacklist_deserialization:(Ljava/lang/String;)V     3.65     1.24 Db     0.122 s
+  insecure_deserialization:(Ljava/lang/String;)V      3.65     1.26 Db     0.124 s
+  whitelist_deserialization:(Ljava/lang/String;)V     3.65     1.34 Db     0.140 s
+                                                                                  
+Totals                                                                            
+[32m[+][0m Successfully wrote report to project/step7/static-interval/report.sexp
+                                                     Score  Time (rel)  Time (abs)
+  Total                                             364.01     1.24 Db    19.965 s
+
+--- Categories ---
+
+The following are the categories you identified, including
+how often they were found versus missed. From this, we
+calculate the optimal wager and the corresponding reward.
+Finally, the score represents the proportion of the total
+score attributed to this category.
+
+Category  Found  Missed  Percentage     Wager  Reward   Score
+lpyes       5.0    52.0       8.77%      -4.7    0.82   19.38
+aeyes      70.0    22.0      76.09%      +1.1    0.52   12.52
+no          2.0   499.0       0.40%  -1.2e+02    0.99  246.52
+okyes     147.0     5.0      96.71%  +1.4e+01    0.93   66.33
+obyes      10.0    42.0      19.23%      -1.6    0.62    9.85
+npyes       5.0    31.0      13.89%      -2.6    0.72    9.39
+dzyes      34.0    36.0      48.57%    -0.029    0.03    0.03

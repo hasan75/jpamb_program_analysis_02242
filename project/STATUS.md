@@ -6,10 +6,12 @@ note, and keep "Next" current.
 
 Last updated: 2026-11-25
 
-**Next:** step 7, new benchmark cases (D12), then step 8 (experiments: run
-the three analyzers on the validated variants in `build/variants/*/decompiled`,
-count distinct inconsistencies per strategy and seed). P1 (paper skeleton) is
-overdue per the WORKFLOW calendar; start it next to step 7.
+**Next:** step 8, experiments: `experiments/run.py` runs the three analyzers
+on the validated variants (`build/variants/*/decompiled`) per strategy and
+seed, `stats.py` computes distinct inconsistencies (D10), Mann-Whitney U and
+A12 (D11), with and without `Guards` (D12); `paper_numbers.py` writes
+`paper/generated/`. Paper in parallel: Approach (Sec. 4), Gap/Innovation
+(must cite and contrast Statfier, see P2), Related Work, Implementation.
 
 ---
 
@@ -127,7 +129,7 @@ overdue per the WORKFLOW calendar; start it next to step 7.
     (gitignored, rebuilt by the program); step 8 analyzes the decompiled JSON.
   - Output in `project/step6/validation.json` (summary `validation-output.txt`):
     344 of 344 compile, **344 valid**, 0 discarded, 0 bytecode-identical to the
-    original. 1-128 inputs per method. Original condition takes both values on
+    original (on the extended benchmark after step 7: 408 of 408). 1-128 inputs per method. Original condition takes both values on
     the inputs for 138 sites, one value for 1, unknown for 205 (operands assigned
     in the method, or not plain parameters).
   - Mutants (`mutants.json`, `mutants-output.txt`): 217 wrong rewrites, 190
@@ -139,16 +141,46 @@ overdue per the WORKFLOW calendar; start it next to step 7.
     the source-constant tier fixed 8. It found no way for a wrong rewrite to be
     reported valid by mistake.
   - Tests: 76 pass in `solutions/metamorphic` (13 new in `test_validate.py`).
-- [ ] **7. New benchmark cases** (D12)
+- [x] **7. New benchmark cases** (D12)
+  - `cases/jpamb/cases/Guards.java`: 15 methods, 31 cases, five patterns fixed in
+    advance (D12); registered in `Runtime.caseclasses`. All 31 cases give their
+    annotated outcome; old class files unchanged by the build.
+  - `jpamb build`'s test phase hangs on `Loops.forever` (container not stopped
+    on timeout); cases checked in one container instead. Coverage entries for
+    Guards added to `target/stats/benchmark.sexp` by
+    `experiments/extend_benchmark.py` (411 old entries checked unchanged).
+    `checkhealth` passes.
+  - Scores (`project/step7/<analyzer>/report.sexp`), 160 methods:
+    `static-sign` 357.60, `static-sign-narrow` 367.25, `static-interval` 364.01
+    (same order as on 145 methods; no category found fewer outcomes).
+  - Steps 3-6 rerun into their folders: 160 methods; 408 sites (368 uncertain,
+    `guided-strict` 215); N = 204 / 102; at N = 204 guided 204 vs random 183.4
+    uncertain hits. All 408 variants compile and are valid. Mutants: 260, 31
+    equivalent (6 new in Guards, added to `equivalent-mutants.json`), 227 of 229
+    non-equivalent killed (survivors: the two `Dependent` ones).
+  - `solutions/static/tests/test_export.py` no longer hard-codes 145 methods.
 - [ ] **8. Experiments + statistics** (D10, D11)
 
 ## Paper (`paper/`, compiled in Overleaf)
 
-- [ ] **P1. Skeleton** (acmart, one file per section, layout from `PAPER-STRUCTURE.md`)
+- [x] **P1. Skeleton** (acmart, one file per section, layout from `PAPER-STRUCTURE.md`)
+  - `paper/main.tex`, `sections/*.tex` (placeholders), `figures/pipeline.tex`
+    (TikZ, Fig. 1), `generated/numbers.tex` (stub), `README.md`. Not yet
+    compiled in Overleaf.
   - Section plan (D13, DECIDED) designed for this project in `PAPER-STRUCTURE.md`. Verified
     BibTeX for the two cited DTU papers (PDFs in `proposal/references/`) is in §3.
 - [ ] **P2. Gap + Related Work** (`literature-scout` first)
+  - `literature-scout` done: 11 verified entries in `paper/bibfile.bib`.
+    **Statfier** (Zhang et al., ESEC/FSE 2023) already tests static analyzers
+    with semantics-preserving transformations and picks sites from the
+    analyzer's own warning locations; Gap/Innovation must state our difference
+    (sites from a separate interval analysis's abstract state; abstract
+    interpreters predicting outcome sets; comparison with random and
+    syntax-based selection under one budget).
 - [ ] **P3. Background, Overview (worked example + pipeline figure), Analysis-Guided Rewriting, Implementation**
+  - Background drafted, reviewed (`paper-reviewer`: major revisions), revised
+    against the code. Open: JPAMB citation; the two per-analyzer method counts
+    (must come from `paper_numbers.py`).
 - [ ] **P4. Evaluation (RQ1–RQ3), Threats to Validity, Conclusion, Abstract**
 - [ ] **P5. Final pass** (`paper-reviewer` + `results-checker`, ≤ 11 pages, no `\todo{}`)
 

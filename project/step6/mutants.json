@@ -12382,6 +12382,4223 @@
    "equivalent": false
   },
   {
+   "id": "cases/jpamb/cases/Guards.java:127:5:mutant-invert-without-swap",
+   "method": "jpamb.cases.Guards.assertAfterGuard:(I)I",
+   "rule": "mutant-invert-without-swap",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 25,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(0)",
+     "original": "ok:0",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(6)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-2147483648)",
+     "original": "ok:0",
+     "variant": "ok:1"
+    },
+    {
+     "input": "(-1)",
+     "original": "ok:0",
+     "variant": "ok:1"
+    },
+    {
+     "input": "(1)",
+     "original": "ok:0",
+     "variant": "ok:1"
+    },
+    {
+     "input": "(4)",
+     "original": "ok:0",
+     "variant": "ok:1"
+    },
+    {
+     "input": "(5)",
+     "original": "ok:0",
+     "variant": "ok:1"
+    },
+    {
+     "input": "(7)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(2147483647)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-7)",
+     "original": "ok:0",
+     "variant": "ok:1"
+    },
+    {
+     "input": "(-6)",
+     "original": "ok:0",
+     "variant": "ok:1"
+    },
+    {
+     "input": "(-5)",
+     "original": "ok:0",
+     "variant": "ok:1"
+    },
+    {
+     "input": "(-3)",
+     "original": "ok:0",
+     "variant": "ok:1"
+    },
+    {
+     "input": "(-2)",
+     "original": "ok:0",
+     "variant": "ok:1"
+    },
+    {
+     "input": "(2)",
+     "original": "ok:0",
+     "variant": "ok:1"
+    },
+    {
+     "input": "(3)",
+     "original": "ok:0",
+     "variant": "ok:1"
+    },
+    {
+     "input": "(9)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(10)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(11)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(31)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(32)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(33)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(159)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(160)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(161)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R1-invert",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:127:9:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.assertAfterGuard:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 25,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(5)",
+     "original": "ok:0",
+     "variant": "ok:1"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-strict",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:128:14:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.assertAfterGuard:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": false,
+   "compiles": true,
+   "inputs": 25,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(6)",
+     "original": "ok:1",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(7)",
+     "original": "ok:1",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(2147483647)",
+     "original": "ok:1",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(9)",
+     "original": "ok:1",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(10)",
+     "original": "ok:1",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(11)",
+     "original": "ok:1",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(31)",
+     "original": "ok:1",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(32)",
+     "original": "ok:1",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(33)",
+     "original": "ok:1",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(159)",
+     "original": "ok:1",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(160)",
+     "original": "ok:1",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(161)",
+     "original": "ok:1",
+     "variant": "assertion error"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-split",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:138:5:mutant-invert-without-swap",
+   "method": "jpamb.cases.Guards.assertDerivedRange:(II)V",
+   "rule": "mutant-invert-without-swap",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 38,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(1, -2147483648)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(1, -1)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(1, 0)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(2, -2147483648)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(2, -1)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(2, 0)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(-2147483648, 0)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(-1, 0)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(0, 0)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(2147483647, 0)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(0, -2147483648)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(0, -1)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(1, -2)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(2, -2)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(-2, 0)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(0, -2)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(-1, -2147483648)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(2147483647, -2147483648)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(-2147483648, -1)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(-2, -2)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R1-invert",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:138:9:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.assertDerivedRange:(II)V",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 38,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [],
+   "valid": true,
+   "mutated_rule": "R2-strict",
+   "equivalent": true
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:138:19:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.assertDerivedRange:(II)V",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 38,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(0, 0)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-swap",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:139:14:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.assertDerivedRange:(II)V",
+   "rule": "mutant-off-by-one",
+   "uncertain": false,
+   "compiles": true,
+   "inputs": 38,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [],
+   "valid": true,
+   "mutated_rule": "R2-strict",
+   "equivalent": true
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:147:5:mutant-invert-without-swap",
+   "method": "jpamb.cases.Guards.assertWrongDerivation:(I)V",
+   "rule": "mutant-invert-without-swap",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 7,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(-1)",
+     "original": "assertion error",
+     "variant": "ok:null"
+    },
+    {
+     "input": "(-2147483648)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(-2)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R1-invert",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:147:9:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.assertWrongDerivation:(I)V",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 7,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(-1)",
+     "original": "assertion error",
+     "variant": "ok:null"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-strict",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:148:14:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.assertWrongDerivation:(I)V",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 7,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(0)",
+     "original": "ok:null",
+     "variant": "assertion error"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-strict",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:111:21:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.boundedLoopCheck:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 30,
+   "condition_values": "unknown",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(1)",
+     "original": "ok:10",
+     "variant": "ok:11"
+    },
+    {
+     "input": "(-2147483648)",
+     "original": "ok:0",
+     "variant": "ok:-2147483648"
+    },
+    {
+     "input": "(-1)",
+     "original": "ok:-10",
+     "variant": "ok:-11"
+    },
+    {
+     "input": "(9)",
+     "original": "ok:90",
+     "variant": "ok:99"
+    },
+    {
+     "input": "(10)",
+     "original": "ok:100",
+     "variant": "ok:110"
+    },
+    {
+     "input": "(11)",
+     "original": "ok:110",
+     "variant": "ok:121"
+    },
+    {
+     "input": "(19)",
+     "original": "ok:190",
+     "variant": "ok:209"
+    },
+    {
+     "input": "(20)",
+     "original": "ok:200",
+     "variant": "ok:220"
+    },
+    {
+     "input": "(21)",
+     "original": "ok:210",
+     "variant": "ok:231"
+    },
+    {
+     "input": "(2147483647)",
+     "original": "ok:-10",
+     "variant": "ok:2147483637"
+    },
+    {
+     "input": "(-22)",
+     "original": "ok:-220",
+     "variant": "ok:-242"
+    },
+    {
+     "input": "(-21)",
+     "original": "ok:-210",
+     "variant": "ok:-231"
+    },
+    {
+     "input": "(-20)",
+     "original": "ok:-200",
+     "variant": "ok:-220"
+    },
+    {
+     "input": "(-12)",
+     "original": "ok:-120",
+     "variant": "ok:-132"
+    },
+    {
+     "input": "(-11)",
+     "original": "ok:-110",
+     "variant": "ok:-121"
+    },
+    {
+     "input": "(-10)",
+     "original": "ok:-100",
+     "variant": "ok:-110"
+    },
+    {
+     "input": "(-2)",
+     "original": "ok:-20",
+     "variant": "ok:-22"
+    },
+    {
+     "input": "(10239)",
+     "original": "ok:102390",
+     "variant": "ok:112629"
+    },
+    {
+     "input": "(10240)",
+     "original": "ok:102400",
+     "variant": "ok:112640"
+    },
+    {
+     "input": "(10241)",
+     "original": "ok:102410",
+     "variant": "ok:112651"
+    },
+    {
+     "input": "(20479)",
+     "original": "ok:204790",
+     "variant": "ok:225269"
+    },
+    {
+     "input": "(20480)",
+     "original": "ok:204800",
+     "variant": "ok:225280"
+    },
+    {
+     "input": "(20481)",
+     "original": "ok:204810",
+     "variant": "ok:225291"
+    },
+    {
+     "input": "(10485759)",
+     "original": "ok:104857590",
+     "variant": "ok:115343349"
+    },
+    {
+     "input": "(10485760)",
+     "original": "ok:104857600",
+     "variant": "ok:115343360"
+    },
+    {
+     "input": "(10485761)",
+     "original": "ok:104857610",
+     "variant": "ok:115343371"
+    },
+    {
+     "input": "(20971519)",
+     "original": "ok:209715190",
+     "variant": "ok:230686709"
+    },
+    {
+     "input": "(20971520)",
+     "original": "ok:209715200",
+     "variant": "ok:230686720"
+    },
+    {
+     "input": "(20971521)",
+     "original": "ok:209715210",
+     "variant": "ok:230686731"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-strict",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:112:7:mutant-invert-without-swap",
+   "method": "jpamb.cases.Guards.boundedLoopCheck:(I)I",
+   "rule": "mutant-invert-without-swap",
+   "uncertain": false,
+   "compiles": true,
+   "inputs": 30,
+   "condition_values": "unknown",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(1)",
+     "original": "ok:10",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(-2147483648)",
+     "original": "ok:0",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(-1)",
+     "original": "ok:-10",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(0)",
+     "original": "ok:0",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(9)",
+     "original": "ok:90",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(10)",
+     "original": "ok:100",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(11)",
+     "original": "ok:110",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(19)",
+     "original": "ok:190",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(20)",
+     "original": "ok:200",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(21)",
+     "original": "ok:210",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(2147483647)",
+     "original": "ok:-10",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(-22)",
+     "original": "ok:-220",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(-21)",
+     "original": "ok:-210",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(-20)",
+     "original": "ok:-200",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(-12)",
+     "original": "ok:-120",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(-11)",
+     "original": "ok:-110",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(-10)",
+     "original": "ok:-100",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(-2)",
+     "original": "ok:-20",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(10239)",
+     "original": "ok:102390",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(10240)",
+     "original": "ok:102400",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(10241)",
+     "original": "ok:102410",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(20479)",
+     "original": "ok:204790",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(20480)",
+     "original": "ok:204800",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(20481)",
+     "original": "ok:204810",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(10485759)",
+     "original": "ok:104857590",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(10485760)",
+     "original": "ok:104857600",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(10485761)",
+     "original": "ok:104857610",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(20971519)",
+     "original": "ok:209715190",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(20971520)",
+     "original": "ok:209715200",
+     "variant": "assertion error"
+    },
+    {
+     "input": "(20971521)",
+     "original": "ok:209715210",
+     "variant": "assertion error"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R1-invert",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:112:11:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.boundedLoopCheck:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": false,
+   "compiles": true,
+   "inputs": 30,
+   "condition_values": "unknown",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [],
+   "valid": true,
+   "mutated_rule": "R2-strict",
+   "equivalent": true
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:88:5:mutant-invert-without-swap",
+   "method": "jpamb.cases.Guards.clampThenDivide:(I)I",
+   "rule": "mutant-invert-without-swap",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 19,
+   "condition_values": "unknown",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(0)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(7)",
+     "original": "ok:14",
+     "variant": "ok:100"
+    },
+    {
+     "input": "(-2147483648)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-1)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(2)",
+     "original": "ok:50",
+     "variant": "ok:100"
+    },
+    {
+     "input": "(2147483647)",
+     "original": "ok:0",
+     "variant": "ok:100"
+    },
+    {
+     "input": "(-102)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-101)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-100)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-3)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-2)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(3)",
+     "original": "ok:33",
+     "variant": "ok:100"
+    },
+    {
+     "input": "(99)",
+     "original": "ok:1",
+     "variant": "ok:100"
+    },
+    {
+     "input": "(100)",
+     "original": "ok:1",
+     "variant": "ok:100"
+    },
+    {
+     "input": "(101)",
+     "original": "ok:0",
+     "variant": "ok:100"
+    },
+    {
+     "input": "(199)",
+     "original": "ok:0",
+     "variant": "ok:100"
+    },
+    {
+     "input": "(200)",
+     "original": "ok:0",
+     "variant": "ok:100"
+    },
+    {
+     "input": "(201)",
+     "original": "ok:0",
+     "variant": "ok:100"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R1-invert",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:88:9:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.clampThenDivide:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 19,
+   "condition_values": "unknown",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [],
+   "valid": true,
+   "mutated_rule": "R2-strict",
+   "equivalent": true
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:91:5:mutant-invert-without-swap",
+   "method": "jpamb.cases.Guards.clampThenDivide:(I)I",
+   "rule": "mutant-invert-without-swap",
+   "uncertain": false,
+   "compiles": true,
+   "inputs": 19,
+   "condition_values": "unknown",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(0)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(7)",
+     "original": "ok:14",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-2147483648)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-1)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(1)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(2)",
+     "original": "ok:50",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-102)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-101)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-100)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-3)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-2)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(3)",
+     "original": "ok:33",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(99)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(100)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R1-invert",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:91:9:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.clampThenDivide:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": false,
+   "compiles": true,
+   "inputs": 19,
+   "condition_values": "unknown",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [],
+   "valid": true,
+   "mutated_rule": "R2-strict",
+   "equivalent": true
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:177:5:mutant-invert-without-swap",
+   "method": "jpamb.cases.Guards.classifyThenIndex:(I)I",
+   "rule": "mutant-invert-without-swap",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 99,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(15)",
+     "original": "ok:20",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(25)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(5)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(-2147483648)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(-1)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(0)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(1)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(9)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(10)",
+     "original": "ok:20",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(11)",
+     "original": "ok:20",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(19)",
+     "original": "ok:20",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(20)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(21)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(2147483647)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(-32)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(-31)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(-30)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(-22)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(-21)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(-20)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(-12)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(-11)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(-10)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(-5)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(-4)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(-3)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(-2)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(2)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(3)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(4)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(6)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(7)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(8)",
+     "original": "ok:10",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(12)",
+     "original": "ok:20",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(13)",
+     "original": "ok:20",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(16)",
+     "original": "ok:20",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(17)",
+     "original": "ok:20",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(23)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(24)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(29)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(30)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(31)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(39)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(40)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(41)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(59)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(60)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(61)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(79)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(80)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(81)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(119)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(120)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(121)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(159)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(160)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(161)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(239)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(240)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(241)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(1023)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(1024)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(1025)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(2047)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(2048)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(2049)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(3071)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(3072)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(3073)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(10239)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(10240)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(10241)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(20479)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(20480)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(20481)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(30719)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(30720)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(30721)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(1048575)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(1048576)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(1048577)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(2097151)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(2097152)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(2097153)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(3145727)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(3145728)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(3145729)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(10485759)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(10485760)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(10485761)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(20971519)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(20971520)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(20971521)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(31457279)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(31457280)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(31457281)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(1073741823)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(1073741824)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(1073741825)",
+     "original": "ok:30",
+     "variant": "ok:10"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R1-invert",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:177:9:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.classifyThenIndex:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 99,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(10)",
+     "original": "ok:20",
+     "variant": "ok:10"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-strict",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:179:12:mutant-invert-without-swap",
+   "method": "jpamb.cases.Guards.classifyThenIndex:(I)I",
+   "rule": "mutant-invert-without-swap",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 99,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(15)",
+     "original": "ok:20",
+     "variant": "ok:30"
+    },
+    {
+     "input": "(25)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(10)",
+     "original": "ok:20",
+     "variant": "ok:30"
+    },
+    {
+     "input": "(11)",
+     "original": "ok:20",
+     "variant": "ok:30"
+    },
+    {
+     "input": "(19)",
+     "original": "ok:20",
+     "variant": "ok:30"
+    },
+    {
+     "input": "(20)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(21)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(2147483647)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(12)",
+     "original": "ok:20",
+     "variant": "ok:30"
+    },
+    {
+     "input": "(13)",
+     "original": "ok:20",
+     "variant": "ok:30"
+    },
+    {
+     "input": "(16)",
+     "original": "ok:20",
+     "variant": "ok:30"
+    },
+    {
+     "input": "(17)",
+     "original": "ok:20",
+     "variant": "ok:30"
+    },
+    {
+     "input": "(23)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(24)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(29)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(30)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(31)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(39)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(40)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(41)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(59)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(60)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(61)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(79)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(80)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(81)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(119)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(120)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(121)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(159)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(160)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(161)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(239)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(240)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(241)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(1023)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(1024)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(1025)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(2047)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(2048)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(2049)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(3071)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(3072)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(3073)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(10239)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(10240)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(10241)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(20479)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(20480)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(20481)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(30719)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(30720)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(30721)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(1048575)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(1048576)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(1048577)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(2097151)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(2097152)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(2097153)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(3145727)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(3145728)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(3145729)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(10485759)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(10485760)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(10485761)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(20971519)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(20971520)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(20971521)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(31457279)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(31457280)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(31457281)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(1073741823)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(1073741824)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    },
+    {
+     "input": "(1073741825)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R1-invert",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:179:16:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.classifyThenIndex:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 99,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(20)",
+     "original": "ok:30",
+     "variant": "ok:20"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-strict",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:101:5:mutant-invert-without-swap",
+   "method": "jpamb.cases.Guards.constantMode:(I)I",
+   "rule": "mutant-invert-without-swap",
+   "uncertain": false,
+   "compiles": true,
+   "inputs": 27,
+   "condition_values": "unknown",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(3)",
+     "original": "ok:4",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(-2147483648)",
+     "original": "ok:-2147483647",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(-1)",
+     "original": "ok:0",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(0)",
+     "original": "ok:1",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(1)",
+     "original": "ok:2",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(2)",
+     "original": "ok:3",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(2147483647)",
+     "original": "ok:-2147483648",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(-102)",
+     "original": "ok:-101",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(-101)",
+     "original": "ok:-100",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(-100)",
+     "original": "ok:-99",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(-4)",
+     "original": "ok:-3",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(-3)",
+     "original": "ok:-2",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(-2)",
+     "original": "ok:-1",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(4)",
+     "original": "ok:5",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(5)",
+     "original": "ok:6",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(7)",
+     "original": "ok:8",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(8)",
+     "original": "ok:9",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(9)",
+     "original": "ok:10",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(99)",
+     "original": "ok:100",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(100)",
+     "original": "ok:101",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(101)",
+     "original": "ok:102",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(199)",
+     "original": "ok:200",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(200)",
+     "original": "ok:201",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(201)",
+     "original": "ok:202",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(399)",
+     "original": "ok:400",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(400)",
+     "original": "ok:401",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(401)",
+     "original": "ok:402",
+     "variant": "divide by zero"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R1-invert",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:101:9:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.constantMode:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": false,
+   "compiles": true,
+   "inputs": 27,
+   "condition_values": "unknown",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(3)",
+     "original": "ok:4",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(-2147483648)",
+     "original": "ok:-2147483647",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(-1)",
+     "original": "ok:0",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(0)",
+     "original": "ok:1",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(1)",
+     "original": "ok:2",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(2)",
+     "original": "ok:3",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(2147483647)",
+     "original": "ok:-2147483648",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(-102)",
+     "original": "ok:-101",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(-101)",
+     "original": "ok:-100",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(-100)",
+     "original": "ok:-99",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(-4)",
+     "original": "ok:-3",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(-3)",
+     "original": "ok:-2",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(-2)",
+     "original": "ok:-1",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(4)",
+     "original": "ok:5",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(5)",
+     "original": "ok:6",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(7)",
+     "original": "ok:8",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(8)",
+     "original": "ok:9",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(9)",
+     "original": "ok:10",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(99)",
+     "original": "ok:100",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(100)",
+     "original": "ok:101",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(101)",
+     "original": "ok:102",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(199)",
+     "original": "ok:200",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(200)",
+     "original": "ok:201",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(201)",
+     "original": "ok:202",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(399)",
+     "original": "ok:400",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(400)",
+     "original": "ok:401",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(401)",
+     "original": "ok:402",
+     "variant": "divide by zero"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-split",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:21:5:mutant-invert-without-swap",
+   "method": "jpamb.cases.Guards.divGuardNotZero:(I)I",
+   "rule": "mutant-invert-without-swap",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 13,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(0)",
+     "original": "ok:0",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(5)",
+     "original": "ok:20",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-1)",
+     "original": "ok:-100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(1)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-100)",
+     "original": "ok:-1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-2)",
+     "original": "ok:-50",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(99)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(100)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R1-invert",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:21:9:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.divGuardNotZero:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 13,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(0)",
+     "original": "ok:0",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(5)",
+     "original": "ok:20",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-1)",
+     "original": "ok:-100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(1)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-100)",
+     "original": "ok:-1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-2)",
+     "original": "ok:-50",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(99)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(100)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-split",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:31:5:mutant-invert-without-swap",
+   "method": "jpamb.cases.Guards.divGuardPositiveReversed:(I)I",
+   "rule": "mutant-invert-without-swap",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 15,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(-3)",
+     "original": "ok:-1",
+     "variant": "ok:-33"
+    },
+    {
+     "input": "(3)",
+     "original": "ok:33",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-2147483648)",
+     "original": "ok:-1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-1)",
+     "original": "ok:-1",
+     "variant": "ok:-100"
+    },
+    {
+     "input": "(0)",
+     "original": "ok:-1",
+     "variant": "divide by zero"
+    },
+    {
+     "input": "(1)",
+     "original": "ok:100",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(2)",
+     "original": "ok:50",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(2147483647)",
+     "original": "ok:0",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-102)",
+     "original": "ok:-1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-101)",
+     "original": "ok:-1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-2)",
+     "original": "ok:-1",
+     "variant": "ok:-50"
+    },
+    {
+     "input": "(99)",
+     "original": "ok:1",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(100)",
+     "original": "ok:1",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(101)",
+     "original": "ok:0",
+     "variant": "ok:-1"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R1-invert",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:31:9:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.divGuardPositiveReversed:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 15,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(0)",
+     "original": "ok:-1",
+     "variant": "divide by zero"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-strict",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:41:5:mutant-invert-without-swap",
+   "method": "jpamb.cases.Guards.divGuardWrongBound:(I)I",
+   "rule": "mutant-invert-without-swap",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 12,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(0)",
+     "original": "divide by zero",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(1)",
+     "original": "ok:100",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(-1)",
+     "original": "ok:0",
+     "variant": "ok:-100"
+    },
+    {
+     "input": "(-100)",
+     "original": "ok:0",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-2)",
+     "original": "ok:0",
+     "variant": "ok:-50"
+    },
+    {
+     "input": "(99)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    },
+    {
+     "input": "(100)",
+     "original": "ok:1",
+     "variant": "ok:0"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R1-invert",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:41:9:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.divGuardWrongBound:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 12,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(0)",
+     "original": "divide by zero",
+     "variant": "ok:0"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-strict",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:193:5:mutant-invert-without-swap",
+   "method": "jpamb.cases.Guards.mergeLosesZero:(I)I",
+   "rule": "mutant-invert-without-swap",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 14,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(-3)",
+     "original": "ok:33",
+     "variant": "ok:-33"
+    },
+    {
+     "input": "(3)",
+     "original": "ok:33",
+     "variant": "ok:-33"
+    },
+    {
+     "input": "(-1)",
+     "original": "ok:100",
+     "variant": "ok:-100"
+    },
+    {
+     "input": "(1)",
+     "original": "ok:100",
+     "variant": "ok:-100"
+    },
+    {
+     "input": "(-100)",
+     "original": "ok:1",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-2)",
+     "original": "ok:50",
+     "variant": "ok:-50"
+    },
+    {
+     "input": "(99)",
+     "original": "ok:1",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(100)",
+     "original": "ok:1",
+     "variant": "ok:-1"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R1-invert",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:193:9:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.mergeLosesZero:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 14,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [],
+   "valid": true,
+   "mutated_rule": "R2-strict",
+   "equivalent": true
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:76:5:mutant-invert-without-swap",
+   "method": "jpamb.cases.Guards.rangeCheckLowerMissing:(I)I",
+   "rule": "mutant-invert-without-swap",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 59,
+   "condition_values": "unknown",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(-1)",
+     "original": "out of bounds",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(1)",
+     "original": "ok:1",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-2147483648)",
+     "original": "out of bounds",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(0)",
+     "original": "ok:3",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(2147483647)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-33)",
+     "original": "out of bounds",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-32)",
+     "original": "out of bounds",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-31)",
+     "original": "out of bounds",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-17)",
+     "original": "out of bounds",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-16)",
+     "original": "out of bounds",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-15)",
+     "original": "out of bounds",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-9)",
+     "original": "out of bounds",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-8)",
+     "original": "out of bounds",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-7)",
+     "original": "out of bounds",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-6)",
+     "original": "out of bounds",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-5)",
+     "original": "out of bounds",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-4)",
+     "original": "out of bounds",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-3)",
+     "original": "out of bounds",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-2)",
+     "original": "out of bounds",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(2)",
+     "original": "ok:4",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(3)",
+     "original": "ok:1",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(4)",
+     "original": "ok:5",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(5)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(6)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(7)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(8)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(9)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(10)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(11)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(15)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(16)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(17)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(23)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(24)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(25)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(31)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(32)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(33)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(39)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(40)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(41)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(47)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(48)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(49)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(63)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(64)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(65)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(79)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(80)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(81)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(95)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(96)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(97)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(127)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(128)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(129)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(159)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(160)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(161)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R1-invert",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:76:9:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.rangeCheckLowerMissing:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 59,
+   "condition_values": "unknown",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(5)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-swap",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:65:5:mutant-invert-without-swap",
+   "method": "jpamb.cases.Guards.rangeCheckOffByOne:(I)I",
+   "rule": "mutant-invert-without-swap",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 59,
+   "condition_values": "unknown",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(0)",
+     "original": "ok:3",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(5)",
+     "original": "out of bounds",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(-2147483648)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-1)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(1)",
+     "original": "ok:1",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(2147483647)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-33)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-32)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-31)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-17)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-16)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-15)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-9)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-8)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-7)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-6)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-5)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-4)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-3)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-2)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(2)",
+     "original": "ok:4",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(3)",
+     "original": "ok:1",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(4)",
+     "original": "ok:5",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(6)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(7)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(8)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(9)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(10)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(11)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(15)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(16)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(17)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(23)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(24)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(25)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(31)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(32)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(33)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(39)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(40)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(41)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(47)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(48)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(49)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(63)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(64)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(65)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(79)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(80)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(81)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(95)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(96)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(97)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(127)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(128)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(129)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(159)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(160)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(161)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R1-invert",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:65:9:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.rangeCheckOffByOne:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 59,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(0)",
+     "original": "ok:3",
+     "variant": "ok:-1"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-strict",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:65:19:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.rangeCheckOffByOne:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 59,
+   "condition_values": "unknown",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(5)",
+     "original": "out of bounds",
+     "variant": "ok:-1"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-swap",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:54:5:mutant-invert-without-swap",
+   "method": "jpamb.cases.Guards.rangeCheckedRead:(I)I",
+   "rule": "mutant-invert-without-swap",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 59,
+   "condition_values": "unknown",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(2)",
+     "original": "ok:4",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(7)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-2147483648)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-1)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(0)",
+     "original": "ok:3",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(1)",
+     "original": "ok:1",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(2147483647)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-33)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-32)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-31)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-17)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-16)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-15)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-9)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-8)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-7)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-6)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-5)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-4)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-3)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(-2)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(3)",
+     "original": "ok:1",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(4)",
+     "original": "ok:5",
+     "variant": "ok:-1"
+    },
+    {
+     "input": "(5)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(6)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(8)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(9)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(10)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(11)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(15)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(16)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(17)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(23)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(24)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(25)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(31)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(32)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(33)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(39)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(40)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(41)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(47)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(48)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(49)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(63)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(64)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(65)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(79)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(80)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(81)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(95)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(96)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(97)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(127)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(128)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(129)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(159)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(160)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    },
+    {
+     "input": "(161)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R1-invert",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:54:9:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.rangeCheckedRead:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 59,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(0)",
+     "original": "ok:3",
+     "variant": "ok:-1"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-strict",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:54:19:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.rangeCheckedRead:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 59,
+   "condition_values": "unknown",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(5)",
+     "original": "ok:-1",
+     "variant": "out of bounds"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-swap",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:160:5:mutant-invert-without-swap",
+   "method": "jpamb.cases.Guards.signThenDivide:(I)I",
+   "rule": "mutant-invert-without-swap",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 39,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(-4)",
+     "original": "ok:-10",
+     "variant": "ok:5"
+    },
+    {
+     "input": "(0)",
+     "original": "ok:10",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(4)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(-2147483648)",
+     "original": "ok:-10",
+     "variant": "ok:5"
+    },
+    {
+     "input": "(-1)",
+     "original": "ok:-10",
+     "variant": "ok:5"
+    },
+    {
+     "input": "(1)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(2147483647)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(-1025)",
+     "original": "ok:-10",
+     "variant": "ok:5"
+    },
+    {
+     "input": "(-1024)",
+     "original": "ok:-10",
+     "variant": "ok:5"
+    },
+    {
+     "input": "(-1023)",
+     "original": "ok:-10",
+     "variant": "ok:5"
+    },
+    {
+     "input": "(-12)",
+     "original": "ok:-10",
+     "variant": "ok:5"
+    },
+    {
+     "input": "(-11)",
+     "original": "ok:-10",
+     "variant": "ok:5"
+    },
+    {
+     "input": "(-10)",
+     "original": "ok:-10",
+     "variant": "ok:5"
+    },
+    {
+     "input": "(-5)",
+     "original": "ok:-10",
+     "variant": "ok:5"
+    },
+    {
+     "input": "(-3)",
+     "original": "ok:-10",
+     "variant": "ok:5"
+    },
+    {
+     "input": "(-2)",
+     "original": "ok:-10",
+     "variant": "ok:5"
+    },
+    {
+     "input": "(2)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(3)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(5)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(7)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(8)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(9)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(10)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(11)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(19)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(20)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(21)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(39)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(40)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(41)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(1023)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(1024)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(1025)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(2047)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(2048)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(2049)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(10239)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(10240)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    },
+    {
+     "input": "(10241)",
+     "original": "ok:5",
+     "variant": "ok:-10"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R1-invert",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:160:9:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.signThenDivide:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 39,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(0)",
+     "original": "ok:10",
+     "variant": "ok:-10"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-strict",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:162:12:mutant-invert-without-swap",
+   "method": "jpamb.cases.Guards.signThenDivide:(I)I",
+   "rule": "mutant-invert-without-swap",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 39,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(0)",
+     "original": "ok:10",
+     "variant": "ok:5"
+    },
+    {
+     "input": "(4)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(1)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(2147483647)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(2)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(3)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(5)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(7)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(8)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(9)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(10)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(11)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(19)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(20)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(21)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(39)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(40)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(41)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(1023)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(1024)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(1025)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(2047)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(2048)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(2049)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(10239)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(10240)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(10241)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R1-invert",
+   "equivalent": false
+  },
+  {
+   "id": "cases/jpamb/cases/Guards.java:162:16:mutant-off-by-one",
+   "method": "jpamb.cases.Guards.signThenDivide:(I)I",
+   "rule": "mutant-off-by-one",
+   "uncertain": true,
+   "compiles": true,
+   "inputs": 39,
+   "condition_values": "both",
+   "bytecode_identical": false,
+   "timeouts": 0,
+   "mismatches": [
+    {
+     "input": "(0)",
+     "original": "ok:10",
+     "variant": "ok:5"
+    },
+    {
+     "input": "(4)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(1)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(2147483647)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(2)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(3)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(5)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(7)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(8)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(9)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(10)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(11)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(19)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(20)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(21)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(39)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(40)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(41)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(1023)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(1024)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(1025)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(2047)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(2048)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(2049)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(10239)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(10240)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    },
+    {
+     "input": "(10241)",
+     "original": "ok:5",
+     "variant": "ok:10"
+    }
+   ],
+   "valid": false,
+   "mutated_rule": "R2-split",
+   "equivalent": false
+  },
+  {
    "id": "cases/jpamb/cases/Loops.java:108:21:mutant-off-by-one",
    "method": "jpamb.cases.Loops.decrementLoop:(I)V",
    "rule": "mutant-off-by-one",

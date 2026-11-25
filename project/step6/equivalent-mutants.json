@@ -1,5 +1,5 @@
 {
- "source": "rewrite-auditor review of step 6 surviving mutants, 2026-11-25; each argument checked against the source",
+ "source": "rewrite-auditor review of step 6 surviving mutants, 2026-11-25; each argument checked against the source; Guards.java entries added 2026-11-25 by the main session, each checked against the source",
  "equivalent": {
   "cases/jpamb/cases/Arrays.java:59:21:mutant-off-by-one": "the assertion fails at i=3 (-13) before the boundary i=5 is reached",
   "cases/jpamb/cases/Arrays.java:60:14:mutant-off-by-one": "constant array data, no element is 0",
@@ -25,6 +25,12 @@
   "cases/jpamb/cases/MagicConstants.java:137:20:mutant-off-by-one": "both conditions are unsatisfiable",
   "cases/jpamb/cases/Overflow.java:16:9:mutant-off-by-one": "n=0: both return 0",
   "cases/jpamb/cases/Randomness.java:119:12:mutant-off-by-one": "value+1 == value is impossible",
-  "cases/jpamb/cases/Simple.java:83:12:mutant-off-by-one": "only reached with n=0"
+  "cases/jpamb/cases/Simple.java:83:12:mutant-off-by-one": "only reached with n=0",
+  "cases/jpamb/cases/Guards.java:88:9:mutant-off-by-one": "x=1: both branches leave x=1",
+  "cases/jpamb/cases/Guards.java:91:9:mutant-off-by-one": "x >= 1 after the clamp, so x > 0 and x >= 0 agree",
+  "cases/jpamb/cases/Guards.java:112:11:mutant-off-by-one": "i <= 9 inside the loop, so i < 20 and i <= 20 agree",
+  "cases/jpamb/cases/Guards.java:138:9:mutant-off-by-one": "x=0: y > 0 holds, so entering or skipping the assert gives ok",
+  "cases/jpamb/cases/Guards.java:139:14:mutant-off-by-one": "y > x >= 0 gives y >= 1, so y > 0 and y >= 0 agree",
+  "cases/jpamb/cases/Guards.java:193:9:mutant-off-by-one": "x=0: d = x and d = -x are both 0"
  }
 }

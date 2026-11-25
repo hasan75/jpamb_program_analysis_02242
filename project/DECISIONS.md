@@ -211,7 +211,8 @@ The same weakness found by several seeds or sites counts once.
   cannot simply rewrite everything. Also report a second value (25%) to show
   the trend.
   Computed by `selection.budgets` from the eligible count: on the step 4 sites
-  (344), N = 172 (50%) and 86 (25%). Recomputed if step 7 adds sites.
+  (344), N = 172 (50%) and 86 (25%). With the step 7 cases (408 eligible
+  sites), N = 204 (50%) and 102 (25%).
 - **Time budget T:** secondary experiment, only if the rewrite-budget
   experiment is done. Default T = the guided strategy's median runtime at
   budget N.
@@ -227,6 +228,24 @@ The same weakness found by several seeds or sites counts once.
 them in `cases/jpamb/Runtime.java` (`caseclasses`). Note:
 `docs/extending-jpamb.md` gives an outdated path (`src/main/java/...`).
 **PENDING:** whether to submit them upstream as a PR. Decide later.
+
+Built in step 7 (2026-11-25): one class, `cases/jpamb/cases/Guards.java`, 15
+static methods with `int` parameters, 31 `@Case`s (every reachable outcome),
+using only opcodes the analyzers support. Five patterns fixed before any
+experiment result existed, three methods each: guarded division with
+different guard forms; range check before array access (incl. off-by-one
+bugs); branches the analysis can settle (clamping, constant flag, loop bound);
+assertions on facts from an earlier branch; else-if chains used after the merge.
+**Reporting rule (PROVISIONAL):** the "settled" pattern adds sites guidance
+can skip, so RQ1 is reported with and without `Guards`, and Threats to
+Validity says the cases were written by the author of the technique.
+Build notes: `jpamb build`'s test phase hangs on `Loops.forever` here (the
+5 s timeout stops the docker client but not the container), so the Guards
+cases were checked in one container instead (31/31 correct). The coverage file
+`target/stats/benchmark.sexp`, which `jpamb analyse` reads its method list
+from, gets entries for Guards only, via `experiments/extend_benchmark.py`
+with `static-interpreter` (31/31 correct); the 411 existing entries are
+checked unchanged.
 
 ---
 

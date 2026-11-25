@@ -8,7 +8,7 @@
    "source": "cases/jpamb/cases/Arrays.java",
    "fixpoint": true,
    "steps": 68,
-   "seconds": 0.0009733579972817097,
+   "seconds": 0.0012140119997638976,
    "outcomes": [
     "*",
     "assertion error",
@@ -1134,7 +1134,7 @@
    "source": "cases/jpamb/cases/Arrays.java",
    "fixpoint": true,
    "steps": 71,
-   "seconds": 0.000831154000479728,
+   "seconds": 0.0010307930006092647,
    "outcomes": [
     "*",
     "assertion error",
@@ -2288,7 +2288,7 @@
    "source": "cases/jpamb/cases/Arrays.java",
    "fixpoint": true,
    "steps": 32,
-   "seconds": 0.0003897240021615289,
+   "seconds": 0.00048418299957120325,
    "outcomes": [
     "*",
     "ok",
@@ -2668,7 +2668,7 @@
    "source": "cases/jpamb/cases/Arrays.java",
    "fixpoint": true,
    "steps": 16,
-   "seconds": 0.00013924800077802502,
+   "seconds": 0.00017026500063366257,
    "outcomes": [
     "ok",
     "out of bounds"
@@ -3051,7 +3051,7 @@
    "source": "cases/jpamb/cases/Arrays.java",
    "fixpoint": true,
    "steps": 54,
-   "seconds": 0.0004987579995940905,
+   "seconds": 0.0005944309996266384,
    "outcomes": [
     "assertion error",
     "ok",
@@ -4617,7 +4617,7 @@
    "source": "cases/jpamb/cases/Arrays.java",
    "fixpoint": true,
    "steps": 6,
-   "seconds": 6.788899918319657e-05,
+   "seconds": 9.245399996871129e-05,
    "outcomes": [
     "null pointer"
    ],
@@ -4766,7 +4766,7 @@
    "source": "cases/jpamb/cases/Arrays.java",
    "fixpoint": true,
    "steps": 6,
-   "seconds": 7.415999789373018e-05,
+   "seconds": 0.0001014159988699248,
    "outcomes": [
     "null pointer"
    ],
@@ -4940,7 +4940,7 @@
    "source": "cases/jpamb/cases/Arrays.java",
    "fixpoint": true,
    "steps": 22,
-   "seconds": 0.00019323499873280525,
+   "seconds": 0.00023339299877989106,
    "outcomes": [
     "assertion error",
     "ok",
@@ -5470,7 +5470,7 @@
    "source": "cases/jpamb/cases/Arrays.java",
    "fixpoint": true,
    "steps": 77,
-   "seconds": 0.0010598720000416506,
+   "seconds": 0.0012372250002954388,
    "outcomes": [
     "*",
     "assertion error",
@@ -6606,7 +6606,7 @@
    "source": "cases/jpamb/cases/Arrays.java",
    "fixpoint": true,
    "steps": 10,
-   "seconds": 0.00024494399985997006,
+   "seconds": 0.0001858610012277495,
    "outcomes": [
     "assertion error",
     "null pointer",
@@ -6859,7 +6859,7 @@
    "source": "cases/jpamb/cases/Arrays.java",
    "fixpoint": true,
    "steps": 16,
-   "seconds": 0.00014885100245010108,
+   "seconds": 0.000199456000700593,
    "outcomes": [
     "ok",
     "out of bounds"
@@ -7242,7 +7242,7 @@
    "source": "cases/jpamb/cases/Arrays.java",
    "fixpoint": true,
    "steps": 21,
-   "seconds": 0.00023087999943527393,
+   "seconds": 0.00031123499866225757,
    "outcomes": [
     "null pointer",
     "ok",
@@ -7727,7 +7727,7 @@
    "source": "cases/jpamb/cases/Arrays.java",
    "fixpoint": true,
    "steps": 32,
-   "seconds": 0.0003547059968695976,
+   "seconds": 0.00044131199865660165,
    "outcomes": [
     "assertion error",
     "null pointer",
@@ -8600,7 +8600,7 @@
    "source": "cases/jpamb/cases/Arrays.java",
    "fixpoint": true,
    "steps": 58,
-   "seconds": 0.000802441001724219,
+   "seconds": 0.000977210000201012,
    "outcomes": [
     "*",
     "assertion error",
@@ -9409,7 +9409,7 @@
    "source": "cases/jpamb/cases/Arrays.java",
    "fixpoint": true,
    "steps": 70,
-   "seconds": 0.0008693119998497423,
+   "seconds": 0.0010095479992742185,
    "outcomes": [
     "*",
     "assertion error",
@@ -10767,7 +10767,7 @@
    "source": "cases/jpamb/cases/Arrays.java",
    "fixpoint": true,
    "steps": 196,
-   "seconds": 0.002598292998300167,
+   "seconds": 0.00314460799927474,
    "outcomes": [
     "*",
     "assertion error",
@@ -13241,7 +13241,7 @@
    "source": "cases/jpamb/cases/Arrays.java",
    "fixpoint": true,
    "steps": 43,
-   "seconds": 0.0004604159985319711,
+   "seconds": 0.0006067289996281033,
    "outcomes": [
     "divide by zero",
     "null pointer",
@@ -14410,7 +14410,7 @@
    "source": "cases/jpamb/cases/BitOperations.java",
    "fixpoint": true,
    "steps": 3,
-   "seconds": 5.4509000619873405e-05,
+   "seconds": 7.56070003262721e-05,
    "outcomes": [
     "*",
     "assertion error",
@@ -14556,7 +14556,7 @@
    "source": "cases/jpamb/cases/BitOperations.java",
    "fixpoint": true,
    "steps": 3,
-   "seconds": 4.082099985680543e-05,
+   "seconds": 4.9475998821435496e-05,
    "outcomes": [
     "*",
     "assertion error",
@@ -14702,7 +14702,7 @@
    "source": "cases/jpamb/cases/BitOperations.java",
    "fixpoint": true,
    "steps": 3,
-   "seconds": 3.812300201389007e-05,
+   "seconds": 4.76869990961859e-05,
    "outcomes": [
     "*",
     "assertion error",
@@ -14848,7 +14848,7 @@
    "source": "cases/jpamb/cases/BitOperations.java",
    "fixpoint": true,
    "steps": 3,
-   "seconds": 4.129900116822682e-05,
+   "seconds": 4.823699964617845e-05,
    "outcomes": [
     "*",
     "assertion error",
@@ -15000,7 +15000,7 @@
    "source": "cases/jpamb/cases/BitOperations.java",
    "fixpoint": true,
    "steps": 3,
-   "seconds": 3.99410018872004e-05,
+   "seconds": 0.0001136050013883505,
    "outcomes": [
     "*",
     "assertion error",
@@ -15146,7 +15146,7 @@
    "source": "cases/jpamb/cases/BitOperations.java",
    "fixpoint": true,
    "steps": 3,
-   "seconds": 3.7565998354693875e-05,
+   "seconds": 9.175800005323254e-05,
    "outcomes": [
     "*",
     "assertion error",
@@ -15304,7 +15304,7 @@
    "source": "cases/jpamb/cases/BitOperations.java",
    "fixpoint": true,
    "steps": 1,
-   "seconds": 3.2307998480973765e-05,
+   "seconds": 7.553099931101315e-05,
    "outcomes": [
     "*",
     "assertion error",
@@ -15550,7 +15550,7 @@
    "source": "cases/jpamb/cases/BitOperations.java",
    "fixpoint": true,
    "steps": 3,
-   "seconds": 4.084100146428682e-05,
+   "seconds": 7.128200013539754e-05,
    "outcomes": [
     "*",
     "assertion error",
@@ -15702,7 +15702,7 @@
    "source": "cases/jpamb/cases/Calls.java",
    "fixpoint": true,
    "steps": 55,
-   "seconds": 0.000810867000836879,
+   "seconds": 0.0015863829994486878,
    "outcomes": [
     "*",
     "assertion error",
@@ -16636,7 +16636,7 @@
    "source": "cases/jpamb/cases/Calls.java",
    "fixpoint": true,
    "steps": 2,
-   "seconds": 3.866699989885092e-05,
+   "seconds": 6.785599907743745e-05,
    "outcomes": [
     "assertion error",
     "ok"
@@ -16670,7 +16670,7 @@
    "source": "cases/jpamb/cases/Calls.java",
    "fixpoint": true,
    "steps": 11,
-   "seconds": 0.00043398799971328117,
+   "seconds": 0.0002420799992250977,
    "outcomes": [
     "assertion error",
     "ok"
@@ -16946,7 +16946,7 @@
    "source": "cases/jpamb/cases/Calls.java",
    "fixpoint": true,
    "steps": 3,
-   "seconds": 5.29569988430012e-05,
+   "seconds": 9.52200007304782e-05,
    "outcomes": [
     "assertion error",
     "ok"
@@ -17010,7 +17010,7 @@
    "source": "cases/jpamb/cases/Calls.java",
    "fixpoint": true,
    "steps": 3,
-   "seconds": 4.701500074588694e-05,
+   "seconds": 7.295799878193066e-05,
    "outcomes": [
     "assertion error",
     "ok"
@@ -17059,7 +17059,7 @@
    "source": "cases/jpamb/cases/Calls.java",
    "fixpoint": true,
    "steps": 2,
-   "seconds": 3.519899837556295e-05,
+   "seconds": 5.652800064126495e-05,
    "outcomes": [
     "assertion error",
     "ok"
@@ -17093,7 +17093,7 @@
    "source": "cases/jpamb/cases/Calls.java",
    "fixpoint": true,
    "steps": 20,
-   "seconds": 0.00026365499797975644,
+   "seconds": 0.00040607399932923727,
    "outcomes": [
     "assertion error",
     "ok"
@@ -17662,7 +17662,7 @@
    "source": "cases/jpamb/cases/Calls.java",
    "fixpoint": true,
    "steps": 12,
-   "seconds": 0.00015304699991247617,
+   "seconds": 0.00026782900022226386,
    "outcomes": [
     "assertion error",
     "ok"
@@ -18006,7 +18006,7 @@
    "source": "cases/jpamb/cases/Calls.java",
    "fixpoint": true,
    "steps": 8,
-   "seconds": 0.00011084599827881902,
+   "seconds": 0.00020511799993983004,
    "outcomes": [
     "assertion error",
     "ok"
@@ -18230,7 +18230,7 @@
    "source": "cases/jpamb/cases/Calls.java",
    "fixpoint": true,
    "steps": 9,
-   "seconds": 0.00011161099973833188,
+   "seconds": 0.00019693000103870872,
    "outcomes": [
     "assertion error",
     "ok"
@@ -18485,7 +18485,7 @@
    "source": "cases/jpamb/cases/Calls.java",
    "fixpoint": true,
    "steps": 4,
-   "seconds": 5.687199882231653e-05,
+   "seconds": 0.00011369399908289779,
    "outcomes": [
     "assertion error",
     "ok"
@@ -18594,7 +18594,7 @@
    "source": "cases/jpamb/cases/Calls.java",
    "fixpoint": true,
    "steps": 4,
-   "seconds": 5.569900167756714e-05,
+   "seconds": 0.00011603699931583833,
    "outcomes": [
     "assertion error",
     "ok"
@@ -18703,7 +18703,7 @@
    "source": "cases/jpamb/cases/Calls.java",
    "fixpoint": true,
    "steps": 6,
-   "seconds": 8.053200144786388e-05,
+   "seconds": 0.00014624100003857166,
    "outcomes": [
     "assertion error",
     "ok"
@@ -18840,7 +18840,7 @@
    "source": "cases/jpamb/cases/Calls.java",
    "fixpoint": true,
    "steps": 12,
-   "seconds": 0.0001513740025984589,
+   "seconds": 0.00028035200011800043,
    "outcomes": [
     "assertion error",
     "ok"
@@ -19184,7 +19184,7 @@
    "source": "cases/jpamb/cases/Calls.java",
    "fixpoint": true,
    "steps": 12,
-   "seconds": 0.00015387399980681948,
+   "seconds": 0.0003042660009668907,
    "outcomes": [
     "assertion error",
     "ok"
@@ -19528,7 +19528,7 @@
    "source": "cases/jpamb/cases/Calls.java",
    "fixpoint": true,
    "steps": 20,
-   "seconds": 0.0002519719964766409,
+   "seconds": 0.0004090630009159213,
    "outcomes": [
     "assertion error",
     "ok"
@@ -20096,7 +20096,7 @@
    "source": "cases/jpamb/cases/Calls.java",
    "fixpoint": true,
    "steps": 6,
-   "seconds": 7.689300036872737e-05,
+   "seconds": 0.0001291150001634378,
    "outcomes": [
     "assertion error",
     "ok"
@@ -20241,7 +20241,7 @@
    "source": "cases/jpamb/cases/Calls.java",
    "fixpoint": true,
    "steps": 4,
-   "seconds": 5.543299994315021e-05,
+   "seconds": 8.736899872019421e-05,
    "outcomes": [
     "assertion error",
     "ok"
@@ -20350,7 +20350,7 @@
    "source": "cases/jpamb/cases/Dependent.java",
    "fixpoint": true,
    "steps": 23,
-   "seconds": 0.000305074001516914,
+   "seconds": 0.0005141170004208107,
    "outcomes": [
     "*",
     "assertion error",
@@ -21100,7 +21100,7 @@
    "source": "cases/jpamb/cases/Dependent.java",
    "fixpoint": true,
    "steps": 34,
-   "seconds": 0.00041617199894972146,
+   "seconds": 0.0006909020012244582,
    "outcomes": [
     "assertion error",
     "ok"
@@ -22262,7 +22262,7 @@
    "source": "cases/jpamb/cases/Dependent.java",
    "fixpoint": true,
    "steps": 24,
-   "seconds": 0.0002704879989323672,
+   "seconds": 0.00046308299897646066,
    "outcomes": [
     "assertion error",
     "ok"
@@ -22993,7 +22993,7 @@
    "source": "cases/jpamb/cases/Dependent.java",
    "fixpoint": true,
    "steps": 30,
-   "seconds": 0.00037019899900769815,
+   "seconds": 0.0006408549998013768,
    "outcomes": [
     "*",
     "assertion error",
@@ -23579,7 +23579,7 @@
    "source": "cases/jpamb/cases/Dependent.java",
    "fixpoint": true,
    "steps": 15,
-   "seconds": 0.0001810079993447289,
+   "seconds": 0.0003694040005939314,
    "outcomes": [
     "assertion error",
     "ok"
@@ -23996,7 +23996,7 @@
    "source": "cases/jpamb/cases/Dependent.java",
    "fixpoint": true,
    "steps": 27,
-   "seconds": 0.0002949289992102422,
+   "seconds": 0.0005436339997686446,
    "outcomes": [
     "*",
     "assertion error",
@@ -24875,7 +24875,7 @@
    "source": "cases/jpamb/cases/Dependent.java",
    "fixpoint": true,
    "steps": 8,
-   "seconds": 0.0001265639984922018,
+   "seconds": 0.0001785669992386829,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -25082,7 +25082,7 @@
    "source": "cases/jpamb/cases/Extended.java",
    "fixpoint": true,
    "steps": 20,
-   "seconds": 0.0002452239968988579,
+   "seconds": 0.0003809339996223571,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -25831,7 +25831,7 @@
    "source": "cases/jpamb/cases/Extended.java",
    "fixpoint": true,
    "steps": 60,
-   "seconds": 0.0008217680006055161,
+   "seconds": 0.0015800019991729641,
    "outcomes": [
     "*",
     "divide by zero",
@@ -27293,7 +27293,7 @@
    "source": "cases/jpamb/cases/Extended.java",
    "fixpoint": true,
    "steps": 84,
-   "seconds": 0.0013406660000327975,
+   "seconds": 0.0024537629997212207,
    "outcomes": [
     "*",
     "divide by zero",
@@ -28907,7 +28907,7 @@
    "source": "cases/jpamb/cases/Extended.java",
    "fixpoint": true,
    "steps": 37,
-   "seconds": 0.0005061929987277836,
+   "seconds": 0.0009596489999239566,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -29774,7 +29774,7 @@
    "source": "cases/jpamb/cases/Extended.java",
    "fixpoint": true,
    "steps": 20,
-   "seconds": 0.0002221710019512102,
+   "seconds": 0.00046790699889243115,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -30640,7 +30640,7 @@
    "source": "cases/jpamb/cases/Extended.java",
    "fixpoint": true,
    "steps": 46,
-   "seconds": 0.0006920980013092048,
+   "seconds": 0.0013996780016896082,
    "outcomes": [
     "*",
     "divide by zero",
@@ -31725,7 +31725,7 @@
    "source": "cases/jpamb/cases/Extended.java",
    "fixpoint": true,
    "steps": 30,
-   "seconds": 0.00038066999695729464,
+   "seconds": 0.0007001450012467103,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -32544,7 +32544,7 @@
    "source": "cases/jpamb/cases/Extended.java",
    "fixpoint": true,
    "steps": 24,
-   "seconds": 0.00027806500293081626,
+   "seconds": 0.0005295079990901286,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -33615,7 +33615,7 @@
    "source": "cases/jpamb/cases/Extended.java",
    "fixpoint": true,
    "steps": 82,
-   "seconds": 0.001421822002157569,
+   "seconds": 0.002600440000605886,
    "outcomes": [
     "*",
     "divide by zero",
@@ -35348,11 +35348,7485 @@
     }
    ]
   },
+  "jpamb.cases.Guards.assertAfterGuard:(I)I": {
+   "source": "cases/jpamb/cases/Guards.java",
+   "fixpoint": true,
+   "steps": 11,
+   "seconds": 0.00023718699958408251,
+   "outcomes": [
+    "ok"
+   ],
+   "uncertain_lines": [
+    127
+   ],
+   "sites": [
+    {
+     "pc": 2,
+     "line": 127,
+     "kind": "branch",
+     "cmp": "le",
+     "operands": [
+      {
+       "min": null,
+       "max": null
+      },
+      {
+       "min": 5,
+       "max": 5
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 4,
+     "line": 128,
+     "kind": "branch",
+     "cmp": "ne",
+     "operands": [
+      {
+       "min": 0,
+       "max": 0
+      },
+      {
+       "min": 0,
+       "max": 0
+      }
+     ],
+     "origins": [
+      null,
+      null
+     ],
+     "outcomes": [
+      false
+     ],
+     "backward": false,
+     "uncertain": false
+    },
+    {
+     "pc": 6,
+     "line": 128,
+     "kind": "branch",
+     "cmp": "ne",
+     "operands": [
+      {
+       "min": 6,
+       "max": null
+      },
+      {
+       "min": 0,
+       "max": 0
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      true
+     ],
+     "backward": false,
+     "uncertain": false
+    }
+   ],
+   "pcs": [
+    {
+     "pc": 0,
+     "line": 127,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 1,
+     "line": 127,
+     "op": "push:I 5",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 2,
+     "line": 127,
+     "op": "if le 13",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 5,
+        "max": 5
+       }
+      ]
+     }
+    },
+    {
+     "pc": 3,
+     "line": 128,
+     "op": "get static jpamb.cases.Guards.$assertionsDisabled:Z",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 6,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 4,
+     "line": 128,
+     "op": "ifz ne 11",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 6,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": 0
+       }
+      ]
+     }
+    },
+    {
+     "pc": 5,
+     "line": 128,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 6,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 6,
+     "line": 128,
+     "op": "ifz ne 11",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 6,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 6,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 7,
+     "line": 128,
+     "op": "new java.lang.AssertionError",
+     "reachable": false
+    },
+    {
+     "pc": 8,
+     "line": 128,
+     "op": "dup 1",
+     "reachable": false
+    },
+    {
+     "pc": 9,
+     "line": 128,
+     "op": "invoke special java.lang.AssertionError.<init>:()V",
+     "reachable": false
+    },
+    {
+     "pc": 10,
+     "line": 128,
+     "op": "throw",
+     "reachable": false
+    },
+    {
+     "pc": 11,
+     "line": 129,
+     "op": "push:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 6,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 12,
+     "line": 129,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 6,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": 1
+       }
+      ]
+     }
+    },
+    {
+     "pc": 13,
+     "line": 131,
+     "op": "push:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": 5
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 14,
+     "line": 131,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": 5
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": 0
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "jpamb.cases.Guards.assertDerivedRange:(II)V": {
+   "source": "cases/jpamb/cases/Guards.java",
+   "fixpoint": true,
+   "steps": 11,
+   "seconds": 0.00029197199910413474,
+   "outcomes": [
+    "ok"
+   ],
+   "uncertain_lines": [
+    138
+   ],
+   "sites": [
+    {
+     "pc": 1,
+     "line": 138,
+     "kind": "branch",
+     "cmp": "lt",
+     "operands": [
+      {
+       "min": null,
+       "max": null
+      },
+      {
+       "min": 0,
+       "max": 0
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 4,
+     "line": 138,
+     "kind": "branch",
+     "cmp": "le",
+     "operands": [
+      {
+       "min": null,
+       "max": null
+      },
+      {
+       "min": 0,
+       "max": null
+      }
+     ],
+     "origins": [
+      1,
+      0
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 6,
+     "line": 139,
+     "kind": "branch",
+     "cmp": "ne",
+     "operands": [
+      {
+       "min": 0,
+       "max": 0
+      },
+      {
+       "min": 0,
+       "max": 0
+      }
+     ],
+     "origins": [
+      null,
+      null
+     ],
+     "outcomes": [
+      false
+     ],
+     "backward": false,
+     "uncertain": false
+    },
+    {
+     "pc": 8,
+     "line": 139,
+     "kind": "branch",
+     "cmp": "gt",
+     "operands": [
+      {
+       "min": 1,
+       "max": null
+      },
+      {
+       "min": 0,
+       "max": 0
+      }
+     ],
+     "origins": [
+      1,
+      null
+     ],
+     "outcomes": [
+      true
+     ],
+     "backward": false,
+     "uncertain": false
+    }
+   ],
+   "pcs": [
+    {
+     "pc": 0,
+     "line": 138,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 1,
+     "line": 138,
+     "op": "ifz lt 13",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 2,
+     "line": 138,
+     "op": "load:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 3,
+     "line": 138,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 4,
+     "line": 138,
+     "op": "if le 13",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 5,
+     "line": 139,
+     "op": "get static jpamb.cases.Guards.$assertionsDisabled:Z",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 6,
+     "line": 139,
+     "op": "ifz ne 13",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": 0
+       }
+      ]
+     }
+    },
+    {
+     "pc": 7,
+     "line": 139,
+     "op": "load:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 8,
+     "line": 139,
+     "op": "ifz gt 13",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 9,
+     "line": 139,
+     "op": "new java.lang.AssertionError",
+     "reachable": false
+    },
+    {
+     "pc": 10,
+     "line": 139,
+     "op": "dup 1",
+     "reachable": false
+    },
+    {
+     "pc": 11,
+     "line": 139,
+     "op": "invoke special java.lang.AssertionError.<init>:()V",
+     "reachable": false
+    },
+    {
+     "pc": 12,
+     "line": 139,
+     "op": "throw",
+     "reachable": false
+    },
+    {
+     "pc": 13,
+     "line": 141,
+     "op": "return:V",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    }
+   ]
+  },
+  "jpamb.cases.Guards.assertWrongDerivation:(I)V": {
+   "source": "cases/jpamb/cases/Guards.java",
+   "fixpoint": true,
+   "steps": 13,
+   "seconds": 0.0002842439989763079,
+   "outcomes": [
+    "assertion error",
+    "ok"
+   ],
+   "uncertain_lines": [
+    147,
+    148
+   ],
+   "sites": [
+    {
+     "pc": 2,
+     "line": 147,
+     "kind": "branch",
+     "cmp": "lt",
+     "operands": [
+      {
+       "min": null,
+       "max": null
+      },
+      {
+       "min": -1,
+       "max": -1
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 4,
+     "line": 148,
+     "kind": "branch",
+     "cmp": "ne",
+     "operands": [
+      {
+       "min": 0,
+       "max": 0
+      },
+      {
+       "min": 0,
+       "max": 0
+      }
+     ],
+     "origins": [
+      null,
+      null
+     ],
+     "outcomes": [
+      false
+     ],
+     "backward": false,
+     "uncertain": false
+    },
+    {
+     "pc": 6,
+     "line": 148,
+     "kind": "branch",
+     "cmp": "ge",
+     "operands": [
+      {
+       "min": -1,
+       "max": null
+      },
+      {
+       "min": 0,
+       "max": 0
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    }
+   ],
+   "pcs": [
+    {
+     "pc": 0,
+     "line": 147,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 1,
+     "line": 147,
+     "op": "push:I -1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 2,
+     "line": 147,
+     "op": "if lt 11",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": -1,
+        "max": -1
+       }
+      ]
+     }
+    },
+    {
+     "pc": 3,
+     "line": 148,
+     "op": "get static jpamb.cases.Guards.$assertionsDisabled:Z",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": -1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 4,
+     "line": 148,
+     "op": "ifz ne 11",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": -1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": 0
+       }
+      ]
+     }
+    },
+    {
+     "pc": 5,
+     "line": 148,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": -1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 6,
+     "line": 148,
+     "op": "ifz ge 11",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": -1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": -1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 7,
+     "line": 148,
+     "op": "new java.lang.AssertionError",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": -1,
+        "max": -1
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 8,
+     "line": 148,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": -1,
+        "max": -1
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 9,
+     "line": 148,
+     "op": "invoke special java.lang.AssertionError.<init>:()V",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": -1,
+        "max": -1
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 10,
+     "line": 148,
+     "op": "throw",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": -1,
+        "max": -1
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 11,
+     "line": 150,
+     "op": "return:V",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    }
+   ]
+  },
+  "jpamb.cases.Guards.boundedLoopCheck:(I)I": {
+   "source": "cases/jpamb/cases/Guards.java",
+   "fixpoint": true,
+   "steps": 32,
+   "seconds": 0.0007024329988780664,
+   "outcomes": [
+    "*",
+    "ok"
+   ],
+   "uncertain_lines": [
+    111
+   ],
+   "sites": [
+    {
+     "pc": 6,
+     "line": 111,
+     "kind": "branch",
+     "cmp": "ge",
+     "operands": [
+      {
+       "min": 0,
+       "max": null
+      },
+      {
+       "min": 10,
+       "max": 10
+      }
+     ],
+     "origins": [
+      2,
+      null
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 9,
+     "line": 112,
+     "kind": "branch",
+     "cmp": "ge",
+     "operands": [
+      {
+       "min": 0,
+       "max": 9
+      },
+      {
+       "min": 20,
+       "max": 20
+      }
+     ],
+     "origins": [
+      2,
+      null
+     ],
+     "outcomes": [
+      false
+     ],
+     "backward": false,
+     "uncertain": false
+    },
+    {
+     "pc": 14,
+     "line": 113,
+     "kind": "goto",
+     "backward": false,
+     "uncertain": false
+    },
+    {
+     "pc": 22,
+     "line": 111,
+     "kind": "goto",
+     "backward": true,
+     "uncertain": false
+    }
+   ],
+   "pcs": [
+    {
+     "pc": 0,
+     "line": 110,
+     "op": "push:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot",
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 1,
+     "line": 110,
+     "op": "store:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot",
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": 0
+       }
+      ]
+     }
+    },
+    {
+     "pc": 2,
+     "line": 111,
+     "op": "push:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 0
+       },
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 3,
+     "line": 111,
+     "op": "store:I 2",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 0
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": 0
+       }
+      ]
+     }
+    },
+    {
+     "pc": 4,
+     "line": 111,
+     "op": "load:I 2",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 5,
+     "line": 111,
+     "op": "push:I 10",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 6,
+     "line": 111,
+     "op": "if ge 23",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 10,
+        "max": 10
+       }
+      ]
+     }
+    },
+    {
+     "pc": 7,
+     "line": 112,
+     "op": "load:I 2",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 9
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 8,
+     "line": 112,
+     "op": "push:I 20",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 9
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": 9
+       }
+      ]
+     }
+    },
+    {
+     "pc": 9,
+     "line": 112,
+     "op": "if ge 15",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 9
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": 9
+       },
+       {
+        "min": 20,
+        "max": 20
+       }
+      ]
+     }
+    },
+    {
+     "pc": 10,
+     "line": 113,
+     "op": "load:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 9
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 11,
+     "line": 113,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 9
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 12,
+     "line": 113,
+     "op": "binary:I add",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 9
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 13,
+     "line": 113,
+     "op": "store:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 9
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 14,
+     "line": 113,
+     "op": "goto 21",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 9
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 15,
+     "line": 115,
+     "op": "get static jpamb.cases.Guards.$assertionsDisabled:Z",
+     "reachable": false
+    },
+    {
+     "pc": 16,
+     "line": 115,
+     "op": "ifz ne 21",
+     "reachable": false
+    },
+    {
+     "pc": 17,
+     "line": 115,
+     "op": "new java.lang.AssertionError",
+     "reachable": false
+    },
+    {
+     "pc": 18,
+     "line": 115,
+     "op": "dup 1",
+     "reachable": false
+    },
+    {
+     "pc": 19,
+     "line": 115,
+     "op": "invoke special java.lang.AssertionError.<init>:()V",
+     "reachable": false
+    },
+    {
+     "pc": 20,
+     "line": 115,
+     "op": "throw",
+     "reachable": false
+    },
+    {
+     "pc": 21,
+     "line": 111,
+     "op": "incr 2 by 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 9
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 22,
+     "line": 111,
+     "op": "goto 4",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": 10
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 23,
+     "line": 118,
+     "op": "load:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 10,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 24,
+     "line": 118,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 10,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "jpamb.cases.Guards.clampThenDivide:(I)I": {
+   "source": "cases/jpamb/cases/Guards.java",
+   "fixpoint": true,
+   "steps": 11,
+   "seconds": 0.00025348599956487305,
+   "outcomes": [
+    "ok"
+   ],
+   "uncertain_lines": [
+    88
+   ],
+   "sites": [
+    {
+     "pc": 2,
+     "line": 88,
+     "kind": "branch",
+     "cmp": "ge",
+     "operands": [
+      {
+       "min": null,
+       "max": null
+      },
+      {
+       "min": 1,
+       "max": 1
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 6,
+     "line": 91,
+     "kind": "branch",
+     "cmp": "le",
+     "operands": [
+      {
+       "min": 1,
+       "max": null
+      },
+      {
+       "min": 0,
+       "max": 0
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      false
+     ],
+     "backward": false,
+     "uncertain": false
+    },
+    {
+     "pc": 9,
+     "line": 92,
+     "kind": "divisor",
+     "opr": "div",
+     "divisor": {
+      "min": 1,
+      "max": null
+     },
+     "origin": 0,
+     "may_be_zero": false,
+     "may_be_nonzero": true,
+     "uncertain": false
+    }
+   ],
+   "pcs": [
+    {
+     "pc": 0,
+     "line": 88,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 1,
+     "line": 88,
+     "op": "push:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 2,
+     "line": 88,
+     "op": "if ge 5",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": 1
+       }
+      ]
+     }
+    },
+    {
+     "pc": 3,
+     "line": 89,
+     "op": "push:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": 0
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 4,
+     "line": 89,
+     "op": "store:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": 0
+       }
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": 1
+       }
+      ]
+     }
+    },
+    {
+     "pc": 5,
+     "line": 91,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 6,
+     "line": 91,
+     "op": "ifz le 11",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 7,
+     "line": 92,
+     "op": "push:I 100",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 8,
+     "line": 92,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 100,
+        "max": 100
+       }
+      ]
+     }
+    },
+    {
+     "pc": 9,
+     "line": 92,
+     "op": "binary:I div",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 100,
+        "max": 100
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 10,
+     "line": 92,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": 100
+       }
+      ]
+     }
+    },
+    {
+     "pc": 11,
+     "line": 94,
+     "op": "push:I 0",
+     "reachable": false
+    },
+    {
+     "pc": 12,
+     "line": 94,
+     "op": "return:I",
+     "reachable": false
+    }
+   ]
+  },
+  "jpamb.cases.Guards.classifyThenIndex:(I)I": {
+   "source": "cases/jpamb/cases/Guards.java",
+   "fixpoint": true,
+   "steps": 41,
+   "seconds": 0.0007427179989463184,
+   "outcomes": [
+    "ok",
+    "out of bounds"
+   ],
+   "uncertain_lines": [
+    175,
+    177,
+    179,
+    184
+   ],
+   "sites": [
+    {
+     "pc": 5,
+     "line": 175,
+     "kind": "array",
+     "index": {
+      "min": 0,
+      "max": 0
+     },
+     "may_be_null": false,
+     "uncertain": true
+    },
+    {
+     "pc": 9,
+     "line": 175,
+     "kind": "array",
+     "index": {
+      "min": 1,
+      "max": 1
+     },
+     "may_be_null": false,
+     "uncertain": true
+    },
+    {
+     "pc": 13,
+     "line": 175,
+     "kind": "array",
+     "index": {
+      "min": 2,
+      "max": 2
+     },
+     "may_be_null": false,
+     "uncertain": true
+    },
+    {
+     "pc": 17,
+     "line": 177,
+     "kind": "branch",
+     "cmp": "ge",
+     "operands": [
+      {
+       "min": null,
+       "max": null
+      },
+      {
+       "min": 10,
+       "max": 10
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 20,
+     "line": 178,
+     "kind": "goto",
+     "backward": false,
+     "uncertain": false
+    },
+    {
+     "pc": 23,
+     "line": 179,
+     "kind": "branch",
+     "cmp": "ge",
+     "operands": [
+      {
+       "min": 10,
+       "max": null
+      },
+      {
+       "min": 20,
+       "max": 20
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 26,
+     "line": 180,
+     "kind": "goto",
+     "backward": false,
+     "uncertain": false
+    },
+    {
+     "pc": 31,
+     "line": 184,
+     "kind": "array",
+     "index": {
+      "min": 0,
+      "max": 2
+     },
+     "may_be_null": false,
+     "uncertain": true
+    }
+   ],
+   "pcs": [
+    {
+     "pc": 0,
+     "line": 175,
+     "op": "push:I 3",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot",
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 1,
+     "line": 175,
+     "op": "newarray[1D] I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot",
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 3,
+        "max": 3
+       }
+      ]
+     }
+    },
+    {
+     "pc": 2,
+     "line": 175,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot",
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 3,
+     "line": 175,
+     "op": "push:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot",
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 4,
+     "line": 175,
+     "op": "push:I 10",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot",
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 0
+       }
+      ]
+     }
+    },
+    {
+     "pc": 5,
+     "line": 175,
+     "op": "array_store I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot",
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 0
+       },
+       {
+        "min": 10,
+        "max": 10
+       }
+      ]
+     }
+    },
+    {
+     "pc": 6,
+     "line": 175,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot",
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 7,
+     "line": 175,
+     "op": "push:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot",
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 8,
+     "line": 175,
+     "op": "push:I 20",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot",
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": 1
+       }
+      ]
+     }
+    },
+    {
+     "pc": 9,
+     "line": 175,
+     "op": "array_store I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot",
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": 1
+       },
+       {
+        "min": 20,
+        "max": 20
+       }
+      ]
+     }
+    },
+    {
+     "pc": 10,
+     "line": 175,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot",
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 11,
+     "line": 175,
+     "op": "push:I 2",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot",
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 12,
+     "line": 175,
+     "op": "push:I 30",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot",
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 2,
+        "max": 2
+       }
+      ]
+     }
+    },
+    {
+     "pc": 13,
+     "line": 175,
+     "op": "array_store I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot",
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 2,
+        "max": 2
+       },
+       {
+        "min": 30,
+        "max": 30
+       }
+      ]
+     }
+    },
+    {
+     "pc": 14,
+     "line": 175,
+     "op": "store:A 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot",
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 15,
+     "line": 177,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 16,
+     "line": 177,
+     "op": "push:I 10",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 17,
+     "line": 177,
+     "op": "if ge 21",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 10,
+        "max": 10
+       }
+      ]
+     }
+    },
+    {
+     "pc": 18,
+     "line": 178,
+     "op": "push:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": 9
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 19,
+     "line": 178,
+     "op": "store:I 2",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": 9
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": 0
+       }
+      ]
+     }
+    },
+    {
+     "pc": 20,
+     "line": 178,
+     "op": "goto 29",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": 9
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 0
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 21,
+     "line": 179,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 10,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 22,
+     "line": 179,
+     "op": "push:I 20",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 10,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 10,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 23,
+     "line": 179,
+     "op": "if ge 27",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 10,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 10,
+        "max": null
+       },
+       {
+        "min": 20,
+        "max": 20
+       }
+      ]
+     }
+    },
+    {
+     "pc": 24,
+     "line": 180,
+     "op": "push:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 10,
+        "max": 19
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 25,
+     "line": 180,
+     "op": "store:I 2",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 10,
+        "max": 19
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": 1
+       }
+      ]
+     }
+    },
+    {
+     "pc": 26,
+     "line": 180,
+     "op": "goto 29",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 10,
+        "max": 19
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": 1
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 27,
+     "line": 182,
+     "op": "push:I 2",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 20,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 28,
+     "line": 182,
+     "op": "store:I 2",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 20,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 2,
+        "max": 2
+       }
+      ]
+     }
+    },
+    {
+     "pc": 29,
+     "line": 184,
+     "op": "load:A 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 2
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 30,
+     "line": 184,
+     "op": "load:I 2",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 2
+       }
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 31,
+     "line": 184,
+     "op": "array_load:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 2
+       }
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 2
+       }
+      ]
+     }
+    },
+    {
+     "pc": 32,
+     "line": 184,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 2
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "jpamb.cases.Guards.constantMode:(I)I": {
+   "source": "cases/jpamb/cases/Guards.java",
+   "fixpoint": true,
+   "steps": 9,
+   "seconds": 0.0001765469987731194,
+   "outcomes": [
+    "ok"
+   ],
+   "uncertain_lines": [],
+   "sites": [
+    {
+     "pc": 4,
+     "line": 101,
+     "kind": "branch",
+     "cmp": "ne",
+     "operands": [
+      {
+       "min": 2,
+       "max": 2
+      },
+      {
+       "min": 2,
+       "max": 2
+      }
+     ],
+     "origins": [
+      1,
+      null
+     ],
+     "outcomes": [
+      false
+     ],
+     "backward": false,
+     "uncertain": false
+    }
+   ],
+   "pcs": [
+    {
+     "pc": 0,
+     "line": 100,
+     "op": "push:I 2",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 1,
+     "line": 100,
+     "op": "store:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 2,
+        "max": 2
+       }
+      ]
+     }
+    },
+    {
+     "pc": 2,
+     "line": 101,
+     "op": "load:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 2,
+        "max": 2
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 3,
+     "line": 101,
+     "op": "push:I 2",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 2,
+        "max": 2
+       }
+      ],
+      "stack": [
+       {
+        "min": 2,
+        "max": 2
+       }
+      ]
+     }
+    },
+    {
+     "pc": 4,
+     "line": 101,
+     "op": "if ne 9",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 2,
+        "max": 2
+       }
+      ],
+      "stack": [
+       {
+        "min": 2,
+        "max": 2
+       },
+       {
+        "min": 2,
+        "max": 2
+       }
+      ]
+     }
+    },
+    {
+     "pc": 5,
+     "line": 102,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 2,
+        "max": 2
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 6,
+     "line": 102,
+     "op": "push:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 2,
+        "max": 2
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 7,
+     "line": 102,
+     "op": "binary:I add",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 2,
+        "max": 2
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": 1
+       }
+      ]
+     }
+    },
+    {
+     "pc": 8,
+     "line": 102,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 2,
+        "max": 2
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 9,
+     "line": 104,
+     "op": "push:I 100",
+     "reachable": false
+    },
+    {
+     "pc": 10,
+     "line": 104,
+     "op": "load:I 1",
+     "reachable": false
+    },
+    {
+     "pc": 11,
+     "line": 104,
+     "op": "push:I 2",
+     "reachable": false
+    },
+    {
+     "pc": 12,
+     "line": 104,
+     "op": "binary:I sub",
+     "reachable": false
+    },
+    {
+     "pc": 13,
+     "line": 104,
+     "op": "binary:I div",
+     "reachable": false
+    },
+    {
+     "pc": 14,
+     "line": 104,
+     "op": "return:I",
+     "reachable": false
+    }
+   ]
+  },
+  "jpamb.cases.Guards.divGuardNotZero:(I)I": {
+   "source": "cases/jpamb/cases/Guards.java",
+   "fixpoint": true,
+   "steps": 8,
+   "seconds": 0.00017766400014807004,
+   "outcomes": [
+    "divide by zero",
+    "ok"
+   ],
+   "uncertain_lines": [
+    21,
+    22
+   ],
+   "sites": [
+    {
+     "pc": 1,
+     "line": 21,
+     "kind": "branch",
+     "cmp": "eq",
+     "operands": [
+      {
+       "min": null,
+       "max": null
+      },
+      {
+       "min": 0,
+       "max": 0
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 4,
+     "line": 22,
+     "kind": "divisor",
+     "opr": "div",
+     "divisor": {
+      "min": null,
+      "max": null
+     },
+     "origin": 0,
+     "may_be_zero": true,
+     "may_be_nonzero": true,
+     "uncertain": true
+    }
+   ],
+   "pcs": [
+    {
+     "pc": 0,
+     "line": 21,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 1,
+     "line": 21,
+     "op": "ifz eq 6",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 2,
+     "line": 22,
+     "op": "push:I 100",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 3,
+     "line": 22,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 100,
+        "max": 100
+       }
+      ]
+     }
+    },
+    {
+     "pc": 4,
+     "line": 22,
+     "op": "binary:I div",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 100,
+        "max": 100
+       },
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 5,
+     "line": 22,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": -100,
+        "max": 100
+       }
+      ]
+     }
+    },
+    {
+     "pc": 6,
+     "line": 24,
+     "op": "push:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": 0
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 7,
+     "line": 24,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": 0
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": 0
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "jpamb.cases.Guards.divGuardPositiveReversed:(I)I": {
+   "source": "cases/jpamb/cases/Guards.java",
+   "fixpoint": true,
+   "steps": 9,
+   "seconds": 0.00019287400027678814,
+   "outcomes": [
+    "ok"
+   ],
+   "uncertain_lines": [
+    31
+   ],
+   "sites": [
+    {
+     "pc": 2,
+     "line": 31,
+     "kind": "branch",
+     "cmp": "ge",
+     "operands": [
+      {
+       "min": 0,
+       "max": 0
+      },
+      {
+       "min": null,
+       "max": null
+      }
+     ],
+     "origins": [
+      null,
+      0
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 5,
+     "line": 32,
+     "kind": "divisor",
+     "opr": "div",
+     "divisor": {
+      "min": 1,
+      "max": null
+     },
+     "origin": 0,
+     "may_be_zero": false,
+     "may_be_nonzero": true,
+     "uncertain": false
+    }
+   ],
+   "pcs": [
+    {
+     "pc": 0,
+     "line": 31,
+     "op": "push:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 1,
+     "line": 31,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": 0
+       }
+      ]
+     }
+    },
+    {
+     "pc": 2,
+     "line": 31,
+     "op": "if ge 7",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": 0
+       },
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 3,
+     "line": 32,
+     "op": "push:I 100",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 4,
+     "line": 32,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 100,
+        "max": 100
+       }
+      ]
+     }
+    },
+    {
+     "pc": 5,
+     "line": 32,
+     "op": "binary:I div",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 100,
+        "max": 100
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 6,
+     "line": 32,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": 100
+       }
+      ]
+     }
+    },
+    {
+     "pc": 7,
+     "line": 34,
+     "op": "push:I -1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": 0
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 8,
+     "line": 34,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": 0
+       }
+      ],
+      "stack": [
+       {
+        "min": -1,
+        "max": -1
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "jpamb.cases.Guards.divGuardWrongBound:(I)I": {
+   "source": "cases/jpamb/cases/Guards.java",
+   "fixpoint": true,
+   "steps": 8,
+   "seconds": 0.00017264900088775903,
+   "outcomes": [
+    "divide by zero",
+    "ok"
+   ],
+   "uncertain_lines": [
+    41,
+    42
+   ],
+   "sites": [
+    {
+     "pc": 1,
+     "line": 41,
+     "kind": "branch",
+     "cmp": "lt",
+     "operands": [
+      {
+       "min": null,
+       "max": null
+      },
+      {
+       "min": 0,
+       "max": 0
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 4,
+     "line": 42,
+     "kind": "divisor",
+     "opr": "div",
+     "divisor": {
+      "min": 0,
+      "max": null
+     },
+     "origin": 0,
+     "may_be_zero": true,
+     "may_be_nonzero": true,
+     "uncertain": true
+    }
+   ],
+   "pcs": [
+    {
+     "pc": 0,
+     "line": 41,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 1,
+     "line": 41,
+     "op": "ifz lt 6",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 2,
+     "line": 42,
+     "op": "push:I 100",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 3,
+     "line": 42,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 100,
+        "max": 100
+       }
+      ]
+     }
+    },
+    {
+     "pc": 4,
+     "line": 42,
+     "op": "binary:I div",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 100,
+        "max": 100
+       },
+       {
+        "min": 0,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 5,
+     "line": 42,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": 100
+       }
+      ]
+     }
+    },
+    {
+     "pc": 6,
+     "line": 44,
+     "op": "push:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": -1
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 7,
+     "line": 44,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": -1
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": 0
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "jpamb.cases.Guards.mergeLosesZero:(I)I": {
+   "source": "cases/jpamb/cases/Guards.java",
+   "fixpoint": true,
+   "steps": 11,
+   "seconds": 0.00022515599994221702,
+   "outcomes": [
+    "*",
+    "assertion error",
+    "divide by zero",
+    "null pointer",
+    "ok",
+    "out of bounds"
+   ],
+   "uncertain_lines": [
+    193
+   ],
+   "sites": [
+    {
+     "pc": 1,
+     "line": 193,
+     "kind": "branch",
+     "cmp": "le",
+     "operands": [
+      {
+       "min": null,
+       "max": null
+      },
+      {
+       "min": 0,
+       "max": 0
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 4,
+     "line": 194,
+     "kind": "goto",
+     "backward": false,
+     "uncertain": false
+    },
+    {
+     "pc": 10,
+     "line": 198,
+     "kind": "divisor",
+     "opr": "div",
+     "divisor": {
+      "min": 1,
+      "max": null
+     },
+     "origin": 1,
+     "may_be_zero": false,
+     "may_be_nonzero": true,
+     "uncertain": false
+    }
+   ],
+   "pcs": [
+    {
+     "pc": 0,
+     "line": 193,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 1,
+     "line": 193,
+     "op": "ifz le 5",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 2,
+     "line": 194,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 3,
+     "line": 194,
+     "op": "store:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 4,
+     "line": 194,
+     "op": "goto 8",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 5,
+     "line": 196,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": 0
+       },
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 6,
+     "line": 196,
+     "op": "negate I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": 0
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": 0
+       }
+      ]
+     }
+    },
+    {
+     "pc": 7,
+     "line": 196,
+     "op": "store:I 1",
+     "reachable": false
+    },
+    {
+     "pc": 8,
+     "line": 198,
+     "op": "push:I 100",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 9,
+     "line": 198,
+     "op": "load:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 100,
+        "max": 100
+       }
+      ]
+     }
+    },
+    {
+     "pc": 10,
+     "line": 198,
+     "op": "binary:I div",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 100,
+        "max": 100
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 11,
+     "line": 198,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": 100
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "jpamb.cases.Guards.rangeCheckLowerMissing:(I)I": {
+   "source": "cases/jpamb/cases/Guards.java",
+   "fixpoint": true,
+   "steps": 33,
+   "seconds": 0.0005298809992382303,
+   "outcomes": [
+    "ok",
+    "out of bounds"
+   ],
+   "uncertain_lines": [
+    75,
+    76,
+    77
+   ],
+   "sites": [
+    {
+     "pc": 5,
+     "line": 75,
+     "kind": "array",
+     "index": {
+      "min": 0,
+      "max": 0
+     },
+     "may_be_null": false,
+     "uncertain": true
+    },
+    {
+     "pc": 9,
+     "line": 75,
+     "kind": "array",
+     "index": {
+      "min": 1,
+      "max": 1
+     },
+     "may_be_null": false,
+     "uncertain": true
+    },
+    {
+     "pc": 13,
+     "line": 75,
+     "kind": "array",
+     "index": {
+      "min": 2,
+      "max": 2
+     },
+     "may_be_null": false,
+     "uncertain": true
+    },
+    {
+     "pc": 17,
+     "line": 75,
+     "kind": "array",
+     "index": {
+      "min": 3,
+      "max": 3
+     },
+     "may_be_null": false,
+     "uncertain": true
+    },
+    {
+     "pc": 21,
+     "line": 75,
+     "kind": "array",
+     "index": {
+      "min": 4,
+      "max": 4
+     },
+     "may_be_null": false,
+     "uncertain": true
+    },
+    {
+     "pc": 26,
+     "line": 76,
+     "kind": "branch",
+     "cmp": "ge",
+     "operands": [
+      {
+       "min": null,
+       "max": null
+      },
+      {
+       "min": 0,
+       "max": null
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 29,
+     "line": 77,
+     "kind": "array",
+     "index": {
+      "min": null,
+      "max": null
+     },
+     "may_be_null": false,
+     "uncertain": true
+    }
+   ],
+   "pcs": [
+    {
+     "pc": 0,
+     "line": 75,
+     "op": "push:I 5",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 1,
+     "line": 75,
+     "op": "newarray[1D] I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 5,
+        "max": 5
+       }
+      ]
+     }
+    },
+    {
+     "pc": 2,
+     "line": 75,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 3,
+     "line": 75,
+     "op": "push:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 4,
+     "line": 75,
+     "op": "push:I 3",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 0
+       }
+      ]
+     }
+    },
+    {
+     "pc": 5,
+     "line": 75,
+     "op": "array_store I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 0
+       },
+       {
+        "min": 3,
+        "max": 3
+       }
+      ]
+     }
+    },
+    {
+     "pc": 6,
+     "line": 75,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 7,
+     "line": 75,
+     "op": "push:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 8,
+     "line": 75,
+     "op": "push:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": 1
+       }
+      ]
+     }
+    },
+    {
+     "pc": 9,
+     "line": 75,
+     "op": "array_store I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": 1
+       },
+       {
+        "min": 1,
+        "max": 1
+       }
+      ]
+     }
+    },
+    {
+     "pc": 10,
+     "line": 75,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 11,
+     "line": 75,
+     "op": "push:I 2",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 12,
+     "line": 75,
+     "op": "push:I 4",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 2,
+        "max": 2
+       }
+      ]
+     }
+    },
+    {
+     "pc": 13,
+     "line": 75,
+     "op": "array_store I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 2,
+        "max": 2
+       },
+       {
+        "min": 4,
+        "max": 4
+       }
+      ]
+     }
+    },
+    {
+     "pc": 14,
+     "line": 75,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 15,
+     "line": 75,
+     "op": "push:I 3",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 16,
+     "line": 75,
+     "op": "push:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 3,
+        "max": 3
+       }
+      ]
+     }
+    },
+    {
+     "pc": 17,
+     "line": 75,
+     "op": "array_store I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 3,
+        "max": 3
+       },
+       {
+        "min": 1,
+        "max": 1
+       }
+      ]
+     }
+    },
+    {
+     "pc": 18,
+     "line": 75,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 19,
+     "line": 75,
+     "op": "push:I 4",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 20,
+     "line": 75,
+     "op": "push:I 5",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 4,
+        "max": 4
+       }
+      ]
+     }
+    },
+    {
+     "pc": 21,
+     "line": 75,
+     "op": "array_store I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 4,
+        "max": 4
+       },
+       {
+        "min": 5,
+        "max": 5
+       }
+      ]
+     }
+    },
+    {
+     "pc": 22,
+     "line": 75,
+     "op": "store:A 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 23,
+     "line": 76,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 24,
+     "line": 76,
+     "op": "load:A 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 25,
+     "line": 76,
+     "op": "arraylength",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 26,
+     "line": 76,
+     "op": "if ge 31",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 27,
+     "line": 77,
+     "op": "load:A 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 28,
+     "line": 77,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 29,
+     "line": 77,
+     "op": "array_load:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 30,
+     "line": 77,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 31,
+     "line": 79,
+     "op": "push:I -1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 32,
+     "line": 79,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": -1,
+        "max": -1
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "jpamb.cases.Guards.rangeCheckOffByOne:(I)I": {
+   "source": "cases/jpamb/cases/Guards.java",
+   "fixpoint": true,
+   "steps": 37,
+   "seconds": 0.0006398169989552116,
+   "outcomes": [
+    "ok",
+    "out of bounds"
+   ],
+   "uncertain_lines": [
+    64,
+    65,
+    66
+   ],
+   "sites": [
+    {
+     "pc": 5,
+     "line": 64,
+     "kind": "array",
+     "index": {
+      "min": 0,
+      "max": 0
+     },
+     "may_be_null": false,
+     "uncertain": true
+    },
+    {
+     "pc": 9,
+     "line": 64,
+     "kind": "array",
+     "index": {
+      "min": 1,
+      "max": 1
+     },
+     "may_be_null": false,
+     "uncertain": true
+    },
+    {
+     "pc": 13,
+     "line": 64,
+     "kind": "array",
+     "index": {
+      "min": 2,
+      "max": 2
+     },
+     "may_be_null": false,
+     "uncertain": true
+    },
+    {
+     "pc": 17,
+     "line": 64,
+     "kind": "array",
+     "index": {
+      "min": 3,
+      "max": 3
+     },
+     "may_be_null": false,
+     "uncertain": true
+    },
+    {
+     "pc": 21,
+     "line": 64,
+     "kind": "array",
+     "index": {
+      "min": 4,
+      "max": 4
+     },
+     "may_be_null": false,
+     "uncertain": true
+    },
+    {
+     "pc": 24,
+     "line": 65,
+     "kind": "branch",
+     "cmp": "lt",
+     "operands": [
+      {
+       "min": null,
+       "max": null
+      },
+      {
+       "min": 0,
+       "max": 0
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 28,
+     "line": 65,
+     "kind": "branch",
+     "cmp": "gt",
+     "operands": [
+      {
+       "min": 0,
+       "max": null
+      },
+      {
+       "min": 0,
+       "max": null
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 31,
+     "line": 66,
+     "kind": "array",
+     "index": {
+      "min": 0,
+      "max": null
+     },
+     "may_be_null": false,
+     "uncertain": true
+    }
+   ],
+   "pcs": [
+    {
+     "pc": 0,
+     "line": 64,
+     "op": "push:I 5",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 1,
+     "line": 64,
+     "op": "newarray[1D] I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 5,
+        "max": 5
+       }
+      ]
+     }
+    },
+    {
+     "pc": 2,
+     "line": 64,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 3,
+     "line": 64,
+     "op": "push:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 4,
+     "line": 64,
+     "op": "push:I 3",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 0
+       }
+      ]
+     }
+    },
+    {
+     "pc": 5,
+     "line": 64,
+     "op": "array_store I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 0
+       },
+       {
+        "min": 3,
+        "max": 3
+       }
+      ]
+     }
+    },
+    {
+     "pc": 6,
+     "line": 64,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 7,
+     "line": 64,
+     "op": "push:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 8,
+     "line": 64,
+     "op": "push:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": 1
+       }
+      ]
+     }
+    },
+    {
+     "pc": 9,
+     "line": 64,
+     "op": "array_store I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": 1
+       },
+       {
+        "min": 1,
+        "max": 1
+       }
+      ]
+     }
+    },
+    {
+     "pc": 10,
+     "line": 64,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 11,
+     "line": 64,
+     "op": "push:I 2",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 12,
+     "line": 64,
+     "op": "push:I 4",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 2,
+        "max": 2
+       }
+      ]
+     }
+    },
+    {
+     "pc": 13,
+     "line": 64,
+     "op": "array_store I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 2,
+        "max": 2
+       },
+       {
+        "min": 4,
+        "max": 4
+       }
+      ]
+     }
+    },
+    {
+     "pc": 14,
+     "line": 64,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 15,
+     "line": 64,
+     "op": "push:I 3",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 16,
+     "line": 64,
+     "op": "push:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 3,
+        "max": 3
+       }
+      ]
+     }
+    },
+    {
+     "pc": 17,
+     "line": 64,
+     "op": "array_store I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 3,
+        "max": 3
+       },
+       {
+        "min": 1,
+        "max": 1
+       }
+      ]
+     }
+    },
+    {
+     "pc": 18,
+     "line": 64,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 19,
+     "line": 64,
+     "op": "push:I 4",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 20,
+     "line": 64,
+     "op": "push:I 5",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 4,
+        "max": 4
+       }
+      ]
+     }
+    },
+    {
+     "pc": 21,
+     "line": 64,
+     "op": "array_store I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 4,
+        "max": 4
+       },
+       {
+        "min": 5,
+        "max": 5
+       }
+      ]
+     }
+    },
+    {
+     "pc": 22,
+     "line": 64,
+     "op": "store:A 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 23,
+     "line": 65,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 24,
+     "line": 65,
+     "op": "ifz lt 33",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 25,
+     "line": 65,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 26,
+     "line": 65,
+     "op": "load:A 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 27,
+     "line": 65,
+     "op": "arraylength",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 28,
+     "line": 65,
+     "op": "if gt 33",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 29,
+     "line": 66,
+     "op": "load:A 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 30,
+     "line": 66,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 31,
+     "line": 66,
+     "op": "array_load:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 32,
+     "line": 66,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 33,
+     "line": 68,
+     "op": "push:I -1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 34,
+     "line": 68,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": -1,
+        "max": -1
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "jpamb.cases.Guards.rangeCheckedRead:(I)I": {
+   "source": "cases/jpamb/cases/Guards.java",
+   "fixpoint": true,
+   "steps": 37,
+   "seconds": 0.0006415170009859139,
+   "outcomes": [
+    "ok",
+    "out of bounds"
+   ],
+   "uncertain_lines": [
+    53,
+    54,
+    55
+   ],
+   "sites": [
+    {
+     "pc": 5,
+     "line": 53,
+     "kind": "array",
+     "index": {
+      "min": 0,
+      "max": 0
+     },
+     "may_be_null": false,
+     "uncertain": true
+    },
+    {
+     "pc": 9,
+     "line": 53,
+     "kind": "array",
+     "index": {
+      "min": 1,
+      "max": 1
+     },
+     "may_be_null": false,
+     "uncertain": true
+    },
+    {
+     "pc": 13,
+     "line": 53,
+     "kind": "array",
+     "index": {
+      "min": 2,
+      "max": 2
+     },
+     "may_be_null": false,
+     "uncertain": true
+    },
+    {
+     "pc": 17,
+     "line": 53,
+     "kind": "array",
+     "index": {
+      "min": 3,
+      "max": 3
+     },
+     "may_be_null": false,
+     "uncertain": true
+    },
+    {
+     "pc": 21,
+     "line": 53,
+     "kind": "array",
+     "index": {
+      "min": 4,
+      "max": 4
+     },
+     "may_be_null": false,
+     "uncertain": true
+    },
+    {
+     "pc": 24,
+     "line": 54,
+     "kind": "branch",
+     "cmp": "lt",
+     "operands": [
+      {
+       "min": null,
+       "max": null
+      },
+      {
+       "min": 0,
+       "max": 0
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 28,
+     "line": 54,
+     "kind": "branch",
+     "cmp": "ge",
+     "operands": [
+      {
+       "min": 0,
+       "max": null
+      },
+      {
+       "min": 0,
+       "max": null
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 31,
+     "line": 55,
+     "kind": "array",
+     "index": {
+      "min": 0,
+      "max": null
+     },
+     "may_be_null": false,
+     "uncertain": true
+    }
+   ],
+   "pcs": [
+    {
+     "pc": 0,
+     "line": 53,
+     "op": "push:I 5",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 1,
+     "line": 53,
+     "op": "newarray[1D] I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 5,
+        "max": 5
+       }
+      ]
+     }
+    },
+    {
+     "pc": 2,
+     "line": 53,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 3,
+     "line": 53,
+     "op": "push:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 4,
+     "line": 53,
+     "op": "push:I 3",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 0
+       }
+      ]
+     }
+    },
+    {
+     "pc": 5,
+     "line": 53,
+     "op": "array_store I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": 0
+       },
+       {
+        "min": 3,
+        "max": 3
+       }
+      ]
+     }
+    },
+    {
+     "pc": 6,
+     "line": 53,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 7,
+     "line": 53,
+     "op": "push:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 8,
+     "line": 53,
+     "op": "push:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": 1
+       }
+      ]
+     }
+    },
+    {
+     "pc": 9,
+     "line": 53,
+     "op": "array_store I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": 1
+       },
+       {
+        "min": 1,
+        "max": 1
+       }
+      ]
+     }
+    },
+    {
+     "pc": 10,
+     "line": 53,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 11,
+     "line": 53,
+     "op": "push:I 2",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 12,
+     "line": 53,
+     "op": "push:I 4",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 2,
+        "max": 2
+       }
+      ]
+     }
+    },
+    {
+     "pc": 13,
+     "line": 53,
+     "op": "array_store I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 2,
+        "max": 2
+       },
+       {
+        "min": 4,
+        "max": 4
+       }
+      ]
+     }
+    },
+    {
+     "pc": 14,
+     "line": 53,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 15,
+     "line": 53,
+     "op": "push:I 3",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 16,
+     "line": 53,
+     "op": "push:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 3,
+        "max": 3
+       }
+      ]
+     }
+    },
+    {
+     "pc": 17,
+     "line": 53,
+     "op": "array_store I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 3,
+        "max": 3
+       },
+       {
+        "min": 1,
+        "max": 1
+       }
+      ]
+     }
+    },
+    {
+     "pc": 18,
+     "line": 53,
+     "op": "dup 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 19,
+     "line": 53,
+     "op": "push:I 4",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 20,
+     "line": 53,
+     "op": "push:I 5",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 4,
+        "max": 4
+       }
+      ]
+     }
+    },
+    {
+     "pc": 21,
+     "line": 53,
+     "op": "array_store I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 4,
+        "max": 4
+       },
+       {
+        "min": 5,
+        "max": 5
+       }
+      ]
+     }
+    },
+    {
+     "pc": 22,
+     "line": 53,
+     "op": "store:A 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 23,
+     "line": 54,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 24,
+     "line": 54,
+     "op": "ifz lt 33",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 25,
+     "line": 54,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 26,
+     "line": 54,
+     "op": "load:A 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 27,
+     "line": 54,
+     "op": "arraylength",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 28,
+     "line": 54,
+     "op": "if ge 33",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 29,
+     "line": 55,
+     "op": "load:A 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 30,
+     "line": 55,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 31,
+     "line": 55,
+     "op": "array_load:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": null
+       },
+       {
+        "min": 0,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 32,
+     "line": 55,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 33,
+     "line": 57,
+     "op": "push:I -1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 34,
+     "line": 57,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": 1,
+        "max": null
+       }
+      ],
+      "stack": [
+       {
+        "min": -1,
+        "max": -1
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "jpamb.cases.Guards.signThenDivide:(I)I": {
+   "source": "cases/jpamb/cases/Guards.java",
+   "fixpoint": true,
+   "steps": 24,
+   "seconds": 0.0005048149996582652,
+   "outcomes": [
+    "divide by zero",
+    "ok"
+   ],
+   "uncertain_lines": [
+    160,
+    162,
+    167
+   ],
+   "sites": [
+    {
+     "pc": 1,
+     "line": 160,
+     "kind": "branch",
+     "cmp": "ge",
+     "operands": [
+      {
+       "min": null,
+       "max": null
+      },
+      {
+       "min": 0,
+       "max": 0
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 4,
+     "line": 161,
+     "kind": "goto",
+     "backward": false,
+     "uncertain": false
+    },
+    {
+     "pc": 6,
+     "line": 162,
+     "kind": "branch",
+     "cmp": "ne",
+     "operands": [
+      {
+       "min": 0,
+       "max": null
+      },
+      {
+       "min": 0,
+       "max": 0
+      }
+     ],
+     "origins": [
+      0,
+      null
+     ],
+     "outcomes": [
+      false,
+      true
+     ],
+     "backward": false,
+     "uncertain": true
+    },
+    {
+     "pc": 9,
+     "line": 163,
+     "kind": "goto",
+     "backward": false,
+     "uncertain": false
+    },
+    {
+     "pc": 14,
+     "line": 167,
+     "kind": "divisor",
+     "opr": "div",
+     "divisor": {
+      "min": -1,
+      "max": 2
+     },
+     "origin": 1,
+     "may_be_zero": true,
+     "may_be_nonzero": true,
+     "uncertain": true
+    }
+   ],
+   "pcs": [
+    {
+     "pc": 0,
+     "line": 160,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 1,
+     "line": 160,
+     "op": "ifz ge 5",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": null,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 2,
+     "line": 161,
+     "op": "push:I -1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": -1
+       },
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 3,
+     "line": 161,
+     "op": "store:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": -1
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": -1,
+        "max": -1
+       }
+      ]
+     }
+    },
+    {
+     "pc": 4,
+     "line": 161,
+     "op": "goto 12",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": -1
+       },
+       {
+        "min": -1,
+        "max": -1
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 5,
+     "line": 162,
+     "op": "load:I 0",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 6,
+     "line": 162,
+     "op": "ifz ne 10",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 0,
+        "max": null
+       }
+      ]
+     }
+    },
+    {
+     "pc": 7,
+     "line": 163,
+     "op": "push:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": 0
+       },
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 8,
+     "line": 163,
+     "op": "store:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": 0
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 1,
+        "max": 1
+       }
+      ]
+     }
+    },
+    {
+     "pc": 9,
+     "line": 163,
+     "op": "goto 12",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 0,
+        "max": 0
+       },
+       {
+        "min": 1,
+        "max": 1
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 10,
+     "line": 165,
+     "op": "push:I 2",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 11,
+     "line": 165,
+     "op": "store:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": 1,
+        "max": null
+       },
+       "bot"
+      ],
+      "stack": [
+       {
+        "min": 2,
+        "max": 2
+       }
+      ]
+     }
+    },
+    {
+     "pc": 12,
+     "line": 167,
+     "op": "push:I 10",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": -1,
+        "max": 2
+       }
+      ],
+      "stack": []
+     }
+    },
+    {
+     "pc": 13,
+     "line": 167,
+     "op": "load:I 1",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": -1,
+        "max": 2
+       }
+      ],
+      "stack": [
+       {
+        "min": 10,
+        "max": 10
+       }
+      ]
+     }
+    },
+    {
+     "pc": 14,
+     "line": 167,
+     "op": "binary:I div",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": -1,
+        "max": 2
+       }
+      ],
+      "stack": [
+       {
+        "min": 10,
+        "max": 10
+       },
+       {
+        "min": -1,
+        "max": 2
+       }
+      ]
+     }
+    },
+    {
+     "pc": 15,
+     "line": 167,
+     "op": "return:I",
+     "reachable": true,
+     "state": {
+      "locals": [
+       {
+        "min": null,
+        "max": null
+       },
+       {
+        "min": -1,
+        "max": 2
+       }
+      ],
+      "stack": [
+       {
+        "min": -10,
+        "max": 10
+       }
+      ]
+     }
+    }
+   ]
+  },
   "jpamb.cases.Loops.decrementLoop:(I)V": {
    "source": "cases/jpamb/cases/Loops.java",
    "fixpoint": true,
    "steps": 23,
-   "seconds": 0.0002933289979409892,
+   "seconds": 0.0004947209999954794,
    "outcomes": [
     "*",
     "assertion error",
@@ -35820,7 +43294,7 @@
    "source": "cases/jpamb/cases/Loops.java",
    "fixpoint": true,
    "steps": 28,
-   "seconds": 0.00042378199941595085,
+   "seconds": 0.0007330930002353853,
    "outcomes": [
     "*",
     "divide by zero",
@@ -36287,7 +43761,7 @@
    "source": "cases/jpamb/cases/Loops.java",
    "fixpoint": true,
    "steps": 37,
-   "seconds": 0.0005455479986267164,
+   "seconds": 0.000944913999774144,
    "outcomes": [
     "*",
     "divide by zero",
@@ -36787,7 +44261,7 @@
    "source": "cases/jpamb/cases/Loops.java",
    "fixpoint": true,
    "steps": 1,
-   "seconds": 2.494300133548677e-05,
+   "seconds": 4.0704000639379956e-05,
    "outcomes": [
     "*"
    ],
@@ -36818,7 +44292,7 @@
    "source": "cases/jpamb/cases/Loops.java",
    "fixpoint": true,
    "steps": 37,
-   "seconds": 0.0005442550027510151,
+   "seconds": 0.000956773999860161,
    "outcomes": [
     "*",
     "divide by zero",
@@ -37318,7 +44792,7 @@
    "source": "cases/jpamb/cases/Loops.java",
    "fixpoint": true,
    "steps": 30,
-   "seconds": 0.0003730889984581154,
+   "seconds": 0.0006412950006051688,
    "outcomes": [
     "*",
     "assertion error",
@@ -37890,7 +45364,7 @@
    "source": "cases/jpamb/cases/Loops.java",
    "fixpoint": true,
    "steps": 42,
-   "seconds": 0.0005297200004861224,
+   "seconds": 0.000976907000222127,
    "outcomes": [
     "*",
     "assertion error",
@@ -38666,7 +46140,7 @@
    "source": "cases/jpamb/cases/Loops.java",
    "fixpoint": true,
    "steps": 5,
-   "seconds": 7.929999992484227e-05,
+   "seconds": 0.00013925400162406731,
    "outcomes": [
     "*"
    ],
@@ -38833,7 +46307,7 @@
    "source": "cases/jpamb/cases/Loops.java",
    "fixpoint": true,
    "steps": 5,
-   "seconds": 7.670299964956939e-05,
+   "seconds": 0.0001336820005235495,
    "outcomes": [
     "*"
    ],
@@ -38982,7 +46456,7 @@
    "source": "cases/jpamb/cases/Loops.java",
    "fixpoint": true,
    "steps": 22,
-   "seconds": 0.0002618590006022714,
+   "seconds": 0.0005150870001671137,
    "outcomes": [
     "*",
     "assertion error",
@@ -39725,7 +47199,7 @@
    "source": "cases/jpamb/cases/Loops.java",
    "fixpoint": true,
    "steps": 7,
-   "seconds": 8.989300113171339e-05,
+   "seconds": 0.0001597620012034895,
    "outcomes": [
     "*",
     "assertion error",
@@ -39943,7 +47417,7 @@
    "source": "cases/jpamb/cases/Loops.java",
    "fixpoint": true,
    "steps": 37,
-   "seconds": 0.0005677249973814469,
+   "seconds": 0.0010828229987964733,
    "outcomes": [
     "*",
     "divide by zero",
@@ -40444,7 +47918,7 @@
    "source": "cases/jpamb/cases/MagicConstants.java",
    "fixpoint": true,
    "steps": 17,
-   "seconds": 0.0001854759975685738,
+   "seconds": 0.00034060100006172433,
    "outcomes": [
     "ok",
     "out of bounds"
@@ -40926,7 +48400,7 @@
    "source": "cases/jpamb/cases/MagicConstants.java",
    "fixpoint": true,
    "steps": 18,
-   "seconds": 0.00019545000031939708,
+   "seconds": 0.00035091999961878173,
    "outcomes": [
     "null pointer",
     "ok",
@@ -41301,7 +48775,7 @@
    "source": "cases/jpamb/cases/MagicConstants.java",
    "fixpoint": true,
    "steps": 24,
-   "seconds": 0.00029442400045809336,
+   "seconds": 0.0005643779986712616,
    "outcomes": [
     "*",
     "assertion error",
@@ -41797,7 +49271,7 @@
    "source": "cases/jpamb/cases/MagicConstants.java",
    "fixpoint": true,
    "steps": 36,
-   "seconds": 0.0004310750009608455,
+   "seconds": 0.0007776319998811232,
    "outcomes": [
     "*",
     "assertion error",
@@ -42552,7 +50026,7 @@
    "source": "cases/jpamb/cases/MagicConstants.java",
    "fixpoint": true,
    "steps": 36,
-   "seconds": 0.00042042700079036877,
+   "seconds": 0.0007558299985248595,
    "outcomes": [
     "*",
     "assertion error",
@@ -43307,7 +50781,7 @@
    "source": "cases/jpamb/cases/MagicConstants.java",
    "fixpoint": true,
    "steps": 10,
-   "seconds": 0.0001263069971173536,
+   "seconds": 0.00020440300068003125,
    "outcomes": [
     "assertion error",
     "ok"
@@ -43563,7 +51037,7 @@
    "source": "cases/jpamb/cases/MagicConstants.java",
    "fixpoint": true,
    "steps": 17,
-   "seconds": 0.00020949700046912767,
+   "seconds": 0.00036484799966274295,
    "outcomes": [
     "assertion error",
     "ok"
@@ -43990,7 +51464,7 @@
    "source": "cases/jpamb/cases/MagicConstants.java",
    "fixpoint": true,
    "steps": 12,
-   "seconds": 0.00013607300206786022,
+   "seconds": 0.0002295440008310834,
    "outcomes": [
     "assertion error",
     "ok"
@@ -44290,7 +51764,7 @@
    "source": "cases/jpamb/cases/MagicConstants.java",
    "fixpoint": true,
    "steps": 8,
-   "seconds": 9.87169987638481e-05,
+   "seconds": 0.000166035000802367,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -44504,7 +51978,7 @@
    "source": "cases/jpamb/cases/MagicConstants.java",
    "fixpoint": true,
    "steps": 48,
-   "seconds": 0.0006375550001394004,
+   "seconds": 0.0011865720007335767,
    "outcomes": [
     "*",
     "assertion error",
@@ -45111,7 +52585,7 @@
    "source": "cases/jpamb/cases/MagicConstants.java",
    "fixpoint": true,
    "steps": 37,
-   "seconds": 0.00032408399783889763,
+   "seconds": 0.0006473599987657508,
    "outcomes": [
     "divide by zero",
     "ok",
@@ -46210,7 +53684,7 @@
    "source": "cases/jpamb/cases/MagicConstants.java",
    "fixpoint": true,
    "steps": 47,
-   "seconds": 0.00046173100054147653,
+   "seconds": 0.0008480699998472119,
    "outcomes": [
     "divide by zero",
     "ok",
@@ -47547,7 +55021,7 @@
    "source": "cases/jpamb/cases/MagicConstants.java",
    "fixpoint": true,
    "steps": 15,
-   "seconds": 0.00016233700080192648,
+   "seconds": 0.0003182340005878359,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -47986,7 +55460,7 @@
    "source": "cases/jpamb/cases/MagicConstants.java",
    "fixpoint": true,
    "steps": 15,
-   "seconds": 0.00016304400196531788,
+   "seconds": 0.000311940999381477,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -48425,7 +55899,7 @@
    "source": "cases/jpamb/cases/MagicConstants.java",
    "fixpoint": true,
    "steps": 8,
-   "seconds": 0.00012147699817433022,
+   "seconds": 0.00021492999985639472,
    "outcomes": [
     "ok"
    ],
@@ -48661,7 +56135,7 @@
    "source": "cases/jpamb/cases/Operators.java",
    "fixpoint": true,
    "steps": 8,
-   "seconds": 9.541500185150653e-05,
+   "seconds": 0.00017186799959745258,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -48899,7 +56373,7 @@
    "source": "cases/jpamb/cases/Operators.java",
    "fixpoint": true,
    "steps": 4,
-   "seconds": 4.610500036505982e-05,
+   "seconds": 0.00010350299999117851,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -49025,7 +56499,7 @@
    "source": "cases/jpamb/cases/Operators.java",
    "fixpoint": true,
    "steps": 8,
-   "seconds": 0.00010482700236025266,
+   "seconds": 0.00023483600125473458,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -49347,7 +56821,7 @@
    "source": "cases/jpamb/cases/Operators.java",
    "fixpoint": true,
    "steps": 6,
-   "seconds": 7.333800022024661e-05,
+   "seconds": 0.00018640300004335586,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -49533,7 +57007,7 @@
    "source": "cases/jpamb/cases/Operators.java",
    "fixpoint": true,
    "steps": 3,
-   "seconds": 3.300599928479642e-05,
+   "seconds": 0.0001174080007331213,
    "outcomes": [
     "*",
     "assertion error",
@@ -49622,7 +57096,7 @@
    "source": "cases/jpamb/cases/Overflow.java",
    "fixpoint": true,
    "steps": 20,
-   "seconds": 0.00022196599820745178,
+   "seconds": 0.0004432130008353852,
    "outcomes": [
     "ok",
     "out of bounds"
@@ -50154,7 +57628,7 @@
    "source": "cases/jpamb/cases/Randomness.java",
    "fixpoint": true,
    "steps": 25,
-   "seconds": 0.00031242000113707036,
+   "seconds": 0.0006086660014261724,
    "outcomes": [
     "assertion error",
     "divide by zero",
@@ -50893,7 +58367,7 @@
    "source": "cases/jpamb/cases/Randomness.java",
    "fixpoint": true,
    "steps": 20,
-   "seconds": 0.00022613300097873434,
+   "seconds": 0.00040914100100053474,
    "outcomes": [
     "assertion error",
     "ok"
@@ -51492,7 +58966,7 @@
    "source": "cases/jpamb/cases/Randomness.java",
    "fixpoint": true,
    "steps": 17,
-   "seconds": 0.00020036900241393596,
+   "seconds": 0.0003338330006954493,
    "outcomes": [
     "assertion error",
     "ok"
@@ -51964,7 +59438,7 @@
    "source": "cases/jpamb/cases/Randomness.java",
    "fixpoint": true,
    "steps": 10,
-   "seconds": 0.0001413449972460512,
+   "seconds": 0.00023990600129764061,
    "outcomes": [
     "assertion error",
     "divide by zero",
@@ -52234,7 +59708,7 @@
    "source": "cases/jpamb/cases/Randomness.java",
    "fixpoint": true,
    "steps": 10,
-   "seconds": 0.00012183400031062774,
+   "seconds": 0.00021916600053373259,
    "outcomes": [
     "assertion error",
     "ok"
@@ -52486,7 +59960,7 @@
    "source": "cases/jpamb/cases/Randomness.java",
    "fixpoint": true,
    "steps": 43,
-   "seconds": 0.0005518930011021439,
+   "seconds": 0.001146521000919165,
    "outcomes": [
     "assertion error",
     "divide by zero",
@@ -53352,7 +60826,7 @@
    "source": "cases/jpamb/cases/Randomness.java",
    "fixpoint": true,
    "steps": 16,
-   "seconds": 0.00019064699881710112,
+   "seconds": 0.00031705800029158127,
    "outcomes": [
     "assertion error",
     "ok"
@@ -53783,7 +61257,7 @@
    "source": "cases/jpamb/cases/Randomness.java",
    "fixpoint": true,
    "steps": 38,
-   "seconds": 0.0005347370024537668,
+   "seconds": 0.0009736409992910922,
    "outcomes": [
     "*",
     "assertion error",
@@ -54256,7 +61730,7 @@
    "source": "cases/jpamb/cases/Randomness.java",
    "fixpoint": true,
    "steps": 11,
-   "seconds": 0.00013191000107326545,
+   "seconds": 0.0002170429997931933,
    "outcomes": [
     "assertion error",
     "ok"
@@ -54530,7 +62004,7 @@
    "source": "cases/jpamb/cases/Randomness.java",
    "fixpoint": true,
    "steps": 21,
-   "seconds": 0.0002441569995426107,
+   "seconds": 0.0004399389999889536,
    "outcomes": [
     "assertion error",
     "ok",
@@ -54956,7 +62430,7 @@
    "source": "cases/jpamb/cases/Randomness.java",
    "fixpoint": true,
    "steps": 18,
-   "seconds": 0.00021599899991997518,
+   "seconds": 0.0003891360011039069,
    "outcomes": [
     "assertion error",
     "null pointer",
@@ -55295,7 +62769,7 @@
    "source": "cases/jpamb/cases/Randomness.java",
    "fixpoint": true,
    "steps": 5,
-   "seconds": 0.000103367001429433,
+   "seconds": 0.00013898299948778003,
    "outcomes": [
     "*",
     "assertion error",
@@ -55431,7 +62905,7 @@
    "source": "cases/jpamb/cases/Randomness.java",
    "fixpoint": true,
    "steps": 18,
-   "seconds": 0.00022103399896877818,
+   "seconds": 0.000379619999876013,
    "outcomes": [
     "assertion error",
     "ok"
@@ -55943,7 +63417,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 10,
-   "seconds": 0.00014140699931886047,
+   "seconds": 0.0002450119991408428,
    "outcomes": [
     "*",
     "assertion error",
@@ -56303,7 +63777,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 9,
-   "seconds": 0.0001126690003729891,
+   "seconds": 0.00018951499987451825,
    "outcomes": [
     "assertion error",
     "ok"
@@ -56535,7 +64009,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 6,
-   "seconds": 7.643500066478737e-05,
+   "seconds": 0.00012570800026878715,
    "outcomes": [
     "assertion error"
    ],
@@ -56664,7 +64138,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 9,
-   "seconds": 0.00011208899741177447,
+   "seconds": 0.00018663100127014332,
    "outcomes": [
     "assertion error",
     "ok"
@@ -56896,7 +64370,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 9,
-   "seconds": 0.00012025099931634031,
+   "seconds": 0.0002042359992628917,
    "outcomes": [
     "assertion error",
     "ok"
@@ -57128,7 +64602,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 1,
-   "seconds": 2.1179999748710543e-05,
+   "seconds": 4.1108000004896894e-05,
    "outcomes": [
     "ok"
    ],
@@ -57151,7 +64625,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 8,
-   "seconds": 0.0001331410021521151,
+   "seconds": 0.00021110899979248643,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -57389,7 +64863,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 14,
-   "seconds": 0.0001890010025817901,
+   "seconds": 0.0003128589996777009,
    "outcomes": [
     "assertion error",
     "divide by zero",
@@ -57757,7 +65231,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 13,
-   "seconds": 0.00016093299927888438,
+   "seconds": 0.00028368499988573603,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -58132,7 +65606,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 12,
-   "seconds": 0.00014346299940370955,
+   "seconds": 0.0002501210001355503,
    "outcomes": [
     "assertion error",
     "divide by zero",
@@ -58444,7 +65918,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 4,
-   "seconds": 6.950399983907118e-05,
+   "seconds": 0.00010338399988540914,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -58570,7 +66044,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 4,
-   "seconds": 6.421799844247289e-05,
+   "seconds": 9.67010000749724e-05,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -58680,7 +66154,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 6,
-   "seconds": 9.016299736686051e-05,
+   "seconds": 0.00014914399980625603,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -58842,7 +66316,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 3,
-   "seconds": 4.488600097829476e-05,
+   "seconds": 7.9940999057726e-05,
    "outcomes": [
     "divide by zero"
    ],
@@ -58920,7 +66394,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 4,
-   "seconds": 6.73849972372409e-05,
+   "seconds": 0.00011312000060570426,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -59046,7 +66520,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 1,
-   "seconds": 4.1842002246994525e-05,
+   "seconds": 3.7959000110276975e-05,
    "outcomes": [
     "ok"
    ],
@@ -59069,7 +66543,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 2,
-   "seconds": 2.8852999093942344e-05,
+   "seconds": 7.268199988175184e-05,
    "outcomes": [
     "ok"
    ],
@@ -59107,7 +66581,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 8,
-   "seconds": 0.00011054900096496567,
+   "seconds": 0.00019370700101717375,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -59314,7 +66788,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 14,
-   "seconds": 0.0001907030018628575,
+   "seconds": 0.00026643300043360796,
    "outcomes": [
     "assertion error",
     "ok"
@@ -59656,7 +67130,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 4,
-   "seconds": 5.925399818806909e-05,
+   "seconds": 7.305299914150964e-05,
    "outcomes": [
     "ok"
    ],
@@ -59764,7 +67238,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 4,
-   "seconds": 5.641999814542942e-05,
+   "seconds": 7.048400038911495e-05,
    "outcomes": [
     "ok"
    ],
@@ -59872,7 +67346,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 2,
-   "seconds": 3.2010997529141605e-05,
+   "seconds": 3.741699947568122e-05,
    "outcomes": [
     "ok"
    ],
@@ -59910,7 +67384,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 1,
-   "seconds": 1.8976999854203314e-05,
+   "seconds": 2.3149999833549373e-05,
    "outcomes": [
     "ok"
    ],
@@ -59933,7 +67407,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 11,
-   "seconds": 0.00013600099919131026,
+   "seconds": 0.00016182400031539146,
    "outcomes": [
     "assertion error",
     "divide by zero"
@@ -60229,7 +67703,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 20,
-   "seconds": 0.000253182999585988,
+   "seconds": 0.0002870600001187995,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -60857,7 +68331,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 16,
-   "seconds": 0.0002201370007242076,
+   "seconds": 0.0002542350011935923,
    "outcomes": [
     "assertion error",
     "ok"
@@ -61413,7 +68887,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 15,
-   "seconds": 0.00024767499780864455,
+   "seconds": 0.0002490859988029115,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -61764,7 +69238,7 @@
    "source": "cases/jpamb/cases/Simple.java",
    "fixpoint": true,
    "steps": 6,
-   "seconds": 8.972400246420875e-05,
+   "seconds": 9.645099999033846e-05,
    "outcomes": [
     "divide by zero",
     "ok"
@@ -61950,7 +69424,7 @@
    "source": "cases/jpamb/cases/Strings.java",
    "fixpoint": true,
    "steps": 4,
-   "seconds": 6.940800085430965e-05,
+   "seconds": 7.695699969190173e-05,
    "outcomes": [
     "*",
     "assertion error",
@@ -62226,7 +69700,7 @@
    "source": "cases/jpamb/cases/Strings.java",
    "fixpoint": true,
    "steps": 4,
-   "seconds": 6.963100167922676e-05,
+   "seconds": 6.861600013507996e-05,
    "outcomes": [
     "*",
     "assertion error",
@@ -62442,7 +69916,7 @@
    "source": "cases/jpamb/cases/Strings.java",
    "fixpoint": true,
    "steps": 4,
-   "seconds": 5.9505997342057526e-05,
+   "seconds": 7.149500015657395e-05,
    "outcomes": [
     "*",
     "assertion error",
@@ -62658,7 +70132,7 @@
    "source": "cases/jpamb/cases/Strings.java",
    "fixpoint": true,
    "steps": 4,
-   "seconds": 6.782000127714127e-05,
+   "seconds": 7.356700007221662e-05,
    "outcomes": [
     "*",
     "assertion error",
@@ -62874,7 +70348,7 @@
    "source": "cases/jpamb/cases/Strings.java",
    "fixpoint": true,
    "steps": 4,
-   "seconds": 6.648700218647718e-05,
+   "seconds": 6.699299956380855e-05,
    "outcomes": [
     "*",
     "assertion error",
@@ -63030,7 +70504,7 @@
    "source": "cases/jpamb/cases/Tricky.java",
    "fixpoint": true,
    "steps": 42,
-   "seconds": 0.0004908670016448013,
+   "seconds": 0.0005627430000458844,
    "outcomes": [
     "*",
     "assertion error",
@@ -63729,7 +71203,7 @@
    "source": "cases/jpamb/cases/advanced/CWE470.java",
    "fixpoint": true,
    "steps": 1,
-   "seconds": 2.726800084928982e-05,
+   "seconds": 2.972899892483838e-05,
    "outcomes": [
     "*",
     "assertion error",
@@ -63885,7 +71359,7 @@
    "source": "cases/jpamb/cases/advanced/CWE470.java",
    "fixpoint": true,
    "steps": 2,
-   "seconds": 5.417600186774507e-05,
+   "seconds": 6.650499926763587e-05,
    "outcomes": [
     "*",
     "assertion error",
@@ -64028,7 +71502,7 @@
    "source": "cases/jpamb/cases/advanced/CWE470.java",
    "fixpoint": true,
    "steps": 2,
-   "seconds": 3.610000203480013e-05,
+   "seconds": 3.755899888346903e-05,
    "outcomes": [
     "*",
     "assertion error",
@@ -64201,7 +71675,7 @@
    "source": "cases/jpamb/cases/advanced/CWE502.java",
    "fixpoint": true,
    "steps": 5,
-   "seconds": 7.016000017756596e-05,
+   "seconds": 8.313100079249125e-05,
    "outcomes": [
     "*",
     "assertion error",
@@ -64596,7 +72070,7 @@
    "source": "cases/jpamb/cases/advanced/CWE502.java",
    "fixpoint": true,
    "steps": 5,
-   "seconds": 8.054499994614162e-05,
+   "seconds": 9.895999937725719e-05,
    "outcomes": [
     "*",
     "assertion error",
@@ -64750,7 +72224,7 @@
    "source": "cases/jpamb/cases/advanced/CWE502.java",
    "fixpoint": true,
    "steps": 5,
-   "seconds": 6.879600186948664e-05,
+   "seconds": 8.344699926965404e-05,
    "outcomes": [
     "*",
     "assertion error",

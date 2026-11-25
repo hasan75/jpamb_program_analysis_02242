@@ -1,9 +1,10 @@
+wrote project/step3/static-interval-states.json
 analyzer static-interval (domain interval, narrow True)
-methods: 145
+methods: 160
 without fixpoint: 0
-methods with an uncertain site: 101
-branch sites: 232 (uncertain 170)
-divisor sites: 65 (uncertain 52)
-array sites: 78 (uncertain 78)
-goto sites: 43 (uncertain 0)
-total seconds: 0.037
+methods with an uncertain site: 115
+branch sites: 260 (uncertain 190)
+divisor sites: 71 (uncertain 55)
+array sites: 100 (uncertain 100)
+goto sites: 50 (uncertain 0)
+total seconds: 0.065

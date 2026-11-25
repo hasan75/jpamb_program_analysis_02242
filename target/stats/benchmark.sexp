@@ -1592,7 +1592,7 @@
   :"jpamb.cases.Extended.unsafeNestedLoopDivisor!(0, 4, 0, 0, 10)I" (control
     :coverage (
       :"jpamb.cases.Extended.unsafeNestedLoopDivisor:(IIIII)I" (coverage
-        :reachable (0 1 2 3 4 5 6 30 31 32)
+        :reachable (0 1 2 3 4 5 6 32 30 31)
       )
     )
     :results ("divide by zero")
@@ -3754,6 +3754,374 @@
       )
       :"jpamb.cases.advanced.CWE502.whitelist_deserialization:(Ljava/lang/String;)V" (coverage
         :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 32 33 34 35 36)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.assertAfterGuard:(I)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.assertAfterGuard:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 11 12 13 14)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.assertAfterGuard!(0)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.assertAfterGuard:(I)I" (coverage
+        :reachable (0 1 2 13 14)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.assertAfterGuard!(6)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.assertAfterGuard:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 11 12 13 14)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.assertDerivedRange:(II)V" (control
+    :coverage (
+      :"jpamb.cases.Guards.assertDerivedRange:(II)V" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 13)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.assertDerivedRange!(1, 2)V" (control
+    :coverage (
+      :"jpamb.cases.Guards.assertDerivedRange:(II)V" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 13)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.assertDerivedRange!(2, 1)V" (control
+    :coverage (
+      :"jpamb.cases.Guards.assertDerivedRange:(II)V" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 13)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.assertWrongDerivation:(I)V" (control
+    :coverage (
+      :"jpamb.cases.Guards.assertWrongDerivation:(I)V" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11)
+      )
+    )
+    :results ("assertion error" ok)
+  )
+  :"jpamb.cases.Guards.assertWrongDerivation!(-1)V" (control
+    :coverage (
+      :"jpamb.cases.Guards.assertWrongDerivation:(I)V" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11)
+      )
+    )
+    :results ("assertion error")
+  )
+  :"jpamb.cases.Guards.assertWrongDerivation!(3)V" (control
+    :coverage (
+      :"jpamb.cases.Guards.assertWrongDerivation:(I)V" (coverage
+        :reachable (0 1 2 3 4 5 6 11)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.boundedLoopCheck:(I)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.boundedLoopCheck:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.boundedLoopCheck!(1)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.boundedLoopCheck:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.clampThenDivide:(I)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.clampThenDivide:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.clampThenDivide!(0)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.clampThenDivide:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.clampThenDivide!(7)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.clampThenDivide:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.classifyThenIndex:(I)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.classifyThenIndex:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.classifyThenIndex!(15)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.classifyThenIndex:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.classifyThenIndex!(25)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.classifyThenIndex:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.classifyThenIndex!(5)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.classifyThenIndex:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.constantMode:(I)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.constantMode:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.constantMode!(3)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.constantMode:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.divGuardNotZero:(I)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.divGuardNotZero:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.divGuardNotZero!(0)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.divGuardNotZero:(I)I" (coverage
+        :reachable (0 1 6 7)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.divGuardNotZero!(5)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.divGuardNotZero:(I)I" (coverage
+        :reachable (0 1 2 3 4 5)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.divGuardPositiveReversed:(I)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.divGuardPositiveReversed:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.divGuardPositiveReversed!(-3)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.divGuardPositiveReversed:(I)I" (coverage
+        :reachable (0 1 2 7 8)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.divGuardPositiveReversed!(3)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.divGuardPositiveReversed:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.divGuardWrongBound:(I)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.divGuardWrongBound:(I)I" (coverage
+        :reachable (0 1 2 3 4 5)
+      )
+    )
+    :results ("divide by zero" ok)
+  )
+  :"jpamb.cases.Guards.divGuardWrongBound!(0)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.divGuardWrongBound:(I)I" (coverage
+        :reachable (0 1 2 3 4)
+      )
+    )
+    :results ("divide by zero")
+  )
+  :"jpamb.cases.Guards.divGuardWrongBound!(1)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.divGuardWrongBound:(I)I" (coverage
+        :reachable (0 1 2 3 4 5)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.mergeLosesZero:(I)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.mergeLosesZero:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 8 9 10 11)
+      )
+    )
+    :results ("divide by zero" ok)
+  )
+  :"jpamb.cases.Guards.mergeLosesZero!(-3)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.mergeLosesZero:(I)I" (coverage
+        :reachable (0 1 5 6)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.mergeLosesZero!(0)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.mergeLosesZero:(I)I" (coverage
+        :reachable (0 1 5 6)
+      )
+    )
+    :results ("divide by zero")
+  )
+  :"jpamb.cases.Guards.mergeLosesZero!(3)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.mergeLosesZero:(I)I" (coverage
+        :reachable (0 1 2 3 4 8 9 10 11)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.rangeCheckLowerMissing:(I)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.rangeCheckLowerMissing:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32)
+      )
+    )
+    :results (ok "out of bounds")
+  )
+  :"jpamb.cases.Guards.rangeCheckLowerMissing!(-1)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.rangeCheckLowerMissing:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30)
+      )
+    )
+    :results ("out of bounds")
+  )
+  :"jpamb.cases.Guards.rangeCheckLowerMissing!(1)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.rangeCheckLowerMissing:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.rangeCheckOffByOne:(I)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.rangeCheckOffByOne:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34)
+      )
+    )
+    :results (ok "out of bounds")
+  )
+  :"jpamb.cases.Guards.rangeCheckOffByOne!(0)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.rangeCheckOffByOne:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.rangeCheckOffByOne!(5)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.rangeCheckOffByOne:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34)
+      )
+    )
+    :results ("out of bounds")
+  )
+  :"jpamb.cases.Guards.rangeCheckedRead:(I)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.rangeCheckedRead:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.rangeCheckedRead!(2)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.rangeCheckedRead:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.rangeCheckedRead!(7)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.rangeCheckedRead:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.signThenDivide:(I)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.signThenDivide:(I)I" (coverage
+        :reachable (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.signThenDivide!(-4)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.signThenDivide:(I)I" (coverage
+        :reachable (0 1 2 3 4 12 13 14 15)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.signThenDivide!(0)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.signThenDivide:(I)I" (coverage
+        :reachable (0 1 5 6 7 8 9 12 13 14 15)
+      )
+    )
+    :results (ok)
+  )
+  :"jpamb.cases.Guards.signThenDivide!(4)I" (control
+    :coverage (
+      :"jpamb.cases.Guards.signThenDivide:(I)I" (coverage
+        :reachable (0 1 5 6 10 11 12 13 14 15)
       )
     )
     :results (ok)

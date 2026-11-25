@@ -1,21 +1,21 @@
-benchmark methods: 145
-methods with a site: 85
-methods with an uncertain site: 74
+benchmark methods: 160
+methods with a site: 100
+methods with an uncertain site: 88
 methods not matched to source: 0
-sites: 344 (uncertain 317, not joined 19)
-  R1-invert: 64 (uncertain 64, not joined 0)
-  R2-swap: 153 (uncertain 139, not joined 10)
-  R2-strict: 70 (uncertain 59, not joined 8)
-  R2-split: 57 (uncertain 55, not joined 1)
+sites: 408 (uncertain 368, not joined 19)
+  R1-invert: 82 (uncertain 79, not joined 0)
+  R2-swap: 178 (uncertain 159, not joined 10)
+  R2-strict: 87 (uncertain 73, not joined 8)
+  R2-split: 61 (uncertain 57, not joined 1)
 rejected (rule, reason):
   invert: not a comparison: 12
   invert: not an int[] access: 1
-  split: not an equality: 96
+  split: not an equality: 117
   split: not an int[] access: 11
   split: method call: 4
   split: ++/--: 1
-  strict: equality has no strict form: 57
-  strict: no decimal int literal: 26
+  strict: equality has no strict form: 61
+  strict: no decimal int literal: 30
   strict: not an int[] access: 11
   strict: method call: 4
   strict: ++/--: 1
