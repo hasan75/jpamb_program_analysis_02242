@@ -37,7 +37,7 @@ construction (\cref{sec:rq1}).
 JPAMB consists of micro-benchmarks, the rules cover only \texttt{int}
 comparisons, and the three analyzers come from one code base; other analyzers
 and programs may contain more inconsistencies. The \texttt{Guards} cases were
-written by the author of the technique; without them the pool shrinks to
+written by us, the authors of the technique; without them the pool shrinks to
 \PoolNoGuards{}, \texttt{guided} still finds fewer than \texttt{random} at both
 budgets, and at 25\% it ties with \texttt{syntax}, which also finds none. Loop
 reshaping (\texttt{while} to \texttt{if} with \texttt{do}-\texttt{while}) is
