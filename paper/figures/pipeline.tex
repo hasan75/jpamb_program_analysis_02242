@@ -29,6 +29,12 @@
   \draw[arr] (ana) -- (cmp);
   \draw[arr] (src.south) -- ++(0,-3mm) -| (ana.north);
 \end{tikzpicture}
+\Description{A flow diagram in two rows. Top row, left to right: Java source
+and bytecode, the interval analysis (guide), the site finder with rules R1 and
+R2, and selection with budget N and a seed. Bottom row, right to left: rewrite
+one site, validation by compiling and running inputs, the analyzer under test
+on the original and the variant, and a check whether the outcome sets differ.
+The source also feeds the analyzer under test directly.}
 \caption{The pipeline. An interval analysis computes abstract states that mark
 sites as uncertain; a strategy orders the eligible sites, and the first $N$ are
 rewritten, one rewrite per variant. Valid variants and their originals are

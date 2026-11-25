@@ -301,8 +301,8 @@ def main() -> None:
     cond_x = next(x for x in branches if x["line"] == 138 and x["origins"][0] == 0)
     cond_y = next(x for x in branches if x["line"] == 139 and x["origins"][0] == 1)
     assert cond_x["uncertain"] and not cond_y["uncertain"]
-    n["OverviewStateX"] = f"${interval(cond_x['operands'][0])}$"
-    n["OverviewStateY"] = f"${interval(cond_y['operands'][0])}$"
+    n["OverviewStateX"] = interval(cond_x["operands"][0])
+    n["OverviewStateY"] = interval(cond_y["operands"][0])
     ex_variants = [v for v in outcomes["variants"] if v["method"] == ex]
     n["OverviewNumSites"] = len(ex_variants)
     ex_valid = [v for v in validation if v["method"] == ex]
